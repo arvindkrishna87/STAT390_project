@@ -4,4 +4,4 @@ title: "About"
 
 This is the website for the first ever Northwestern hosted [ASA DataFest](https://ww2.amstat.org/education/datafest/)!
 
-
+There will be more information to come soon!
