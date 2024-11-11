@@ -2,7 +2,8 @@
 title: "STAT390 (CMIL Classification)"
 ---
 
-This is a Quarto website.
+Aim: The aim of this project is to...
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+NU Class of Fall 2024 has made the following progress on this project.
+
 

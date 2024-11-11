@@ -1,0 +1,8 @@
+---
+title: "Step 1 (Slice extraction)"
+---
+
+Aim: To extract the tissue slices from the WSI (Whole slide images)
+
+Methodology:
+
