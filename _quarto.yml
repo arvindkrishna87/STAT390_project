@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "2025-datafest"
+  title: "STAT390 project"
   navbar:
     left:
       - href: index.qmd

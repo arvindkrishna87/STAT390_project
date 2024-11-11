@@ -1,5 +1,5 @@
 ---
-title: "2025-datafest"
+title: "STAT390 (CMIL Classification)"
 ---
 
 This is a Quarto website.
