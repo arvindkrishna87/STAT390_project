@@ -1,10 +1,17 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STAT390 (CMIL Classification)",
+    "objectID": "step2.html",
+    "href": "step2.html",
+    "title": "Step 2 (Matching slices across stains)",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Aim: To identify structurally similar slices across stains.\nMethodology:"
+  },
+  {
+    "objectID": "step1.html",
+    "href": "step1.html",
+    "title": "Step 1 (Slice extraction)",
+    "section": "",
+    "text": "Aim: To extract the tissue slices from the WSI (Whole slide images)\nMethodology:"
   },
   {
     "objectID": "about.html",
@@ -12,5 +19,12 @@
     "title": "About",
     "section": "",
     "text": "This is the website for the STAT390 project!\nThere will be more information to come soon!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STAT390 (CMIL Classification)",
+    "section": "",
+    "text": "Aim: The aim of this project is to…\nNU Class of Fall 2024 has made the following progress on this project."
   }
 ]
