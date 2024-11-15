@@ -59,7 +59,9 @@ other stain types to expedite process: existing_annotations.groovy
 Following the instructions above, open your image in QuPath and run this
 “annotation export newest” groovy script.
 
-![](step%201%20images/step_1_image_1.png)Select Run, then Run For
+![](step%201%20images/step_1_image_1.png)
+
+Select Run, then Run For
 Project
 
 ![](step%201%20images/step_1_image_2.png)
