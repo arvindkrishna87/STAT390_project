@@ -12,7 +12,6 @@ Two codes required:
 
 -   match_pipeline-2.py
 
-
 ## Step-by-Step Manual
 
 Follow these steps to use the pipeline to generate matching slices for all patients or a specific subset:
@@ -25,25 +24,30 @@ For All Patients: Place all images in the same processed_images directory. For a
 
 Run match_pipeline.py. A GUI will prompt you to select the directory containing the images. Open NoahsMatching.ipynb in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.
 
+
 ## Results
+
+Example:
 
 All tissue slices from patient h2114153
 
-![](step 2 images/slice1.png){width="125"}
-![](step 2 images/slice4.png){width="90"}
-![](step 2 images/slice5.png){width="106"}
-![](step 2 images/slice6.png){width="105"}
-![](step 2 images/slice2.png){width="121"}
-![](step 2 images/slice7.png){width="100"}
-![](step 2 images/slice3.png){width="113"}
+![](step%202%20images/slice1.png){width="125"} ![](step%202%20images/slice4.png){width="90"} ![](step%202%20images/slice5.png){width="106"} ![](step%202%20images/slice6.png){width="105"} ![](step%202%20images/slice2.png){width="121"} ![](step%202%20images/slice7.png){width="100"} ![](step%202%20images/slice3.png){width="113"}
 
 **Successfully matched results**
 
-![](step 2 images/slice1.png){width="125"}
-![](step 2 images/slice2.png){width="121"}
-![](step 2 images/slice3.png){width="113"}
-
+![](step%202%20images/slice1.png){width="125"} ![](step%202%20images/slice2.png){width="121"} ![](step%202%20images/slice3.png){width="113"}
 
 [Matching Algorithm Evaluation Tracker](https://docs.google.com/spreadsheets/d/1ftfgVTarxCAADnrV4wQ9Plx2EjlHfv4KF3QgBLAyV2A/edit?gid=1717311473#gid=1717311473)
 
 This tracker shows the status of each patient if they had a successful match
+
+
+## API
+
+![](step 2 images/step 2 API image 1.png)
+
+![](step 2 images/step 2 API image 2.png)
+
+## API Results
+
+![](step 2 images/step 2 API image 3.png)
