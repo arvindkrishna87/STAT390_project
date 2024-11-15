@@ -11,9 +11,9 @@ developed. By improving the precision of lesion classification, our model has th
 The Northwestern University STAT390 Class of Fall 2024 has made the following progress on this project:
 
 1. Extracting each tissue from the patient data using QuPath
-2. Matching tissue slices across the different stains (H&E, Melan-A, Sox-10) to each patient if there is a correct match
-3. Detecting and extracting only the epithelium for each tissue
-4. Patching certain regions of each epithelium for further examination
+2. Matching tissue slices across the different stains (H&E, Melan-A, Sox-10) for each patient if there is a correct match
+3. Detecting and extracting the epithelium for each tissue
+4. Apply patching across each epithelium for further examination
 5. TBD
 
 
