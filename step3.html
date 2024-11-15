@@ -132,8 +132,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">Set Up</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong>:</a>
+  <ul class="collapse">
+  <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up">Set Up</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#code-explanation" id="toc-code-explanation" class="nav-link" data-scroll-target="#code-explanation">Code Explanation</a>
+  <ul class="collapse">
+  <li><a href="#separation-process" id="toc-separation-process" class="nav-link" data-scroll-target="#separation-process">Separation Process</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -159,16 +166,66 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Aim: To detect and extract the epithelium in each slice.</p>
-<p>Methodology:</p>
+<p><strong>Aim</strong>: To separate the epithelium from the stroma in each tissue.</p>
+<section id="methodology" class="level1">
+<h1><strong>Methodology</strong>:</h1>
+<p>Automated separation of tissues using color space binning and morphological operations.</p>
 <section id="set-up" class="level2">
 <h2 class="anchored" data-anchor-id="set-up">Set Up</h2>
+<p>Use the API</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="step 3 API image 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Type into your terminal:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="step 3 API image 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
-<p>Images for Kevin’s updated Prashant code.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="step 3 API image 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="code-explanation" class="level2">
+<h2 class="anchored" data-anchor-id="code-explanation">Code Explanation</h2>
+<section id="separation-process" class="level3">
+<h3 class="anchored" data-anchor-id="separation-process">Separation Process</h3>
+<p>Preprocessing and Color Space Transformation</p>
+<p>Aim: Convert input images to a color space that separates luminance from chrominance, making it easier to isolate tissue features.</p>
+<p>Input Image: The original image is loaded as RGB.</p>
+<p>Transformation: Convert the RGB image to YCrCb. This transformation decomposes the image into:</p>
+<p>Y: Luminance (brightness) Cr: Red chroma component Cb: Blue chroma component</p>
+<p>Background Detection Aim: Separate the tissue regions from the background to reduce noise in the analysis.</p>
+<p>A thresholding technique is applied to the luminance channel to identify low-intensity regions representing the background.</p>
+<p>Morphological operations are used to remove small noise regions and smooth the background mask.</p>
+<p>The background mask is then subtracted from subsequent tissue analysis steps.</p>
+<p>Identifying Stroma using Red Chroma (Cr) Binning</p>
+<p>Aim: Isolate stroma tissue based on the red chroma component, which correlates well with stromal regions in histology slides.</p>
+<p>Binning of Cr Channel</p>
+<p>The Cr component is divided into discrete bins (e.g., 12 bins) to simplify the image analysis.</p>
+<p>The bin with the maximum number of pixels is identified as the dominant chroma level for stromal regions.</p>
+<p>Stroma Detection</p>
+<p>Stroma is defined as the regions within three bins below the dominant bin. A mask is created to isolate stroma areas, followed by dilation to fill gaps. Morphological operations remove small objects and refine the segmentation. The result is saved as a binary mask representing the stroma.</p>
+<p>Identifying Epithelia Using Red Chroma (Cr) Binning Aim: Differentiate epithelial tissue from stroma using the chroma profile.</p>
+<p>Binning for Epithelia: Epithelia are identified in the Cr channel bins immediately following the stroma bins. The bins are selected based on their relative position to the previously identified stroma bins.</p>
+<p>Mask Refinement: Background and stroma regions are subtracted to isolate the epithelia. Further refinement includes removing small objects, filling holes, and eliminating noise caused by blue ink (detected using the Cb channel). The result is saved as a binary mask representing the epithelia.</p>
+<p>Post-Processing and Visualization Aim: Generate segmented visualizations of the input image with stroma and epithelia overlaid.</p>
+<p>Mask Application: The segmented stroma and epithelia masks are applied to the original RGB image, producing separate visual representations of each tissue type.</p>
+<p>Segmentation Visualization: A combined image is generated with three panels: The original RGB image The segmented stroma region The segmented epithelia region These visualizations are saved for further analysis and validation.</p>
+<p>Batch Processing and Cleanup Aim: Automate the processing for multiple images and optimize memory usage.</p>
+<p>Batch Processing: The process is set to iterate over a folder of images, applying the segmentation pipeline to each one.</p>
+<p>Memory Management: To prevent memory overload, unnecessary variables are deleted, and garbage collection is manually triggered at the end of each iteration.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
