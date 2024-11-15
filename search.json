@@ -144,6 +144,20 @@
     "href": "step2.html#results",
     "title": "Step 2: Matching slices across stains",
     "section": "Results",
-    "text": "Results\nAll tissue slices from patient h2114153\n      \nSuccessfully matched results\n  \nMatching Algorithm Evaluation Tracker\nThis tracker shows the status of each patient if they had a successful match"
+    "text": "Results\nExample:\nAll tissue slices from patient h2114153\n      \nSuccessfully matched results\n  \nMatching Algorithm Evaluation Tracker\nThis tracker shows the status of each patient if they had a successful match"
+  },
+  {
+    "objectID": "step2.html#api",
+    "href": "step2.html#api",
+    "title": "Step 2: Matching slices across stains",
+    "section": "API",
+    "text": "API"
+  },
+  {
+    "objectID": "step2.html#api-results",
+    "href": "step2.html#api-results",
+    "title": "Step 2: Matching slices across stains",
+    "section": "API Results",
+    "text": "API Results"
   }
 ]
