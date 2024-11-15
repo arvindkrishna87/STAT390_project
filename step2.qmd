@@ -45,3 +45,5 @@ All tissue slices from patient h2114153
 
 
 [Matching Algorithm Evaluation Tracker](https://docs.google.com/spreadsheets/d/1ftfgVTarxCAADnrV4wQ9Plx2EjlHfv4KF3QgBLAyV2A/edit?gid=1717311473#gid=1717311473)
+
+This tracker shows the status of each patient if they had a successful match
