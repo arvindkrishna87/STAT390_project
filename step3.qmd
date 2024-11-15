@@ -12,7 +12,7 @@ Automated separation of tissues using color space binning and morphological oper
 
 Use the API
 
-## ![](step 3 images/step 3 API image 1.png)
+![](step 3 images/step 3 API image 1.png)
 
 ## Code Explanation
 
