@@ -12,7 +12,7 @@ Two codes required:
 
 -   match_pipeline-2.py
 
-## Step-by-Step Manual
+## Step-by-Step Manual 
 
 Follow these steps to use the pipeline to generate matching slices for all patients or a specific subset:
 
