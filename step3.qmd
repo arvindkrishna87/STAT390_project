@@ -48,7 +48,7 @@ The bin with the maximum number of pixels is identified as the dominant chroma l
 
 Stroma Detection
 
-Stroma is defined as the regions within three bins below the dominant bin. A mask is created to isolate stroma areas, followed by dilation to fill gaps. Morphological operations remove small objects and refine the segmentation. The result is saved as a binary mask representing the stroma.
+Stroma is defined as the regions within three bins below the dominant bin. A mask is created to isolate stroma areas, followed by dilation to fill gaps. Morphological operations remove small objects and refine the segmentation. The result is saved as a binary mask representing the stroma. 
 
 Identifying Epithelia Using Red Chroma (Cr) Binning Aim: Differentiate epithelial tissue from stroma using the chroma profile.
 
