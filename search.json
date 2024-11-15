@@ -123,7 +123,7 @@
     "href": "step2.html",
     "title": "Step 2: Matching slices across stains",
     "section": "",
-    "text": "Aim: To identify structurally similar slices across stains.\nMethodology:\nTwo codes required:\nMatching Algorithm Evaluation Tracker"
+    "text": "Aim: To identify structurally similar slices across stains for each patient."
   },
   {
     "objectID": "step2.html#step-by-step-manual",
@@ -137,6 +137,6 @@
     "href": "step2.html#results",
     "title": "Step 2: Matching slices across stains",
     "section": "Results",
-    "text": "Results\nAll tissue slices from patient h2114153\n      \nSuccessfully matched results"
+    "text": "Results\nAll tissue slices from patient h2114153\n      \nSuccessfully matched results\n  \nMatching Algorithm Evaluation Tracker"
   }
 ]
