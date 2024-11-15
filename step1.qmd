@@ -50,7 +50,7 @@ other stain types to expedite process: existing_annotations.groovy
     work from there
 3.  Save this and then replace "tissues_2" in .groovy script.
 
-## **Extraction Process**
+## Extraction Process
 
 ### Step 1: First pass of algorithm
 
