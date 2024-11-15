@@ -4,7 +4,7 @@ title: "About"
 
 This is the website for the Fall 2024 STAT390 project!
 
-## Team 
+## Team
 
 **Professor and Project Leader**: Arvind Krishna
 
@@ -18,7 +18,7 @@ Link to connect to our Github
 link to connect to our API
 
 
-## Data overview 
+## Data overview
 
 [Data Source](https://www.sciencedirect.com/science/article/pii/S0023683723002246)
 
