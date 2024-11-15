@@ -2,11 +2,9 @@
 title: "Step 1: Slice extraction"
 ---
 
-Aim: To extract the tissue slices from the WSI (Whole slide images)
+**Aim**: To extract the tissue slices from the WSI (Whole slide images)
 
-Methodology: QuPath scripting files to automate tissue extraction
-
-# **Set Up**
+# **Methodology** 
 
 ## Setting up in QuPath
 
@@ -29,9 +27,9 @@ other stain types to expedite process: existing_annotations.groovy
     project
 7.  Data will save in processed_data dir in your base project dir
 
-## To deal with more difficult stain types if you decide to manually annotate:
+### To deal with more difficult stain types if you decide to manually annotate:
 
-### Runs like automate_export_newest.groovy but only if you already have annotations
+ Runs like automate_export_newest.groovy but only if you already have annotations
 
 1.  Need to set annotation class to "Positive" in QuPath (Annotations
     --\> Positive --\> Set selected and for future annotations to be
@@ -44,7 +42,7 @@ other stain types to expedite process: existing_annotations.groovy
     project
 6.  Data will save in processed_data dir in your base project dir
 
-## To create a new pixel classifier or modify (optional):
+### To create a new pixel classifier or modify (optional):
 
 1.  QuPath Interface top bar --\> Classify --\> Pixel Classification
     --\> Create thresholder
@@ -52,16 +50,14 @@ other stain types to expedite process: existing_annotations.groovy
     work from there
 3.  Save this and then replace "tissues_2" in .groovy script.
 
-# **Extraction Process**
+## **Extraction Process**
 
-## Step 1: First pass of algorithm
+### Step 1: First pass of algorithm
 
 Following the instructions above, open your image in QuPath and run this
 “annotation export newest” groovy script.
 
-![](step%201%20images/step_1_image_1.png)
-
-Select Run, then Run For
+![](step%201%20images/step_1_image_1.png)Select Run, then Run For
 Project
 
 ![](step%201%20images/step_1_image_2.png)
@@ -80,7 +76,7 @@ process up to 20 at a time to reduce the memory load.
 
 ![](step%201%20images/step_1_image_3.png)
 
-## Step 2: Analyze results and troubleshoot
+### Step 2: Analyze results and troubleshoot
 
 Once you run the automation for your images, I check in QuPath directly
 image by image to ensure all data was properly exported. You should also
