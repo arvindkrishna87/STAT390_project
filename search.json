@@ -23,8 +23,8 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "STAT390 (CMIL Classification)",
+    "title": "Fall 2024 STAT390 (CMIL Classification)",
     "section": "",
-    "text": "Aim: The aim of this project is to…\nNU Class of Fall 2024 has made the following progress on this project."
+    "text": "Aim: The objective of the project is to develop a machine learning model to accurately classify Conjunctival melanocytic intraepithelial lesions (C-MIL) as per the WHO 2022 classification system. In layman’s terms, we want to identify the severity of potential eye cancer by looking at a particular eye tissue of the patient.\nThe motivation behind the project is to provide a reproducible and accurate grading of C-MIL so that the most appropriate management plan for the patient can be developed. By improving the precision of lesion classification, our model has the potential to enhance patient outcomes and optimize treatment strategies\nThe Northwestern University STAT390 Class of Fall 2024 has made the following progress on this project:\n\nExtracting each tissue from the patient data using QuPath\nMatching tissue slices across the different stains (H&E, Melan-A, Sox-10) to each patient if there is a correct match\nDetecting and extracting only the epithelium for each tissue\nPatching certain regions of each epithelium for further examination\nTBD"
   }
 ]
