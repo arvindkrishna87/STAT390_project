@@ -3,10 +3,11 @@ title: "Step 4: Patching"
 ---
 
 
+**Aim**: Applies horizontal / vertical patching across the epithelium for later use in model. 
 
-Aim: Applies horizontal / vertical patching across the epithelium for later use in model. 
+# **Methodology**: 
 
-Methodology: Patching algorithm calculates the optimal patch height and width based on the epithelium mask. The patch dimensions are based on the maximum continuous width of white pixels (i.e., the epithelium area) and the overall epithelium area in the mask. 
+Patching algorithm calculates the optimal patch height and width based on the epithelium mask. The patch dimensions are based on the maximum continuous width of white pixels (i.e., the epithelium area) and the overall epithelium area in the mask. 
 The patches are used to analyze and visualize the epithelium coverage, and they are placed on the images based on optimal patch dimensions and overlap calculations.
 Patching algorithm takes in processed images of the epithelium from the stained cells and applies a sliding kernel across the image
 The optimal patch height is the maximum width of continuous white pixels (in each row), with a minimum height of 100. The patch width is calculated by dividing the epithelium area by 100 and the optimal patch height.
@@ -28,7 +29,6 @@ Place all desired sample images in “filtered_images” folder
 Open and run epithelium_patches_6_hori.py. Dependencies include cv2, numpy, os
 
 Find processed images in “processed_images_sub”
-
 
 
 ## Functions Explanations: 
@@ -79,8 +79,7 @@ Hardcoding:
 Only hardcoded value relates to the color thresholding used in the epithelium extraction. Other group members / team 6 have been working on ways to generalize this segment and can likely be combined.
 
 
-
-
 ## Results
-Images for Alyssa's code
+
+Images TBD
 
