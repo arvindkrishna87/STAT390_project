@@ -12,15 +12,7 @@ Automated separation of tissues using color space binning and morphological oper
 
 Use the API
 
-![](step 3 API image 1.png){fig-align="center"}
-
-Type into your terminal:
-
-![](step 3 API image 2.png){fig-align="center"}
-
-## Results
-
-![](step 3 API image 3.png){fig-align="center"}
+## ![](step 3 images/step 3 API image 1.png)
 
 ## Code Explanation
 
@@ -75,6 +67,3 @@ Batch Processing and Cleanup Aim: Automate the processing for multiple images an
 Batch Processing: The process is set to iterate over a folder of images, applying the segmentation pipeline to each one.
 
 Memory Management: To prevent memory overload, unnecessary variables are deleted, and garbage collection is manually triggered at the end of each iteration.
-
-
-
