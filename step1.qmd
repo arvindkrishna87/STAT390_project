@@ -1,13 +1,10 @@
 ---
 title: "Step 1: Slice extraction"
-editor: 
-  markdown: 
-    wrap: 72
 ---
 
-**Aim**: To extract the tissue slices from the WSI (Whole slide images)
+Aim: To extract the tissue slices from the WSI (Whole slide images)
 
-**Methodology**: QuPath scripting files to automate tissue extraction
+Methodology: QuPath scripting files to automate tissue extraction
 
 # **Set Up**
 
