@@ -2,9 +2,9 @@
 title: "Step 2: Matching slices across stains"
 ---
 
-Aim: To identify structurally similar slices across stains.
+**Aim**: To identify structurally similar slices across stains for each patient.
 
-Methodology:
+# **Methodology**:
 
 Two codes required:
 
@@ -12,7 +12,6 @@ Two codes required:
 
 -   match_pipeline-2.py
 
-[Matching Algorithm Evaluation Tracker](https://docs.google.com/spreadsheets/d/1ftfgVTarxCAADnrV4wQ9Plx2EjlHfv4KF3QgBLAyV2A/edit?gid=1717311473#gid=1717311473)
 
 ## Step-by-Step Manual
 
@@ -44,3 +43,5 @@ All tissue slices from patient h2114153
 ![](step 2 images/slice2.png){width="121"}
 ![](step 2 images/slice3.png){width="113"}
 
+
+[Matching Algorithm Evaluation Tracker](https://docs.google.com/spreadsheets/d/1ftfgVTarxCAADnrV4wQ9Plx2EjlHfv4KF3QgBLAyV2A/edit?gid=1717311473#gid=1717311473)
