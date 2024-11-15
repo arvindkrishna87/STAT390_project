@@ -1,0 +1,184 @@
+---
+title: "Step 1: Slice extraction"
+---
+
+**Aim**: To extract the tissue slices from the WSI (Whole slide images)
+
+**Methodology**: QuPath scripting files to automate tissue extraction
+
+# **Set Up**
+
+## Setting up in QuPath
+
+Images in a QuPath Project --> processed_data/tissue_image.tif
+Contains tissues_1.json, tissues_2.json and automate_export_newest.groovy
+New for other stain types to expedite process: existing_annotations.groovy
+
+1. Open a project that has all your images
+2. Put tissue_2.json into base_proj_dir/classifiers/pixel_classifiers (make if does not exist) Note, use tissues_2.json for most recent results (not tissues_1 but you can still try this too. tissues_2 contains broader parameters for a more sensitive model, works on more stains and images)
+3. Put automate_export_newest.groovy into base_project_dir/scripts (make if does not exist)
+4. Make sure you have an image open in QuPath interface
+5. In QuPath, top bar --> Automate --> Project scripts --> automate_export_newest.groovy
+6. Script Editor has three vertical dots at the bottom --> Run for project
+7. Data will save in processed_data dir in your base project dir
+
+## To deal with more difficult stain types if you decide to manually annotate:
+### Runs like automate_export_newest.groovy but only if you already have annotations
+
+1. Need to set annotation class to "Positive" in QuPath (Annotations --> Positive --> Set selected and for future annotations to be auto "Positive," press "Auto set"")
+2. To export existing annotations only, run existing_annotations.groovy
+3. existing_annotations.groovy --> base_project_dir/scripts
+4. In QuPath, top bar --> Automate --> Project scripts --> existing_annotations.groovy
+5. Script Editor has three vertical dots at the bottom --> Run for project
+6. Data will save in processed_data dir in your base project dir
+
+## To create a new pixel classifier or modify (optional):
+1. QuPath Interface top bar --> Classify --> Pixel Classification --> Create thresholder
+2. See tissues_1.json and tissues_2.json for my parameters, and you can work from there
+3. Save this and then replace "tissues_2" in .groovy script.
+
+# **Extraction Process**
+
+## Step 1: First pass of algorithm
+
+Following the instructions above, open your image in QuPath and run this “annotation export newest” groovy script.
+
+```{r, echo = FALSE}
+library(png)
+```
+
+```{r, echo = FALSE}
+img <- readPNG("step 1 images/step_1_image_1.png")
+plot(1:2, type = "n", axes = FALSE, xlab = "", ylab = "") 
+rasterImage(img, 1, 1, 2, 2)
+```
+
+Select Run, then Run For Project
+
+```{r, echo = FALSE}
+img <- readPNG("step 1 images/step_1_image_2.png")
+plot(1:2, type = "n", axes = FALSE, xlab = "", ylab = "") 
+rasterImage(img, 1, 1, 2, 2)
+```
+
+*Note*: If your automation fails while running due to a particularly large image or systematically fails on a stain type (ie Sheffield Sox10–most fail because reference image annotation is too large to export), you have two options:
+Manually annotate and export images (more on this later)
+Downsample an annotated area (last resort, but can successfully downsample up to a factor of 2 to match stakeholder’s desired resolution), can do this directly by changing the downsample parameter
+
+Select your images to process. Not counting the mask images, I tended to process up to 20 at a time to reduce the memory load.
+
+```{r, echo = FALSE}
+img <- readPNG("step 1 images/step_1_image_3.png")
+plot(1:2, type = "n", axes = FALSE, xlab = "", ylab = "") 
+rasterImage(img, 1, 1, 2, 2)
+```
+
+## Step 2: Analyze results and troubleshoot
+
+Once you run the automation for your images, I check in QuPath directly image by image to ensure all data was properly exported. You should also check in the processed_images dir created in your Qupath project dir that no image was corrupted or too blurry. In order of manual work needed, here are the possible cases for your images. They correspond with how we dealt with and logged processing these images in the [Tracker Data of Status of Each Slice](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&file=data_uploaded_tracker.xlsx&action=default&mobileredirect=true)
+
+# Result Cases
+
+**Case 1**: perfect ROI identification
+Self-explanatory, all ROIs were successfully found and exported
+Example: Liverpool h1831023
+
+```{r, echo = FALSE}
+img <- readPNG("step 1 images/step_1_image_4.png")
+plot(1:2, type = "n", axes = FALSE, xlab = "", ylab = "") 
+rasterImage(img, 1, 1, 2, 2)
+```
+
+**Case 2**: merging
+Some of the region was not selected by the algorithm but belongs in the tissue sample
+This has to be determined across stains because some tissues might be separated in one type of stain but appear merged in another
+However, we don’t want to over-merge as the amount of whitespace makes matching difficult
+Example of merging: h1846151 small hanging pieces are okay to merge
+
+```{r, echo = FALSE}
+img <- readPNG("step 1 images/step_1_image_5.png")
+plot(1:2, type = "n", axes = FALSE, xlab = "", ylab = "") 
+rasterImage(img, 1, 1, 2, 2)
+```
+
+Example of when to not merge: h1810898B because sox10 looks similar to unmerged h&e
+
+```{r, echo = FALSE}
+img <- readPNG("step 1 images/step_1_image_6.png")
+plot(1:2, type = "n", axes = FALSE, xlab = "", ylab = "") 
+rasterImage(img, 1, 1, 2, 2)
+```
+```{r, echo = FALSE}
+img <- readPNG("step 1 images/step_1_image_7.png")
+plot(1:2, type = "n", axes = FALSE, xlab = "", ylab = "") 
+rasterImage(img, 1, 1, 2, 2)
+```
+Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory
+
+
+**Case 3**: deletion
+For any of the following types of areas, delete the annotations in QuPath:
+Blank images
+Example: Sheffield 77
+
+```{r, echo = FALSE}
+img <- readPNG("step 1 images/step_1_image_8.png")
+plot(1:2, type = "n", axes = FALSE, xlab = "", ylab = "") 
+rasterImage(img, 1, 1, 2, 2)
+```
+
+Splotches (shadows on the glass? blurs?)
+
+```{r, echo = FALSE}
+img <- readPNG("step 1 images/step_1_image_9.png")
+plot(1:2, type = "n", axes = FALSE, xlab = "", ylab = "") 
+rasterImage(img, 1, 1, 2, 2)
+```
+
+Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering
+
+
+**Case 4**: manual selection from poor selection
+Sometimes, the annotation region is specified correctly but with too much whitespace/unnecessary area outside
+Delete the original annotation, select a new region, set the class to Positive
+Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering
+Example: selecting around the hair in h2114185 h&e
+
+```{r, echo = FALSE}
+img <- readPNG("step 1 images/step_1_image_10.png")
+plot(1:2, type = "n", axes = FALSE, xlab = "", ylab = "") 
+rasterImage(img, 1, 1, 2, 2)
+```
+
+Example: h1845484 sox10: selection reduces the splotches’ area and prevents them from being exported extraneously
+
+```{r, echo = FALSE}
+img <- readPNG("step 1 images/step_1_image_11.png")
+plot(1:2, type = "n", axes = FALSE, xlab = "", ylab = "") 
+rasterImage(img, 1, 1, 2, 2)
+```
+
+**Case 5**: manual selection from image too large
+If Qupath runs out of memory when trying to run images or is stuck on a particular one (ie most of Sheffield sox10 due to large reference tissues), I created a less memory-intensive existing annotations groovy script
+Select each annotation region manually in QuPath, then set class as Positive
+Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering
+Example: reference tissues in most of Sheffield sox10–select actual tissue manually instead of running the algorithm–the large files like this will prevent efficient exports
+ 
+```{r, echo = FALSE}
+img <- readPNG("step 1 images/step_1_image_12.png")
+plot(1:2, type = "n", axes = FALSE, xlab = "", ylab = "") 
+rasterImage(img, 1, 1, 2, 2)
+```
+
+**Case 6**: not even manual selection works to export large image
+Try to export each annotated area at a time by selecting, selecting class → Positive, and running the “existing annotation” groovy
+Worst case, downsample by 2.0 factor max
+Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering
+Example: Sheffield 85 (lots of samples, junk images, and large files)
+
+
+[Tracker Data of Status of Each Slice](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&file=data_uploaded_tracker.xlsx&action=default&mobileredirect=true)
+
+
+[Folder of Extracted Slices](https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FProcessed%20data%20%28slices%20extracted%29&ga=1)
+
