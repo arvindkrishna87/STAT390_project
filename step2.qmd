@@ -2,7 +2,7 @@
 title: "Step 2: Matching slices across stains"
 ---
 
-Aim: To identify structurally similar slices across stains for each patient.
+**Aim**: To identify structurally similar slices across stains for each patient.
 
 # **Methodology**:
 
