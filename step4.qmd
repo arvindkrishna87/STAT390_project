@@ -1,0 +1,12 @@
+---
+title: "Step 4: Patching"
+---
+
+Aim: To create boxes in the same matched epithelia to investigate further.
+
+Methodology:
+
+## Set Up
+
+## Results
+Images for Alyssa's code
