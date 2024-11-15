@@ -2,6 +2,41 @@
 title: "About"
 ---
 
-This is the website for the STAT390 project!
+This is the website for the Fall 2024 STAT390 project!
 
-There will be more information to come soon!
+Professor and Project Leader: **Arvind Krishna**
+
+Team Members:
+
+Marianne Cano, Lauren Gomez, Rayyana Hassan, Baron Patterson, Cara Chang, Eli Nacar, Kenny Yeon, Luna Nguyen, Teresa Pan, Emma Drisko, Ally Bardas, Diego Goldfrank, Andrew Luke, Maddy Gallagher, Sarah Abdulwahid, Noah Schulhof, Christina Tzavara, Faith Cramer, Aryaman Chawla, Parth Patel, Atharva Weling, Kyla Bruno, Kevin Li, Alyssa Shou, Annie Xia, Alex Devorsetz, Kelly Meng
+
+Stakeholders: Yamini Krishna, He Zhao, Prashant Kumar
+
+Link to connect to our Github
+link to connect to our API
+
+
+**Data overview**
+
+[Data Source](https://www.sciencedirect.com/science/article/pii/S0023683723002246)
+
+Data consists of 105 cases from 97 patients. Below are some statistics of the data:
+
+- 60 women (age range: 23-93 years; median 65; mean 61.5) and 37 men (age range:
+31-91 years; median 68; mean 66.5)
+
+- The ethnic group mix comprised of the following: 88 White Caucasian, 4 Black, 2
+South Asian, 1 Inuit, 1 Mixed race, and 1 Unspecified
+
+The data corresponds to patients in the following 3 ocular oncology/pathology
+centers:
+
+- Liverpool University Hospitals NHS Foundation Trust (Liverpool; cases from
+2018 to 2021),
+- Royal Hallamshire Hospital (Sheffield; from 2011 to 2021), and
+- Rigshospitalet (Copenhagen; from 1996 to 2021)
+
+
+For each patient, a tissue is taken from their conjunctiva. The tissue is sliced into multiple slices. Multiple slices are used so that each slice can be analyzed separately and there is more evidence to support the conclusion,
+i.e., the classification of the C-MIL.
+
