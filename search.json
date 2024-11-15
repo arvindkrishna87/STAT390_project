@@ -72,8 +72,22 @@
   {
     "objectID": "step2.html",
     "href": "step2.html",
-    "title": "Step 2 (Matching slices across stains)",
+    "title": "Step 2: Matching slices across stains",
     "section": "",
-    "text": "Aim: To identify structurally similar slices across stains.\nMethodology:"
+    "text": "Aim: To identify structurally similar slices across stains.\nMethodology:\nTwo codes required:\nMatching Algorithm Evaluation Tracker"
+  },
+  {
+    "objectID": "step2.html#step-by-step-manual",
+    "href": "step2.html#step-by-step-manual",
+    "title": "Step 2: Matching slices across stains",
+    "section": "Step-by-Step Manual",
+    "text": "Step-by-Step Manual\nFollow these steps to use the pipeline to generate matching slices for all patients or a specific subset:\nPrepare Image Data: Place .tif image files in the designated folder (e.g., processed_images). Ensure that each patient has images for all three stains (H&E, Melanin, Sox10).\nChoose Full or Subset Processing:\nFor All Patients: Place all images in the same processed_images directory. For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., processed_images/patient1, processed_images/patient2). Run the Pipeline:\nRun match_pipeline.py. A GUI will prompt you to select the directory containing the images. Open NoahsMatching.ipynb in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders."
+  },
+  {
+    "objectID": "step2.html#results",
+    "href": "step2.html#results",
+    "title": "Step 2: Matching slices across stains",
+    "section": "Results",
+    "text": "Results\nFor 1 patient, show all the slices. then Show images of the matching slices it chose"
   }
 ]
