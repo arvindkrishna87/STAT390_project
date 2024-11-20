@@ -2,6 +2,6 @@
 title: "Step 5: TBD"
 ---
 
-Aim: We will find this out soon!
+**Aim:** We will find this out soon!
 
-Methodology:
+**Methodology:**

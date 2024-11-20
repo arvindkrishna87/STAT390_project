@@ -8,26 +8,25 @@ title: "Step 2: Matching slices across stains"
 
 Two codes required:
 
--   Team4Matching.ipynb
+-   `Team4Matching.ipynb`
 
--   match_pipeline-2.py
+-   `match_pipeline-2.py`
 
-## Step-by-Step Manual 
+## Step-by-Step Manual
 
 Follow these steps to use the pipeline to generate matching slices for all patients or a specific subset:
 
 Prepare Image Data: Place .tif image files in the designated folder (e.g., processed_images). Ensure that each patient has images for all three stains (H&E, Melanin, Sox10).
 
-Choose Full or Subset Processing:
+**Choose Full or Subset Processing:**
 
-For All Patients: Place all images in the same processed_images directory. For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., processed_images/patient1, processed_images/patient2). Run the Pipeline:
+**For All Patients:** Place all images in the same `processed_images` directory. For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., `processed_images/patient1`, `processed_images/patient2`). Run the Pipeline:
 
-Run match_pipeline.py. A GUI will prompt you to select the directory containing the images. Open NoahsMatching.ipynb in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.
-
+Run `match_pipeline.py`. A GUI will prompt you to select the directory containing the images. Open `NoahsMatching.ipynb` in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.
 
 ## Results
 
-Example:
+**Example:**
 
 All tissue slices from patient h2114153
 
@@ -41,13 +40,12 @@ All tissue slices from patient h2114153
 
 This tracker shows the status of each patient if they had a successful match
 
-
 ## API
 
-![](step 2 images/step 2 API image 1.png)
+![](step%202%20images/step%202%20API%20image%201.png)
 
-![](step 2 images/step 2 API image 2.png)
+![](step%202%20images/step%202%20API%20image%202.png)
 
 ## API Results
 
-![](step 2 images/step 2 API image 3.png)
+![](step%202%20images/step%202%20API%20image%203.png)
