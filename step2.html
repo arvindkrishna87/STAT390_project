@@ -169,20 +169,20 @@ ul.task-list li input[type="checkbox"] {
 <h1><strong>Methodology</strong>:</h1>
 <p>Two codes required:</p>
 <ul>
-<li><p>Team4Matching.ipynb</p></li>
-<li><p>match_pipeline-2.py</p></li>
+<li><p><code>Team4Matching.ipynb</code></p></li>
+<li><p><code>match_pipeline-2.py</code></p></li>
 </ul>
 <section id="step-by-step-manual" class="level2">
 <h2 class="anchored" data-anchor-id="step-by-step-manual">Step-by-Step Manual</h2>
 <p>Follow these steps to use the pipeline to generate matching slices for all patients or a specific subset:</p>
 <p>Prepare Image Data: Place .tif image files in the designated folder (e.g., processed_images). Ensure that each patient has images for all three stains (H&amp;E, Melanin, Sox10).</p>
-<p>Choose Full or Subset Processing:</p>
-<p>For All Patients: Place all images in the same processed_images directory. For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., processed_images/patient1, processed_images/patient2). Run the Pipeline:</p>
-<p>Run match_pipeline.py. A GUI will prompt you to select the directory containing the images. Open NoahsMatching.ipynb in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.</p>
+<p><strong>Choose Full or Subset Processing:</strong></p>
+<p><strong>For All Patients:</strong> Place all images in the same <code>processed_images</code> directory. For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., <code>processed_images/patient1</code>, <code>processed_images/patient2</code>). Run the Pipeline:</p>
+<p>Run <code>match_pipeline.py</code>. A GUI will prompt you to select the directory containing the images. Open <code>NoahsMatching.ipynb</code> in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.</p>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
-<p>Example:</p>
+<p><strong>Example:</strong></p>
 <p>All tissue slices from patient h2114153</p>
 <p><img src="step 2 images/slice1.png" class="img-fluid" width="125"> <img src="step 2 images/slice4.png" class="img-fluid" width="90"> <img src="step 2 images/slice5.png" class="img-fluid" width="106"> <img src="step 2 images/slice6.png" class="img-fluid" width="105"> <img src="step 2 images/slice2.png" class="img-fluid" width="121"> <img src="step 2 images/slice7.png" class="img-fluid" width="100"> <img src="step 2 images/slice3.png" class="img-fluid" width="113"></p>
 <p><strong>Successfully matched results</strong></p>

@@ -171,38 +171,85 @@ ul.task-list li input[type="checkbox"] {
 <p>Automated separation of tissues using color space binning and morphological operations.</p>
 <section id="set-up" class="level2">
 <h2 class="anchored" data-anchor-id="set-up">Set Up</h2>
-<p>Use the API</p>
+<p>Use the API:</p>
 <p><img src="step 3 images/step 3 API image 1.png" class="img-fluid"></p>
 </section>
 <section id="code-explanation" class="level2">
 <h2 class="anchored" data-anchor-id="code-explanation">Code Explanation</h2>
 <section id="separation-process" class="level3">
 <h3 class="anchored" data-anchor-id="separation-process">Separation Process</h3>
-<p>Preprocessing and Color Space Transformation</p>
-<p>Aim: Convert input images to a color space that separates luminance from chrominance, making it easier to isolate tissue features.</p>
-<p>Input Image: The original image is loaded as RGB.</p>
-<p>Transformation: Convert the RGB image to YCrCb. This transformation decomposes the image into:</p>
-<p>Y: Luminance (brightness) Cr: Red chroma component Cb: Blue chroma component</p>
-<p>Background Detection Aim: Separate the tissue regions from the background to reduce noise in the analysis.</p>
-<p>A thresholding technique is applied to the luminance channel to identify low-intensity regions representing the background.</p>
-<p>Morphological operations are used to remove small noise regions and smooth the background mask.</p>
-<p>The background mask is then subtracted from subsequent tissue analysis steps.</p>
-<p>Identifying Stroma using Red Chroma (Cr) Binning</p>
-<p>Aim: Isolate stroma tissue based on the red chroma component, which correlates well with stromal regions in histology slides.</p>
-<p>Binning of Cr Channel</p>
-<p>The Cr component is divided into discrete bins (e.g., 12 bins) to simplify the image analysis.</p>
-<p>The bin with the maximum number of pixels is identified as the dominant chroma level for stromal regions.</p>
-<p>Stroma Detection</p>
-<p>Stroma is defined as the regions within three bins below the dominant bin. A mask is created to isolate stroma areas, followed by dilation to fill gaps. Morphological operations remove small objects and refine the segmentation. The result is saved as a binary mask representing the stroma.</p>
-<p>Identifying Epithelia Using Red Chroma (Cr) Binning Aim: Differentiate epithelial tissue from stroma using the chroma profile.</p>
-<p>Binning for Epithelia: Epithelia are identified in the Cr channel bins immediately following the stroma bins. The bins are selected based on their relative position to the previously identified stroma bins.</p>
-<p>Mask Refinement: Background and stroma regions are subtracted to isolate the epithelia. Further refinement includes removing small objects, filling holes, and eliminating noise caused by blue ink (detected using the Cb channel). The result is saved as a binary mask representing the epithelia.</p>
-<p>Post-Processing and Visualization Aim: Generate segmented visualizations of the input image with stroma and epithelia overlaid.</p>
-<p>Mask Application: The segmented stroma and epithelia masks are applied to the original RGB image, producing separate visual representations of each tissue type.</p>
-<p>Segmentation Visualization: A combined image is generated with three panels: The original RGB image The segmented stroma region The segmented epithelia region These visualizations are saved for further analysis and validation.</p>
-<p>Batch Processing and Cleanup Aim: Automate the processing for multiple images and optimize memory usage.</p>
-<p>Batch Processing: The process is set to iterate over a folder of images, applying the segmentation pipeline to each one.</p>
-<p>Memory Management: To prevent memory overload, unnecessary variables are deleted, and garbage collection is manually triggered at the end of each iteration.</p>
+<p><strong>Preprocessing and Color Space Transformation</strong></p>
+<p><strong>Aim:</strong> Convert input images to a color space that separates luminance from chrominance, making it easier to isolate tissue features.</p>
+<p><strong>Input Image:</strong> The original image is loaded as RGB.</p>
+<p><strong>Transformation:</strong> Convert the RGB image to YCrCb. This transformation decomposes the image into:</p>
+<ul>
+<li><p><strong>Y:</strong> Luminance (brightness)</p></li>
+<li><p><strong>Cr:</strong> Red chroma component</p></li>
+<li><p><strong>Cb:</strong> Blue chroma component</p></li>
+</ul>
+<p><strong>Background Detection Aim:</strong> Separate the tissue regions from the background to reduce noise in the analysis.</p>
+<ul>
+<li><p>A thresholding technique is applied to the luminance channel to identify low-intensity regions representing the background.</p></li>
+<li><p>Morphological operations are used to remove small noise regions and smooth the background mask.</p></li>
+<li><p>The background mask is then subtracted from subsequent tissue analysis steps.</p></li>
+<li><p>Identifying Stroma using Red Chroma (Cr) Binning</p></li>
+</ul>
+<p><strong>Aim:</strong> Isolate stroma tissue based on the red chroma component, which correlates well with stromal regions in histology slides.</p>
+<p><strong>Binning of Cr Channel</strong></p>
+<ul>
+<li><p>The Cr component is divided into discrete bins (e.g., 12 bins) to simplify the image analysis.</p></li>
+<li><p>The bin with the maximum number of pixels is identified as the dominant chroma level for stromal regions.</p></li>
+</ul>
+<p><strong>Stroma Detection</strong></p>
+<ul>
+<li><p>Stroma is defined as the regions within three bins below the dominant bin.</p></li>
+<li><p>A mask is created to isolate stroma areas, followed by dilation to fill gaps.</p></li>
+<li><p>Morphological operations remove small objects and refine the segmentation.</p></li>
+<li><p>The result is saved as a binary mask representing the stroma.</p></li>
+</ul>
+<p><strong>Identifying Epithelia Using Red Chroma (Cr) Binning Aim:</strong></p>
+<ul>
+<li>Differentiate epithelial tissue from stroma using the chroma profile.</li>
+</ul>
+<p><strong>Binning for Epithelia:</strong></p>
+<ul>
+<li><p>Epithelia are identified in the Cr channel bins immediately following the stroma bins.</p></li>
+<li><p>The bins are selected based on their relative position to the previously identified stroma bins.</p></li>
+</ul>
+<p><strong>Mask Refinement:</strong></p>
+<ul>
+<li><p>Background and stroma regions are subtracted to isolate the epithelia.</p></li>
+<li><p>Further refinement includes removing small objects, filling holes, and eliminating noise caused by blue ink (detected using the Cb channel).</p></li>
+<li><p>The result is saved as a binary mask representing the epithelia.</p></li>
+</ul>
+<p><strong>Post-Processing and Visualization Aim:</strong></p>
+<ul>
+<li>Generate segmented visualizations of the input image with stroma and epithelia overlaid.</li>
+</ul>
+<p><strong>Mask Application:</strong></p>
+<ul>
+<li>The segmented stroma and epithelia masks are applied to the original RGB image, producing separate visual representations of each tissue type.</li>
+</ul>
+<p><strong>Segmentation Visualization:</strong></p>
+<ul>
+<li><p>A combined image is generated with three panels:</p>
+<ul>
+<li>The original RGB image, the segmented stroma region, the segmented epithelia region</li>
+</ul></li>
+<li><p>These visualizations are saved for further analysis and validation.</p></li>
+</ul>
+<p><strong>Batch Processing and Cleanup Aim:</strong></p>
+<ul>
+<li>Automate the processing for multiple images and optimize memory usage.</li>
+</ul>
+<p><strong>Batch Processing:</strong></p>
+<ul>
+<li>The process is set to iterate over a folder of images, applying the segmentation pipeline to each one.</li>
+</ul>
+<p><strong>Memory Management:</strong></p>
+<ul>
+<li>To prevent memory overload, unnecessary variables are deleted, and garbage collection is manually triggered at the end of each iteration.</li>
+</ul>
 
 
 </section>

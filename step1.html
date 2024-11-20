@@ -134,8 +134,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong></a>
   <ul class="collapse">
-  <li><a href="#setting-up-in-qupath" id="toc-setting-up-in-qupath" class="nav-link" data-scroll-target="#setting-up-in-qupath">Setting up in QuPath</a>
-  <ul class="collapse">
+  <li><a href="#setting-up-in-qupath" id="toc-setting-up-in-qupath" class="nav-link" data-scroll-target="#setting-up-in-qupath">Setting up in QuPath</a></li>
   <li><a href="#to-deal-with-more-difficult-stain-types-if-you-decide-to-manually-annotate" id="toc-to-deal-with-more-difficult-stain-types-if-you-decide-to-manually-annotate" class="nav-link" data-scroll-target="#to-deal-with-more-difficult-stain-types-if-you-decide-to-manually-annotate">To deal with more difficult stain types if you decide to manually annotate:</a></li>
   <li><a href="#to-create-a-new-pixel-classifier-or-modify-optional" id="toc-to-create-a-new-pixel-classifier-or-modify-optional" class="nav-link" data-scroll-target="#to-create-a-new-pixel-classifier-or-modify-optional">To create a new pixel classifier or modify (optional):</a></li>
   </ul></li>
@@ -143,7 +142,6 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#step-1-first-pass-of-algorithm" id="toc-step-1-first-pass-of-algorithm" class="nav-link" data-scroll-target="#step-1-first-pass-of-algorithm">Step 1: First pass of algorithm</a></li>
   <li><a href="#step-2-analyze-results-and-troubleshoot" id="toc-step-2-analyze-results-and-troubleshoot" class="nav-link" data-scroll-target="#step-2-analyze-results-and-troubleshoot">Step 2: Analyze results and troubleshoot</a></li>
-  </ul></li>
   </ul></li>
   <li><a href="#result-cases" id="toc-result-cases" class="nav-link" data-scroll-target="#result-cases">Result Cases</a></li>
   </ul>
@@ -174,26 +172,27 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Aim</strong>: To extract the tissue slices from the WSI (Whole slide images)</p>
 <section id="methodology" class="level1">
 <h1><strong>Methodology</strong></h1>
-<section id="setting-up-in-qupath" class="level2">
-<h2 class="anchored" data-anchor-id="setting-up-in-qupath">Setting up in QuPath</h2>
-<p>Images in a QuPath Project –&gt; processed_data/tissue_image.tif Contains tissues_1.json, tissues_2.json and automate_export_newest.groovy New for other stain types to expedite process: existing_annotations.groovy</p>
+<section id="setting-up-in-qupath" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up-in-qupath">Setting up in QuPath</h3>
+<p>Images in a QuPath Project –&gt; <code>processed_data/tissue_image.tif</code> Contains <code>tissues_1.json</code>, <code>tissues_2.json</code> and <code>automate_export_newest.groovy</code> New for other stain types to expedite process: <code>existing_annotations.groovy</code></p>
 <ol type="1">
 <li>Open a project that has all your images</li>
-<li>Put tissue_2.json into base_proj_dir/classifiers/pixel_classifiers (make if does not exist) Note, use tissues_2.json for most recent results (not tissues_1 but you can still try this too. tissues_2 contains broader parameters for a more sensitive model, works on more stains and images)</li>
-<li>Put automate_export_newest.groovy into base_project_dir/scripts (make if does not exist)</li>
+<li>Put <code>tissue_2.json</code> into <code>base_proj_dir/classifiers/pixel_classifiers</code> (make if does not exist) Note, use <code>tissues_2.json</code> for most recent results (not <code>tissues_1</code> but you can still try this too. <code>tissues_2</code> contains broader parameters for a more sensitive model, works on more stains and images)</li>
+<li>Put <code>automate_export_newest.groovy</code> into <code>base_project_dir/scripts</code> (make if does not exist)</li>
 <li>Make sure you have an image open in QuPath interface</li>
-<li>In QuPath, top bar –&gt; Automate –&gt; Project scripts –&gt; automate_export_newest.groovy</li>
+<li>In QuPath, top bar –&gt; Automate –&gt; Project scripts –&gt; <code>automate_export_newest.groovy</code></li>
 <li>Script Editor has three vertical dots at the bottom –&gt; Run for project</li>
 <li>Data will save in processed_data dir in your base project dir</li>
 </ol>
+</section>
 <section id="to-deal-with-more-difficult-stain-types-if-you-decide-to-manually-annotate" class="level3">
 <h3 class="anchored" data-anchor-id="to-deal-with-more-difficult-stain-types-if-you-decide-to-manually-annotate">To deal with more difficult stain types if you decide to manually annotate:</h3>
-<p>Runs like automate_export_newest.groovy but only if you already have annotations</p>
+<p>Runs like <code>automate_export_newest.groovy</code> but only if you already have annotations</p>
 <ol type="1">
 <li>Need to set annotation class to “Positive” in QuPath (Annotations –&gt; Positive –&gt; Set selected and for future annotations to be auto “Positive,” press “Auto set”“)</li>
-<li>To export existing annotations only, run existing_annotations.groovy</li>
-<li>existing_annotations.groovy –&gt; base_project_dir/scripts</li>
-<li>In QuPath, top bar –&gt; Automate –&gt; Project scripts –&gt; existing_annotations.groovy</li>
+<li>To export existing annotations only, run <code>existing_annotations.groovy</code></li>
+<li><code>existing_annotations.groovy</code> –&gt; <code>base_project_dir/scripts</code></li>
+<li>In QuPath, top bar –&gt; Automate –&gt; Project scripts –&gt; <code>existing_annotations.groovy</code></li>
 <li>Script Editor has three vertical dots at the bottom –&gt; Run for project</li>
 <li>Data will save in processed_data dir in your base project dir</li>
 </ol>
@@ -202,26 +201,26 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="to-create-a-new-pixel-classifier-or-modify-optional">To create a new pixel classifier or modify (optional):</h3>
 <ol type="1">
 <li>QuPath Interface top bar –&gt; Classify –&gt; Pixel Classification –&gt; Create thresholder</li>
-<li>See tissues_1.json and tissues_2.json for my parameters, and you can work from there</li>
-<li>Save this and then replace “tissues_2” in .groovy script.</li>
+<li>See <code>tissues_1.json</code> and <code>tissues_2.json</code> for my parameters, and you can work from there</li>
+<li>Save this and then replace <code>tissues_2</code> in .groovy script.</li>
 </ol>
 </section>
 </section>
-<section id="extraction-process" class="level2">
-<h2 class="anchored" data-anchor-id="extraction-process">Extraction Process</h2>
-<section id="step-1-first-pass-of-algorithm" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-first-pass-of-algorithm">Step 1: First pass of algorithm</h3>
+<section id="extraction-process" class="level1">
+<h1>Extraction Process</h1>
+<section id="step-1-first-pass-of-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-first-pass-of-algorithm">Step 1: First pass of algorithm</h2>
 <p>Following the instructions above, open your image in QuPath and run this “annotation export newest” groovy script.</p>
-<p><img src="step 1 images/step_1_image_1.png" class="img-fluid">Select Run, then Run For Project</p>
+<p><img src="step 1 images/step_1_image_1.png" class="img-fluid"></p>
+<p>Select Run, then Run For Project</p>
 <p><img src="step 1 images/step_1_image_2.png" class="img-fluid"></p>
-<p><em>Note</em>: If your automation fails while running due to a particularly large image or systematically fails on a stain type (ie Sheffield Sox10–most fail because reference image annotation is too large to export), you have two options: Manually annotate and export images (more on this later) Downsample an annotated area (last resort, but can successfully downsample up to a factor of 2 to match stakeholder’s desired resolution), can do this directly by changing the downsample parameter</p>
+<p><strong><em>Note</em>:</strong> If your automation fails while running due to a particularly large image or systematically fails on a stain type (i.e. Sheffield Sox10–most fail because reference image annotation is too large to export), you have two options: Manually annotate and export images (more on this later) Downsample an annotated area (last resort, but can successfully downsample up to a factor of 2 to match stakeholder’s desired resolution), can do this directly by changing the downsample parameter</p>
 <p>Select your images to process. Not counting the mask images, I tended to process up to 20 at a time to reduce the memory load.</p>
 <p><img src="step 1 images/step_1_image_3.png" class="img-fluid"></p>
 </section>
-<section id="step-2-analyze-results-and-troubleshoot" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-analyze-results-and-troubleshoot">Step 2: Analyze results and troubleshoot</h3>
+<section id="step-2-analyze-results-and-troubleshoot" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-analyze-results-and-troubleshoot">Step 2: Analyze results and troubleshoot</h2>
 <p>Once you run the automation for your images, I check in QuPath directly image by image to ensure all data was properly exported. You should also check in the processed_images dir created in your Qupath project dir that no image was corrupted or too blurry. In order of manual work needed, here are the possible cases for your images. They correspond with how we dealt with and logged processing these images in the <a href="https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&amp;file=data_uploaded_tracker.xlsx&amp;action=default&amp;mobileredirect=true">Tracker Data of Status of Each Slice</a></p>
-</section>
 </section>
 </section>
 <section id="result-cases" class="level1">
