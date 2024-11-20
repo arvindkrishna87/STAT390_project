@@ -1,66 +1,94 @@
 [
   {
-    "objectID": "step5.html",
-    "href": "step5.html",
-    "title": "Step 5: TBD",
+    "objectID": "litreview.html",
+    "href": "litreview.html",
+    "title": "Literature Review",
     "section": "",
-    "text": "Aim: We will find this out soon!\nMethodology:"
+    "text": "Large Batch and Patch Size Training for Medical Image Segmentation:\nLink: https://arxiv.org/pdf/2210.13364\n\nThis article highlights the performance improvements gained by adjusting patch and batch sizes, suggesting that larger patches improve segmentation accuracy up to a certain limit, beyond which performance plateaus or even decreases.\nAdaptive pooling could be used to create variable patch sizes within a single image, enabling finer details in complex areas and larger patches for broader context in simpler areas.\nBy using adaptive pooling, you could manage patch sizes more dynamically, potentially overcoming the plateau effect observed with fixed large patch sizes.\nThis would ensure that each region of the image is analyzed at an optimal scale, leading to potentially higher accuracy without the drawbacks of uniform large patches."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Fall 2024 STAT390 (CMIL Classification)",
+    "objectID": "litreview.html#adaptive-pooling",
+    "href": "litreview.html#adaptive-pooling",
+    "title": "Literature Review",
     "section": "",
-    "text": "Aim: The objective of the project is to develop a machine learning model to accurately classify Conjunctival melanocytic intraepithelial lesions (C-MIL) as per the WHO 2022 classification system. In layman’s terms, we want to identify the severity of potential eye cancer by looking at a particular eye tissue of the patient.\nThe motivation behind the project is to provide a reproducible and accurate grading of C-MIL so that the most appropriate management plan for the patient can be developed. By improving the precision of lesion classification, our model has the potential to enhance patient outcomes and optimize treatment strategies\nThe Northwestern University STAT390 Class of Fall 2024 has made the following progress on this project:\n\nExtracting each tissue from the patient data using QuPath\nMatching tissue slices across the different stains (H&E, Melan-A, Sox-10) for each patient if there is a correct match\nDetecting and extracting the epithelium for each tissue\nApply patching across each epithelium for further examination\nTBD"
+    "text": "Large Batch and Patch Size Training for Medical Image Segmentation:\nLink: https://arxiv.org/pdf/2210.13364\n\nThis article highlights the performance improvements gained by adjusting patch and batch sizes, suggesting that larger patches improve segmentation accuracy up to a certain limit, beyond which performance plateaus or even decreases.\nAdaptive pooling could be used to create variable patch sizes within a single image, enabling finer details in complex areas and larger patches for broader context in simpler areas.\nBy using adaptive pooling, you could manage patch sizes more dynamically, potentially overcoming the plateau effect observed with fixed large patch sizes.\nThis would ensure that each region of the image is analyzed at an optimal scale, leading to potentially higher accuracy without the drawbacks of uniform large patches."
   },
   {
-    "objectID": "step1.html",
-    "href": "step1.html",
-    "title": "Step 1: Slice extraction",
+    "objectID": "litreview.html#cross-view-transformer",
+    "href": "litreview.html#cross-view-transformer",
+    "title": "Literature Review",
+    "section": "Cross View Transformer:",
+    "text": "Cross View Transformer:"
+  },
+  {
+    "objectID": "litreview.html#advantages-of-square-patches",
+    "href": "litreview.html#advantages-of-square-patches",
+    "title": "Literature Review",
+    "section": "Advantages of square patches:",
+    "text": "Advantages of square patches:\nLink: https://blogs.mathworks.com/deep-learning/2021/11/02/handling-very-large-images\n-in-medical-imaging-applications/\n\nImage patches are usually square regions whose size can vary from 32 × 32 pixels up to 10,000 × 10,000 pixels (256 × 256 pixels is a typical patch size\n\nSquare Patches: Common Practice and Benefits\n\nSquare patches are popular due to their simplicity and compatibility with standard convolutional neural network (CNN) architectures. They provide balanced feature extraction and are easy to preprocess and resize.\nStudy Reference: A study on patch-based classification using CNNs found that square patches offered efficient, balanced spatial representation for deep learning models (link.springer.com).\n\nRectangular Patches: Advantages and Considerations\n\nRectangular patches are beneficial for capturing elongated or directional structures in tissues, such as blood vessels or specific cellular arrangements. They can maximize context capture along a specific axis.\nStudy Reference: Research on adaptive patch extraction found that rectangular patches, when properly oriented, improved analysis accuracy for tissues with dominant directional features (arxiv.org).\n\nComparative Analysis\nSquare patches are easier to integrate into standard CNNs and preprocessing workflows, making them suitable for general histopathological analysis. Rectangular patches, while more complex to implement, offer better feature representation for specific tissue structures."
+  },
+  {
+    "objectID": "litreview.html#padding-effect",
+    "href": "litreview.html#padding-effect",
+    "title": "Literature Review",
+    "section": "Padding effect:",
+    "text": "Padding effect:\nCNNs and Image Classification:\nConvolutional Neural Networks (CNNs) have emerged as a dominant architecture in the realm of image classification due to their capacity to capture hierarchical patterns in visual data. Their structure, characterized by convolutional layers, pooling layers, and fully connected layers, enables the effective extraction and learning of features such as edges, textures, and complex shapes. Image classification is critical in various applications, from medical imaging diagnostics to autonomous vehicle navigation and facial recognition technologies.\nRole of Padding in CNNs:\nPadding refers to the practice of adding extra pixels around the borders of an image before it is passed through a convolutional layer. This added border can be composed of zeros or other methods of pixel replication, and serves several important functions in the context of deep learning models. Padding affects how convolution operations treat the image boundaries, ensuring that every pixel, including those at the edges, receives the same level of processing as those in the center.\nTypes of Padding:\nValid Padding (No Padding):\n\nThis type processes only the valid, central pixels of the image, avoiding the addition of extra pixels. The downside of valid padding is that it reduces the spatial dimensions of the image after each convolutional layer, potentially leading to loss of information and reduced feature maps.\n\nSame Padding:\n\nSame padding involves adding pixels around the border such that the output feature map has the same width and height as the input. This type of padding ensures that spatial dimensions are maintained throughout the network, allowing for deeper architectures to operate without diminishing the feature map size.\n\nZero Padding:\n\nThis is a specific type of same padding where the border pixels added are zeros. It is used to control the size of the output while ensuring that edge pixels contribute to feature extraction.\n\nReflection Padding:\n\nReflection padding is a type of padding where the pixel values along the borders of an image are mirrored, creating a natural extension of the image edges. This method is designed to preserve edge continuity, making it particularly beneficial for tasks where accurate edge processing is essential.\nVisual Impact: The padded border reflects the nearest pixels from the original image, creating a seamless transition that better mimics natural image boundaries compared to zero padding.\nFeature Extraction: Reflection padding enhances feature extraction by preserving the original edge information, allowing convolutional filters to process these pixels as part of the existing image. This continuity leads to stronger responses and better feature learning at the borders.\nUse Cases and Benefits: Reflection padding is advantageous in scenarios where maintaining edge information is critical, such as in medical imaging or fine-grained image recognition tasks. Studies have demonstrated that using reflection padding can improve model performance, particularly for complex images where edge details carry significant information.\n\nImpact of Padding on Image Classification Performance\nPadding plays a critical role in maintaining the integrity of the data passed through CNNs and can significantly affect the model’s overall performance.\nPreservation of Spatial Dimensions:\n\nSame padding is particularly valuable because it prevents the reduction of image size across layers. This preservation is crucial when working with complex and deep networks where retaining spatial dimensions is necessary for accurate feature extraction.\n\nReduction in Information Loss:\n\nWithout padding, the edges of an image can receive less attention from convolutional layers, potentially leading to information loss. Padding mitigates this issue by providing a buffer around the image, ensuring that features at the borders are adequately processed and retained.\n\nImprovement in Feature Extraction:\n\nResearch has shown that padding enhances the network’s ability to detect edge-related features, contributing to a more holistic understanding of the input image.\n\nComputational Cost:\n\nWhile padding ensures that the output feature map size remains the same as the input, it can increase computational complexity. Larger feature maps require more memory and processing power, especially in deep networks. This can impact the overall training time and computational cost of the model.\n\nPadding References:\n\n“The Impact of Padding on Image Classification by Using Pre-trained Convolutional Neural Networks” (2019): This study investigated the effect of pre-processing, specifically padding, on image classification using pre-trained CNN models. The authors proposed a padding pre-processing pipeline that improved classification performance on challenging images without the need for re-training the model or increasing the number of CNN parameters.\n“Position, Padding and Predictions: A Deeper Look at Position Information in CNNs” (2024): This research explored how padding influences the encoding of position information in CNNs. The study revealed that zero padding drives CNNs to encode position information in their internal representations, while a lack of padding precludes position encoding. This finding suggests that padding not only affects spatial dimensions but also the way positional information is processed within the network.\n“Effects of Boundary Conditions in Fully Convolutional Networks for Spatio-Temporal Physical Modeling” (2021): This study examined various padding strategies, including reflection padding, within the context of spatio-temporal physical modeling using fully convolutional networks. The researchers found that reflection padding significantly helped in preserving edge continuity and reduced boundary artifacts, resulting in improved network generalization and accuracy. This effect was particularly notable in tasks requiring precise edge information, such as fluid dynamics simulations."
+  },
+  {
+    "objectID": "step2.html",
+    "href": "step2.html",
+    "title": "Step 2: Matching slices across stains",
     "section": "",
-    "text": "Aim: To extract the tissue slices from the WSI (Whole slide images)"
+    "text": "Aim: To identify structurally similar slices across stains for each patient."
   },
   {
-    "objectID": "step1.html#step-1-first-pass-of-algorithm",
-    "href": "step1.html#step-1-first-pass-of-algorithm",
-    "title": "Step 1: Slice extraction",
-    "section": "Step 1: First pass of algorithm",
-    "text": "Step 1: First pass of algorithm\nFollowing the instructions above, open your image in QuPath and run this “annotation export newest” groovy script.\n\nSelect Run, then Run For Project\n\nNote: If your automation fails while running due to a particularly large image or systematically fails on a stain type (i.e. Sheffield Sox10–most fail because reference image annotation is too large to export), you have two options: Manually annotate and export images (more on this later) Downsample an annotated area (last resort, but can successfully downsample up to a factor of 2 to match stakeholder’s desired resolution), can do this directly by changing the downsample parameter\nSelect your images to process. Not counting the mask images, I tended to process up to 20 at a time to reduce the memory load."
+    "objectID": "step2.html#step-by-step-manual",
+    "href": "step2.html#step-by-step-manual",
+    "title": "Step 2: Matching slices across stains",
+    "section": "Step-by-Step Manual",
+    "text": "Step-by-Step Manual\nFollow these steps to use the pipeline to generate matching slices for all patients or a specific subset:\nPrepare Image Data: Place .tif image files in the designated folder (e.g., processed_images). Ensure that each patient has images for all three stains (H&E, Melanin, Sox10).\nChoose Full or Subset Processing:\nFor All Patients: Place all images in the same processed_images directory. For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., processed_images/patient1, processed_images/patient2). Run the Pipeline:\nRun match_pipeline.py. A GUI will prompt you to select the directory containing the images. Open NoahsMatching.ipynb in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders."
   },
   {
-    "objectID": "step1.html#step-2-analyze-results-and-troubleshoot",
-    "href": "step1.html#step-2-analyze-results-and-troubleshoot",
-    "title": "Step 1: Slice extraction",
-    "section": "Step 2: Analyze results and troubleshoot",
-    "text": "Step 2: Analyze results and troubleshoot\nOnce you run the automation for your images, I check in QuPath directly image by image to ensure all data was properly exported. You should also check in the processed_images dir created in your Qupath project dir that no image was corrupted or too blurry. In order of manual work needed, here are the possible cases for your images. They correspond with how we dealt with and logged processing these images in the Tracker Data of Status of Each Slice"
+    "objectID": "step2.html#results",
+    "href": "step2.html#results",
+    "title": "Step 2: Matching slices across stains",
+    "section": "Results",
+    "text": "Results\nExample:\nAll tissue slices from patient h2114153\n      \nSuccessfully matched results\n  \nMatching Algorithm Evaluation Tracker\nThis tracker shows the status of each patient if they had a successful match"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "step2.html#api",
+    "href": "step2.html#api",
+    "title": "Step 2: Matching slices across stains",
+    "section": "API",
+    "text": "API"
+  },
+  {
+    "objectID": "step2.html#api-results",
+    "href": "step2.html#api-results",
+    "title": "Step 2: Matching slices across stains",
+    "section": "API Results",
+    "text": "API Results"
+  },
+  {
+    "objectID": "step3.html",
+    "href": "step3.html",
+    "title": "Step 3: Epithelium Detection",
     "section": "",
-    "text": "This is the website for the Fall 2024 STAT390 project!"
+    "text": "Aim: To separate the epithelium from the stroma in each tissue."
   },
   {
-    "objectID": "about.html#team",
-    "href": "about.html#team",
-    "title": "About",
-    "section": "Team",
-    "text": "Team\nProfessor and Project Leader: Arvind Krishna\nTeam Members:\nMarianne Cano, Lauren Gomez, Rayyana Hassan, Baron Patterson, Cara Chang, Eli Nacar, Kenny Yeon, Luna Nguyen, Teresa Pan, Emma Drisko, Ally Bardas, Diego Goldfrank, Andrew Luke, Maddy Gallagher, Sarah Abdulwahid, Noah Schulhof, Christina Tzavara, Faith Cramer, Aryaman Chawla, Parth Patel, Atharva Weling, Kyla Bruno, Kevin Li, Alyssa Shou, Annie Xia, Alex Devorsetz, Kelly Meng\nStakeholders: Dr. Yamini Krishna, Dr. He Zhao, Prashant Kumar"
+    "objectID": "step3.html#set-up",
+    "href": "step3.html#set-up",
+    "title": "Step 3: Epithelium Detection",
+    "section": "Set Up",
+    "text": "Set Up\nUse the API:"
   },
   {
-    "objectID": "about.html#data-overview",
-    "href": "about.html#data-overview",
-    "title": "About",
-    "section": "Data overview",
-    "text": "Data overview\nData Source\nData consists of 105 cases from 97 patients. Below are some statistics of the data:\n\n60 women (age range: 23-93 years; median 65; mean 61.5) and 37 men (age range: 31-91 years; median 68; mean 66.5)\nThe ethnic group mix comprised of the following: 88 White Caucasian, 4 Black, 2 South Asian, 1 Inuit, 1 Mixed race, and 1 Unspecified\n\nThe data corresponds to patients in the following 3 ocular oncology/pathology centers:\n\nLiverpool University Hospitals NHS Foundation Trust (Liverpool; cases from 2018 to 2021),\nRoyal Hallamshire Hospital (Sheffield; from 2011 to 2021), and\nRigshospitalet (Copenhagen; from 1996 to 2021)\n\nFor each patient, a tissue is taken from their conjunctiva. The tissue is sliced into multiple slices. Multiple slices are used so that each slice can be analyzed separately and there is more evidence to support the conclusion, i.e., the classification of the C-MIL."
-  },
-  {
-    "objectID": "about.html#team-github",
-    "href": "about.html#team-github",
-    "title": "About",
-    "section": "Team GitHub",
-    "text": "Team GitHub\nGitHub\nThis github contains all necessary files"
+    "objectID": "step3.html#code-explanation",
+    "href": "step3.html#code-explanation",
+    "title": "Step 3: Epithelium Detection",
+    "section": "Code Explanation",
+    "text": "Code Explanation\n\nSeparation Process\nPreprocessing and Color Space Transformation\nAim: Convert input images to a color space that separates luminance from chrominance, making it easier to isolate tissue features.\nInput Image: The original image is loaded as RGB.\nTransformation: Convert the RGB image to YCrCb. This transformation decomposes the image into:\n\nY: Luminance (brightness)\nCr: Red chroma component\nCb: Blue chroma component\n\nBackground Detection Aim: Separate the tissue regions from the background to reduce noise in the analysis.\n\nA thresholding technique is applied to the luminance channel to identify low-intensity regions representing the background.\nMorphological operations are used to remove small noise regions and smooth the background mask.\nThe background mask is then subtracted from subsequent tissue analysis steps.\nIdentifying Stroma using Red Chroma (Cr) Binning\n\nAim: Isolate stroma tissue based on the red chroma component, which correlates well with stromal regions in histology slides.\nBinning of Cr Channel\n\nThe Cr component is divided into discrete bins (e.g., 12 bins) to simplify the image analysis.\nThe bin with the maximum number of pixels is identified as the dominant chroma level for stromal regions.\n\nStroma Detection\n\nStroma is defined as the regions within three bins below the dominant bin.\nA mask is created to isolate stroma areas, followed by dilation to fill gaps.\nMorphological operations remove small objects and refine the segmentation.\nThe result is saved as a binary mask representing the stroma.\n\nIdentifying Epithelia Using Red Chroma (Cr) Binning Aim:\n\nDifferentiate epithelial tissue from stroma using the chroma profile.\n\nBinning for Epithelia:\n\nEpithelia are identified in the Cr channel bins immediately following the stroma bins.\nThe bins are selected based on their relative position to the previously identified stroma bins.\n\nMask Refinement:\n\nBackground and stroma regions are subtracted to isolate the epithelia.\nFurther refinement includes removing small objects, filling holes, and eliminating noise caused by blue ink (detected using the Cb channel).\nThe result is saved as a binary mask representing the epithelia.\n\nPost-Processing and Visualization Aim:\n\nGenerate segmented visualizations of the input image with stroma and epithelia overlaid.\n\nMask Application:\n\nThe segmented stroma and epithelia masks are applied to the original RGB image, producing separate visual representations of each tissue type.\n\nSegmentation Visualization:\n\nA combined image is generated with three panels:\n\nThe original RGB image, the segmented stroma region, the segmented epithelia region\n\nThese visualizations are saved for further analysis and validation.\n\nBatch Processing and Cleanup Aim:\n\nAutomate the processing for multiple images and optimize memory usage.\n\nBatch Processing:\n\nThe process is set to iterate over a folder of images, applying the segmentation pipeline to each one.\n\nMemory Management:\n\nTo prevent memory overload, unnecessary variables are deleted, and garbage collection is manually triggered at the end of each iteration."
   },
   {
     "objectID": "step4.html",
@@ -98,59 +126,66 @@
     "text": "Results\nImages TBD"
   },
   {
-    "objectID": "step3.html",
-    "href": "step3.html",
-    "title": "Step 3: Epithelium Detection",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Aim: To separate the epithelium from the stroma in each tissue."
+    "text": "This is the website for the Fall 2024 STAT390 project!"
   },
   {
-    "objectID": "step3.html#set-up",
-    "href": "step3.html#set-up",
-    "title": "Step 3: Epithelium Detection",
-    "section": "Set Up",
-    "text": "Set Up\nUse the API:"
+    "objectID": "about.html#team",
+    "href": "about.html#team",
+    "title": "About",
+    "section": "Team",
+    "text": "Team\nProfessor and Project Leader: Arvind Krishna\nTeam Members:\nMarianne Cano, Lauren Gomez, Rayyana Hassan, Baron Patterson, Cara Chang, Eli Nacar, Kenny Yeon, Luna Nguyen, Teresa Pan, Emma Drisko, Ally Bardas, Diego Goldfrank, Andrew Luke, Maddy Gallagher, Sarah Abdulwahid, Noah Schulhof, Christina Tzavara, Faith Cramer, Aryaman Chawla, Parth Patel, Atharva Weling, Kyla Bruno, Kevin Li, Alyssa Shou, Annie Xia, Alex Devorsetz, Kelly Meng\nStakeholders: Dr. Yamini Krishna, Dr. He Zhao, Prashant Kumar"
   },
   {
-    "objectID": "step3.html#code-explanation",
-    "href": "step3.html#code-explanation",
-    "title": "Step 3: Epithelium Detection",
-    "section": "Code Explanation",
-    "text": "Code Explanation\n\nSeparation Process\nPreprocessing and Color Space Transformation\nAim: Convert input images to a color space that separates luminance from chrominance, making it easier to isolate tissue features.\nInput Image: The original image is loaded as RGB.\nTransformation: Convert the RGB image to YCrCb. This transformation decomposes the image into:\n\nY: Luminance (brightness)\nCr: Red chroma component\nCb: Blue chroma component\n\nBackground Detection Aim: Separate the tissue regions from the background to reduce noise in the analysis.\n\nA thresholding technique is applied to the luminance channel to identify low-intensity regions representing the background.\nMorphological operations are used to remove small noise regions and smooth the background mask.\nThe background mask is then subtracted from subsequent tissue analysis steps.\nIdentifying Stroma using Red Chroma (Cr) Binning\n\nAim: Isolate stroma tissue based on the red chroma component, which correlates well with stromal regions in histology slides.\nBinning of Cr Channel\n\nThe Cr component is divided into discrete bins (e.g., 12 bins) to simplify the image analysis.\nThe bin with the maximum number of pixels is identified as the dominant chroma level for stromal regions.\n\nStroma Detection\n\nStroma is defined as the regions within three bins below the dominant bin.\nA mask is created to isolate stroma areas, followed by dilation to fill gaps.\nMorphological operations remove small objects and refine the segmentation.\nThe result is saved as a binary mask representing the stroma.\n\nIdentifying Epithelia Using Red Chroma (Cr) Binning Aim:\n\nDifferentiate epithelial tissue from stroma using the chroma profile.\n\nBinning for Epithelia:\n\nEpithelia are identified in the Cr channel bins immediately following the stroma bins.\nThe bins are selected based on their relative position to the previously identified stroma bins.\n\nMask Refinement:\n\nBackground and stroma regions are subtracted to isolate the epithelia.\nFurther refinement includes removing small objects, filling holes, and eliminating noise caused by blue ink (detected using the Cb channel).\nThe result is saved as a binary mask representing the epithelia.\n\nPost-Processing and Visualization Aim:\n\nGenerate segmented visualizations of the input image with stroma and epithelia overlaid.\n\nMask Application:\n\nThe segmented stroma and epithelia masks are applied to the original RGB image, producing separate visual representations of each tissue type.\n\nSegmentation Visualization:\n\nA combined image is generated with three panels:\n\nThe original RGB image, the segmented stroma region, the segmented epithelia region\n\nThese visualizations are saved for further analysis and validation.\n\nBatch Processing and Cleanup Aim:\n\nAutomate the processing for multiple images and optimize memory usage.\n\nBatch Processing:\n\nThe process is set to iterate over a folder of images, applying the segmentation pipeline to each one.\n\nMemory Management:\n\nTo prevent memory overload, unnecessary variables are deleted, and garbage collection is manually triggered at the end of each iteration."
+    "objectID": "about.html#data-overview",
+    "href": "about.html#data-overview",
+    "title": "About",
+    "section": "Data overview",
+    "text": "Data overview\nData Source\nData consists of 105 cases from 97 patients. Below are some statistics of the data:\n\n60 women (age range: 23-93 years; median 65; mean 61.5) and 37 men (age range: 31-91 years; median 68; mean 66.5)\nThe ethnic group mix comprised of the following: 88 White Caucasian, 4 Black, 2 South Asian, 1 Inuit, 1 Mixed race, and 1 Unspecified\n\nThe data corresponds to patients in the following 3 ocular oncology/pathology centers:\n\nLiverpool University Hospitals NHS Foundation Trust (Liverpool; cases from 2018 to 2021),\nRoyal Hallamshire Hospital (Sheffield; from 2011 to 2021), and\nRigshospitalet (Copenhagen; from 1996 to 2021)\n\nFor each patient, a tissue is taken from their conjunctiva. The tissue is sliced into multiple slices. Multiple slices are used so that each slice can be analyzed separately and there is more evidence to support the conclusion, i.e., the classification of the C-MIL."
   },
   {
-    "objectID": "step2.html",
-    "href": "step2.html",
-    "title": "Step 2: Matching slices across stains",
+    "objectID": "about.html#team-github",
+    "href": "about.html#team-github",
+    "title": "About",
+    "section": "Team GitHub",
+    "text": "Team GitHub\nGitHub\nThis github contains all necessary files"
+  },
+  {
+    "objectID": "step1.html",
+    "href": "step1.html",
+    "title": "Step 1: Slice extraction",
     "section": "",
-    "text": "Aim: To identify structurally similar slices across stains for each patient."
+    "text": "Aim: To extract the tissue slices from the WSI (Whole slide images)"
   },
   {
-    "objectID": "step2.html#step-by-step-manual",
-    "href": "step2.html#step-by-step-manual",
-    "title": "Step 2: Matching slices across stains",
-    "section": "Step-by-Step Manual",
-    "text": "Step-by-Step Manual\nFollow these steps to use the pipeline to generate matching slices for all patients or a specific subset:\nPrepare Image Data: Place .tif image files in the designated folder (e.g., processed_images). Ensure that each patient has images for all three stains (H&E, Melanin, Sox10).\nChoose Full or Subset Processing:\nFor All Patients: Place all images in the same processed_images directory. For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., processed_images/patient1, processed_images/patient2). Run the Pipeline:\nRun match_pipeline.py. A GUI will prompt you to select the directory containing the images. Open NoahsMatching.ipynb in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders."
+    "objectID": "step1.html#step-1-first-pass-of-algorithm",
+    "href": "step1.html#step-1-first-pass-of-algorithm",
+    "title": "Step 1: Slice extraction",
+    "section": "Step 1: First pass of algorithm",
+    "text": "Step 1: First pass of algorithm\nFollowing the instructions above, open your image in QuPath and run this “annotation export newest” groovy script.\n\nSelect Run, then Run For Project\n\nNote: If your automation fails while running due to a particularly large image or systematically fails on a stain type (i.e. Sheffield Sox10–most fail because reference image annotation is too large to export), you have two options: Manually annotate and export images (more on this later) Downsample an annotated area (last resort, but can successfully downsample up to a factor of 2 to match stakeholder’s desired resolution), can do this directly by changing the downsample parameter\nSelect your images to process. Not counting the mask images, I tended to process up to 20 at a time to reduce the memory load."
   },
   {
-    "objectID": "step2.html#results",
-    "href": "step2.html#results",
-    "title": "Step 2: Matching slices across stains",
-    "section": "Results",
-    "text": "Results\nExample:\nAll tissue slices from patient h2114153\n      \nSuccessfully matched results\n  \nMatching Algorithm Evaluation Tracker\nThis tracker shows the status of each patient if they had a successful match"
+    "objectID": "step1.html#step-2-analyze-results-and-troubleshoot",
+    "href": "step1.html#step-2-analyze-results-and-troubleshoot",
+    "title": "Step 1: Slice extraction",
+    "section": "Step 2: Analyze results and troubleshoot",
+    "text": "Step 2: Analyze results and troubleshoot\nOnce you run the automation for your images, I check in QuPath directly image by image to ensure all data was properly exported. You should also check in the processed_images dir created in your Qupath project dir that no image was corrupted or too blurry. In order of manual work needed, here are the possible cases for your images. They correspond with how we dealt with and logged processing these images in the Tracker Data of Status of Each Slice"
   },
   {
-    "objectID": "step2.html#api",
-    "href": "step2.html#api",
-    "title": "Step 2: Matching slices across stains",
-    "section": "API",
-    "text": "API"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fall 2024 STAT390 (CMIL Classification)",
+    "section": "",
+    "text": "Aim: The objective of the project is to develop a machine learning model to accurately classify Conjunctival melanocytic intraepithelial lesions (C-MIL) as per the WHO 2022 classification system. In layman’s terms, we want to identify the severity of potential eye cancer by looking at a particular eye tissue of the patient.\nThe motivation behind the project is to provide a reproducible and accurate grading of C-MIL so that the most appropriate management plan for the patient can be developed. By improving the precision of lesion classification, our model has the potential to enhance patient outcomes and optimize treatment strategies\nThe Northwestern University STAT390 Class of Fall 2024 has made the following progress on this project:\n\nExtracting each tissue from the patient data using QuPath\nMatching tissue slices across the different stains (H&E, Melan-A, Sox-10) for each patient if there is a correct match\nDetecting and extracting the epithelium for each tissue\nApply patching across each epithelium for further examination\nTBD"
   },
   {
-    "objectID": "step2.html#api-results",
-    "href": "step2.html#api-results",
-    "title": "Step 2: Matching slices across stains",
-    "section": "API Results",
-    "text": "API Results"
+    "objectID": "step5.html",
+    "href": "step5.html",
+    "title": "Step 5: TBD",
+    "section": "",
+    "text": "Aim: We will find this out soon!\nMethodology:"
   }
 ]
