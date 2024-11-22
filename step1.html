@@ -134,14 +134,14 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong></a>
   <ul class="collapse">
-  <li><a href="#setting-up-in-qupath" id="toc-setting-up-in-qupath" class="nav-link" data-scroll-target="#setting-up-in-qupath">Setting up in QuPath</a></li>
-  <li><a href="#extraction-process" id="toc-extraction-process" class="nav-link" data-scroll-target="#extraction-process">Extraction Process</a>
+  <li><a href="#step-by-step-manual" id="toc-step-by-step-manual" class="nav-link" data-scroll-target="#step-by-step-manual"><strong>Step-by-Step Manual</strong></a>
   <ul class="collapse">
+  <li><a href="#setting-up-in-qupath" id="toc-setting-up-in-qupath" class="nav-link" data-scroll-target="#setting-up-in-qupath">Setting up in QuPath</a></li>
   <li><a href="#step-1-first-pass-of-algorithm" id="toc-step-1-first-pass-of-algorithm" class="nav-link" data-scroll-target="#step-1-first-pass-of-algorithm">Step 1: First pass of algorithm</a></li>
   <li><a href="#step-2-analyze-results-and-troubleshoot" id="toc-step-2-analyze-results-and-troubleshoot" class="nav-link" data-scroll-target="#step-2-analyze-results-and-troubleshoot">Step 2: Analyze results and troubleshoot</a></li>
   </ul></li>
-  </ul></li>
   <li><a href="#result-cases" id="toc-result-cases" class="nav-link" data-scroll-target="#result-cases">Result Cases</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -173,6 +173,8 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&amp;file=data_uploaded_tracker.xlsx&amp;action=default&amp;mobileredirect=true"><strong>Tracker Data of Status of Each Slice</strong></a></p>
 <section id="methodology" class="level1">
 <h1><strong>Methodology</strong></h1>
+<section id="step-by-step-manual" class="level2">
+<h2 class="anchored" data-anchor-id="step-by-step-manual"><strong>Step-by-Step Manual</strong></h2>
 <section id="setting-up-in-qupath" class="level3">
 <h3 class="anchored" data-anchor-id="setting-up-in-qupath">Setting up in QuPath</h3>
 <p>Images in a QuPath Project –&gt; <code>processed_data/tissue_image.tif</code> Contains <code>tissues_1.json</code>, <code>tissues_2.json</code> and <code>automate_export_newest.groovy</code> New for other stain types to expedite process: <code>existing_annotations.groovy</code></p>
@@ -206,8 +208,6 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 </section>
 </section>
-<section id="extraction-process" class="level2">
-<h2 class="anchored" data-anchor-id="extraction-process">Extraction Process</h2>
 <section id="step-1-first-pass-of-algorithm" class="level3">
 <h3 class="anchored" data-anchor-id="step-1-first-pass-of-algorithm">Step 1: First pass of algorithm</h3>
 <p>Following the instructions above, open your image in QuPath and run this “annotation export newest” groovy script.</p>
@@ -235,9 +235,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Once you run the automation for your images, I check in QuPath directly image by image to ensure all data was properly exported. You should also check in the processed_images dir created in your Qupath project dir that no image was corrupted or too blurry. In order of manual work needed, here are the possible cases for your images. They correspond with how we dealt with and logged processing these images in the <a href="https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&amp;file=data_uploaded_tracker.xlsx&amp;action=default&amp;mobileredirect=true">Tracker Data of Status of Each Slice</a></p>
 </section>
 </section>
-</section>
-<section id="result-cases" class="level1">
-<h1>Result Cases</h1>
+<section id="result-cases" class="level2">
+<h2 class="anchored" data-anchor-id="result-cases">Result Cases</h2>
 <p><strong>Case 1</strong>: perfect ROI identification Self-explanatory, all ROIs were successfully found and exported Example: Liverpool h1831023</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -296,6 +295,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Case 6</strong>: not even manual selection works to export large image Try to export each annotated area at a time by selecting, selecting class → Positive, and running the “existing annotation” groovy Worst case, downsample by 2.0 factor max Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering Example: Sheffield 85 (lots of samples, junk images, and large files)</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
