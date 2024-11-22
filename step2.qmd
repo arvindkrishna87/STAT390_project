@@ -8,6 +8,8 @@ title: "Step 2: Matching slices across stains"
 
 # API for Matching Slices
 
+:::{.callout-note collapse=true}
+
 ## Step-by-Step Manual
 
 ![](images/step%202%20images/step%202%20API%20image%201.png){fig-align="center"}
@@ -37,6 +39,8 @@ For All Patients: Place all images in the same `processed_images` directory.
 For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., `processed_images/patient1`, `processed_images/patient2`). Run the Pipeline.
 
 **3. Run `match_pipeline.py`.** A GUI will prompt you to select the directory containing the images. Open **`NoahsMatching.ipynb`** in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.
+
+:::
 
 ## Results
 
