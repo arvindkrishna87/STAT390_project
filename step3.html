@@ -132,13 +132,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong></a>
+  <li><a href="#api-for-epithelium-extraction" id="toc-api-for-epithelium-extraction" class="nav-link active" data-scroll-target="#api-for-epithelium-extraction">API for Epithelium Extraction</a>
   <ul class="collapse">
   <li><a href="#step-by-step-manual" id="toc-step-by-step-manual" class="nav-link" data-scroll-target="#step-by-step-manual">Step-by-Step Manual</a></li>
-  <li><a href="#code-explanation" id="toc-code-explanation" class="nav-link" data-scroll-target="#code-explanation">Code Explanation</a>
-  <ul class="collapse">
-  <li><a href="#separation-process" id="toc-separation-process" class="nav-link" data-scroll-target="#separation-process">Separation Process</a></li>
   </ul></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><strong>Methodology</strong></a>
+  <ul class="collapse">
+  <li><a href="#code-explanation" id="toc-code-explanation" class="nav-link" data-scroll-target="#code-explanation">Code Explanation</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -168,25 +169,37 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Aim: To separate the epithelium from the stroma in each tissue.</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
+<p><img src="images/h2114153h&amp;e_ROI_5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
 <p><img src="images/Step3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<section id="methodology" class="level1">
-<h1><strong>Methodology</strong></h1>
-<p>Automated separation of tissues using color space binning and morphological operations.</p>
-<section id="step-by-step-manual" class="level2">
-<h2 class="anchored" data-anchor-id="step-by-step-manual">Step-by-Step Manual</h2>
-<p><strong>Use the API</strong></p>
+<section id="api-for-epithelium-extraction" class="level2">
+<h2 class="anchored" data-anchor-id="api-for-epithelium-extraction">API for Epithelium Extraction</h2>
+<section id="step-by-step-manual" class="level3">
+<h3 class="anchored" data-anchor-id="step-by-step-manual">Step-by-Step Manual</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/step 3 images/step 3 API image 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section>
+</section>
+<section id="methodology" class="level1">
+<h1><strong>Methodology</strong></h1>
+<p>We automated a process to separate tissue regions using automated image processing. The RGB image is converted to YCrCb color space to make tissue features easier to identify. Background regions are removed using brightness thresholds and smoothing techniques. Stroma is isolated by analyzing the red chroma (Cr) channel and selecting specific color ranges. Epithelia are identified by focusing on adjacent color ranges and refining the mask to remove noise. The results are visualized as overlays on the original image, showing stroma and epithelia separately. This process is automated for multiple images, with efficient memory management for large datasets.</p>
+<p>Codes required:</p>
+<ul>
+<li><code>Presentation 6 - Generalizing Epithelium Extraction.ipynb</code></li>
+<li><code>Presentation 7 - Extracting from Melan-A.ipynb</code></li>
+<li><code>Presentation 7 - Extracting from Sox-10.ipynb</code></li>
+</ul>
+<p>Each code does a different stain.</p>
 <section id="code-explanation" class="level2">
 <h2 class="anchored" data-anchor-id="code-explanation">Code Explanation</h2>
-<section id="separation-process" class="level3">
-<h3 class="anchored" data-anchor-id="separation-process">Separation Process</h3>
 <p><strong>Preprocessing and Color Space Transformation</strong></p>
 <p><strong>Aim:</strong> Convert input images to a color space that separates luminance from chrominance, making it easier to isolate tissue features.</p>
 <p><strong>Input Image:</strong> The original image is loaded as RGB.</p>
@@ -196,7 +209,6 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Cr:</strong> Red chroma component</p></li>
 <li><p><strong>Cb:</strong> Blue chroma component</p></li>
 </ul>
-<p><img src="images/step 3 images/rgb.png" class="img-fluid"></p>
 <p><strong>Background Detection Aim:</strong> Separate the tissue regions from the background to reduce noise in the analysis.</p>
 <ul>
 <li><p>A thresholding technique is applied to the luminance channel to identify low-intensity regions representing the background.</p></li>
@@ -260,9 +272,16 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>To prevent memory overload, unnecessary variables are deleted, and garbage collection is manually triggered at the end of each iteration.</li>
 </ul>
-
-
 </section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/h2114153h&amp;e_ROI_5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+
+
 </section>
 </section>
 
