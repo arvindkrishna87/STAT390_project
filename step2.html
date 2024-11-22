@@ -136,7 +136,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#api-for-matching-slices" id="toc-api-for-matching-slices" class="nav-link active" data-scroll-target="#api-for-matching-slices">API for Matching Slices</a>
+  <li><a href="#api-for-matching-slices" id="toc-api-for-matching-slices" class="nav-link active" data-scroll-target="#api-for-matching-slices">API for Matching Slices</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><strong>Methodology</strong></a>
   <ul class="collapse">
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   </ul></li>
@@ -178,13 +179,17 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/API.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
+</section>
+<section id="methodology" class="level1">
+<h1><strong>Methodology</strong></h1>
+<p>The Matching Slices process identifies structurally similar tissue slices across stains (H&amp;E, Melanin, Sox10) for each patient. Image files are prepared and organized, either collectively or by patient-specific folders. The pipeline, executed via match_pipeline.py and Jupyter Notebook, preprocesses images, extracts contours, and matches slices based on structural similarity. Results are saved in organized folders, with matched slices grouped for easy review. This automated process ensures accurate alignment across stains for further analysis.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<strong>Methodology</strong>
+Step-by-Step Manual
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
