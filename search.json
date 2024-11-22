@@ -137,7 +137,21 @@
     "href": "step3.html#api-for-epithelium-extraction",
     "title": "Step 3: Epithelium Detection",
     "section": "API for Epithelium Extraction",
-    "text": "API for Epithelium Extraction\n\nStep-by-Step Manual"
+    "text": "API for Epithelium Extraction"
+  },
+  {
+    "objectID": "step3.html#code-explanation",
+    "href": "step3.html#code-explanation",
+    "title": "Step 3: Epithelium Detection",
+    "section": "Code Explanation",
+    "text": "Code Explanation\nPreprocessing and Color Space Transformation\nAim: Convert input images to a color space that separates luminance from chrominance, making it easier to isolate tissue features.\nInput Image: The original image is loaded as RGB.\nTransformation: Convert the RGB image to YCrCb. This transformation decomposes the image into:\n\nY: Luminance (brightness)\nCr: Red chroma component\nCb: Blue chroma component\n\nBackground Detection Aim: Separate the tissue regions from the background to reduce noise in the analysis.\n\nA thresholding technique is applied to the luminance channel to identify low-intensity regions representing the background.\nMorphological operations are used to remove small noise regions and smooth the background mask.\nThe background mask is then subtracted from subsequent tissue analysis steps.\nIdentifying Stroma using Red Chroma (Cr) Binning\n\nAim: Isolate stroma tissue based on the red chroma component, which correlates well with stromal regions in histology slides.\nBinning of Cr Channel\n\nThe Cr component is divided into discrete bins (e.g., 12 bins) to simplify the image analysis.\nThe bin with the maximum number of pixels is identified as the dominant chroma level for stromal regions.\n\nStroma Detection\n\nStroma is defined as the regions within three bins below the dominant bin.\nA mask is created to isolate stroma areas, followed by dilation to fill gaps.\nMorphological operations remove small objects and refine the segmentation.\nThe result is saved as a binary mask representing the stroma.\n\nIdentifying Epithelia Using Red Chroma (Cr) Binning Aim:\n\nDifferentiate epithelial tissue from stroma using the chroma profile.\n\nBinning for Epithelia:\n\nEpithelia are identified in the Cr channel bins immediately following the stroma bins.\nThe bins are selected based on their relative position to the previously identified stroma bins.\n\nMask Refinement:\n\nBackground and stroma regions are subtracted to isolate the epithelia.\nFurther refinement includes removing small objects, filling holes, and eliminating noise caused by blue ink (detected using the Cb channel).\nThe result is saved as a binary mask representing the epithelia.\n\nPost-Processing and Visualization Aim:\n\nGenerate segmented visualizations of the input image with stroma and epithelia overlaid.\n\nMask Application:\n\nThe segmented stroma and epithelia masks are applied to the original RGB image, producing separate visual representations of each tissue type.\n\nSegmentation Visualization:\n\nA combined image is generated with three panels:\n\nThe original RGB image, the segmented stroma region, the segmented epithelia region\n\nThese visualizations are saved for further analysis and validation.\n\nBatch Processing and Cleanup Aim:\n\nAutomate the processing for multiple images and optimize memory usage.\n\nBatch Processing:\n\nThe process is set to iterate over a folder of images, applying the segmentation pipeline to each one.\n\nMemory Management:\n\nTo prevent memory overload, unnecessary variables are deleted, and garbage collection is manually triggered at the end of each iteration."
+  },
+  {
+    "objectID": "step3.html#results",
+    "href": "step3.html#results",
+    "title": "Step 3: Epithelium Detection",
+    "section": "Results",
+    "text": "Results"
   },
   {
     "objectID": "step2.html",
