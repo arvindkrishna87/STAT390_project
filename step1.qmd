@@ -17,7 +17,7 @@ Slice**](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwes
 
 # **Methodology**
 
-## **Step-by-Step Manual**
+## Step-by-Step Manual
 
 ### Setting up in QuPath
 
