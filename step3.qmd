@@ -34,6 +34,8 @@ Automated separation of tissues using color space binning and morphological oper
 
 -   **Cb:** Blue chroma component
 
+![](images/step3/rgb.png)
+
 **Background Detection Aim:** Separate the tissue regions from the background to reduce noise in the analysis.
 
 -   A thresholding technique is applied to the luminance channel to identify low-intensity regions representing the background.
