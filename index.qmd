@@ -2,24 +2,15 @@
 title: "Fall 2024 STAT390 (CMIL Classification)"
 ---
 
-Aim: The objective of the project is to develop a machine learning model to accurately classify Conjunctival melanocytic intraepithelial lesions (C-MIL) as per the WHO 2022 classification system. In layman's terms, we want to identify the severity of potential eye cancer by looking at a particular eye tissue of the patient. 
+**Aim: The objective of this project is to identify the severity of potential eye cancer by looking at a particular eye tissue of the patient.**
 
-The motivation behind the project is to provide a reproducible and accurate grading
-of C-MIL so that the most appropriate management plan for the patient can be
-developed. By improving the precision of lesion classification, our model has the potential to enhance patient outcomes and optimize treatment strategies
+In medical terms, we want to develop a machine learning model to accurately classify *Conjunctival melanocytic intraepithelial lesions (C-MIL)* as per the *WHO 2022 classification system*. Providing a reproducible and accurate grading of C-MIL will help doctors select the most appropriate management plan for the patient.
 
 The Northwestern University STAT390 Class of Fall 2024 has made the following progress on this project:
 
-1. Extracting each tissue from the patient data using QuPath
-2. Matching tissue slices across the different stains (H&E, Melan-A, Sox-10) for each patient if there is a correct match
-3. Detecting and extracting the epithelium for each tissue
-4. Apply patching across each epithelium for further examination
-5. TBD
+![](images/HomeImage.png){fig-align="center"}
 
-
-
-
-
-
-
-
+1.  Extracting tissue slices from Whole Slice Images (WSI) using QuPath
+2.  Matching tissue slices across the different stains (H&E, Melan-A, Sox-10) for each patient when there is a correct match
+3.  Detecting and extracting the epithelium and stroma for each tissue slice
+4.  Apply patching across epithelium for matched slices
