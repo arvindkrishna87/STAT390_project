@@ -26,6 +26,8 @@ Codes required:
 
 Each code does a different stain.
 
+:::{.callout-note collapse=true}
+
 ## Code Explanation
 
 **Preprocessing and Color Space Transformation**
@@ -116,6 +118,11 @@ Each code does a different stain.
 
 -   To prevent memory overload, unnecessary variables are deleted, and garbage collection is manually triggered at the end of each iteration.
 
+:::
+
+:::{.callout-note collapse=true}
 ## Results
 
 ![](images/h2114153h&e_ROI_5.png){fig-align="center"}
+
+:::
