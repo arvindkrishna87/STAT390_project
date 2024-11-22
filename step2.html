@@ -132,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong>:</a>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong></a>
   <ul class="collapse">
   <li><a href="#step-by-step-manual" id="toc-step-by-step-manual" class="nav-link" data-scroll-target="#step-by-step-manual">Step-by-Step Manual</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
@@ -173,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <section id="methodology" class="level1">
-<h1><strong>Methodology</strong>:</h1>
+<h1><strong>Methodology</strong></h1>
 <p>Two codes required:</p>
 <ul>
 <li><p><code>Team4Matching.ipynb</code></p></li>
@@ -182,10 +182,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="step-by-step-manual" class="level2">
 <h2 class="anchored" data-anchor-id="step-by-step-manual">Step-by-Step Manual</h2>
 <p>Follow these steps to use the pipeline to generate matching slices for all patients or a specific subset:</p>
-<p>Prepare Image Data: Place .tif image files in the designated folder (e.g., processed_images). Ensure that each patient has images for all three stains (H&amp;E, Melanin, Sox10).</p>
-<p><strong>Choose Full or Subset Processing:</strong></p>
-<p><strong>For All Patients:</strong> Place all images in the same <code>processed_images</code> directory. For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., <code>processed_images/patient1</code>, <code>processed_images/patient2</code>). Run the Pipeline:</p>
-<p>Run <code>match_pipeline.py</code>. A GUI will prompt you to select the directory containing the images. Open <code>NoahsMatching.ipynb</code> in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.</p>
+<p><strong>1. Prepare Image Data:</strong> Place .tif image files in the designated folder (e.g., processed_images). Ensure that each patient has images for all three stains (H&amp;E, Melanin, Sox10).</p>
+<p><strong>2. Choose Full or Subset Processing:</strong></p>
+<p>For All Patients: Place all images in the same <code>processed_images</code> directory.</p>
+<p>For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., <code>processed_images/patient1</code>, <code>processed_images/patient2</code>). Run the Pipeline.</p>
+<p><strong>3. Run <code>match_pipeline.py</code>.</strong> A GUI will prompt you to select the directory containing the images. Open <strong><code>NoahsMatching.ipynb</code></strong> in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.</p>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
