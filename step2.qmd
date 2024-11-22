@@ -10,8 +10,14 @@ title: "Step 2: Matching slices across stains"
 
 ![](images/API.png){fig-align="center"}
 
-:::{.callout-note collapse=true}
+
 # **Methodology**
+
+The Matching Slices process identifies structurally similar tissue slices across stains (H&E, Melanin, Sox10) for each patient. Image files are prepared and organized, either collectively or by patient-specific folders. The pipeline, executed via match_pipeline.py and Jupyter Notebook, preprocesses images, extracts contours, and matches slices based on structural similarity. Results are saved in organized folders, with matched slices grouped for easy review. This automated process ensures accurate alignment across stains for further analysis.
+
+:::{.callout-note collapse=true}
+
+## Step-by-Step Manual
 
 Two codes required:
 
