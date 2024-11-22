@@ -17,7 +17,7 @@ Slice**](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwes
 
 # **Methodology**
 
-Using QuPath, we uploaded the data which was in WSIs. We created an automated tool using groovy, which extracts each individual tissue from the WSIs and places all the extracted tissue slices in a new data folder.
+This step employs QuPath and custom Groovy scripts to automate the extraction of tissue regions from Whole Slide Images (WSIs). Key scripts, including `tissues_2.json`, `automate_export_newest.groovy`, and `existing_annotations.groovy`, enable efficient processing and handling of diverse stain types. After setting up the project and placing scripts in their designated directories, the `automate_export_newest.groovy` script is executed to detect and export regions of interest (ROIs) as tissue slices, which are saved in the `processed_data` folder. The process includes error handling for large or challenging images, offering manual annotation and adjustments when necessary. Exported data is reviewed to ensure quality, with issues like merging, deletion, or poor selection addressed using targeted corrections or downsampling, ensuring consistent and accurate tissue extraction.
 
 :::{.callout-note collapse=true}
 
