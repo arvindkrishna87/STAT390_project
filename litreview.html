@@ -131,17 +131,8 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#adaptive-pooling-used-in-step-4" id="toc-adaptive-pooling-used-in-step-4" class="nav-link active" data-scroll-target="#adaptive-pooling-used-in-step-4">Adaptive Pooling: (Used in Step 4)</a></li>
-  <li><a href="#cross-view-transformer-used-in-step-4" id="toc-cross-view-transformer-used-in-step-4" class="nav-link" data-scroll-target="#cross-view-transformer-used-in-step-4">Cross View Transformer: (Used in Step 4)</a></li>
-  <li><a href="#advantages-of-square-patches-used-in-step-4" id="toc-advantages-of-square-patches-used-in-step-4" class="nav-link" data-scroll-target="#advantages-of-square-patches-used-in-step-4">Advantages of square patches: (Used in step 4)</a></li>
-  <li><a href="#padding-effect-used-in-step-4" id="toc-padding-effect-used-in-step-4" class="nav-link" data-scroll-target="#padding-effect-used-in-step-4">Padding effect: (Used in Step 4)</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -165,9 +156,18 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>:::{.callout-note collapse=true}</p>
-<section id="adaptive-pooling-used-in-step-4" class="level2">
-<h2 class="anchored" data-anchor-id="adaptive-pooling-used-in-step-4">Adaptive Pooling: (Used in Step 4)</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Adaptive Pooling: (Used in Step 4)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><img src="images/litreview/MAXPOOL.png" class="img-fluid"></p>
 <p><u><strong>Large Batch and Patch Size Training for Medical Image Segmentation:</strong></u></p>
 <p><a href="https://arxiv.org/pdf/2210.13364"><strong>Article Link</strong></a></p>
@@ -177,11 +177,21 @@ ul.task-list li input[type="checkbox"] {
 <li><p>By using adaptive pooling, you could manage patch sizes more dynamically, potentially overcoming the plateau effect observed with fixed large patch sizes.</p></li>
 <li><p>This would ensure that each region of the image is analyzed at an optimal scale, leading to potentially higher accuracy without the drawbacks of uniform large patches.</p></li>
 </ul>
-<p>:::</p>
-<p>:::{.callout-note collapse=true}</p>
-</section>
-<section id="cross-view-transformer-used-in-step-4" class="level2">
-<h2 class="anchored" data-anchor-id="cross-view-transformer-used-in-step-4">Cross View Transformer: (Used in Step 4)</h2>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross View Transformer: (Used in Step 4)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><img src="images/litreview/CVT.png" class="img-fluid"></p>
 <p><strong>Purpose:</strong> Cross-view transformers are ideal for aligning images from different modalities (or stains) without exact pixel-level registration. They enable spatial feature alignment through learned transformations, which is helpful when the images are stained differently and thus might not naturally align perfectly.</p>
 <p><strong>Benefit:</strong> Using this alignment allows our algorithm to recognize similar regions across stains, orienting them correctly and enabling the same-region patches to be matched across the stains. The algorithm would learn to map similar features across images without requiring identical sizes, which suits our no-resize constraint.</p>
@@ -193,11 +203,21 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Apply Controlled Padding (if Needed):</strong> Pad the patches to make them uniform in size, allowing them to be used in the classification model.</p></li>
 </ol>
 <p><strong>Summary:</strong> Ultimately, the multi-resolution network will capture different levels of detail from each stain, ensuring that both fine cellular structures and broader tissue architectures are represented. This helps to make the model robust to slight size or scale variations in patches. The cross-view alignment will allow our algorithm to “match” regions across different stains based on learned features rather than exact spatial coordinates. This is especially helpful when we have patches of different stains that aren’t perfectly aligned but should correspond to the same tissue region.</p>
-<p>:::</p>
-<p>:::{.callout-note collapse=true}</p>
-</section>
-<section id="advantages-of-square-patches-used-in-step-4" class="level2">
-<h2 class="anchored" data-anchor-id="advantages-of-square-patches-used-in-step-4">Advantages of square patches: (Used in step 4)</h2>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advantages of square patches: (Used in step 4)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><img src="images/litreview/patching.png" class="img-fluid"></p>
 <p><a href="https://blogs.mathworks.com/deep-learning/2021/11/02/handling-very-large-images"><strong>Article Link:</strong></a></p>
 <p>In medical imaging applications, image patches are usually square regions whose size can vary from 32 × 32 pixels up to 10,000 × 10,000 pixels (256 × 256 pixels is a typical patch size</p>
@@ -213,11 +233,21 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><u><strong>Comparative Analysis</strong></u></p>
 <p>Square patches are easier to integrate into standard CNNs and preprocessing workflows, making them suitable for general histopathological analysis. Rectangular patches, while more complex to implement, offer better feature representation for specific tissue structures.&nbsp;</p>
-<p>:::</p>
-<p>:::{.callout-note collapse=true}</p>
-</section>
-<section id="padding-effect-used-in-step-4" class="level2">
-<h2 class="anchored" data-anchor-id="padding-effect-used-in-step-4">Padding effect: (Used in Step 4)</h2>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Padding effect: (Used in Step 4)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><img src="images/litreview/padding.png" class="img-fluid"></p>
 <p><u><strong>CNNs and Image Classification:</strong></u></p>
 <p>Convolutional Neural Networks (CNNs) have emerged as a dominant architecture in the realm of image classification due to their capacity to capture hierarchical patterns in visual data. Their structure, characterized by convolutional layers, pooling layers, and fully connected layers, enables the effective extraction and learning of features such as edges, textures, and complex shapes. Image classification is critical in various applications, from medical imaging diagnostics to autonomous vehicle navigation and facial recognition technologies.</p>
@@ -267,10 +297,11 @@ ul.task-list li input[type="checkbox"] {
 <li><p>“Position, Padding and Predictions: A Deeper Look at Position Information in CNNs” (2024): This research explored how padding influences the encoding of position information in CNNs. The study revealed that zero padding drives CNNs to encode position information in their internal representations, while a lack of padding precludes position encoding. This finding suggests that padding not only affects spatial dimensions but also the way positional information is processed within the network.</p></li>
 <li><p>“Effects of Boundary Conditions in Fully Convolutional Networks for Spatio-Temporal Physical Modeling” (2021): This study examined various padding strategies, including reflection padding, within the context of spatio-temporal physical modeling using fully convolutional networks. The researchers found that reflection padding significantly helped in preserving edge continuity and reduced boundary artifacts, resulting in improved network generalization and accuracy. This effect was particularly notable in tasks requiring precise edge information, such as fluid dynamics simulations.</p></li>
 </ul>
-<p>:::</p>
+</div>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
