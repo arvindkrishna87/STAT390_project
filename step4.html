@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Step 4: Patching – Fall 2024 STAT390 project</title>
+<title>Step 3: Epithelium Detection – Fall 2024 STAT390 project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./step4.html" aria-current="page"> 
-<span class="menu-text">Step 4: Patching</span></a>
+<span class="menu-text">Step 3: Epithelium Detection</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./litreview.html"> 
@@ -134,9 +134,11 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong>:</a>
   <ul class="collapse">
-  <li><a href="#description-of-code" id="toc-description-of-code" class="nav-link" data-scroll-target="#description-of-code">Description of code</a></li>
-  <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up">Set Up</a></li>
-  <li><a href="#code-explanation" id="toc-code-explanation" class="nav-link" data-scroll-target="#code-explanation">Code Explanation:</a></li>
+  <li><a href="#step-by-step-manual" id="toc-step-by-step-manual" class="nav-link" data-scroll-target="#step-by-step-manual">Step-by-Step Manual</a></li>
+  <li><a href="#code-explanation" id="toc-code-explanation" class="nav-link" data-scroll-target="#code-explanation">Code Explanation</a>
+  <ul class="collapse">
+  <li><a href="#separation-process" id="toc-separation-process" class="nav-link" data-scroll-target="#separation-process">Separation Process</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -146,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Step 4: Patching</h1>
+<h1 class="title">Step 3: Epithelium Detection</h1>
 </div>
 
 
@@ -163,45 +165,103 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Aim: Applies horizontal/vertical patching across the matched epithelia.</strong></p>
+<p><strong>Aim: To separate the epithelium from the stroma in each tissue.</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Step4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/Step3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <section id="methodology" class="level1">
 <h1><strong>Methodology</strong>:</h1>
-<p>Patching algorithm calculates the optimal patch height and width based on the epithelium mask. The patch dimensions are based on the maximum continuous width of white pixels (i.e., the epithelium area) and the overall epithelium area in the mask. The patches are used to analyze and visualize the epithelium coverage, and they are placed on the images based on optimal patch dimensions and overlap calculations. Patching algorithm takes in processed images of the epithelium from the stained cells and applies a sliding kernel across the image The optimal patch height is the maximum width of continuous white pixels (in each row), with a minimum height of 100. The patch width is calculated by dividing the epithelium area by 100 and the optimal patch height.</p>
-<section id="description-of-code" class="level2">
-<h2 class="anchored" data-anchor-id="description-of-code">Description of code</h2>
-<p>Directories: Defines input_folder (where processed images are stored) and output_folder (where the results will be saved).</p>
-<p>Directory structure: <code>Step 4/ Processed_images_sub Filtered_images epithelium_patches_6_hori.py</code></p>
-</section>
-<section id="set-up" class="level2">
-<h2 class="anchored" data-anchor-id="set-up">Set Up</h2>
-<p>Place all desired sample images in “filtered_images” folder</p>
-<p>Open and run <code>epithelium_patches_6_hori.py</code>. Dependencies include cv2, numpy, os</p>
-<p>Find processed images in <code>processed_images_sub</code></p>
+<p>Automated separation of tissues using color space binning and morphological operations.</p>
+<section id="step-by-step-manual" class="level2">
+<h2 class="anchored" data-anchor-id="step-by-step-manual">Step-by-Step Manual</h2>
+<p><strong>Use the API</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/step 3 images/step 3 API image 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 </section>
 <section id="code-explanation" class="level2">
-<h2 class="anchored" data-anchor-id="code-explanation">Code Explanation:</h2>
-<p><strong>calculate_optimal_patch_dimensions(mask):</strong> Analyzes the epithelium mask to determine the optimal patch size for image processing. Finds the maximum continuous width of white pixels (epithelium) in each row to determine the optimal patch height. Calculates the patch width based on the total epithelium area, ensuring it’s large enough to cover meaningful portions of the image.</p>
-<p><strong>calculate_overlap(patch_coords, placed_patches):</strong> Checks if a new patch overlaps with any already placed patches. Returns True if the overlap area exceeds 10% of the patch’s total area, indicating that the patch should not be placed.</p>
-<p><strong>calculate_coverage(mask, patches):</strong> Calculates the coverage percentage of epithelium in the provided mask by summing the areas covered by all patches.Returns the percentage of epithelium covered by patches.</p>
-<p><strong>apply_patches(epithelium_mask, patch_height, patch_width, stride, orientation):</strong> Applies patches to the epithelium mask, either vertically or horizontally. Iterates over the image using a sliding window approach, placing patches where the epithelium ratio is 50% or more. Checks for overlaps using calculate_overlap and ensures patches are placed in non-overlapping areas.</p>
-<p><strong>process_image(image_path, output_image_path, output_mask_path, region_outline_path):</strong> Reads and Preprocesses Image: Loads the image, converts it to grayscale, applies Gaussian blur, and thresholds to create a binary mask.</p>
-<p><strong>Mask Cleaning:</strong> Applies morphological operations (close and open) to clean the mask.</p>
-<p><strong>Epithelium Detection:</strong> Finds contours, identifies the largest contour, and creates an epithelium mask.</p>
-<p><strong>Patch Calculation:</strong> Uses calculate_optimal_patch_dimensions to determine the optimal patch size and stride for patch placement.</p>
-<p><strong>Apply Patches:</strong> Uses apply_patches for both vertical and horizontal patch orientations and calculates the coverage for each.</p>
-<p><strong>Region Outline:</strong> Draws rectangles around regions in the original image and saves an image showing the regions where patches will be applied.</p>
-<p><strong>Draw Patches:</strong> Based on the coverage, selects the best orientation (vertical or horizontal) and draws patches on the image.</p>
-<p><strong>Save Output:</strong> Saves the final processed image with patches drawn, as well as the region outline image and the epithelium mask.</p>
-<p><strong>Image Processing Loop:</strong> Loops through all image files in the input_folder with .tif, .jpg, or .png extensions. For each image, it processes the image and saves: the epithelium mask, the final image with mixed patches applied, the region outline image showing the patches’ locations.</p>
-<p>Prints a message indicating that the processing is complete for all images.</p>
-<p><strong>Hardcoding:</strong> Only hardcoded value relates to the color thresholding used in the epithelium extraction. Other group members / team 6 have been working on ways to generalize this segment and can likely be combined.</p>
+<h2 class="anchored" data-anchor-id="code-explanation">Code Explanation</h2>
+<section id="separation-process" class="level3">
+<h3 class="anchored" data-anchor-id="separation-process">Separation Process</h3>
+<p><strong>Preprocessing and Color Space Transformation</strong></p>
+<p><strong>Aim:</strong> Convert input images to a color space that separates luminance from chrominance, making it easier to isolate tissue features.</p>
+<p><strong>Input Image:</strong> The original image is loaded as RGB.</p>
+<p><strong>Transformation:</strong> Convert the RGB image to YCrCb. This transformation decomposes the image into:</p>
+<ul>
+<li><p><strong>Y:</strong> Luminance (brightness)</p></li>
+<li><p><strong>Cr:</strong> Red chroma component</p></li>
+<li><p><strong>Cb:</strong> Blue chroma component</p></li>
+</ul>
+<p><strong>Background Detection Aim:</strong> Separate the tissue regions from the background to reduce noise in the analysis.</p>
+<ul>
+<li><p>A thresholding technique is applied to the luminance channel to identify low-intensity regions representing the background.</p></li>
+<li><p>Morphological operations are used to remove small noise regions and smooth the background mask.</p></li>
+<li><p>The background mask is then subtracted from subsequent tissue analysis steps.</p></li>
+<li><p>Identifying Stroma using Red Chroma (Cr) Binning</p></li>
+</ul>
+<p><strong>Aim:</strong> Isolate stroma tissue based on the red chroma component, which correlates well with stromal regions in histology slides.</p>
+<p><strong>Binning of Cr Channel</strong></p>
+<ul>
+<li><p>The Cr component is divided into discrete bins (e.g., 12 bins) to simplify the image analysis.</p></li>
+<li><p>The bin with the maximum number of pixels is identified as the dominant chroma level for stromal regions.</p></li>
+</ul>
+<p><strong>Stroma Detection</strong></p>
+<ul>
+<li><p>Stroma is defined as the regions within three bins below the dominant bin.</p></li>
+<li><p>A mask is created to isolate stroma areas, followed by dilation to fill gaps.</p></li>
+<li><p>Morphological operations remove small objects and refine the segmentation.</p></li>
+<li><p>The result is saved as a binary mask representing the stroma.</p></li>
+</ul>
+<p><strong>Identifying Epithelia Using Red Chroma (Cr) Binning Aim:</strong></p>
+<ul>
+<li>Differentiate epithelial tissue from stroma using the chroma profile.</li>
+</ul>
+<p><strong>Binning for Epithelia:</strong></p>
+<ul>
+<li><p>Epithelia are identified in the Cr channel bins immediately following the stroma bins.</p></li>
+<li><p>The bins are selected based on their relative position to the previously identified stroma bins.</p></li>
+</ul>
+<p><strong>Mask Refinement:</strong></p>
+<ul>
+<li><p>Background and stroma regions are subtracted to isolate the epithelia.</p></li>
+<li><p>Further refinement includes removing small objects, filling holes, and eliminating noise caused by blue ink (detected using the Cb channel).</p></li>
+<li><p>The result is saved as a binary mask representing the epithelia.</p></li>
+</ul>
+<p><strong>Post-Processing and Visualization Aim:</strong></p>
+<ul>
+<li>Generate segmented visualizations of the input image with stroma and epithelia overlaid.</li>
+</ul>
+<p><strong>Mask Application:</strong></p>
+<ul>
+<li>The segmented stroma and epithelia masks are applied to the original RGB image, producing separate visual representations of each tissue type.</li>
+</ul>
+<p><strong>Segmentation Visualization:</strong></p>
+<ul>
+<li><p>A combined image is generated with three panels:</p>
+<ul>
+<li>The original RGB image, the segmented stroma region, the segmented epithelia region</li>
+</ul></li>
+<li><p>These visualizations are saved for further analysis and validation.</p></li>
+</ul>
+<p><strong>Batch Processing and Cleanup Aim:</strong></p>
+<ul>
+<li>Automate the processing for multiple images and optimize memory usage.</li>
+</ul>
+<p><strong>Batch Processing:</strong></p>
+<ul>
+<li>The process is set to iterate over a folder of images, applying the segmentation pipeline to each one.</li>
+</ul>
+<p><strong>Memory Management:</strong></p>
+<ul>
+<li>To prevent memory overload, unnecessary variables are deleted, and garbage collection is manually triggered at the end of each iteration.</li>
+</ul>
 
 
+</section>
 </section>
 </section>
 
