@@ -41,7 +41,7 @@ numpy, os
 
 Find processed images in `processed_images_sub`
 
-## Functions Explanations:
+## Code Explanation:
 
 **calculate_optimal_patch_dimensions(mask):** Analyzes the epithelium
 mask to determine the optimal patch size for image processing. Finds the
