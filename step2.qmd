@@ -2,7 +2,9 @@
 title: "Step 2: Matching slices across stains"
 ---
 
-**Aim**: To identify structurally similar slices across stains for each patient.
+**Aim: To identify and match structurally similar slices across stains for each patient.**
+
+![](images/Step2.png){fig-align="center"}
 
 # **Methodology**:
 
@@ -28,24 +30,22 @@ Run `match_pipeline.py`. A GUI will prompt you to select the directory containin
 
 **Example:**
 
-All tissue slices from patient h2114153
+All tissue slices from patient h2114153:
 
-![](step%202%20images/slice1.png){width="125"} ![](step%202%20images/slice4.png){width="90"} ![](step%202%20images/slice5.png){width="106"} ![](step%202%20images/slice6.png){width="105"} ![](step%202%20images/slice2.png){width="121"} ![](step%202%20images/slice7.png){width="100"} ![](step%202%20images/slice3.png){width="113"}
+![](images/step%202%20images/slice1.png){width="125"} ![](images/step%202%20images//slice4.png){width="90"} ![](images/step%202%20images//slice5.png){width="106"} ![](images/step%202%20images//slice6.png){width="105"} ![](images/step%202%20images//slice2.png){width="121"} ![](images/step%202%20images//slice7.png){width="100"} ![](images/step%202%20images//slice3.png){width="113"}
 
 **Successfully matched results**
 
-![](step%202%20images/slice1.png){width="125"} ![](step%202%20images/slice2.png){width="121"} ![](step%202%20images/slice3.png){width="113"}
+![](images/step%202%20images//slice1.png){width="125"} ![](images/step%202%20images//slice2.png){width="121"} ![](images/step%202%20images//slice3.png){width="113"}
 
-[Matching Algorithm Evaluation Tracker](https://docs.google.com/spreadsheets/d/1ftfgVTarxCAADnrV4wQ9Plx2EjlHfv4KF3QgBLAyV2A/edit?gid=1717311473#gid=1717311473)
-
-This tracker shows the status of each patient if they had a successful match
+![](images/Step2.png){fig-align="center"}
 
 ## API
 
-![](step%202%20images/step%202%20API%20image%201.png)
+![](images/step 2 images/step 2 API image 1.png){fig-align="center"}
 
-![](step%202%20images/step%202%20API%20image%202.png)
+![](images/step 2 images/step 2 API image 2.png){fig-align="center"}
 
-## API Results
+### API Results
 
-![](step%202%20images/step%202%20API%20image%203.png)
+![](images/step 2 images/step 2 API image 3.png){fig-align="center"}
