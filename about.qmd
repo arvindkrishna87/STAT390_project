@@ -45,5 +45,3 @@ centers:
 
 For each patient, a tissue is taken from their conjunctiva. The tissue is sliced into multiple slices. Multiple slices are used so that each slice can be analyzed separately and there is more evidence to support the conclusion,
 i.e., the classification of the C-MIL.
-
-**[Data](https://www.sciencedirect.com/science/article/pii/S0023683723002246)**
