@@ -136,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#description-of-code" id="toc-description-of-code" class="nav-link" data-scroll-target="#description-of-code">Description of code</a></li>
   <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up">Set Up</a></li>
-  <li><a href="#functions-explanations" id="toc-functions-explanations" class="nav-link" data-scroll-target="#functions-explanations">Functions Explanations:</a></li>
+  <li><a href="#code-explanation" id="toc-code-explanation" class="nav-link" data-scroll-target="#code-explanation">Code Explanation:</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -183,8 +183,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Open and run <code>epithelium_patches_6_hori.py</code>. Dependencies include cv2, numpy, os</p>
 <p>Find processed images in <code>processed_images_sub</code></p>
 </section>
-<section id="functions-explanations" class="level2">
-<h2 class="anchored" data-anchor-id="functions-explanations">Functions Explanations:</h2>
+<section id="code-explanation" class="level2">
+<h2 class="anchored" data-anchor-id="code-explanation">Code Explanation:</h2>
 <p><strong>calculate_optimal_patch_dimensions(mask):</strong> Analyzes the epithelium mask to determine the optimal patch size for image processing. Finds the maximum continuous width of white pixels (epithelium) in each row to determine the optimal patch height. Calculates the patch width based on the total epithelium area, ensuring it’s large enough to cover meaningful portions of the image.</p>
 <p><strong>calculate_overlap(patch_coords, placed_patches):</strong> Checks if a new patch overlaps with any already placed patches. Returns True if the overlap area exceeds 10% of the patch’s total area, indicating that the patch should not be placed.</p>
 <p><strong>calculate_coverage(mask, patches):</strong> Calculates the coverage percentage of epithelium in the provided mask by summing the areas covered by all patches.Returns the percentage of epithelium covered by patches.</p>
