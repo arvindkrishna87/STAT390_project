@@ -4,7 +4,7 @@ title: "About"
 
 This is the website for the Fall 2024 STAT390 project!
 
-## Team
+## People
 
 **Professor and Project Leader**: Arvind Krishna
 
@@ -14,12 +14,19 @@ Marianne Cano, Lauren Gomez, Rayyana Hassan, Baron Patterson, Cara Chang, Eli Na
 
 **Stakeholders**: Dr. Yamini Krishna, Dr. He Zhao, Prashant Kumar
 
+## GitHub and OneDrive
+
+This github contains all the necessary code and algorithms from our progress:
+
+**[GitHub](https://github.com/diegogoldfrank/STAT-390---Fall-24.git)**
+
+This OneDrive contains all data and processed folders from our progress:
+
+**[OneDrive](https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390)**
 
 ## Data overview
 
-[Data Source](https://www.sciencedirect.com/science/article/pii/S0023683723002246)
-
-Data consists of 105 cases from 97 patients. Below are some statistics of the data:
+**[Data](https://www.sciencedirect.com/science/article/pii/S0023683723002246)** consists of 105 cases from 97 patients. Below are some statistics of the data:
 
 - 60 women (age range: 23-93 years; median 65; mean 61.5) and 37 men (age range:
 31-91 years; median 68; mean 66.5)
@@ -30,17 +37,13 @@ South Asian, 1 Inuit, 1 Mixed race, and 1 Unspecified
 The data corresponds to patients in the following 3 ocular oncology/pathology
 centers:
 
-- Liverpool University Hospitals NHS Foundation Trust (Liverpool; cases from
+- Liverpool University Hospitals NHS Foundation Trust (**Liverpool**; cases from
 2018 to 2021),
-- Royal Hallamshire Hospital (Sheffield; from 2011 to 2021), and
-- Rigshospitalet (Copenhagen; from 1996 to 2021)
+- Royal Hallamshire Hospital (**Sheffield**; from 2011 to 2021), and
+- Rigshospitalet (**Copenhagen**; from 1996 to 2021)
 
 
 For each patient, a tissue is taken from their conjunctiva. The tissue is sliced into multiple slices. Multiple slices are used so that each slice can be analyzed separately and there is more evidence to support the conclusion,
 i.e., the classification of the C-MIL.
 
-## Team GitHub
-
-[GitHub](https://github.com/diegogoldfrank/STAT-390---Fall-24.git)
-
-This github contains all necessary files
+**[Data](https://www.sciencedirect.com/science/article/pii/S0023683723002246)**
