@@ -4,6 +4,8 @@ title: "Literature Review"
  
 ## Adaptive Pooling: (Used in Step 4)
 
+![](images/litreview/MAXPOOL.png)
+
 [**Large Batch and Patch Size Training for Medical Image Segmentation:**]{.underline} 
 
 [**Article Link**](https://arxiv.org/pdf/2210.13364)
@@ -17,6 +19,9 @@ title: "Literature Review"
 -   This would ensure that each region of the image is analyzed at an optimal scale, leading to potentially higher accuracy without the drawbacks of uniform large patches.
 
 ## Cross View Transformer: (Used in Step 4)
+
+![](images/litreview/CVT.png)
+
 **Purpose:** Cross-view transformers are ideal for aligning images from different
 modalities (or stains) without exact pixel-level registration. They enable spatial feature alignment through learned transformations, which is helpful when the images are stained differently and thus might not naturally align perfectly.
 
@@ -42,6 +47,7 @@ allowing them to be used in the classification model.
 
 ## Advantages of square patches: (Used in step 4)
 
+![](images/litreview/patching.png)
 
 [**Article Link:**](https://blogs.mathworks.com/deep-learning/2021/11/02/handling-very-large-images)
 
@@ -64,6 +70,8 @@ In medical imaging applications, image patches are usually square regions whose 
 Square patches are easier to integrate into standard CNNs and preprocessing workflows, making them suitable for general histopathological analysis. Rectangular patches, while more complex to implement, offer better feature representation for specific tissue structures. 
 
 ## Padding effect: (Used in Step 4)
+
+![](images/litreview/padding.png)
 
 [**CNNs and Image Classification:**]{.underline}
 
