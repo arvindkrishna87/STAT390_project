@@ -4,6 +4,8 @@ title: "About"
 
 This is the website for the Fall 2024 STAT390 project!
 
+<img src="images/dataicon.png" width="500" height="400" />
+
 ## People
 
 **Professor and Project Leader**: Arvind Krishna
