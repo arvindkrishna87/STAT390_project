@@ -10,9 +10,7 @@ title: "Step 3: Epithelium Detection"
 
 ## API for Epithelium Extraction
 
-### Step-by-Step Manual
-
-![](images/step%203%20images/step%203%20API%20image%201.png){fig-align="center"}
+![](images/API.png){fig-align="center"}
 
 # **Methodology**
 
@@ -25,8 +23,6 @@ Codes required:
 -   `Presentation 7 - Extracting from Sox-10.ipynb`
 
 Each code does a different stain.
-
-:::{.callout-note collapse=true}
 
 ## Code Explanation
 
@@ -118,11 +114,6 @@ Each code does a different stain.
 
 -   To prevent memory overload, unnecessary variables are deleted, and garbage collection is manually triggered at the end of each iteration.
 
-:::
-
-:::{.callout-note collapse=true}
 ## Results
 
 ![](images/h2114153h&e_ROI_5.png){fig-align="center"}
-
-:::
