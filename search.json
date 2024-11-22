@@ -95,21 +95,42 @@
     "href": "step4.html",
     "title": "Step 4: Patching",
     "section": "",
-    "text": "Aim: Applies horizontal/vertical patching across the matched epithelia."
+    "text": "Aim: Applies horizontal/vertical patching across the matched and oriented epithelia."
+  },
+  {
+    "objectID": "step4.html#pathologist-team-annotations",
+    "href": "step4.html#pathologist-team-annotations",
+    "title": "Step 4: Patching",
+    "section": "1. Pathologist Team Annotations",
+    "text": "1. Pathologist Team Annotations\nBefore this step, we will send matched and extracted epithelium slices to the pathologist team to annotate the regions."
+  },
+  {
+    "objectID": "step4.html#orientation",
+    "href": "step4.html#orientation",
+    "title": "Step 4: Patching",
+    "section": "2. Orientation",
+    "text": "2. Orientation\nAfter this we will orient the images to be aligned evenly before patching.\n\n\n\n\n\nOnce these steps are complete, we can begin patching."
   },
   {
     "objectID": "step4.html#description-of-code",
     "href": "step4.html#description-of-code",
     "title": "Step 4: Patching",
     "section": "Description of code",
-    "text": "Description of code\nDirectories: Defines input_folder (where processed images are stored) and output_folder (where the results will be saved).\nDirectory structure: Step 4/ Processed_images_sub Filtered_images epithelium_patches_6_hori.py"
+    "text": "Description of code\nDirectories:\nDefines input_folder (where processed images are stored) and output_folder (where the results will be saved).\nDirectory structure:\nImages: Step 4/ Processed_images_sub\nFiltered_images: epithelium_patches_6_hori.py"
   },
   {
     "objectID": "step4.html#step-by-step-manual",
     "href": "step4.html#step-by-step-manual",
     "title": "Step 4: Patching",
     "section": "Step-by-Step Manual",
-    "text": "Step-by-Step Manual\nPlace all desired sample images in “filtered_images” folder\nOpen and run epithelium_patches_6_hori.py. Dependencies include cv2, numpy, os\nFind processed images in processed_images_sub"
+    "text": "Step-by-Step Manual\n\nPlace all desired sample images in “filtered_images” folder\nOpen and run epithelium_patches_6_hori.py. Dependencies include cv2, numpy, os\nFind processed images in processed_images_sub"
+  },
+  {
+    "objectID": "step4.html#results",
+    "href": "step4.html#results",
+    "title": "Step 4: Patching",
+    "section": "Results",
+    "text": "Results"
   },
   {
     "objectID": "step4.html#code-explanation",

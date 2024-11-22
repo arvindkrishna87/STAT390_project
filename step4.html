@@ -132,10 +132,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong></a>
+  <li><a href="#necessary-steps-before-patching-to-do" id="toc-necessary-steps-before-patching-to-do" class="nav-link active" data-scroll-target="#necessary-steps-before-patching-to-do"><strong>Necessary Steps Before Patching (To Do)</strong></a>
+  <ul class="collapse">
+  <li><a href="#pathologist-team-annotations" id="toc-pathologist-team-annotations" class="nav-link" data-scroll-target="#pathologist-team-annotations">1. Pathologist Team Annotations</a></li>
+  <li><a href="#orientation" id="toc-orientation" class="nav-link" data-scroll-target="#orientation">2. Orientation</a></li>
+  </ul></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><strong>Methodology</strong></a>
   <ul class="collapse">
   <li><a href="#description-of-code" id="toc-description-of-code" class="nav-link" data-scroll-target="#description-of-code">Description of code</a></li>
   <li><a href="#step-by-step-manual" id="toc-step-by-step-manual" class="nav-link" data-scroll-target="#step-by-step-manual">Step-by-Step Manual</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#code-explanation" id="toc-code-explanation" class="nav-link" data-scroll-target="#code-explanation">Code Explanation</a></li>
   </ul></li>
   </ul>
@@ -163,25 +169,60 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Aim: Applies horizontal/vertical patching across the matched epithelia.</strong></p>
+<p><strong>Aim: Applies horizontal/vertical patching across the matched and oriented epithelia.</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Step4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
+<section id="necessary-steps-before-patching-to-do" class="level1">
+<h1><strong>Necessary Steps Before Patching (To Do)</strong></h1>
+<section id="pathologist-team-annotations" class="level2">
+<h2 class="anchored" data-anchor-id="pathologist-team-annotations">1. Pathologist Team Annotations</h2>
+<p>Before this step, we will send matched and extracted epithelium slices to the <strong>pathologist team</strong> to annotate the regions.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Annotations.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="orientation" class="level2">
+<h2 class="anchored" data-anchor-id="orientation">2. Orientation</h2>
+<p>After this we will orient the images to be aligned evenly before patching.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Orient.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Once these steps are complete, we can begin patching.</p>
+</section>
+</section>
 <section id="methodology" class="level1">
 <h1><strong>Methodology</strong></h1>
 <p>Patching algorithm calculates the optimal patch height and width based on the epithelium mask. The patch dimensions are based on the maximum continuous width of white pixels (i.e., the epithelium area) and the overall epithelium area in the mask. The patches are used to analyze and visualize the epithelium coverage, and they are placed on the images based on optimal patch dimensions and overlap calculations. Patching algorithm takes in processed images of the epithelium from the stained cells and applies a sliding kernel across the image The optimal patch height is the maximum width of continuous white pixels (in each row), with a minimum height of 100. The patch width is calculated by dividing the epithelium area by 100 and the optimal patch height.</p>
 <section id="description-of-code" class="level2">
 <h2 class="anchored" data-anchor-id="description-of-code">Description of code</h2>
-<p>Directories: Defines input_folder (where processed images are stored) and output_folder (where the results will be saved).</p>
-<p>Directory structure: <code>Step 4/ Processed_images_sub Filtered_images epithelium_patches_6_hori.py</code></p>
+<p><strong>Directories:</strong></p>
+<p>Defines input_folder (where processed images are stored) and output_folder (where the results will be saved).</p>
+<p><strong>Directory structure:</strong></p>
+<p>Images: <code>Step 4/ Processed_images_sub</code></p>
+<p>Filtered_images: <code>epithelium_patches_6_hori.py</code></p>
 </section>
 <section id="step-by-step-manual" class="level2">
 <h2 class="anchored" data-anchor-id="step-by-step-manual">Step-by-Step Manual</h2>
-<p>Place all desired sample images in “filtered_images” folder</p>
-<p>Open and run <code>epithelium_patches_6_hori.py</code>. Dependencies include cv2, numpy, os</p>
-<p>Find processed images in <code>processed_images_sub</code></p>
+<ol type="1">
+<li><p>Place all desired sample images in “filtered_images” folder</p></li>
+<li><p>Open and run <code>epithelium_patches_6_hori.py</code>. Dependencies include cv2, numpy, os</p></li>
+<li><p>Find processed images in <code>processed_images_sub</code></p></li>
+</ol>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Step4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 </section>
 <section id="code-explanation" class="level2">
 <h2 class="anchored" data-anchor-id="code-explanation">Code Explanation</h2>
