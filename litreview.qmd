@@ -6,8 +6,6 @@ title: "Literature Review"
 
 ![](images/litreview/MAXPOOL.png)
 
-<img src="images/litreview/MAXPOOL.png" width="300" height="200" />
-
 [**Large Batch and Patch Size Training for Medical Image Segmentation:**]{.underline} 
 
 [**Article Link**](https://arxiv.org/pdf/2210.13364)
