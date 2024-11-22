@@ -6,6 +6,18 @@ title: "Step 2: Matching slices across stains"
 
 ![](images/Step2.png){fig-align="center"}
 
+# API for Matching Slices
+
+## Step-by-Step Manual
+
+![](images/step%202%20images/step%202%20API%20image%201.png){fig-align="center"}
+
+![](images/step%202%20images/step%202%20API%20image%202.png){fig-align="center"}
+
+### Results
+
+![](images/step%202%20images/step%202%20API%20image%203.png){fig-align="center"}
+
 # **Methodology**
 
 Two codes required:
@@ -14,15 +26,13 @@ Two codes required:
 
 -   `match_pipeline-2.py`
 
-## Step-by-Step Manual
-
 Follow these steps to use the pipeline to generate matching slices for all patients or a specific subset:
 
 **1. Prepare Image Data:** Place .tif image files in the designated folder (e.g., processed_images). Ensure that each patient has images for all three stains (H&E, Melanin, Sox10).
 
 **2. Choose Full or Subset Processing:**
 
-For All Patients: Place all images in the same `processed_images` directory. 
+For All Patients: Place all images in the same `processed_images` directory.
 
 For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., `processed_images/patient1`, `processed_images/patient2`). Run the Pipeline.
 
@@ -41,13 +51,3 @@ All tissue slices from patient h2114153:
 ![](images/step%202%20images//slice1.png){width="125"} ![](images/step%202%20images//slice2.png){width="121"} ![](images/step%202%20images//slice3.png){width="113"}
 
 ![](images/Step2.png){fig-align="center"}
-
-## API
-
-![](images/step 2 images/step 2 API image 1.png){fig-align="center"}
-
-![](images/step 2 images/step 2 API image 2.png){fig-align="center"}
-
-### API Results
-
-![](images/step 2 images/step 2 API image 3.png){fig-align="center"}
