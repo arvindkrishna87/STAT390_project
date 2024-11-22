@@ -2,10 +2,9 @@
 title: "Literature Review"
 ---
 
-## Adaptive Pooling: 
+## Adaptive Pooling: (Used in Step 4)
 
-
-[**Large Batch and Patch Size Training for Medical Image Segmentation:**]{.underline}
+[**Large Batch and Patch Size Training for Medical Image Segmentation:**]{.underline} 
 
 [**Article Link**](https://arxiv.org/pdf/2210.13364)
 
@@ -17,7 +16,7 @@ title: "Literature Review"
 
 -   This would ensure that each region of the image is analyzed at an optimal scale, leading to potentially higher accuracy without the drawbacks of uniform large patches.
 
-## Cross View Transformer:
+## Cross View Transformer: (Used in Step 4)
 
 ### Advantages of square patches:
 
@@ -42,7 +41,7 @@ In medical imaging applications, image patches are usually square regions whose 
 
 Square patches are easier to integrate into standard CNNs and preprocessing workflows, making them suitable for general histopathological analysis. Rectangular patches, while more complex to implement, offer better feature representation for specific tissue structures. 
 
-## Padding effect: 
+## Padding effect: (Used in Step 4)
 
 [**CNNs and Image Classification:**]{.underline}
 
