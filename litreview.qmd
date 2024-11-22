@@ -1,7 +1,8 @@
 ---
 title: "Literature Review"
 ---
- 
+ :::{.callout-note collapse=true}
+
 ## Adaptive Pooling: (Used in Step 4)
 
 ![](images/litreview/MAXPOOL.png)
@@ -17,6 +18,10 @@ title: "Literature Review"
 -   By using adaptive pooling, you could manage patch sizes more dynamically, potentially overcoming the plateau effect observed with fixed large patch sizes.
 
 -   This would ensure that each region of the image is analyzed at an optimal scale, leading to potentially higher accuracy without the drawbacks of uniform large patches.
+
+:::
+
+ :::{.callout-note collapse=true}
 
 ## Cross View Transformer: (Used in Step 4)
 
@@ -44,6 +49,9 @@ allowing them to be used in the classification model.
 
 **Summary:** Ultimately, the multi-resolution network will capture different levels of detail from each stain, ensuring that both fine cellular structures and broader tissue architectures are represented. This helps to make the model robust to slight size or scale variations in patches. The cross-view alignment will allow our algorithm to “match” regions across different stains based on learned features rather than exact spatial coordinates. This is especially helpful when we have patches of different stains that aren’t perfectly aligned but should correspond to the same tissue region.
 
+ :::
+
+ :::{.callout-note collapse=true}
 
 ## Advantages of square patches: (Used in step 4)
 
@@ -68,6 +76,10 @@ In medical imaging applications, image patches are usually square regions whose 
 [**Comparative Analysis**]{.underline}		
 
 Square patches are easier to integrate into standard CNNs and preprocessing workflows, making them suitable for general histopathological analysis. Rectangular patches, while more complex to implement, offer better feature representation for specific tissue structures. 
+
+ :::
+
+ :::{.callout-note collapse=true}
 
 ## Padding effect: (Used in Step 4)
 
@@ -132,3 +144,5 @@ Padding plays a critical role in maintaining the integrity of the data passed th
 -   "Position, Padding and Predictions: A Deeper Look at Position Information in CNNs" (2024): This research explored how padding influences the encoding of position information in CNNs. The study revealed that zero padding drives CNNs to encode position information in their internal representations, while a lack of padding precludes position encoding. This finding suggests that padding not only affects spatial dimensions but also the way positional information is processed within the network.
 
 -   "Effects of Boundary Conditions in Fully Convolutional Networks for Spatio-Temporal Physical Modeling" (2021): This study examined various padding strategies, including reflection padding, within the context of spatio-temporal physical modeling using fully convolutional networks. The researchers found that reflection padding significantly helped in preserving edge continuity and reduced boundary artifacts, resulting in improved network generalization and accuracy. This effect was particularly notable in tasks requiring precise edge information, such as fluid dynamics simulations.
+
+ :::
