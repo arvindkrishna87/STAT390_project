@@ -92,7 +92,7 @@ process up to 20 at a time to reduce the memory load.
 
 ![](images/step 1 images/step_1_image_3.png){fig-align="center"}
 
-## Step 2: Analyze results and troubleshoot
+### Step 2: Analyze results and troubleshoot
 
 Once you run the automation for your images, I check in QuPath directly
 image by image to ensure all data was properly exported. You should also
