@@ -1,6 +1,7 @@
 ---
 title: "Literature Review"
 ---
+
 :::{.callout-note collapse=true}
 
 ## Adaptive Pooling: (Used in Step 4)
