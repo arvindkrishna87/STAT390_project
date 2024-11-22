@@ -17,14 +17,16 @@ Slice**](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwes
 
 # **Methodology**
 
-## Step-by-Step Manual
+Using QuPath, we uploaded the data which was in WSIs. We created an automated tool using groovy, which extracts each individual tissue from the WSIs and places all the extracted tissue slices in a new data folder.
+
+## **Step-by-Step Manual**
+
+Codes required:
+
+- `tissues_1.json`, `tissues_2.json` and `automate_export_newest.groovy` 
+- New for other stain types to expedite process: `existing_annotations.groovy`
 
 ### Setting up in QuPath
-
-Images in a QuPath Project --\> `processed_data/tissue_image.tif`
-Contains `tissues_1.json`, `tissues_2.json` and
-`automate_export_newest.groovy` New for other stain types to expedite
-process: `existing_annotations.groovy`
 
 1.  Open a project that has all your images
 2.  Put `tissue_2.json` into
