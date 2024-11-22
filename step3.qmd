@@ -4,21 +4,29 @@ title: "Step 3: Epithelium Detection"
 
 **Aim: To separate the epithelium from the stroma in each tissue.**
 
+![](images/h2114153h&e_ROI_5.png){fig-align="center"}
+
 ![](images/Step3.png){fig-align="center"}
+
+## API for Epithelium Extraction
+
+### Step-by-Step Manual
+
+![](images/step%203%20images/step%203%20API%20image%201.png){fig-align="center"}
 
 # **Methodology**
 
-Automated separation of tissues using color space binning and morphological operations.
+We automated a process to separate tissue regions using automated image processing. The RGB image is converted to YCrCb color space to make tissue features easier to identify. Background regions are removed using brightness thresholds and smoothing techniques. Stroma is isolated by analyzing the red chroma (Cr) channel and selecting specific color ranges. Epithelia are identified by focusing on adjacent color ranges and refining the mask to remove noise. The results are visualized as overlays on the original image, showing stroma and epithelia separately. This process is automated for multiple images, with efficient memory management for large datasets.
 
-## Step-by-Step Manual
+Codes required:
 
-**Use the API**
+-   `Presentation 6 - Generalizing Epithelium Extraction.ipynb`
+-   `Presentation 7 - Extracting from Melan-A.ipynb`
+-   `Presentation 7 - Extracting from Sox-10.ipynb`
 
-![](images/step 3 images/step 3 API image 1.png){fig-align="center"}
+Each code does a different stain.
 
 ## Code Explanation
-
-### Separation Process
 
 **Preprocessing and Color Space Transformation**
 
@@ -33,8 +41,6 @@ Automated separation of tissues using color space binning and morphological oper
 -   **Cr:** Red chroma component
 
 -   **Cb:** Blue chroma component
-
-![](images/step 3 images/rgb.png)
 
 **Background Detection Aim:** Separate the tissue regions from the background to reduce noise in the analysis.
 
@@ -109,3 +115,7 @@ Automated separation of tissues using color space binning and morphological oper
 **Memory Management:**
 
 -   To prevent memory overload, unnecessary variables are deleted, and garbage collection is manually triggered at the end of each iteration.
+
+## Results
+
+![](images/h2114153h&e_ROI_5.png){fig-align="center"}
