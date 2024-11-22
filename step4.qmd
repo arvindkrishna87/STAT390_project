@@ -5,10 +5,28 @@ editor:
     wrap: 72
 ---
 
-**Aim: Applies horizontal/vertical patching across the matched
-epithelia.**
+**Aim: Applies horizontal/vertical patching across the matched and
+oriented epithelia.**
 
 ![](images/Step4.png){fig-align="center"}
+
+# **Necessary Steps Before Patching (To Do)**
+
+## 1. Pathologist Team Annotations
+
+Before this step, we will send matched and extracted epithelium slices
+to the **pathologist team** to annotate the regions.
+
+![](images/Annotations.png){fig-align="center"}
+
+## 2. Orientation
+
+After this we will orient the images to be aligned evenly before
+patching.
+
+![](images/Orient.png){fig-align="center"}
+
+Once these steps are complete, we can begin patching.
 
 # **Methodology**
 
@@ -26,20 +44,29 @@ the epithelium area by 100 and the optimal patch height.
 
 ## Description of code
 
-Directories: Defines input_folder (where processed images are stored)
-and output_folder (where the results will be saved).
+**Directories:**
 
-Directory structure:
-`Step 4/ Processed_images_sub Filtered_images epithelium_patches_6_hori.py`
+Defines input_folder (where processed images are stored) and
+output_folder (where the results will be saved).
+
+**Directory structure:**
+
+Images: `Step 4/ Processed_images_sub`
+
+Filtered_images: `epithelium_patches_6_hori.py`
 
 ## Step-by-Step Manual
 
-Place all desired sample images in “filtered_images” folder
+1.  Place all desired sample images in “filtered_images” folder
 
-Open and run `epithelium_patches_6_hori.py`. Dependencies include cv2,
-numpy, os
+2.  Open and run `epithelium_patches_6_hori.py`. Dependencies include
+    cv2, numpy, os
 
-Find processed images in `processed_images_sub`
+3.  Find processed images in `processed_images_sub`
+
+## Results
+
+![](images/Step4.png){fig-align="center"}
 
 ## Code Explanation
 
