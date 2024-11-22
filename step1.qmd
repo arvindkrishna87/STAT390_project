@@ -5,7 +5,15 @@ editor:
     wrap: 72
 ---
 
-**Aim**: To extract the tissue slices from the WSI (Whole slide images)
+**Aim: To extract the tissue slices from the Whole slide images (WSI)**
+
+![](images/Step1.png)
+
+[**Folder of Extracted
+Slices**](https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FProcessed%20data%20%28slices%20extracted%29&ga=1)
+
+[**Tracker Data of Status of Each
+Slice**](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&file=data_uploaded_tracker.xlsx&action=default&mobileredirect=true)
 
 # **Methodology**
 
@@ -32,7 +40,7 @@ process: `existing_annotations.groovy`
     project
 7.  Data will save in processed_data dir in your base project dir
 
-### To deal with more difficult stain types if you decide to manually annotate:
+#### To deal with more difficult stain types if you decide to manually annotate:
 
 Runs like `automate_export_newest.groovy` but only if you already have
 annotations
@@ -49,7 +57,7 @@ annotations
     project
 6.  Data will save in processed_data dir in your base project dir
 
-### To create a new pixel classifier or modify (optional):
+#### To create a new pixel classifier or modify (optional):
 
 1.  QuPath Interface top bar --\> Classify --\> Pixel Classification
     --\> Create thresholder
@@ -57,18 +65,18 @@ annotations
     can work from there
 3.  Save this and then replace `tissues_2` in .groovy script.
 
-# Extraction Process
+## Extraction Process
 
-## Step 1: First pass of algorithm
+### Step 1: First pass of algorithm
 
 Following the instructions above, open your image in QuPath and run this
 “annotation export newest” groovy script.
 
-![](step%201%20images/step_1_image_1.png)
+![](images/step 1 images/step_1_image_1.png){fig-align="center"}
 
 Select Run, then Run For Project
 
-![](step%201%20images/step_1_image_2.png)
+![](images/step 1 images/step_1_image_2.png){fig-align="center"}
 
 ***Note*****:** If your automation fails while running due to a
 particularly large image or systematically fails on a stain type (i.e.
@@ -82,7 +90,7 @@ downsample parameter
 Select your images to process. Not counting the mask images, I tended to
 process up to 20 at a time to reduce the memory load.
 
-![](step%201%20images/step_1_image_3.png)
+![](images/step 1 images/step_1_image_3.png){fig-align="center"}
 
 ## Step 2: Analyze results and troubleshoot
 
@@ -100,7 +108,7 @@ Slice](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northweste
 **Case 1**: perfect ROI identification Self-explanatory, all ROIs were
 successfully found and exported Example: Liverpool h1831023
 
-![](step%201%20images/step_1_image_4.png){fig-align="center"}
+![](images/step 1 images/step_1_image_4.png){fig-align="center"}
 
 **Case 2**: merging Some of the region was not selected by the algorithm
 but belongs in the tissue sample This has to be determined across stains
@@ -109,14 +117,14 @@ merged in another However, we don’t want to over-merge as the amount of
 whitespace makes matching difficult Example of merging: h1846151 small
 hanging pieces are okay to merge
 
-![](step%201%20images/step_1_image_5.png)
+![](images/step 1 images/step_1_image_5.png){fig-align="center"}
 
 Example of when to not merge: h1810898B because sox10 looks similar to
 unmerged h&e
 
-![](step%201%20images/step_1_image_6.png)
+![](images/step 1 images/step_1_image_6.png){fig-align="center"}
 
-![](step%201%20images/step_1_image_7.png)
+![](images/step 1 images/step_1_image_7.png){fig-align="center"}
 
 Then, rerun “existing annotations” groovy script to export faster and
 delete remaining ROIs in your file directory
@@ -124,11 +132,11 @@ delete remaining ROIs in your file directory
 **Case 3**: deletion For any of the following types of areas, delete the
 annotations in QuPath: Blank images Example: Sheffield 77
 
-![](step%201%20images/step_1_image_8.png)
+![](images/step 1 images/step_1_image_8.png){fig-align="center"}
 
 Splotches (shadows on the glass? blurs?)
 
-![](step%201%20images/step_1_image_9.png)
+![](images/step 1 images/step_1_image_9.png){fig-align="center"}
 
 Then, rerun “existing annotations” groovy script to export faster and
 delete remaining ROIs in your file directory to ensure consistent ROI
@@ -142,12 +150,12 @@ annotations” groovy script to export faster and delete remaining ROIs in
 your file directory to ensure consistent ROI numbering Example:
 selecting around the hair in h2114185 h&e
 
-![](step%201%20images/step_1_image_10.png)
+![](images/step 1 images/step_1_image_10.png){fig-align="center"}
 
 Example: h1845484 sox10: selection reduces the splotches’ area and
 prevents them from being exported extraneously
 
-![](step%201%20images/step_1_image_11.png)
+![](images/step 1 images/step_1_image_11.png){fig-align="center"}
 
 **Case 5**: manual selection from image too large If Qupath runs out of
 memory when trying to run images or is stuck on a particular one (ie
@@ -160,7 +168,7 @@ Example: reference tissues in most of Sheffield sox10–select actual
 tissue manually instead of running the algorithm–the large files like
 this will prevent efficient exports
 
-![](step%201%20images/step_1_image_12.png)
+![](images/step 1 images/step_1_image_12.png){fig-align="center"}
 
 **Case 6**: not even manual selection works to export large image Try to
 export each annotated area at a time by selecting, selecting class →
@@ -169,9 +177,3 @@ downsample by 2.0 factor max Then, rerun “existing annotations” groovy
 script to export faster and delete remaining ROIs in your file directory
 to ensure consistent ROI numbering Example: Sheffield 85 (lots of
 samples, junk images, and large files)
-
-[Tracker Data of Status of Each
-Slice](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&file=data_uploaded_tracker.xlsx&action=default&mobileredirect=true)
-
-[Folder of Extracted
-Slices](https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FProcessed%20data%20%28slices%20extracted%29&ga=1)
