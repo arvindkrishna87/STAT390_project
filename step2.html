@@ -136,9 +136,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#api-for-matching-slices" id="toc-api-for-matching-slices" class="nav-link active" data-scroll-target="#api-for-matching-slices">API for Matching Slices</a>
+  <li><a href="#api-for-matching-slices" id="toc-api-for-matching-slices" class="nav-link active" data-scroll-target="#api-for-matching-slices">API for Matching Slices</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><strong>Methodology</strong></a>
   <ul class="collapse">
-  <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1">Results</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -173,33 +174,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="api-for-matching-slices" class="level1">
 <h1>API for Matching Slices</h1>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Step-by-Step Manual
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/step 2 images/step 2 API image 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/step 2 images/step 2 API image 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<section id="results" class="level3">
-<h3 class="anchored" data-anchor-id="results">Results</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/step 2 images/step 2 API image 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/API.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section>
@@ -216,12 +193,8 @@ Step-by-Step Manual
 <p>For All Patients: Place all images in the same <code>processed_images</code> directory.</p>
 <p>For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., <code>processed_images/patient1</code>, <code>processed_images/patient2</code>). Run the Pipeline.</p>
 <p><strong>3. Run <code>match_pipeline.py</code>.</strong> A GUI will prompt you to select the directory containing the images. Open <strong><code>NoahsMatching.ipynb</code></strong> in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.</p>
-</section>
-</div>
-</div>
-</div>
-<section id="results-1" class="level2">
-<h2 class="anchored" data-anchor-id="results-1">Results</h2>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
 <p><strong>Example:</strong></p>
 <p>All tissue slices from patient h2114153:</p>
 <p><img src="images/step 2 images/slice1.png" class="img-fluid" width="125"> <img src="images/step 2 images//slice4.png" class="img-fluid" width="90"> <img src="images/step 2 images//slice5.png" class="img-fluid" width="106"> <img src="images/step 2 images//slice6.png" class="img-fluid" width="105"> <img src="images/step 2 images//slice2.png" class="img-fluid" width="121"> <img src="images/step 2 images//slice7.png" class="img-fluid" width="100"> <img src="images/step 2 images//slice3.png" class="img-fluid" width="113"></p>
