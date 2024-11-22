@@ -4,7 +4,6 @@ title: "About"
 
 This is the website for the Fall 2024 STAT390 project!
 
-<img src="images/dataicon.png" width="200" height="100" />
 
 ## People
 
