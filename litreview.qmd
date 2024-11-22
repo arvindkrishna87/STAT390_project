@@ -4,9 +4,9 @@ title: "Literature Review"
 
 ## Adaptive Pooling: 
 
-[**Large Batch and Patch Size Training for Medical Image Segmentation:**]{.underline}
+**Large Batch and Patch Size Training for Medical Image Segmentation:**
 
-[**Link:**]{.underline} https://arxiv.org/pdf/2210.13364
+[**Article Link**](https://arxiv.org/pdf/2210.13364)
 
 -   This article highlights the performance improvements gained by adjusting patch and batch sizes, suggesting that larger patches improve segmentation accuracy up to a certain limit, beyond which performance plateaus or even decreases.
 
@@ -16,15 +16,14 @@ title: "Literature Review"
 
 -   This would ensure that each region of the image is analyzed at an optimal scale, leading to potentially higher accuracy without the drawbacks of uniform large patches.
 
-## **Cross View Transformer:** 
+## Cross View Transformer:
 
-## **Advantages of square patches:**
+### Advantages of square patches:
 
-[**Link:**]{.underline} https://blogs.mathworks.com/deep-learning/2021/11/02/handling-very-large-images
 
--in-medical-imaging-applications/
+[**Article Link:**](https://blogs.mathworks.com/deep-learning/2021/11/02/handling-very-large-images)
 
--   Image patches are usually square regions whose size can vary from 32 × 32 pixels up to 10,000 × 10,000 pixels (256 × 256 pixels is a typical patch size
+In medical imaging applications, image patches are usually square regions whose size can vary from 32 × 32 pixels up to 10,000 × 10,000 pixels (256 × 256 pixels is a typical patch size
 
 [**Square Patches: Common Practice and Benefits**]{.underline}
 
