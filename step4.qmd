@@ -6,7 +6,7 @@ title: "Step 3: Epithelium Detection"
 
 ![](images/Step3.png){fig-align="center"}
 
-# **Methodology**:
+# **Methodology**
 
 Automated separation of tissues using color space binning and morphological operations.
 
