@@ -132,14 +132,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong></a>
+  <li><a href="#api-for-matching-slices" id="toc-api-for-matching-slices" class="nav-link active" data-scroll-target="#api-for-matching-slices">API for Matching Slices</a>
   <ul class="collapse">
-  <li><a href="#step-by-step-manual" id="toc-step-by-step-manual" class="nav-link" data-scroll-target="#step-by-step-manual">Step-by-Step Manual</a></li>
+  <li><a href="#step-by-step-manual" id="toc-step-by-step-manual" class="nav-link" data-scroll-target="#step-by-step-manual">Step-by-Step Manual</a>
+  <ul class="collapse">
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a>
-  <ul class="collapse">
-  <li><a href="#api-results" id="toc-api-results" class="nav-link" data-scroll-target="#api-results">API Results</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><strong>Methodology</strong></a>
+  <ul class="collapse">
+  <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1">Results</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -172,37 +174,10 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/Step2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<section id="methodology" class="level1">
-<h1><strong>Methodology</strong></h1>
-<p>Two codes required:</p>
-<ul>
-<li><p><code>Team4Matching.ipynb</code></p></li>
-<li><p><code>match_pipeline-2.py</code></p></li>
-</ul>
+<section id="api-for-matching-slices" class="level1">
+<h1>API for Matching Slices</h1>
 <section id="step-by-step-manual" class="level2">
 <h2 class="anchored" data-anchor-id="step-by-step-manual">Step-by-Step Manual</h2>
-<p>Follow these steps to use the pipeline to generate matching slices for all patients or a specific subset:</p>
-<p><strong>1. Prepare Image Data:</strong> Place .tif image files in the designated folder (e.g., processed_images). Ensure that each patient has images for all three stains (H&amp;E, Melanin, Sox10).</p>
-<p><strong>2. Choose Full or Subset Processing:</strong></p>
-<p>For All Patients: Place all images in the same <code>processed_images</code> directory.</p>
-<p>For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., <code>processed_images/patient1</code>, <code>processed_images/patient2</code>). Run the Pipeline.</p>
-<p><strong>3. Run <code>match_pipeline.py</code>.</strong> A GUI will prompt you to select the directory containing the images. Open <strong><code>NoahsMatching.ipynb</code></strong> in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.</p>
-</section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
-<p><strong>Example:</strong></p>
-<p>All tissue slices from patient h2114153:</p>
-<p><img src="images/step 2 images/slice1.png" class="img-fluid" width="125"> <img src="images/step 2 images//slice4.png" class="img-fluid" width="90"> <img src="images/step 2 images//slice5.png" class="img-fluid" width="106"> <img src="images/step 2 images//slice6.png" class="img-fluid" width="105"> <img src="images/step 2 images//slice2.png" class="img-fluid" width="121"> <img src="images/step 2 images//slice7.png" class="img-fluid" width="100"> <img src="images/step 2 images//slice3.png" class="img-fluid" width="113"></p>
-<p><strong>Successfully matched results</strong></p>
-<p><img src="images/step 2 images//slice1.png" class="img-fluid" width="125"> <img src="images/step 2 images//slice2.png" class="img-fluid" width="121"> <img src="images/step 2 images//slice3.png" class="img-fluid" width="113"></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/Step2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="api" class="level2">
-<h2 class="anchored" data-anchor-id="api">API</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/step 2 images/step 2 API image 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -213,16 +188,43 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/step 2 images/step 2 API image 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<section id="api-results" class="level3">
-<h3 class="anchored" data-anchor-id="api-results">API Results</h3>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">Results</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/step 2 images/step 2 API image 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-
-
 </section>
+</section>
+</section>
+<section id="methodology" class="level1">
+<h1><strong>Methodology</strong></h1>
+<p>Two codes required:</p>
+<ul>
+<li><p><code>Team4Matching.ipynb</code></p></li>
+<li><p><code>match_pipeline-2.py</code></p></li>
+</ul>
+<p>Follow these steps to use the pipeline to generate matching slices for all patients or a specific subset:</p>
+<p><strong>1. Prepare Image Data:</strong> Place .tif image files in the designated folder (e.g., processed_images). Ensure that each patient has images for all three stains (H&amp;E, Melanin, Sox10).</p>
+<p><strong>2. Choose Full or Subset Processing:</strong></p>
+<p>For All Patients: Place all images in the same <code>processed_images</code> directory.</p>
+<p>For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., <code>processed_images/patient1</code>, <code>processed_images/patient2</code>). Run the Pipeline.</p>
+<p><strong>3. Run <code>match_pipeline.py</code>.</strong> A GUI will prompt you to select the directory containing the images. Open <strong><code>NoahsMatching.ipynb</code></strong> in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.</p>
+<section id="results-1" class="level2">
+<h2 class="anchored" data-anchor-id="results-1">Results</h2>
+<p><strong>Example:</strong></p>
+<p>All tissue slices from patient h2114153:</p>
+<p><img src="images/step 2 images/slice1.png" class="img-fluid" width="125"> <img src="images/step 2 images//slice4.png" class="img-fluid" width="90"> <img src="images/step 2 images//slice5.png" class="img-fluid" width="106"> <img src="images/step 2 images//slice6.png" class="img-fluid" width="105"> <img src="images/step 2 images//slice2.png" class="img-fluid" width="121"> <img src="images/step 2 images//slice7.png" class="img-fluid" width="100"> <img src="images/step 2 images//slice3.png" class="img-fluid" width="113"></p>
+<p><strong>Successfully matched results</strong></p>
+<p><img src="images/step 2 images//slice1.png" class="img-fluid" width="125"> <img src="images/step 2 images//slice2.png" class="img-fluid" width="121"> <img src="images/step 2 images//slice3.png" class="img-fluid" width="113"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Step2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+
+
 </section>
 </section>
 
