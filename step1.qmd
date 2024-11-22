@@ -17,6 +17,8 @@ Slice**](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwes
 
 # **Methodology**
 
+## **Step-by-Step Manual**
+
 ### Setting up in QuPath
 
 Images in a QuPath Project --\> `processed_data/tissue_image.tif`
@@ -65,8 +67,6 @@ annotations
     can work from there
 3.  Save this and then replace `tissues_2` in .groovy script.
 
-## Extraction Process
-
 ### Step 1: First pass of algorithm
 
 Following the instructions above, open your image in QuPath and run this
@@ -103,7 +103,7 @@ with how we dealt with and logged processing these images in the
 [Tracker Data of Status of Each
 Slice](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&file=data_uploaded_tracker.xlsx&action=default&mobileredirect=true)
 
-# Result Cases
+## Result Cases
 
 **Case 1**: perfect ROI identification Self-explanatory, all ROIs were
 successfully found and exported Example: Liverpool h1831023
