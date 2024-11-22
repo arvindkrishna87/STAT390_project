@@ -152,15 +152,19 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Aim: The objective of the project is to develop a machine learning model to accurately classify Conjunctival melanocytic intraepithelial lesions (C-MIL) as per the WHO 2022 classification system. In layman’s terms, we want to identify the severity of potential eye cancer by looking at a particular eye tissue of the patient.</p>
-<p>The motivation behind the project is to provide a reproducible and accurate grading of C-MIL so that the most appropriate management plan for the patient can be developed. By improving the precision of lesion classification, our model has the potential to enhance patient outcomes and optimize treatment strategies</p>
+<p><strong>Aim: The objective of this project is to identify the severity of potential eye cancer by looking at a particular eye tissue of the patient.</strong></p>
+<p>In medical terms, we want to develop a machine learning model to accurately classify <em>Conjunctival melanocytic intraepithelial lesions (C-MIL)</em> as per the <em>WHO 2022 classification system</em>. Providing a reproducible and accurate grading of C-MIL will help doctors select the most appropriate management plan for the patient.</p>
 <p>The Northwestern University STAT390 Class of Fall 2024 has made the following progress on this project:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/HomeImage.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <ol type="1">
-<li>Extracting each tissue from the patient data using QuPath</li>
-<li>Matching tissue slices across the different stains (H&amp;E, Melan-A, Sox-10) for each patient if there is a correct match</li>
-<li>Detecting and extracting the epithelium for each tissue</li>
-<li>Apply patching across each epithelium for further examination</li>
-<li>TBD</li>
+<li>Extracting tissue slices from Whole Slice Images (WSI) using QuPath</li>
+<li>Matching tissue slices across the different stains (H&amp;E, Melan-A, Sox-10) for each patient when there is a correct match</li>
+<li>Detecting and extracting the epithelium and stroma for each tissue slice</li>
+<li>Apply patching across epithelium for matched slices</li>
 </ol>
 
 
