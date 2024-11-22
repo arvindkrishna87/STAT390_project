@@ -55,6 +55,8 @@ Images: `Step 4/ Processed_images_sub`
 
 Filtered_images: `epithelium_patches_6_hori.py`
 
+:::{.callout-note collapse=true}
+
 ## Step-by-Step Manual
 
 1.  Place all desired sample images in “filtered_images” folder
@@ -67,6 +69,10 @@ Filtered_images: `epithelium_patches_6_hori.py`
 ## Results
 
 ![](images/Step4.png){fig-align="center"}
+
+:::
+
+:::{.callout-note collapse=true}
 
 ## Code Explanation
 
@@ -134,3 +140,5 @@ images.
 used in the epithelium extraction. Other group members / team 6 have
 been working on ways to generalize this segment and can likely be
 combined.
+
+:::
