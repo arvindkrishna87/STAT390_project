@@ -9,13 +9,15 @@ In medical terms, we want to develop a machine learning model to accurately clas
 The Northwestern University STAT390 Class of Fall 2024 has made the following progress on this project:
 
 ![](images/HomeImage.png){fig-align="center"}
- 
+
 **Step 1:**  Extracting tissue slices from Whole Slice Images (**WSI**) using QuPath
 
-**Step 2:**  Matching tissue slices across the different stains (**H&E, Melan-A, Sox-10**) for each patient when there is a correct match. Then, orienting matched slices
+**Step 2:**  Matching similar tissue slices across the different stains (**H&E, Melan-A, Sox-10**) for each patient when there is a correct match. 
 
 **Step 3:**  Detecting and extracting the epithelium and stroma for each tissue slice
 
-**Step 4:**  Apply patching across epithelium for matched slices
+**Pathologist Team Step:** Annotating H&E slice with high grade, low grade, and benign regions
+
+**Step 4:**  Orienting matched slices and apply patching across epithelium for matched slices
 
 **Literature Review**: Researched adaptive pooling, cross view transformer, advantages of square patches, padding effect, etc.
