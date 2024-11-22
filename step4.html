@@ -137,7 +137,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#description-of-code" id="toc-description-of-code" class="nav-link" data-scroll-target="#description-of-code">Description of code</a></li>
   <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up">Set Up</a></li>
   <li><a href="#functions-explanations" id="toc-functions-explanations" class="nav-link" data-scroll-target="#functions-explanations">Functions Explanations:</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -164,7 +163,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Aim</strong>: Applies horizontal / vertical patching across the epithelium for later use in model.</p>
+<p><strong>Aim: Applies horizontal/vertical patching across the matched epithelia.</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Step4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <section id="methodology" class="level1">
 <h1><strong>Methodology</strong>:</h1>
 <p>Patching algorithm calculates the optimal patch height and width based on the epithelium mask. The patch dimensions are based on the maximum continuous width of white pixels (i.e., the epithelium area) and the overall epithelium area in the mask. The patches are used to analyze and visualize the epithelium coverage, and they are placed on the images based on optimal patch dimensions and overlap calculations. Patching algorithm takes in processed images of the epithelium from the stained cells and applies a sliding kernel across the image The optimal patch height is the maximum width of continuous white pixels (in each row), with a minimum height of 100. The patch width is calculated by dividing the epithelium area by 100 and the optimal patch height.</p>
@@ -196,10 +200,6 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Image Processing Loop:</strong> Loops through all image files in the input_folder with .tif, .jpg, or .png extensions. For each image, it processes the image and saves: the epithelium mask, the final image with mixed patches applied, the region outline image showing the patches’ locations.</p>
 <p>Prints a message indicating that the processing is complete for all images.</p>
 <p><strong>Hardcoding:</strong> Only hardcoded value relates to the color thresholding used in the epithelium extraction. Other group members / team 6 have been working on ways to generalize this segment and can likely be combined.</p>
-</section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
-<p>Images TBD</p>
 
 
 </section>
