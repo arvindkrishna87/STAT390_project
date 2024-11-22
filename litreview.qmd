@@ -4,7 +4,8 @@ title: "Literature Review"
 
 ## Adaptive Pooling: 
 
-**Large Batch and Patch Size Training for Medical Image Segmentation:**
+
+[**Large Batch and Patch Size Training for Medical Image Segmentation:**]{.underline}
 
 [**Article Link**](https://arxiv.org/pdf/2210.13364)
 
