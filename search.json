@@ -46,14 +46,7 @@
     "href": "step1.html#extraction-process",
     "title": "Step 1: Slice extraction",
     "section": "Extraction Process",
-    "text": "Extraction Process\n\nStep 1: First pass of algorithm\nFollowing the instructions above, open your image in QuPath and run this “annotation export newest” groovy script.\n\n\n\n\n\nSelect Run, then Run For Project\n\n\n\n\n\nNote: If your automation fails while running due to a particularly large image or systematically fails on a stain type (i.e. Sheffield Sox10–most fail because reference image annotation is too large to export), you have two options: Manually annotate and export images (more on this later) Downsample an annotated area (last resort, but can successfully downsample up to a factor of 2 to match stakeholder’s desired resolution), can do this directly by changing the downsample parameter\nSelect your images to process. Not counting the mask images, I tended to process up to 20 at a time to reduce the memory load."
-  },
-  {
-    "objectID": "step1.html#step-2-analyze-results-and-troubleshoot",
-    "href": "step1.html#step-2-analyze-results-and-troubleshoot",
-    "title": "Step 1: Slice extraction",
-    "section": "Step 2: Analyze results and troubleshoot",
-    "text": "Step 2: Analyze results and troubleshoot\nOnce you run the automation for your images, I check in QuPath directly image by image to ensure all data was properly exported. You should also check in the processed_images dir created in your Qupath project dir that no image was corrupted or too blurry. In order of manual work needed, here are the possible cases for your images. They correspond with how we dealt with and logged processing these images in the Tracker Data of Status of Each Slice"
+    "text": "Extraction Process\n\nStep 1: First pass of algorithm\nFollowing the instructions above, open your image in QuPath and run this “annotation export newest” groovy script.\n\n\n\n\n\nSelect Run, then Run For Project\n\n\n\n\n\nNote: If your automation fails while running due to a particularly large image or systematically fails on a stain type (i.e. Sheffield Sox10–most fail because reference image annotation is too large to export), you have two options: Manually annotate and export images (more on this later) Downsample an annotated area (last resort, but can successfully downsample up to a factor of 2 to match stakeholder’s desired resolution), can do this directly by changing the downsample parameter\nSelect your images to process. Not counting the mask images, I tended to process up to 20 at a time to reduce the memory load.\n\n\n\n\n\n\n\nStep 2: Analyze results and troubleshoot\nOnce you run the automation for your images, I check in QuPath directly image by image to ensure all data was properly exported. You should also check in the processed_images dir created in your Qupath project dir that no image was corrupted or too blurry. In order of manual work needed, here are the possible cases for your images. They correspond with how we dealt with and logged processing these images in the Tracker Data of Status of Each Slice"
   },
   {
     "objectID": "about.html",
