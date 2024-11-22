@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Literature Review – Fall 2024 STAT390 project</title>
+<title>Step 4: Patching – Fall 2024 STAT390 project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./step4.html" aria-current="page"> 
-<span class="menu-text">Literature Review</span></a>
+<span class="menu-text">Step 4: Patching</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./litreview.html"> 
@@ -132,12 +132,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#adaptive-pooling-used-in-step-4" id="toc-adaptive-pooling-used-in-step-4" class="nav-link active" data-scroll-target="#adaptive-pooling-used-in-step-4">Adaptive Pooling: (Used in Step 4)</a></li>
-  <li><a href="#cross-view-transformer-used-in-step-4" id="toc-cross-view-transformer-used-in-step-4" class="nav-link" data-scroll-target="#cross-view-transformer-used-in-step-4">Cross View Transformer: (Used in Step 4)</a>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong></a>
   <ul class="collapse">
-  <li><a href="#advantages-of-square-patches" id="toc-advantages-of-square-patches" class="nav-link" data-scroll-target="#advantages-of-square-patches">Advantages of square patches:</a></li>
+  <li><a href="#description-of-code" id="toc-description-of-code" class="nav-link" data-scroll-target="#description-of-code">Description of code</a></li>
+  <li><a href="#step-by-step-manual" id="toc-step-by-step-manual" class="nav-link" data-scroll-target="#step-by-step-manual">Step-by-Step Manual</a></li>
+  <li><a href="#code-explanation" id="toc-code-explanation" class="nav-link" data-scroll-target="#code-explanation">Code Explanation</a></li>
   </ul></li>
-  <li><a href="#padding-effect-used-in-step-4" id="toc-padding-effect-used-in-step-4" class="nav-link" data-scroll-target="#padding-effect-used-in-step-4"><strong>Padding effect:</strong> (Used in Step 4)</a></li>
   </ul>
 </nav>
     </div>
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Literature Review</h1>
+<h1 class="title">Step 4: Patching</h1>
 </div>
 
 
@@ -163,89 +163,46 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="adaptive-pooling-used-in-step-4" class="level2">
-<h2 class="anchored" data-anchor-id="adaptive-pooling-used-in-step-4">Adaptive Pooling: (Used in Step 4)</h2>
-<p><u><strong>Large Batch and Patch Size Training for Medical Image Segmentation:</strong></u></p>
-<p><a href="https://arxiv.org/pdf/2210.13364"><strong>Article Link</strong></a></p>
-<ul>
-<li><p>This article highlights the performance improvements gained by adjusting patch and batch sizes, suggesting that larger patches improve segmentation accuracy up to a certain limit, beyond which performance plateaus or even decreases.</p></li>
-<li><p>Adaptive pooling could be used to create variable patch sizes within a single image, enabling finer details in complex areas and larger patches for broader context in simpler areas.</p></li>
-<li><p>By using adaptive pooling, you could manage patch sizes more dynamically, potentially overcoming the plateau effect observed with fixed large patch sizes.</p></li>
-<li><p>This would ensure that each region of the image is analyzed at an optimal scale, leading to potentially higher accuracy without the drawbacks of uniform large patches.</p></li>
-</ul>
+<p><strong>Aim: Applies horizontal/vertical patching across the matched epithelia.</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Step4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<section id="methodology" class="level1">
+<h1><strong>Methodology</strong></h1>
+<p>Patching algorithm calculates the optimal patch height and width based on the epithelium mask. The patch dimensions are based on the maximum continuous width of white pixels (i.e., the epithelium area) and the overall epithelium area in the mask. The patches are used to analyze and visualize the epithelium coverage, and they are placed on the images based on optimal patch dimensions and overlap calculations. Patching algorithm takes in processed images of the epithelium from the stained cells and applies a sliding kernel across the image The optimal patch height is the maximum width of continuous white pixels (in each row), with a minimum height of 100. The patch width is calculated by dividing the epithelium area by 100 and the optimal patch height.</p>
+<section id="description-of-code" class="level2">
+<h2 class="anchored" data-anchor-id="description-of-code">Description of code</h2>
+<p>Directories: Defines input_folder (where processed images are stored) and output_folder (where the results will be saved).</p>
+<p>Directory structure: <code>Step 4/ Processed_images_sub Filtered_images epithelium_patches_6_hori.py</code></p>
 </section>
-<section id="cross-view-transformer-used-in-step-4" class="level2">
-<h2 class="anchored" data-anchor-id="cross-view-transformer-used-in-step-4">Cross View Transformer: (Used in Step 4)</h2>
-<section id="advantages-of-square-patches" class="level3">
-<h3 class="anchored" data-anchor-id="advantages-of-square-patches">Advantages of square patches:</h3>
-<p><a href="https://blogs.mathworks.com/deep-learning/2021/11/02/handling-very-large-images"><strong>Article Link:</strong></a></p>
-<p>In medical imaging applications, image patches are usually square regions whose size can vary from 32 × 32 pixels up to 10,000 × 10,000 pixels (256 × 256 pixels is a typical patch size</p>
-<p><u><strong>Square Patches: Common Practice and Benefits</strong></u></p>
-<ul>
-<li><p>Square patches are popular due to their simplicity and compatibility with standard convolutional neural network (CNN) architectures. They provide balanced feature extraction and are easy to preprocess and resize.</p></li>
-<li><p><strong>Study Reference</strong>: A study on patch-based classification using CNNs found that square patches offered efficient, balanced spatial representation for deep learning models (link.springer.com).</p></li>
-</ul>
-<p><u><strong>Rectangular Patches: Advantages and Considerations</strong></u></p>
-<ul>
-<li><p>Rectangular patches are beneficial for capturing elongated or directional structures in tissues, such as blood vessels or specific cellular arrangements. They can maximize context capture along a specific axis.</p></li>
-<li><p><strong>Study Reference</strong>: Research on adaptive patch extraction found that rectangular patches, when properly oriented, improved analysis accuracy for tissues with dominant directional features (arxiv.org).</p></li>
-</ul>
-<p><u><strong>Comparative Analysis</strong></u></p>
-<p>Square patches are easier to integrate into standard CNNs and preprocessing workflows, making them suitable for general histopathological analysis. Rectangular patches, while more complex to implement, offer better feature representation for specific tissue structures.&nbsp;</p>
+<section id="step-by-step-manual" class="level2">
+<h2 class="anchored" data-anchor-id="step-by-step-manual">Step-by-Step Manual</h2>
+<p>Place all desired sample images in “filtered_images” folder</p>
+<p>Open and run <code>epithelium_patches_6_hori.py</code>. Dependencies include cv2, numpy, os</p>
+<p>Find processed images in <code>processed_images_sub</code></p>
 </section>
-</section>
-<section id="padding-effect-used-in-step-4" class="level2">
-<h2 class="anchored" data-anchor-id="padding-effect-used-in-step-4"><strong>Padding effect:</strong> (Used in Step 4)</h2>
-<p><u><strong>CNNs and Image Classification:</strong></u></p>
-<p>Convolutional Neural Networks (CNNs) have emerged as a dominant architecture in the realm of image classification due to their capacity to capture hierarchical patterns in visual data. Their structure, characterized by convolutional layers, pooling layers, and fully connected layers, enables the effective extraction and learning of features such as edges, textures, and complex shapes. Image classification is critical in various applications, from medical imaging diagnostics to autonomous vehicle navigation and facial recognition technologies.</p>
-<p><u><strong>Role of Padding in CNNs:</strong></u></p>
-<p>Padding refers to the practice of adding extra pixels around the borders of an image before it is passed through a convolutional layer. This added border can be composed of zeros or other methods of pixel replication, and serves several important functions in the context of deep learning models. Padding affects how convolution operations treat the image boundaries, ensuring that every pixel, including those at the edges, receives the same level of processing as those in the center.</p>
-<p><u><strong>Types of Padding:</strong></u></p>
-<p><strong>Valid Padding (No Padding):</strong></p>
-<ul>
-<li>This type processes only the valid, central pixels of the image, avoiding the addition of extra pixels. The downside of valid padding is that it reduces the spatial dimensions of the image after each convolutional layer, potentially leading to loss of information and reduced feature maps.</li>
-</ul>
-<p><strong>Same Padding:</strong></p>
-<ul>
-<li>Same padding involves adding pixels around the border such that the output feature map has the same width and height as the input. This type of padding ensures that spatial dimensions are maintained throughout the network, allowing for deeper architectures to operate without diminishing the feature map size.</li>
-</ul>
-<p><strong>Zero Padding:</strong></p>
-<ul>
-<li>This is a specific type of same padding where the border pixels added are zeros. It is used to control the size of the output while ensuring that edge pixels contribute to feature extraction.</li>
-</ul>
-<p><strong>Reflection Padding:</strong></p>
-<ul>
-<li><p>Reflection padding is a type of padding where the pixel values along the borders of an image are mirrored, creating a natural extension of the image edges. This method is designed to preserve edge continuity, making it particularly beneficial for tasks where accurate edge processing is essential.</p></li>
-<li><p><strong>Visual Impact:</strong> The padded border reflects the nearest pixels from the original image, creating a seamless transition that better mimics natural image boundaries compared to zero padding.</p></li>
-<li><p><strong>Feature Extraction:</strong> Reflection padding enhances feature extraction by preserving the original edge information, allowing convolutional filters to process these pixels as part of the existing image. This continuity leads to stronger responses and better feature learning at the borders.</p></li>
-<li><p><strong>Use Cases and Benefits:</strong> Reflection padding is advantageous in scenarios where maintaining edge information is critical, such as in medical imaging or fine-grained image recognition tasks. Studies have demonstrated that using reflection padding can improve model performance, particularly for complex images where edge details carry significant information.</p></li>
-</ul>
-<p><u><strong>Impact of Padding on Image Classification Performance</strong></u></p>
-<p>Padding plays a critical role in maintaining the integrity of the data passed through CNNs and can significantly affect the model’s overall performance.</p>
-<p><strong>Preservation of Spatial Dimensions:</strong></p>
-<ul>
-<li>Same padding is particularly valuable because it prevents the reduction of image size across layers. This preservation is crucial when working with complex and deep networks where retaining spatial dimensions is necessary for accurate feature extraction.</li>
-</ul>
-<p><strong>Reduction in Information Loss:</strong></p>
-<ul>
-<li>Without padding, the edges of an image can receive less attention from convolutional layers, potentially leading to information loss. Padding mitigates this issue by providing a buffer around the image, ensuring that features at the borders are adequately processed and retained.</li>
-</ul>
-<p><strong>Improvement in Feature Extraction:</strong></p>
-<ul>
-<li>Research has shown that padding enhances the network’s ability to detect edge-related features, contributing to a more holistic understanding of the input image.</li>
-</ul>
-<p><strong>Computational Cost:</strong></p>
-<ul>
-<li>While padding ensures that the output feature map size remains the same as the input, it can increase computational complexity. Larger feature maps require more memory and processing power, especially in deep networks. This can impact the overall training time and computational cost of the model.</li>
-</ul>
-<p><u><strong>Padding References:</strong></u></p>
-<ul>
-<li><p>“The Impact of Padding on Image Classification by Using Pre-trained Convolutional Neural Networks” (2019): This study investigated the effect of pre-processing, specifically padding, on image classification using pre-trained CNN models. The authors proposed a padding pre-processing pipeline that improved classification performance on challenging images without the need for re-training the model or increasing the number of CNN parameters.</p></li>
-<li><p>“Position, Padding and Predictions: A Deeper Look at Position Information in CNNs” (2024): This research explored how padding influences the encoding of position information in CNNs. The study revealed that zero padding drives CNNs to encode position information in their internal representations, while a lack of padding precludes position encoding. This finding suggests that padding not only affects spatial dimensions but also the way positional information is processed within the network.</p></li>
-<li><p>“Effects of Boundary Conditions in Fully Convolutional Networks for Spatio-Temporal Physical Modeling” (2021): This study examined various padding strategies, including reflection padding, within the context of spatio-temporal physical modeling using fully convolutional networks. The researchers found that reflection padding significantly helped in preserving edge continuity and reduced boundary artifacts, resulting in improved network generalization and accuracy. This effect was particularly notable in tasks requiring precise edge information, such as fluid dynamics simulations.</p></li>
-</ul>
+<section id="code-explanation" class="level2">
+<h2 class="anchored" data-anchor-id="code-explanation">Code Explanation</h2>
+<p><strong>calculate_optimal_patch_dimensions(mask):</strong> Analyzes the epithelium mask to determine the optimal patch size for image processing. Finds the maximum continuous width of white pixels (epithelium) in each row to determine the optimal patch height. Calculates the patch width based on the total epithelium area, ensuring it’s large enough to cover meaningful portions of the image.</p>
+<p><strong>calculate_overlap(patch_coords, placed_patches):</strong> Checks if a new patch overlaps with any already placed patches. Returns True if the overlap area exceeds 10% of the patch’s total area, indicating that the patch should not be placed.</p>
+<p><strong>calculate_coverage(mask, patches):</strong> Calculates the coverage percentage of epithelium in the provided mask by summing the areas covered by all patches.Returns the percentage of epithelium covered by patches.</p>
+<p><strong>apply_patches(epithelium_mask, patch_height, patch_width, stride, orientation):</strong> Applies patches to the epithelium mask, either vertically or horizontally. Iterates over the image using a sliding window approach, placing patches where the epithelium ratio is 50% or more. Checks for overlaps using calculate_overlap and ensures patches are placed in non-overlapping areas.</p>
+<p><strong>process_image(image_path, output_image_path, output_mask_path, region_outline_path):</strong> Reads and Preprocesses Image: Loads the image, converts it to grayscale, applies Gaussian blur, and thresholds to create a binary mask.</p>
+<p><strong>Mask Cleaning:</strong> Applies morphological operations (close and open) to clean the mask.</p>
+<p><strong>Epithelium Detection:</strong> Finds contours, identifies the largest contour, and creates an epithelium mask.</p>
+<p><strong>Patch Calculation:</strong> Uses calculate_optimal_patch_dimensions to determine the optimal patch size and stride for patch placement.</p>
+<p><strong>Apply Patches:</strong> Uses apply_patches for both vertical and horizontal patch orientations and calculates the coverage for each.</p>
+<p><strong>Region Outline:</strong> Draws rectangles around regions in the original image and saves an image showing the regions where patches will be applied.</p>
+<p><strong>Draw Patches:</strong> Based on the coverage, selects the best orientation (vertical or horizontal) and draws patches on the image.</p>
+<p><strong>Save Output:</strong> Saves the final processed image with patches drawn, as well as the region outline image and the epithelium mask.</p>
+<p><strong>Image Processing Loop:</strong> Loops through all image files in the input_folder with .tif, .jpg, or .png extensions. For each image, it processes the image and saves: the epithelium mask, the final image with mixed patches applied, the region outline image showing the patches’ locations.</p>
+<p>Prints a message indicating that the processing is complete for all images.</p>
+<p><strong>Hardcoding:</strong> Only hardcoded value relates to the color thresholding used in the epithelium extraction. Other group members / team 6 have been working on ways to generalize this segment and can likely be combined.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
