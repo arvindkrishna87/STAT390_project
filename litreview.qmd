@@ -1,7 +1,7 @@
 ---
 title: "Literature Review"
 ---
-
+ 
 ## Adaptive Pooling: (Used in Step 4)
 
 [**Large Batch and Patch Size Training for Medical Image Segmentation:**]{.underline} 
