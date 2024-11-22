@@ -133,25 +133,25 @@
     "text": "This is the website for the Fall 2024 STAT390 project!"
   },
   {
-    "objectID": "about.html#team",
-    "href": "about.html#team",
+    "objectID": "about.html#people",
+    "href": "about.html#people",
     "title": "About",
-    "section": "Team",
-    "text": "Team\nProfessor and Project Leader: Arvind Krishna\nTeam Members:\nMarianne Cano, Lauren Gomez, Rayyana Hassan, Baron Patterson, Cara Chang, Eli Nacar, Kenny Yeon, Luna Nguyen, Teresa Pan, Emma Drisko, Ally Bardas, Diego Goldfrank, Andrew Luke, Maddy Gallagher, Sarah Abdulwahid, Noah Schulhof, Christina Tzavara, Faith Cramer, Aryaman Chawla, Parth Patel, Atharva Weling, Kyla Bruno, Kevin Li, Alyssa Shou, Annie Xia, Alex Devorsetz, Kelly Meng\nStakeholders: Dr. Yamini Krishna, Dr. He Zhao, Prashant Kumar"
+    "section": "People",
+    "text": "People\nProfessor and Project Leader: Arvind Krishna\nTeam Members:\nMarianne Cano, Lauren Gomez, Rayyana Hassan, Baron Patterson, Cara Chang, Eli Nacar, Kenny Yeon, Luna Nguyen, Teresa Pan, Emma Drisko, Ally Bardas, Diego Goldfrank, Andrew Luke, Maddy Gallagher, Sarah Abdulwahid, Noah Schulhof, Christina Tzavara, Faith Cramer, Aryaman Chawla, Parth Patel, Atharva Weling, Kyla Bruno, Kevin Li, Alyssa Shou, Annie Xia, Alex Devorsetz, Kelly Meng\nStakeholders: Dr. Yamini Krishna, Dr. He Zhao, Prashant Kumar"
+  },
+  {
+    "objectID": "about.html#github-and-onedrive",
+    "href": "about.html#github-and-onedrive",
+    "title": "About",
+    "section": "GitHub and OneDrive",
+    "text": "GitHub and OneDrive\nThis github contains all the necessary code and algorithms from our progress:\nGitHub\nThis OneDrive contains all data and processed folders from our progress:\nOneDrive"
   },
   {
     "objectID": "about.html#data-overview",
     "href": "about.html#data-overview",
     "title": "About",
     "section": "Data overview",
-    "text": "Data overview\nData Source\nData consists of 105 cases from 97 patients. Below are some statistics of the data:\n\n60 women (age range: 23-93 years; median 65; mean 61.5) and 37 men (age range: 31-91 years; median 68; mean 66.5)\nThe ethnic group mix comprised of the following: 88 White Caucasian, 4 Black, 2 South Asian, 1 Inuit, 1 Mixed race, and 1 Unspecified\n\nThe data corresponds to patients in the following 3 ocular oncology/pathology centers:\n\nLiverpool University Hospitals NHS Foundation Trust (Liverpool; cases from 2018 to 2021),\nRoyal Hallamshire Hospital (Sheffield; from 2011 to 2021), and\nRigshospitalet (Copenhagen; from 1996 to 2021)\n\nFor each patient, a tissue is taken from their conjunctiva. The tissue is sliced into multiple slices. Multiple slices are used so that each slice can be analyzed separately and there is more evidence to support the conclusion, i.e., the classification of the C-MIL."
-  },
-  {
-    "objectID": "about.html#team-github",
-    "href": "about.html#team-github",
-    "title": "About",
-    "section": "Team GitHub",
-    "text": "Team GitHub\nGitHub\nThis github contains all necessary files"
+    "text": "Data overview\nData consists of 105 cases from 97 patients. Below are some statistics of the data:\n\n60 women (age range: 23-93 years; median 65; mean 61.5) and 37 men (age range: 31-91 years; median 68; mean 66.5)\nThe ethnic group mix comprised of the following: 88 White Caucasian, 4 Black, 2 South Asian, 1 Inuit, 1 Mixed race, and 1 Unspecified\n\nThe data corresponds to patients in the following 3 ocular oncology/pathology centers:\n\nLiverpool University Hospitals NHS Foundation Trust (Liverpool; cases from 2018 to 2021),\nRoyal Hallamshire Hospital (Sheffield; from 2011 to 2021), and\nRigshospitalet (Copenhagen; from 1996 to 2021)\n\nFor each patient, a tissue is taken from their conjunctiva. The tissue is sliced into multiple slices. Multiple slices are used so that each slice can be analyzed separately and there is more evidence to support the conclusion, i.e., the classification of the C-MIL.\nData"
   },
   {
     "objectID": "step1.html",
