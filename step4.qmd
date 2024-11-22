@@ -5,8 +5,10 @@ editor:
     wrap: 72
 ---
 
-**Aim**: Applies horizontal / vertical patching across the epithelium
-for later use in model.
+**Aim: Applies horizontal/vertical patching across the matched
+epithelia.**
+
+![](images/Step4.png){fig-align="center"}
 
 # **Methodology**:
 
@@ -105,7 +107,3 @@ images.
 used in the epithelium extraction. Other group members / team 6 have
 been working on ways to generalize this segment and can likely be
 combined.
-
-## Results
-
-Images TBD
