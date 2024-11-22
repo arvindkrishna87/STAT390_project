@@ -158,14 +158,14 @@
     "href": "step1.html",
     "title": "Step 1: Slice extraction",
     "section": "",
-    "text": "Aim: To extract the tissue slices from the WSI (Whole slide images)"
+    "text": "Aim: To extract the tissue slices from the Whole slide images (WSI)\nFolder of Extracted Slices\nTracker Data of Status of Each Slice"
   },
   {
-    "objectID": "step1.html#step-1-first-pass-of-algorithm",
-    "href": "step1.html#step-1-first-pass-of-algorithm",
+    "objectID": "step1.html#extraction-process",
+    "href": "step1.html#extraction-process",
     "title": "Step 1: Slice extraction",
-    "section": "Step 1: First pass of algorithm",
-    "text": "Step 1: First pass of algorithm\nFollowing the instructions above, open your image in QuPath and run this “annotation export newest” groovy script.\n\nSelect Run, then Run For Project\n\nNote: If your automation fails while running due to a particularly large image or systematically fails on a stain type (i.e. Sheffield Sox10–most fail because reference image annotation is too large to export), you have two options: Manually annotate and export images (more on this later) Downsample an annotated area (last resort, but can successfully downsample up to a factor of 2 to match stakeholder’s desired resolution), can do this directly by changing the downsample parameter\nSelect your images to process. Not counting the mask images, I tended to process up to 20 at a time to reduce the memory load."
+    "section": "Extraction Process",
+    "text": "Extraction Process\n\nStep 1: First pass of algorithm\nFollowing the instructions above, open your image in QuPath and run this “annotation export newest” groovy script.\n\n\n\n\n\nSelect Run, then Run For Project\n\n\n\n\n\nNote: If your automation fails while running due to a particularly large image or systematically fails on a stain type (i.e. Sheffield Sox10–most fail because reference image annotation is too large to export), you have two options: Manually annotate and export images (more on this later) Downsample an annotated area (last resort, but can successfully downsample up to a factor of 2 to match stakeholder’s desired resolution), can do this directly by changing the downsample parameter\nSelect your images to process. Not counting the mask images, I tended to process up to 20 at a time to reduce the memory load."
   },
   {
     "objectID": "step1.html#step-2-analyze-results-and-troubleshoot",

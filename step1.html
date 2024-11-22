@@ -135,12 +135,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong></a>
   <ul class="collapse">
   <li><a href="#setting-up-in-qupath" id="toc-setting-up-in-qupath" class="nav-link" data-scroll-target="#setting-up-in-qupath">Setting up in QuPath</a></li>
-  <li><a href="#to-deal-with-more-difficult-stain-types-if-you-decide-to-manually-annotate" id="toc-to-deal-with-more-difficult-stain-types-if-you-decide-to-manually-annotate" class="nav-link" data-scroll-target="#to-deal-with-more-difficult-stain-types-if-you-decide-to-manually-annotate">To deal with more difficult stain types if you decide to manually annotate:</a></li>
-  <li><a href="#to-create-a-new-pixel-classifier-or-modify-optional" id="toc-to-create-a-new-pixel-classifier-or-modify-optional" class="nav-link" data-scroll-target="#to-create-a-new-pixel-classifier-or-modify-optional">To create a new pixel classifier or modify (optional):</a></li>
-  </ul></li>
   <li><a href="#extraction-process" id="toc-extraction-process" class="nav-link" data-scroll-target="#extraction-process">Extraction Process</a>
   <ul class="collapse">
   <li><a href="#step-1-first-pass-of-algorithm" id="toc-step-1-first-pass-of-algorithm" class="nav-link" data-scroll-target="#step-1-first-pass-of-algorithm">Step 1: First pass of algorithm</a></li>
+  </ul></li>
   <li><a href="#step-2-analyze-results-and-troubleshoot" id="toc-step-2-analyze-results-and-troubleshoot" class="nav-link" data-scroll-target="#step-2-analyze-results-and-troubleshoot">Step 2: Analyze results and troubleshoot</a></li>
   </ul></li>
   <li><a href="#result-cases" id="toc-result-cases" class="nav-link" data-scroll-target="#result-cases">Result Cases</a></li>
@@ -169,7 +167,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Aim</strong>: To extract the tissue slices from the WSI (Whole slide images)</p>
+<p><strong>Aim: To extract the tissue slices from the Whole slide images (WSI)</strong></p>
+<p><img src="images/Step1.png" class="img-fluid"></p>
+<p><a href="https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FProcessed%20data%20%28slices%20extracted%29&amp;ga=1"><strong>Folder of Extracted Slices</strong></a></p>
+<p><a href="https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&amp;file=data_uploaded_tracker.xlsx&amp;action=default&amp;mobileredirect=true"><strong>Tracker Data of Status of Each Slice</strong></a></p>
 <section id="methodology" class="level1">
 <h1><strong>Methodology</strong></h1>
 <section id="setting-up-in-qupath" class="level3">
@@ -184,9 +185,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Script Editor has three vertical dots at the bottom –&gt; Run for project</li>
 <li>Data will save in processed_data dir in your base project dir</li>
 </ol>
-</section>
-<section id="to-deal-with-more-difficult-stain-types-if-you-decide-to-manually-annotate" class="level3">
-<h3 class="anchored" data-anchor-id="to-deal-with-more-difficult-stain-types-if-you-decide-to-manually-annotate">To deal with more difficult stain types if you decide to manually annotate:</h3>
+<section id="to-deal-with-more-difficult-stain-types-if-you-decide-to-manually-annotate" class="level4">
+<h4 class="anchored" data-anchor-id="to-deal-with-more-difficult-stain-types-if-you-decide-to-manually-annotate">To deal with more difficult stain types if you decide to manually annotate:</h4>
 <p>Runs like <code>automate_export_newest.groovy</code> but only if you already have annotations</p>
 <ol type="1">
 <li>Need to set annotation class to “Positive” in QuPath (Annotations –&gt; Positive –&gt; Set selected and for future annotations to be auto “Positive,” press “Auto set”“)</li>
@@ -197,8 +197,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Data will save in processed_data dir in your base project dir</li>
 </ol>
 </section>
-<section id="to-create-a-new-pixel-classifier-or-modify-optional" class="level3">
-<h3 class="anchored" data-anchor-id="to-create-a-new-pixel-classifier-or-modify-optional">To create a new pixel classifier or modify (optional):</h3>
+<section id="to-create-a-new-pixel-classifier-or-modify-optional" class="level4">
+<h4 class="anchored" data-anchor-id="to-create-a-new-pixel-classifier-or-modify-optional">To create a new pixel classifier or modify (optional):</h4>
 <ol type="1">
 <li>QuPath Interface top bar –&gt; Classify –&gt; Pixel Classification –&gt; Create thresholder</li>
 <li>See <code>tissues_1.json</code> and <code>tissues_2.json</code> for my parameters, and you can work from there</li>
@@ -206,17 +206,30 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 </section>
 </section>
-<section id="extraction-process" class="level1">
-<h1>Extraction Process</h1>
-<section id="step-1-first-pass-of-algorithm" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-first-pass-of-algorithm">Step 1: First pass of algorithm</h2>
+<section id="extraction-process" class="level2">
+<h2 class="anchored" data-anchor-id="extraction-process">Extraction Process</h2>
+<section id="step-1-first-pass-of-algorithm" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-first-pass-of-algorithm">Step 1: First pass of algorithm</h3>
 <p>Following the instructions above, open your image in QuPath and run this “annotation export newest” groovy script.</p>
-<p><img src="step 1 images/step_1_image_1.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/step 1 images/step_1_image_1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p>Select Run, then Run For Project</p>
-<p><img src="step 1 images/step_1_image_2.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/step 1 images/step_1_image_2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p><strong><em>Note</em>:</strong> If your automation fails while running due to a particularly large image or systematically fails on a stain type (i.e. Sheffield Sox10–most fail because reference image annotation is too large to export), you have two options: Manually annotate and export images (more on this later) Downsample an annotated area (last resort, but can successfully downsample up to a factor of 2 to match stakeholder’s desired resolution), can do this directly by changing the downsample parameter</p>
 <p>Select your images to process. Not counting the mask images, I tended to process up to 20 at a time to reduce the memory load.</p>
-<p><img src="step 1 images/step_1_image_3.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/step 1 images/step_1_image_3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
 </section>
 <section id="step-2-analyze-results-and-troubleshoot" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-analyze-results-and-troubleshoot">Step 2: Analyze results and troubleshoot</h2>
@@ -228,29 +241,59 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Case 1</strong>: perfect ROI identification Self-explanatory, all ROIs were successfully found and exported Example: Liverpool h1831023</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="step 1 images/step_1_image_4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/step 1 images/step_1_image_4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <p><strong>Case 2</strong>: merging Some of the region was not selected by the algorithm but belongs in the tissue sample This has to be determined across stains because some tissues might be separated in one type of stain but appear merged in another However, we don’t want to over-merge as the amount of whitespace makes matching difficult Example of merging: h1846151 small hanging pieces are okay to merge</p>
-<p><img src="step 1 images/step_1_image_5.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/step 1 images/step_1_image_5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p>Example of when to not merge: h1810898B because sox10 looks similar to unmerged h&amp;e</p>
-<p><img src="step 1 images/step_1_image_6.png" class="img-fluid"></p>
-<p><img src="step 1 images/step_1_image_7.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/step 1 images/step_1_image_6.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/step 1 images/step_1_image_7.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p>Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory</p>
 <p><strong>Case 3</strong>: deletion For any of the following types of areas, delete the annotations in QuPath: Blank images Example: Sheffield 77</p>
-<p><img src="step 1 images/step_1_image_8.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/step 1 images/step_1_image_8.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p>Splotches (shadows on the glass? blurs?)</p>
-<p><img src="step 1 images/step_1_image_9.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/step 1 images/step_1_image_9.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p>Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering</p>
 <p><strong>Case 4</strong>: manual selection from poor selection Sometimes, the annotation region is specified correctly but with too much whitespace/unnecessary area outside Delete the original annotation, select a new region, set the class to Positive Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering Example: selecting around the hair in h2114185 h&amp;e</p>
-<p><img src="step 1 images/step_1_image_10.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/step 1 images/step_1_image_10.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p>Example: h1845484 sox10: selection reduces the splotches’ area and prevents them from being exported extraneously</p>
-<p><img src="step 1 images/step_1_image_11.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/step 1 images/step_1_image_11.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p><strong>Case 5</strong>: manual selection from image too large If Qupath runs out of memory when trying to run images or is stuck on a particular one (ie most of Sheffield sox10 due to large reference tissues), I created a less memory-intensive existing annotations groovy script Select each annotation region manually in QuPath, then set class as Positive Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering Example: reference tissues in most of Sheffield sox10–select actual tissue manually instead of running the algorithm–the large files like this will prevent efficient exports</p>
-<p><img src="step 1 images/step_1_image_12.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/step 1 images/step_1_image_12.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p><strong>Case 6</strong>: not even manual selection works to export large image Try to export each annotated area at a time by selecting, selecting class → Positive, and running the “existing annotation” groovy Worst case, downsample by 2.0 factor max Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering Example: Sheffield 85 (lots of samples, junk images, and large files)</p>
-<p><a href="https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&amp;file=data_uploaded_tracker.xlsx&amp;action=default&amp;mobileredirect=true">Tracker Data of Status of Each Slice</a></p>
-<p><a href="https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FProcessed%20data%20%28slices%20extracted%29&amp;ga=1">Folder of Extracted Slices</a></p>
 
 
 </section>
