@@ -57,7 +57,7 @@ All tissue slices from patient h2114153:
 
 # API
 
-Here is the API we created to automate this step. Using this tool will speed up the process a great deal:
+Here is the API we created to automate this step. Using this tool will speed up the process.
 
 ![](images/API.png){fig-align="center"}
 
