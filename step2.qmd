@@ -6,10 +6,6 @@ title: "Step 2: Matching slices across stains"
 
 ![](images/Step2.png){fig-align="center"}
 
-# API for Matching Slices
-
-![](images/API.png){fig-align="center"}
-
 
 # **Methodology**
 
@@ -38,7 +34,8 @@ For a Subset of Patients: Separate patient image files into their own folders wi
 **3. Run `match_pipeline.py`.** A GUI will prompt you to select the directory containing the images. Open **`NoahsMatching.ipynb`** in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.
 
 :::
-## Results
+
+# Results
 
 **Example:**
 
@@ -51,3 +48,11 @@ All tissue slices from patient h2114153:
 ![](images/step%202%20images//slice1.png){width="125"} ![](images/step%202%20images//slice2.png){width="121"} ![](images/step%202%20images//slice3.png){width="113"}
 
 ![](images/Step2.png){fig-align="center"}
+
+# API for Matching Slices
+
+Here is the API we created to automate this step
+
+![](images/API.png){fig-align="center"}
+
+
