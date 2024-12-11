@@ -9,7 +9,7 @@ title: "Step 2: Matching slices across stains"
 
 # Methodology
 
-This pipeline automates the preprocessing, matching, alignment, and patch extraction of stained tissue images to enable efficient downstream analysis. The process begins with the preprocessing phase, where images are standardized and organized. Files are renamed to a consistent format, and patients missing one or more strain types (H&E, melan, SOX10) are excluded. For patients with multiple images of the same strain, only the highest-resolution image is retained. Once cleaned, images are split into folders by patient ID to prepare for further analysis.
+This pipeline automates the preprocessing, matching, alignment, and patch extraction of stained tissue images to enable efficient downstream analysis. The process begins with the preprocessing phase, where images are standardized and organized. Files are renamed to a consistent format, and patients missing one or more strain types (H&E, Melan-A, SOX-10) are excluded. For patients with multiple images of the same strain, only the highest-resolution image is retained. Once cleaned, images are split into folders by patient ID to prepare for further analysis.
 
 The matching phase groups corresponding images across the three stains for each patient by calculating distances between extracted contours to find optimal matches. The aligned images are saved as "matches" and further processed during the alignment phase, where images are rotated and resized to maximize overlap while maintaining consistent dimensions. A contour-based algorithm crops images to their regions of interest before alignment.
 
