@@ -12,108 +12,15 @@ title: "Step 3: Epithelium Detection"
 
 # **Methodology**
 
-We automated a process to separate tissue regions using automated image processing. The RGB image is converted to YCrCb color space to make tissue features easier to identify. Background regions are removed using brightness thresholds and smoothing techniques. Stroma is isolated by analyzing the red chroma (Cr) channel and selecting specific color ranges. Epithelia are identified by focusing on adjacent color ranges and refining the mask to remove noise. The results are visualized as overlays on the original image, showing stroma and epithelia separately. This process is automated for multiple images, with efficient memory management for large datasets.
-
 Codes required:
 
--   `Presentation 6 - Generalizing Epithelium Extraction.ipynb`
--   `Presentation 7 - Extracting from Melan-A.ipynb`
--   `Presentation 7 - Extracting from Sox-10.ipynb`
+-   `Presentation 6 - Generalizing Epithelium Extraction.ipynb` (H&E)
+-   `Presentation 7 - Extracting from Melan-A.ipynb` (Melan-A)
+-   `Presentation 7 - Extracting from Sox-10.ipynb` (SOX-10)
 
-Each code does a different stain.
+The methodologies for segmenting and extracting epithelium and stroma regions from tissue images stained with **Melan-A** and **Sox-10** employ similar algorithms but adapt to the unique properties of each stain. Both methods begin by loading the images and converting them to the YCrCb color space to leverage luminance (Y) and chroma (Cr or Cb) channels for segmentation. The background is identified using a binning approach on the luminance channel, isolating the most common intensity bin. Morphological operations like object removal and hole filling refine the background mask, ensuring accurate separation of non-background elements.
 
-
-
-## Code Explanation
-
-**Preprocessing and Color Space Transformation**
-
-**Aim:** Convert input images to a color space that separates luminance from chrominance, making it easier to isolate tissue features.
-
-**Input Image:** The original image is loaded as RGB.
-
-**Transformation:** Convert the RGB image to YCrCb. This transformation decomposes the image into:
-
--   **Y:** Luminance (brightness)
-
--   **Cr:** Red chroma component
-
--   **Cb:** Blue chroma component
-
-**Background Detection Aim:** Separate the tissue regions from the background to reduce noise in the analysis.
-
--   A thresholding technique is applied to the luminance channel to identify low-intensity regions representing the background.
-
--   Morphological operations are used to remove small noise regions and smooth the background mask.
-
--   The background mask is then subtracted from subsequent tissue analysis steps.
-
--   Identifying Stroma using Red Chroma (Cr) Binning
-
-**Aim:** Isolate stroma tissue based on the red chroma component, which correlates well with stromal regions in histology slides.
-
-**Binning of Cr Channel**
-
--   The Cr component is divided into discrete bins (e.g., 12 bins) to simplify the image analysis.
-
--   The bin with the maximum number of pixels is identified as the dominant chroma level for stromal regions.
-
-**Stroma Detection**
-
--   Stroma is defined as the regions within three bins below the dominant bin.
-
--   A mask is created to isolate stroma areas, followed by dilation to fill gaps.
-
--   Morphological operations remove small objects and refine the segmentation.
-
--   The result is saved as a binary mask representing the stroma.
-
-**Identifying Epithelia Using Red Chroma (Cr) Binning Aim:**
-
--   Differentiate epithelial tissue from stroma using the chroma profile.
-
-**Binning for Epithelia:**
-
--   Epithelia are identified in the Cr channel bins immediately following the stroma bins.
-
--   The bins are selected based on their relative position to the previously identified stroma bins.
-
-**Mask Refinement:**
-
--   Background and stroma regions are subtracted to isolate the epithelia.
-
--   Further refinement includes removing small objects, filling holes, and eliminating noise caused by blue ink (detected using the Cb channel).
-
--   The result is saved as a binary mask representing the epithelia.
-
-**Post-Processing and Visualization Aim:**
-
--   Generate segmented visualizations of the input image with stroma and epithelia overlaid.
-
-**Mask Application:**
-
--   The segmented stroma and epithelia masks are applied to the original RGB image, producing separate visual representations of each tissue type.
-
-**Segmentation Visualization:**
-
--   A combined image is generated with three panels:
-
-    -   The original RGB image, the segmented stroma region, the segmented epithelia region
-
--   These visualizations are saved for further analysis and validation.
-
-**Batch Processing and Cleanup Aim:**
-
--   Automate the processing for multiple images and optimize memory usage.
-
-**Batch Processing:**
-
--   The process is set to iterate over a folder of images, applying the segmentation pipeline to each one.
-
-**Memory Management:**
-
--   To prevent memory overload, unnecessary variables are deleted, and garbage collection is manually triggered at the end of each iteration.
-
+For Melan-A stains, the red chroma channel is used to identify stroma and epithelium, leveraging bins surrounding the most frequent intensity to segment stroma and bins further offset to isolate epithelium. For Sox-10 stains, the blue chroma channel is used similarly, with a tailored binning strategy to reflect the different chromatic characteristics of this stain. In both cases, stroma and epithelium masks are refined through morphological dilation, Gaussian smoothing, and removal of small objects or holes. The resulting masks are applied to the RGB images to generate segmented outputs, which are saved alongside visualizations of the input, stroma, and epithelium regions. These methods balance robustness and flexibility, ensuring segmentation quality across diverse tissue samples and staining variations.
 
 
 
