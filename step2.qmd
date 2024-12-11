@@ -26,8 +26,6 @@ Two codes required:
 
 -   `pipeline (1).py`
 
--   `rotate_extract_patch (1).py`
-
 Follow these steps to use the pipeline to generate matching slices for all patients or a specific subset:
 
 To ensure this script works correctly, please follow the instructions below:   
