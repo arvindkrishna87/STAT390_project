@@ -27,7 +27,7 @@ This OneDrive contains all data and processed folders from our progress:
 
 ## Data overview
 
-**[Data](https://www.sciencedirect.com/science/article/pii/S0023683723002246)** consists of 105 cases from 97 patients. Below are some statistics of the data:
+**The [Data](https://www.sciencedirect.com/science/article/pii/S0023683723002246)** consists of 105 cases from 97 patients. Below are some statistics of the data:
 
 - 60 women (age range: 23-93 years; median 65; mean 61.5) and 37 men (age range:
 31-91 years; median 68; mean 66.5)
