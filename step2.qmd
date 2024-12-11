@@ -15,6 +15,8 @@ The matching phase groups corresponding images across the three stains for each 
 
 Finally, the patch extraction phase identifies and extracts tissue patches containing both epithelium and stroma using skeletonization and gradient-based methods. Each patch is validated to ensure it contains components from all three stain types and meets quality criteria, such as having a balanced proportion of tissue and background pixels. Patches are saved in an organized structure, enabling seamless comparison across stains. The pipeline integrates error handling and modular design to ensure robustness, scalability, and adaptability to varied datasets.
 
+The **rotation code** processes stained tissue images by aligning them spatially, segmenting key regions (epithelium and stroma), and extracting patches for comparative analysis across different stains (H&E, Melan-A, and Sox-10). It begins by aligning images through contour detection, cropping, and optimizing overlap between stains. Using adaptive thresholding and morphological operations, the script segments epithelium and stroma regions based on luminance and chroma channels in the YCrCb color space. Patches containing both regions are extracted along the skeletonized centerline, validated across stains, and saved for further analysis, enabling consistent and meaningful cross-stain comparisons.
+
 Follow this step-by-step manual to match slices. Our API is included which automates the process.
 
 :::{.callout-note collapse=true}
@@ -23,21 +25,20 @@ Follow this step-by-step manual to match slices. Our API is included which autom
 
 Two codes required:
 
--   `Team4Matching.ipynb`
+-   `pipeline (1).py`
 
--   `match_pipeline-2.py`
+-   `rotate_extract_patch (1).py`
 
 Follow these steps to use the pipeline to generate matching slices for all patients or a specific subset:
 
-**1. Prepare Image Data:** Place .tif image files in the designated folder (e.g., processed_images). Ensure that each patient has images for all three stains (H&E, Melanin, Sox10).
+To ensure this script works correctly, please follow the instructions below:   
 
-**2. Choose Full or Subset Processing:**
+1. Run Cara's automation script to generate the 'processed_images' directory  
 
-For All Patients: Place all images in the same `processed_images` directory.
+2. Ensure that each file is named the same way (with upper and lower case letters): 
+          patient ID + strain type + ROI number (separated by underscores)          
 
-For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., `processed_images/patient1`, `processed_images/patient2`). Run the Pipeline.
-
-**3. Run `match_pipeline.py`.** A GUI will prompt you to select the directory containing the images. Open **`NoahsMatching.ipynb`** in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.
+3. Run the script `pipeline (1).py` and select the 'processed_images' directory
 
 
 # API
