@@ -11,16 +11,16 @@ oriented epithelia.**
 
 ![](images/Step4.png){fig-align="center"}
 
-# ** Steps Before Patching **
+# Steps Before Patching
 
-### 1. Pathologist Team Annotations
+## 1. Pathologist Team Annotations
 
 Before this step, we will send matched and extracted epithelium slices
 to the **pathologist team** to annotate the regions.
 
 ![](images/Annotations.png){fig-align="center"}
 
-### 2. Orientation
+## 2. Orientation
 
 After this we will orient the images to be aligned evenly before
 patching.
@@ -31,17 +31,9 @@ Once these steps are complete, we can begin patching.
 
 # **Methodology**
 
-Patching algorithm calculates the optimal patch height and width based
-on the epithelium mask. The patch dimensions are based on the maximum
-continuous width of white pixels (i.e., the epithelium area) and the
-overall epithelium area in the mask. The patches are used to analyze and
-visualize the epithelium coverage, and they are placed on the images
-based on optimal patch dimensions and overlap calculations. Patching
-algorithm takes in processed images of the epithelium from the stained
-cells and applies a sliding kernel across the image The optimal patch
-height is the maximum width of continuous white pixels (in each row),
-with a minimum height of 100. The patch width is calculated by dividing
-the epithelium area by 100 and the optimal patch height.
+
+
+The methodology for segmenting and analyzing epithelium regions in tissue images involves a structured series of image processing steps. Initially, each image is converted to grayscale and smoothed using a Gaussian blur to reduce noise and enhance uniformity. A binary mask is then generated through thresholding, followed by morphological operations such as closing and opening to refine the mask and remove small artifacts. The largest contour is identified as the epithelium region, and its mask is saved for further analysis. To segment the epithelium into patches, optimal patch dimensions are calculated based on the maximum continuous width of white pixels and the total epithelium area. Patches are applied using a stride that ensures coverage while minimizing overlap, and both vertical and horizontal orientations are evaluated to determine the best coverage for each region. The combined patches are drawn on the original image, and coverage percentages are calculated. Additionally, region outlines are overlaid on the images for visualization. The final outputs include the processed images with patches, region outlines, and masks, ensuring comprehensive segmentation and coverage assessment.
 
 
 
