@@ -132,11 +132,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#api-for-matching-slices" id="toc-api-for-matching-slices" class="nav-link active" data-scroll-target="#api-for-matching-slices">API for Matching Slices</a></li>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><strong>Methodology</strong></a>
-  <ul class="collapse">
+  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong></a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  </ul></li>
+  <li><a href="#api-for-matching-slices" id="toc-api-for-matching-slices" class="nav-link" data-scroll-target="#api-for-matching-slices">API for Matching Slices</a></li>
   </ul>
 </nav>
     </div>
@@ -168,14 +166,6 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/Step2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<section id="api-for-matching-slices" class="level1">
-<h1>API for Matching Slices</h1>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/API.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</section>
 <section id="methodology" class="level1">
 <h1><strong>Methodology</strong></h1>
 <p>The Matching Slices process identifies structurally similar tissue slices across stains (H&amp;E, Melanin, Sox10) for each patient. Image files are prepared and organized, either collectively or by patient-specific folders. The pipeline, executed via match_pipeline.py and Jupyter Notebook, preprocesses images, extracts contours, and matches slices based on structural similarity. Results are saved in organized folders, with matched slices grouped for easy review. This automated process ensures accurate alignment across stains for further analysis.</p>
@@ -205,8 +195,9 @@ Step-by-Step Manual
 </div>
 </div>
 </div>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
 <p><strong>Example:</strong></p>
 <p>All tissue slices from patient h2114153:</p>
 <p><img src="images/step 2 images/slice1.png" class="img-fluid" width="125"> <img src="images/step 2 images//slice4.png" class="img-fluid" width="90"> <img src="images/step 2 images//slice5.png" class="img-fluid" width="106"> <img src="images/step 2 images//slice6.png" class="img-fluid" width="105"> <img src="images/step 2 images//slice2.png" class="img-fluid" width="121"> <img src="images/step 2 images//slice7.png" class="img-fluid" width="100"> <img src="images/step 2 images//slice3.png" class="img-fluid" width="113"></p>
@@ -217,9 +208,17 @@ Step-by-Step Manual
 <p><img src="images/Step2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-
-
 </section>
+<section id="api-for-matching-slices" class="level1">
+<h1>API for Matching Slices</h1>
+<p>Here is the API we created to automate this step</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/API.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
