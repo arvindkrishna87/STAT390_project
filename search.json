@@ -53,7 +53,21 @@
     "href": "step4.html",
     "title": "Step 4: Patching",
     "section": "",
-    "text": "Aim: Applies horizontal/vertical patching across the matched and oriented epithelia.\n\n\n\n\n\n\n** Steps Before Patching **\n\n1. Pathologist Team Annotations\nBefore this step, we will send matched and extracted epithelium slices to the pathologist team to annotate the regions.\n\n\n\n\n\n\n\n2. Orientation\nAfter this we will orient the images to be aligned evenly before patching.\n\n\n\n\n\nOnce these steps are complete, we can begin patching.\n\n\n\nMethodology\nPatching algorithm calculates the optimal patch height and width based on the epithelium mask. The patch dimensions are based on the maximum continuous width of white pixels (i.e., the epithelium area) and the overall epithelium area in the mask. The patches are used to analyze and visualize the epithelium coverage, and they are placed on the images based on optimal patch dimensions and overlap calculations. Patching algorithm takes in processed images of the epithelium from the stained cells and applies a sliding kernel across the image The optimal patch height is the maximum width of continuous white pixels (in each row), with a minimum height of 100. The patch width is calculated by dividing the epithelium area by 100 and the optimal patch height.\n\n\n\n\n\n\nStep-by-Step Manual\n\n\n\n\n\nDirectories:\nDefines input_folder (where processed images are stored) and output_folder (where the results will be saved).\nDirectory structure:\nImages: Step 4/ Processed_images_sub\nFiltered_images: epithelium_patches_6_hori.py\n\nPlace all desired sample images in “filtered_images” folder\nOpen and run epithelium_patches_6_hori.py. Dependencies include cv2, numpy, os\nFind processed images in processed_images_sub\n\n\n\n\n\n\nResults"
+    "text": "Aim: Applies horizontal/vertical patching across the matched and oriented epithelia."
+  },
+  {
+    "objectID": "step4.html#pathologist-team-annotations",
+    "href": "step4.html#pathologist-team-annotations",
+    "title": "Step 4: Patching",
+    "section": "1. Pathologist Team Annotations",
+    "text": "1. Pathologist Team Annotations\nBefore this step, we will send matched and extracted epithelium slices to the pathologist team to annotate the regions."
+  },
+  {
+    "objectID": "step4.html#orientation",
+    "href": "step4.html#orientation",
+    "title": "Step 4: Patching",
+    "section": "2. Orientation",
+    "text": "2. Orientation\nAfter this we will orient the images to be aligned evenly before patching.\n\n\n\n\n\nOnce these steps are complete, we can begin patching."
   },
   {
     "objectID": "step3.html",
