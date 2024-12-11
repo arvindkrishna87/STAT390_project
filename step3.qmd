@@ -8,9 +8,7 @@ title: "Step 3: Epithelium Detection"
 
 ![](images/Step3.png){fig-align="center"}
 
-## API for Epithelium Extraction
 
-![](images/API.png){fig-align="center"}
 
 # **Methodology**
 
@@ -24,7 +22,7 @@ Codes required:
 
 Each code does a different stain.
 
-:::{.callout-note collapse=true}
+
 
 ## Code Explanation
 
@@ -116,11 +114,15 @@ Each code does a different stain.
 
 -   To prevent memory overload, unnecessary variables are deleted, and garbage collection is manually triggered at the end of each iteration.
 
-:::
 
-:::{.callout-note collapse=true}
-## Results
+
+
+# Results
 
 ![](images/h2114153h&e_ROI_5.png){fig-align="center"}
 
-:::
+
+
+# API
+
+![](images/API.png){fig-align="center"}
