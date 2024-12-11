@@ -136,7 +136,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong></a></li>
+  <li><a href="#links-to-results" id="toc-links-to-results" class="nav-link active" data-scroll-target="#links-to-results">Links to Results</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><strong>Methodology</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -164,8 +165,11 @@ ul.task-list li input[type="checkbox"] {
 
 <p><strong>Aim: To extract the tissue slices from the Whole slide images (WSI)</strong></p>
 <p><img src="images/Step1.png" class="img-fluid"></p>
+<section id="links-to-results" class="level2">
+<h2 class="anchored" data-anchor-id="links-to-results">Links to Results</h2>
 <p><a href="https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FProcessed%20data%20%28slices%20extracted%29&amp;ga=1"><strong>Folder of Extracted Slices</strong></a></p>
 <p><a href="https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&amp;file=data_uploaded_tracker.xlsx&amp;action=default&amp;mobileredirect=true"><strong>Tracker Data of Status of Each Slice</strong></a></p>
+</section>
 <section id="methodology" class="level1">
 <h1><strong>Methodology</strong></h1>
 <p>This step employs QuPath and custom Groovy scripts to automate the extraction of tissue regions from Whole Slide Images (WSIs). Key scripts, including <code>tissues_2.json</code>, <code>automate_export_newest.groovy</code>, and <code>existing_annotations.groovy</code>, enable efficient processing and handling of diverse stain types. After setting up the project and placing scripts in their designated directories, the <code>automate_export_newest.groovy</code> script is executed to detect and export regions of interest (ROIs) as tissue slices, which are saved in the <code>processed_data</code> folder. The process includes error handling for large or challenging images, offering manual annotation and adjustments when necessary. Exported data is reviewed to ensure quality, with issues like merging, deletion, or poor selection addressed using targeted corrections or downsampling, ensuring consistent and accurate tissue extraction.</p>
