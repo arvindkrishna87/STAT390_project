@@ -15,7 +15,6 @@ The matching phase groups corresponding images across the three stains for each 
 
 Finally, the patch extraction phase identifies and extracts tissue patches containing both epithelium and stroma using skeletonization and gradient-based methods. Each patch is validated to ensure it contains components from all three stain types and meets quality criteria, such as having a balanced proportion of tissue and background pixels. Patches are saved in an organized structure, enabling seamless comparison across stains. The pipeline integrates error handling and modular design to ensure robustness, scalability, and adaptability to varied datasets.
 
-The **rotation code** processes stained tissue images by aligning them spatially, segmenting key regions (epithelium and stroma), and extracting patches for comparative analysis across different stains (H&E, Melan-A, and Sox-10). It begins by aligning images through contour detection, cropping, and optimizing overlap between stains. Using adaptive thresholding and morphological operations, the script segments epithelium and stroma regions based on luminance and chroma channels in the YCrCb color space. Patches containing both regions are extracted along the skeletonized centerline, validated across stains, and saved for further analysis, enabling consistent and meaningful cross-stain comparisons.
 
 Follow this step-by-step manual to match slices. Our API is included which automates the process.
 
