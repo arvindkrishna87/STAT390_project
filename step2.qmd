@@ -9,7 +9,13 @@ title: "Step 2: Matching slices across stains"
 
 # **Methodology**
 
-The Matching Slices process identifies structurally similar tissue slices across stains (H&E, Melanin, Sox10) for each patient. Image files are prepared and organized, either collectively or by patient-specific folders. The pipeline, executed via match_pipeline.py and Jupyter Notebook, preprocesses images, extracts contours, and matches slices based on structural similarity. Results are saved in organized folders, with matched slices grouped for easy review. This automated process ensures accurate alignment across stains for further analysis.
+This pipeline automates the preprocessing, matching, alignment, and patch extraction of stained tissue images to enable efficient downstream analysis. The process begins with the preprocessing phase, where images are standardized and organized. Files are renamed to a consistent format, and patients missing one or more strain types (H&E, melan, SOX10) are excluded. For patients with multiple images of the same strain, only the highest-resolution image is retained. Once cleaned, images are split into folders by patient ID to prepare for further analysis.
+
+The matching phase groups corresponding images across the three stains for each patient by calculating distances between extracted contours to find optimal matches. The aligned images are saved as "matches" and further processed during the alignment phase, where images are rotated and resized to maximize overlap while maintaining consistent dimensions. A contour-based algorithm crops images to their regions of interest before alignment.
+
+Finally, the patch extraction phase identifies and extracts tissue patches containing both epithelium and stroma using skeletonization and gradient-based methods. Each patch is validated to ensure it contains components from all three stain types and meets quality criteria, such as having a balanced proportion of tissue and background pixels. Patches are saved in an organized structure, enabling seamless comparison across stains. The pipeline integrates error handling and modular design to ensure robustness, scalability, and adaptability to varied datasets.
+
+Follow this step-by-step manual to match slices:
 
 :::{.callout-note collapse=true}
 
@@ -49,9 +55,9 @@ All tissue slices from patient h2114153:
 
 ![](images/Step2.png){fig-align="center"}
 
-# API for Matching Slices
+# API
 
-Here is the API we created to automate this step
+Here is the API we created to automate this step. Using this tool will speed up the process a great deal:
 
 ![](images/API.png){fig-align="center"}
 
