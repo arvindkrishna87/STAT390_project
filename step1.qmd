@@ -9,14 +9,6 @@ editor:
 
 ![](images/Step1.png)
 
-
-## Links to Results
-[**Folder of Extracted
-Slices**](https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FProcessed%20data%20%28slices%20extracted%29&ga=1)
-
-[**Tracker Data of Status of Each
-Slice**](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&file=data_uploaded_tracker.xlsx&action=default&mobileredirect=true)
-
 # **Methodology**
 
 This step employs QuPath and custom Groovy scripts to automate the extraction of tissue regions from Whole Slide Images (WSIs). Key scripts, including `tissues_2.json`, `automate_export_newest.groovy`, and `existing_annotations.groovy`, enable efficient processing and handling of diverse stain types. After setting up the project and placing scripts in their designated directories, the `automate_export_newest.groovy` script is executed to detect and export regions of interest (ROIs) as tissue slices, which are saved in the `processed_data` folder. The process includes error handling for large or challenging images, offering manual annotation and adjustments when necessary. Exported data is reviewed to ensure quality, with issues like merging, deletion, or poor selection addressed using targeted corrections or downsampling, ensuring consistent and accurate tissue extraction.
@@ -191,3 +183,11 @@ to ensure consistent ROI numbering Example: Sheffield 85 (lots of
 samples, junk images, and large files)
 
 :::
+
+
+# Results
+[**Folder of Extracted
+Slices**](https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FProcessed%20data%20%28slices%20extracted%29&ga=1)
+
+[**Tracker Data of Status of Each
+Slice**](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&file=data_uploaded_tracker.xlsx&action=default&mobileredirect=true)
