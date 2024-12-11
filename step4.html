@@ -132,15 +132,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#necessary-steps-before-patching-to-do" id="toc-necessary-steps-before-patching-to-do" class="nav-link active" data-scroll-target="#necessary-steps-before-patching-to-do"><strong>Necessary Steps Before Patching (To Do)</strong></a>
+  <li><a href="#steps-before-patching" id="toc-steps-before-patching" class="nav-link active" data-scroll-target="#steps-before-patching">** Steps Before Patching **</a>
   <ul class="collapse">
   <li><a href="#pathologist-team-annotations" id="toc-pathologist-team-annotations" class="nav-link" data-scroll-target="#pathologist-team-annotations">1. Pathologist Team Annotations</a></li>
   <li><a href="#orientation" id="toc-orientation" class="nav-link" data-scroll-target="#orientation">2. Orientation</a></li>
   </ul></li>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><strong>Methodology</strong></a>
-  <ul class="collapse">
-  <li><a href="#description-of-code" id="toc-description-of-code" class="nav-link" data-scroll-target="#description-of-code">Description of code</a></li>
-  </ul></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><strong>Methodology</strong></a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   </ul>
 </nav>
     </div>
@@ -172,10 +170,10 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/Step4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<section id="necessary-steps-before-patching-to-do" class="level1">
-<h1><strong>Necessary Steps Before Patching (To Do)</strong></h1>
-<section id="pathologist-team-annotations" class="level2">
-<h2 class="anchored" data-anchor-id="pathologist-team-annotations">1. Pathologist Team Annotations</h2>
+<section id="steps-before-patching" class="level1">
+<h1>** Steps Before Patching **</h1>
+<section id="pathologist-team-annotations" class="level3">
+<h3 class="anchored" data-anchor-id="pathologist-team-annotations">1. Pathologist Team Annotations</h3>
 <p>Before this step, we will send matched and extracted epithelium slices to the <strong>pathologist team</strong> to annotate the regions.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -183,8 +181,8 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="orientation" class="level2">
-<h2 class="anchored" data-anchor-id="orientation">2. Orientation</h2>
+<section id="orientation" class="level3">
+<h3 class="anchored" data-anchor-id="orientation">2. Orientation</h3>
 <p>After this we will orient the images to be aligned evenly before patching.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -197,13 +195,6 @@ ul.task-list li input[type="checkbox"] {
 <section id="methodology" class="level1">
 <h1><strong>Methodology</strong></h1>
 <p>Patching algorithm calculates the optimal patch height and width based on the epithelium mask. The patch dimensions are based on the maximum continuous width of white pixels (i.e., the epithelium area) and the overall epithelium area in the mask. The patches are used to analyze and visualize the epithelium coverage, and they are placed on the images based on optimal patch dimensions and overlap calculations. Patching algorithm takes in processed images of the epithelium from the stained cells and applies a sliding kernel across the image The optimal patch height is the maximum width of continuous white pixels (in each row), with a minimum height of 100. The patch width is calculated by dividing the epithelium area by 100 and the optimal patch height.</p>
-<section id="description-of-code" class="level2">
-<h2 class="anchored" data-anchor-id="description-of-code">Description of code</h2>
-<p><strong>Directories:</strong></p>
-<p>Defines input_folder (where processed images are stored) and output_folder (where the results will be saved).</p>
-<p><strong>Directory structure:</strong></p>
-<p>Images: <code>Step 4/ Processed_images_sub</code></p>
-<p>Filtered_images: <code>epithelium_patches_6_hori.py</code></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -216,55 +207,29 @@ Step-by-Step Manual
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p><strong>Directories:</strong></p>
+<p>Defines input_folder (where processed images are stored) and output_folder (where the results will be saved).</p>
+<p><strong>Directory structure:</strong></p>
+<p>Images: <code>Step 4/ Processed_images_sub</code></p>
+<p>Filtered_images: <code>epithelium_patches_6_hori.py</code></p>
 <ol type="1">
 <li><p>Place all desired sample images in “filtered_images” folder</p></li>
 <li><p>Open and run <code>epithelium_patches_6_hori.py</code>. Dependencies include cv2, numpy, os</p></li>
 <li><p>Find processed images in <code>processed_images_sub</code></p></li>
 </ol>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
+</div>
+</div>
+</div>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Step4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-</section>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Code Explanation
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>calculate_optimal_patch_dimensions(mask):</strong> Analyzes the epithelium mask to determine the optimal patch size for image processing. Finds the maximum continuous width of white pixels (epithelium) in each row to determine the optimal patch height. Calculates the patch width based on the total epithelium area, ensuring it’s large enough to cover meaningful portions of the image.</p>
-<p><strong>calculate_overlap(patch_coords, placed_patches):</strong> Checks if a new patch overlaps with any already placed patches. Returns True if the overlap area exceeds 10% of the patch’s total area, indicating that the patch should not be placed.</p>
-<p><strong>calculate_coverage(mask, patches):</strong> Calculates the coverage percentage of epithelium in the provided mask by summing the areas covered by all patches.Returns the percentage of epithelium covered by patches.</p>
-<p><strong>apply_patches(epithelium_mask, patch_height, patch_width, stride, orientation):</strong> Applies patches to the epithelium mask, either vertically or horizontally. Iterates over the image using a sliding window approach, placing patches where the epithelium ratio is 50% or more. Checks for overlaps using calculate_overlap and ensures patches are placed in non-overlapping areas.</p>
-<p><strong>process_image(image_path, output_image_path, output_mask_path, region_outline_path):</strong> Reads and Preprocesses Image: Loads the image, converts it to grayscale, applies Gaussian blur, and thresholds to create a binary mask.</p>
-<p><strong>Mask Cleaning:</strong> Applies morphological operations (close and open) to clean the mask.</p>
-<p><strong>Epithelium Detection:</strong> Finds contours, identifies the largest contour, and creates an epithelium mask.</p>
-<p><strong>Patch Calculation:</strong> Uses calculate_optimal_patch_dimensions to determine the optimal patch size and stride for patch placement.</p>
-<p><strong>Apply Patches:</strong> Uses apply_patches for both vertical and horizontal patch orientations and calculates the coverage for each.</p>
-<p><strong>Region Outline:</strong> Draws rectangles around regions in the original image and saves an image showing the regions where patches will be applied.</p>
-<p><strong>Draw Patches:</strong> Based on the coverage, selects the best orientation (vertical or horizontal) and draws patches on the image.</p>
-<p><strong>Save Output:</strong> Saves the final processed image with patches drawn, as well as the region outline image and the epithelium mask.</p>
-<p><strong>Image Processing Loop:</strong> Loops through all image files in the input_folder with .tif, .jpg, or .png extensions. For each image, it processes the image and saves: the epithelium mask, the final image with mixed patches applied, the region outline image showing the patches’ locations.</p>
-<p>Prints a message indicating that the processing is complete for all images.</p>
-<p><strong>Hardcoding:</strong> Only hardcoded value relates to the color thresholding used in the epithelium extraction. Other group members / team 6 have been working on ways to generalize this segment and can likely be combined.</p>
-</div>
-</div>
-</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
