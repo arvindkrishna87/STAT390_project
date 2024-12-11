@@ -15,7 +15,7 @@ The matching phase groups corresponding images across the three stains for each 
 
 Finally, the patch extraction phase identifies and extracts tissue patches containing both epithelium and stroma using skeletonization and gradient-based methods. Each patch is validated to ensure it contains components from all three stain types and meets quality criteria, such as having a balanced proportion of tissue and background pixels. Patches are saved in an organized structure, enabling seamless comparison across stains. The pipeline integrates error handling and modular design to ensure robustness, scalability, and adaptability to varied datasets.
 
-Follow this step-by-step manual to match slices:
+Follow this step-by-step manual to match slices. Our API we created is included which automates the process.
 
 :::{.callout-note collapse=true}
 
