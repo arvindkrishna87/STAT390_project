@@ -112,7 +112,9 @@ Here are the six result cases we experience and what to do with each one. Some r
 ## Result Cases
 
 **Case 1**: perfect ROI identification Self-explanatory, all ROIs were
-successfully found and exported Example: Liverpool h1831023
+successfully found and exported 
+
+Example: Liverpool h1831023
 
 ![](images/step 1 images/step_1_image_4.png){fig-align="center"}
 
@@ -120,7 +122,9 @@ successfully found and exported Example: Liverpool h1831023
 but belongs in the tissue sample This has to be determined across stains
 because some tissues might be separated in one type of stain but appear
 merged in another However, we don’t want to over-merge as the amount of
-whitespace makes matching difficult Example of merging: h1846151 small
+whitespace makes matching difficult 
+
+Example of merging: h1846151 small
 hanging pieces are okay to merge
 
 ![](images/step 1 images/step_1_image_5.png){fig-align="center"}
@@ -153,8 +157,9 @@ annotation region is specified correctly but with too much
 whitespace/unnecessary area outside Delete the original annotation,
 select a new region, set the class to Positive Then, rerun “existing
 annotations” groovy script to export faster and delete remaining ROIs in
-your file directory to ensure consistent ROI numbering Example:
-selecting around the hair in h2114185 h&e
+your file directory to ensure consistent ROI numbering 
+
+Example: selecting around the hair in h2114185 h&e
 
 ![](images/step 1 images/step_1_image_10.png){fig-align="center"}
 
@@ -170,6 +175,7 @@ less memory-intensive existing annotations groovy script Select each
 annotation region manually in QuPath, then set class as Positive Then,
 rerun “existing annotations” groovy script to export faster and delete
 remaining ROIs in your file directory to ensure consistent ROI numbering
+
 Example: reference tissues in most of Sheffield sox10–select actual
 tissue manually instead of running the algorithm–the large files like
 this will prevent efficient exports
@@ -181,7 +187,9 @@ export each annotated area at a time by selecting, selecting class →
 Positive, and running the “existing annotation” groovy Worst case,
 downsample by 2.0 factor max Then, rerun “existing annotations” groovy
 script to export faster and delete remaining ROIs in your file directory
-to ensure consistent ROI numbering Example: Sheffield 85 (lots of
+to ensure consistent ROI numbering 
+
+Example: Sheffield 85 (lots of
 samples, junk images, and large files)
 
 :::
