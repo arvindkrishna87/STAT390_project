@@ -256,13 +256,15 @@ Result Cases
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>Case 1</strong>: perfect ROI identification Self-explanatory, all ROIs were successfully found and exported Example: Liverpool h1831023</p>
+<p><strong>Case 1</strong>: perfect ROI identification Self-explanatory, all ROIs were successfully found and exported</p>
+<p>Example: Liverpool h1831023</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/step 1 images/step_1_image_4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p><strong>Case 2</strong>: merging Some of the region was not selected by the algorithm but belongs in the tissue sample This has to be determined across stains because some tissues might be separated in one type of stain but appear merged in another However, we don’t want to over-merge as the amount of whitespace makes matching difficult Example of merging: h1846151 small hanging pieces are okay to merge</p>
+<p><strong>Case 2</strong>: merging Some of the region was not selected by the algorithm but belongs in the tissue sample This has to be determined across stains because some tissues might be separated in one type of stain but appear merged in another However, we don’t want to over-merge as the amount of whitespace makes matching difficult</p>
+<p>Example of merging: h1846151 small hanging pieces are okay to merge</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/step 1 images/step_1_image_5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -293,7 +295,8 @@ Result Cases
 </figure>
 </div>
 <p>Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering</p>
-<p><strong>Case 4</strong>: manual selection from poor selection Sometimes, the annotation region is specified correctly but with too much whitespace/unnecessary area outside Delete the original annotation, select a new region, set the class to Positive Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering Example: selecting around the hair in h2114185 h&amp;e</p>
+<p><strong>Case 4</strong>: manual selection from poor selection Sometimes, the annotation region is specified correctly but with too much whitespace/unnecessary area outside Delete the original annotation, select a new region, set the class to Positive Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering</p>
+<p>Example: selecting around the hair in h2114185 h&amp;e</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/step 1 images/step_1_image_10.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -305,13 +308,15 @@ Result Cases
 <p><img src="images/step 1 images/step_1_image_11.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p><strong>Case 5</strong>: manual selection from image too large If Qupath runs out of memory when trying to run images or is stuck on a particular one (ie most of Sheffield sox10 due to large reference tissues), I created a less memory-intensive existing annotations groovy script Select each annotation region manually in QuPath, then set class as Positive Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering Example: reference tissues in most of Sheffield sox10–select actual tissue manually instead of running the algorithm–the large files like this will prevent efficient exports</p>
+<p><strong>Case 5</strong>: manual selection from image too large If Qupath runs out of memory when trying to run images or is stuck on a particular one (ie most of Sheffield sox10 due to large reference tissues), I created a less memory-intensive existing annotations groovy script Select each annotation region manually in QuPath, then set class as Positive Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering</p>
+<p>Example: reference tissues in most of Sheffield sox10–select actual tissue manually instead of running the algorithm–the large files like this will prevent efficient exports</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/step 1 images/step_1_image_12.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p><strong>Case 6</strong>: not even manual selection works to export large image Try to export each annotated area at a time by selecting, selecting class → Positive, and running the “existing annotation” groovy Worst case, downsample by 2.0 factor max Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering Example: Sheffield 85 (lots of samples, junk images, and large files)</p>
+<p><strong>Case 6</strong>: not even manual selection works to export large image Try to export each annotated area at a time by selecting, selecting class → Positive, and running the “existing annotation” groovy Worst case, downsample by 2.0 factor max Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering</p>
+<p>Example: Sheffield 85 (lots of samples, junk images, and large files)</p>
 </div>
 </div>
 </div>
