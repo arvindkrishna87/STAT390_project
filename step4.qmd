@@ -11,12 +11,12 @@ oriented epithelia.**
 
 ![](images/Step4.png){fig-align="center"}
 
-# Steps Before Patching
+## Steps Before Patching (Pathologist Team)
 
 **1. Pathologist Team Annotations**
 
 Before this step, we will send matched and extracted epithelium slices
-to the **pathologist team** to annotate the regions.
+to the pathologist team to annotate the regions.
 
 ![](images/Annotations.png){fig-align="center"}
 
