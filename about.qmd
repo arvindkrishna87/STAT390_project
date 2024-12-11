@@ -25,7 +25,7 @@ This OneDrive contains all data and processed folders from our progress:
 
 **[OneDrive](https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390)**
 
-## Data overview
+## Data Overview
 
 The [Data](https://www.sciencedirect.com/science/article/pii/S0023683723002246) consists of 105 cases from 97 patients. Below are some statistics of the data:
 
