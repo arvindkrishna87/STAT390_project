@@ -132,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong></a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology">Methodology</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   </ul>
 </nav>
@@ -162,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Aim: To extract the tissue slices from the Whole slide images (WSI)</strong></p>
 <p><img src="images/Step1.png" class="img-fluid"></p>
 <section id="methodology" class="level1">
-<h1><strong>Methodology</strong></h1>
+<h1>Methodology</h1>
 <p>This method employs a Groovy script in QuPath to automate the identification, processing, and export of tissue regions of interest (ROIs) from Whole Slide Images (WSIs). Key scripts, including <code>tissues_2.json</code>, <code>automate_export_newest.groovy</code>, and <code>existing_annotations.groovy</code>, enable efficient processing and handling of diverse stain types. After setting up the project and placing scripts in their designated directories, the <code>automate_export_newest.groovy</code> script is executed to detect and export regions of interest (ROIs) as tissue slices, which are saved in the <code>processed_data</code> folder.</p>
 <p>The process begins by ensuring the image is not a mask file before applying stain deconvolution to separate Hematoxylin and Eosin (H&amp;E) stains using predefined parameters for color deconvolution. If no annotations exist, a pixel classifier (<code>tissues_2</code>) is applied to detect tissue regions, generating initial annotations. These annotations are refined by merging those within a set distance threshold (5000 micrometers) to consolidate closely related tissue regions, leveraging centroid-based Euclidean distance calculations. Duplicate annotations with centroids closer than 50 micrometers are identified and removed to ensure clean and accurate outputs. Finally, the refined annotations are exported as high-resolution image tiles into a specified output directory, using a customizable downsample parameter to accommodate variations in image quality. This pipeline ensures efficient and accurate tissue ROI extraction, supporting downstream analysis and quality control.</p>
 <p>Follow this step by step manual to extract slices:</p>
@@ -172,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<strong>Step-by-Step Manual</strong>
+Step-by-Step Manual
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
