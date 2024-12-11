@@ -22,7 +22,9 @@ The segmentation process for **H&E** stained images leverages the luminance and 
 
 The methodologies for segmenting and extracting epithelium and stroma regions from tissue images stained with **Melan-A** and **Sox-10** employ similar algorithms but adapt to the unique properties of each stain. Both methods begin by loading the images and converting them to the YCrCb color space to leverage luminance (Y) and chroma (Cr or Cb) channels for segmentation. The background is identified using a binning approach on the luminance channel, isolating the most common intensity bin. Morphological operations like object removal and hole filling refine the background mask, ensuring accurate separation of non-background elements.
 
-For Melan-A stains, the red chroma channel is used to identify stroma and epithelium, leveraging bins surrounding the most frequent intensity to segment stroma and bins further offset to isolate epithelium. For Sox-10 stains, the blue chroma channel is used similarly, with a tailored binning strategy to reflect the different chromatic characteristics of this stain. In both cases, stroma and epithelium masks are refined through morphological dilation, Gaussian smoothing, and removal of small objects or holes. The resulting masks are applied to the RGB images to generate segmented outputs, which are saved alongside visualizations of the input, stroma, and epithelium regions. These methods balance robustness and flexibility, ensuring segmentation quality across diverse tissue samples and staining variations.
+For **Melan-A** stains, the red chroma channel is used to identify stroma and epithelium, leveraging bins surrounding the most frequent intensity to segment stroma and bins further offset to isolate epithelium. 
+
+For **Sox-10** stains, the blue chroma channel is used similarly, with a tailored binning strategy to reflect the different chromatic characteristics of this stain. In both cases, stroma and epithelium masks are refined through morphological dilation, Gaussian smoothing, and removal of small objects or holes. The resulting masks are applied to the RGB images to generate segmented outputs, which are saved alongside visualizations of the input, stroma, and epithelium regions. These methods balance robustness and flexibility, ensuring segmentation quality across diverse tissue samples and staining variations.
 
 
 
@@ -33,5 +35,7 @@ For Melan-A stains, the red chroma channel is used to identify stroma and epithe
 
 
 # API
+
+This 
 
 ![](images/API.png){fig-align="center"}
