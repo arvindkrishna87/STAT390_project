@@ -39,7 +39,13 @@ Codes required:
 - `Epithelium Extraction Script.ipynb`
 
 
-Run `Epithelium Extraction Script.ipynb`. 
+1. Set the input and output directories: Make sure the paths for the input and output directories are correctly configured to point to the appropriate folders on your computer.
+
+2. Rename files to include locations: Update the file names to include their locations (E.G., h2114189 melan_ROI_1 (Sheffield).tif). This step is essential because the extraction algorithm selection depends on both the stain type and location.
+
+3. Run the setup code: Execute all code cells from the purple header through the end of the file before executing the code cell below. Verify the folder object: Confirm that the folder object contains the correct tissue scans. Once verified, you may execute the code cell below.
+
+4. Run `Epithelium Extraction Script.ipynb`. 
 
 
 # API
