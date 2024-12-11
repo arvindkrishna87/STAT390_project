@@ -10,7 +10,7 @@ title: "Step 3: Epithelium Detection"
 
 
 
-# **Methodology**
+# Methodology
 
 Codes required:
 
