@@ -19,7 +19,7 @@ Follow this step-by-step manual to match slices:
 
 :::{.callout-note collapse=true}
 
-## Step-by-Step Manual
+## Step-by-Step Manual (API included)
 
 Two codes required:
 
@@ -39,6 +39,13 @@ For a Subset of Patients: Separate patient image files into their own folders wi
 
 **3. Run `match_pipeline.py`.** A GUI will prompt you to select the directory containing the images. Open **`NoahsMatching.ipynb`** in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.
 
+
+# API
+
+Here is the API we created to automate this step. Using this tool will speed up the process.
+
+![](images/API.png){fig-align="center"}
+
 :::
 
 # Results
@@ -55,10 +62,6 @@ All tissue slices from patient h2114153:
 
 ![](images/Step2.png){fig-align="center"}
 
-# API
 
-Here is the API we created to automate this step. Using this tool will speed up the process.
-
-![](images/API.png){fig-align="center"}
 
 
