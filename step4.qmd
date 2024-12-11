@@ -11,7 +11,7 @@ oriented epithelia.**
 
 ![](images/Step4.png){fig-align="center"}
 
-## Steps Before Patching (Pathologist Team)
+## Pathologist Team Step
 
 **1. Pathologist Team Annotations**
 
