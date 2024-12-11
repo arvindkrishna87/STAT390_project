@@ -12,12 +12,6 @@ title: "Step 3: Epithelium Detection"
 
 # Methodology
 
-Codes required:
-
--   `Presentation 6 - Generalizing Epithelium Extraction.ipynb` (H&E)
--   `Presentation 7 - Extracting from Melan-A.ipynb` (Melan-A)
--   `Presentation 7 - Extracting from Sox-10.ipynb` (SOX-10)
-
 The segmentation process for **H&E** stained images leverages the luminance and chroma characteristics of the image to differentiate background, stroma, and epithelial regions effectively. Using the YCrCb color space, the luminance channel identifies the background by isolating the bin with the highest pixel count, refined further through morphological operations like hole filling and object removal. For epithelial segmentation, the red chroma channel is used, with bins adjacent to the stroma bin analyzed to isolate epithelial regions. Morphological techniques, including dilation and Gaussian smoothing, enhance the segmentation mask. The process ensures robust separation of regions, saving the results as masks and visualizations for further analysis. This approach maintains adaptability to the variable staining intensities and patterns characteristic of H&E images.
 
 The methodologies for segmenting and extracting epithelium and stroma regions from tissue images stained with **Melan-A** and **Sox-10** employ similar algorithms but adapt to the unique properties of each stain. Both methods begin by loading the images and converting them to the YCrCb color space to leverage luminance (Y) and chroma (Cr or Cb) channels for segmentation. The background is identified using a binning approach on the luminance channel, isolating the most common intensity bin. Morphological operations like object removal and hole filling refine the background mask, ensuring accurate separation of non-background elements.
@@ -30,27 +24,14 @@ Follow this step-by manual to extract epithelia. Our API we created is included 
 
 ## Step-by-Step Manual (API included)
 
-Two codes required:
+Codes required:
 
--   `Team4Matching.ipynb`
-
--   `match_pipeline-2.py`
-
-Follow these steps to use the pipeline to generate matching slices for all patients or a specific subset:
-
-**1. Prepare Image Data:** Place .tif image files in the designated folder (e.g., processed_images). Ensure that each patient has images for all three stains (H&E, Melanin, Sox10).
-
-**2. Choose Full or Subset Processing:**
-
-For All Patients: Place all images in the same `processed_images` directory.
-
-For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., `processed_images/patient1`, `processed_images/patient2`). Run the Pipeline.
-
-**3. Run `match_pipeline.py`.** A GUI will prompt you to select the directory containing the images. Open **`NoahsMatching.ipynb`** in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.
+-   `Presentation 6 - Generalizing Epithelium Extraction.ipynb` (H&E)
+-   `Presentation 7 - Extracting from Melan-A.ipynb` (Melan-A)
+-   `Presentation 7 - Extracting from Sox-10.ipynb` (SOX-10)
 
 
 # API
-
 
 
 ![](images/API.png){fig-align="center"}
@@ -62,10 +43,3 @@ For a Subset of Patients: Separate patient image files into their own folders wi
 
 ![](images/h2114153h&e_ROI_5.png){fig-align="center"}
 
-
-
-# API
-
-Here is the API we created to automate this step. Using this tool will speed up the process.
-
-![](images/API.png){fig-align="center"}
