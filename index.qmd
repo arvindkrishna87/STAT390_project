@@ -12,11 +12,11 @@ The Northwestern University STAT390 Class of Fall 2024 has made the following pr
 
 **Step 1:**  Extracting tissue slices from Whole Slice Images (**WSI**) using QuPath
 
-**Step 2:**  Matching similar tissue slices across the different stains (**H&E, Melan-A, Sox-10**) for each patient when there is a correct match. 
+**Step 2:**  Matching similar tissue slices across the different stains (**H&E, Melan-A, Sox-10**) for each patient when there is a correct match 
 
-**Step 3:**  Detecting and extracting the epithelium and stroma for each tissue slice
+**Step 3:**  Detecting and extracting the epithelium and stroma for each tissue slice. Send to pathologist team
 
-**Pathologist Team Step:** Annotating H&E slice with high grade, low grade, and benign regions
+ - Pathologist Team will annotate H&E slice with high grade, low grade, and benign regions and send back to us
 
 **Step 4:**  Orienting matched slices and apply patching across epithelium for matched slices
 
