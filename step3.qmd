@@ -26,6 +26,36 @@ For **Melan-A** stains, the red chroma channel is used to identify stroma and ep
 
 For **Sox-10** stains, the blue chroma channel is used similarly, with a tailored binning strategy to reflect the different chromatic characteristics of this stain. In both cases, stroma and epithelium masks are refined through morphological dilation, Gaussian smoothing, and removal of small objects or holes. The resulting masks are applied to the RGB images to generate segmented outputs, which are saved alongside visualizations of the input, stroma, and epithelium regions. These methods balance robustness and flexibility, ensuring segmentation quality across diverse tissue samples and staining variations.
 
+Follow this step-by manual to extract epithelia. Our API we created is included which automates the process.
+
+## Step-by-Step Manual (API included)
+
+Two codes required:
+
+-   `Team4Matching.ipynb`
+
+-   `match_pipeline-2.py`
+
+Follow these steps to use the pipeline to generate matching slices for all patients or a specific subset:
+
+**1. Prepare Image Data:** Place .tif image files in the designated folder (e.g., processed_images). Ensure that each patient has images for all three stains (H&E, Melanin, Sox10).
+
+**2. Choose Full or Subset Processing:**
+
+For All Patients: Place all images in the same `processed_images` directory.
+
+For a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., `processed_images/patient1`, `processed_images/patient2`). Run the Pipeline.
+
+**3. Run `match_pipeline.py`.** A GUI will prompt you to select the directory containing the images. Open **`NoahsMatching.ipynb`** in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.
+
+
+# API
+
+
+
+![](images/API.png){fig-align="center"}
+
+:::
 
 
 # Results
