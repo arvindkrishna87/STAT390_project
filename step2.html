@@ -132,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong></a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology">Methodology</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
   </ul>
@@ -167,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <section id="methodology" class="level1">
-<h1><strong>Methodology</strong></h1>
+<h1>Methodology</h1>
 <p>This pipeline automates the preprocessing, matching, alignment, and patch extraction of stained tissue images to enable efficient downstream analysis. The process begins with the preprocessing phase, where images are standardized and organized. Files are renamed to a consistent format, and patients missing one or more strain types (H&amp;E, melan, SOX10) are excluded. For patients with multiple images of the same strain, only the highest-resolution image is retained. Once cleaned, images are split into folders by patient ID to prepare for further analysis.</p>
 <p>The matching phase groups corresponding images across the three stains for each patient by calculating distances between extracted contours to find optimal matches. The aligned images are saved as “matches” and further processed during the alignment phase, where images are rotated and resized to maximize overlap while maintaining consistent dimensions. A contour-based algorithm crops images to their regions of interest before alignment.</p>
 <p>Finally, the patch extraction phase identifies and extracts tissue patches containing both epithelium and stroma using skeletonization and gradient-based methods. Each patch is validated to ensure it contains components from all three stain types and meets quality criteria, such as having a balanced proportion of tissue and background pixels. Patches are saved in an organized structure, enabling seamless comparison across stains. The pipeline integrates error handling and modular design to ensure robustness, scalability, and adaptability to varied datasets.</p>
