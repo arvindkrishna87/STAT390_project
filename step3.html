@@ -195,7 +195,12 @@ Step-by-Step Manual (API included)
 <ul>
 <li><code>Epithelium Extraction Script.ipynb</code></li>
 </ul>
-<p>Run <code>Epithelium Extraction Script.ipynb</code>.</p>
+<ol type="1">
+<li><p>Set the input and output directories: Make sure the paths for the input and output directories are correctly configured to point to the appropriate folders on your computer.</p></li>
+<li><p>Rename files to include locations: Update the file names to include their locations (E.G., h2114189 melan_ROI_1 (Sheffield).tif). This step is essential because the extraction algorithm selection depends on both the stain type and location.</p></li>
+<li><p>Run the setup code: Execute all code cells from the purple header through the end of the file before executing the code cell below. Verify the folder object: Confirm that the folder object contains the correct tissue scans. Once verified, you may execute the code cell below.</p></li>
+<li><p>Run <code>Epithelium Extraction Script.ipynb</code>.</p></li>
+</ol>
 <section id="api" class="level1">
 <h1>API</h1>
 <p>Here is the API we created to automate this step. Using this tool will speed up the process.</p>
