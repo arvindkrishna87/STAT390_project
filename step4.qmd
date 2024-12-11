@@ -11,16 +11,16 @@ oriented epithelia.**
 
 ![](images/Step4.png){fig-align="center"}
 
-# **Necessary Steps Before Patching (To Do)**
+# ** Steps Before Patching **
 
-## 1. Pathologist Team Annotations
+### 1. Pathologist Team Annotations
 
 Before this step, we will send matched and extracted epithelium slices
 to the **pathologist team** to annotate the regions.
 
 ![](images/Annotations.png){fig-align="center"}
 
-## 2. Orientation
+### 2. Orientation
 
 After this we will orient the images to be aligned evenly before
 patching.
@@ -43,7 +43,12 @@ height is the maximum width of continuous white pixels (in each row),
 with a minimum height of 100. The patch width is calculated by dividing
 the epithelium area by 100 and the optimal patch height.
 
-## Description of code
+
+
+
+:::{.callout-note collapse=true}
+
+## Step-by-Step Manual
 
 **Directories:**
 
@@ -56,9 +61,6 @@ Images: `Step 4/ Processed_images_sub`
 
 Filtered_images: `epithelium_patches_6_hori.py`
 
-:::{.callout-note collapse=true}
-
-## Step-by-Step Manual
 
 1.  Place all desired sample images in “filtered_images” folder
 
@@ -67,79 +69,10 @@ Filtered_images: `epithelium_patches_6_hori.py`
 
 3.  Find processed images in `processed_images_sub`
 
-## Results
+:::
+
+# Results
 
 ![](images/Step4.png){fig-align="center"}
 
-:::
 
-:::{.callout-note collapse=true}
-
-## Code Explanation
-
-**calculate_optimal_patch_dimensions(mask):** Analyzes the epithelium
-mask to determine the optimal patch size for image processing. Finds the
-maximum continuous width of white pixels (epithelium) in each row to
-determine the optimal patch height. Calculates the patch width based on
-the total epithelium area, ensuring it's large enough to cover
-meaningful portions of the image.
-
-**calculate_overlap(patch_coords, placed_patches):** Checks if a new
-patch overlaps with any already placed patches. Returns True if the
-overlap area exceeds 10% of the patch's total area, indicating that the
-patch should not be placed.
-
-**calculate_coverage(mask, patches):** Calculates the coverage
-percentage of epithelium in the provided mask by summing the areas
-covered by all patches.Returns the percentage of epithelium covered by
-patches.
-
-**apply_patches(epithelium_mask, patch_height, patch_width, stride,
-orientation):** Applies patches to the epithelium mask, either
-vertically or horizontally. Iterates over the image using a sliding
-window approach, placing patches where the epithelium ratio is 50% or
-more. Checks for overlaps using calculate_overlap and ensures patches
-are placed in non-overlapping areas.
-
-**process_image(image_path, output_image_path, output_mask_path,
-region_outline_path):** Reads and Preprocesses Image: Loads the image,
-converts it to grayscale, applies Gaussian blur, and thresholds to
-create a binary mask.
-
-**Mask Cleaning:** Applies morphological operations (close and open) to
-clean the mask.
-
-**Epithelium Detection:** Finds contours, identifies the largest
-contour, and creates an epithelium mask.
-
-**Patch Calculation:** Uses calculate_optimal_patch_dimensions to
-determine the optimal patch size and stride for patch placement.
-
-**Apply Patches:** Uses apply_patches for both vertical and horizontal
-patch orientations and calculates the coverage for each.
-
-**Region Outline:** Draws rectangles around regions in the original
-image and saves an image showing the regions where patches will be
-applied.
-
-**Draw Patches:** Based on the coverage, selects the best orientation
-(vertical or horizontal) and draws patches on the image.
-
-**Save Output:** Saves the final processed image with patches drawn, as
-well as the region outline image and the epithelium mask.
-
-**Image Processing Loop:** Loops through all image files in the
-input_folder with .tif, .jpg, or .png extensions. For each image, it
-processes the image and saves: the epithelium mask, the final image with
-mixed patches applied, the region outline image showing the patches'
-locations.
-
-Prints a message indicating that the processing is complete for all
-images.
-
-**Hardcoding:** Only hardcoded value relates to the color thresholding
-used in the epithelium extraction. Other group members / team 6 have
-been working on ways to generalize this segment and can likely be
-combined.
-
-:::
