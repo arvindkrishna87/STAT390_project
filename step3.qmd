@@ -12,7 +12,7 @@ title: "Step 3: Epithelium Detection"
 
 # Methodology
 
-This project involves a comprehensive image processing workflow designed to segment epithelial and stromal regions from tissue images stained with different markers. The methodology combines advanced image processing techniques, including color space transformations, morphological operations, and region-based segmentation, tailored for specific stain types and locations (e.g., Liverpool or Sheffield). For each image, the script first identifies background regions using the luminance channel. The algorithm then isolates epithelia and stroma using chroma channels, applying binning techniques to detect dominant pixel intensity ranges. Morphological operations such as dilation, erosion, and small object removal refine the segmentation. Gaussian smoothing is incorporated to reduce noise and improve mask quality. Segmented regions are applied as binary masks to the original image for visualization and saved for further analysis. Parameter tuning and function selection were performed iteratively based on intermediate visualizations, ensuring high accuracy for each stain-location combination.
+This project involves a comprehensive image processing workflow designed to segment epithelial and stromal regions from tissue images stained with different markers. The methodology combines advanced image processing techniques, including color space transformations, morphological operations, and region-based segmentation, tailored for specific stain types and locations (e.g., Liverpool or Sheffield). For each image, the script `Epithelium Extraction Script.ipynb` first identifies background regions using the luminance channel. The algorithm then isolates epithelia and stroma using chroma channels, applying binning techniques to detect dominant pixel intensity ranges. Morphological operations such as dilation, erosion, and small object removal refine the segmentation. Gaussian smoothing is incorporated to reduce noise and improve mask quality. Segmented regions are applied as binary masks to the original image for visualization and saved for further analysis. Parameter tuning and function selection were performed iteratively based on intermediate visualizations, ensuring high accuracy for each stain-location combination.
 
 Among the six algorithms implemented, those for H&E stains exhibit the highest accuracy, followed by Melan-A and Sox-10 stains. Each algorithm is adapted to the unique characteristics of the stain and location, ensuring reliable extraction of relevant regions.
 
@@ -36,10 +36,13 @@ Follow this step-by-step manual to extract epithelia. Our API we created is incl
 
 Codes required:
 
+- `Epithelium Extraction Script.ipynb`
 -   `Presentation 6 - Generalizing Epithelium Extraction.ipynb` (H&E)
 -   `Presentation 7 - Extracting from Melan-A.ipynb` (Melan-A)
 -   `Presentation 7 - Extracting from Sox-10.ipynb` (SOX-10)
-- `Epithelium Extraction Script.ipynb`
+
+Run `Epithelium Extraction Script.ipynb`. 
+
 
 # API
 
