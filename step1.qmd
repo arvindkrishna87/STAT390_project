@@ -184,10 +184,89 @@ samples, junk images, and large files)
 
 :::
 
-
 # Results
 [**Folder of Extracted
 Slices**](https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FProcessed%20data%20%28slices%20extracted%29&ga=1)
 
 [**Tracker Data of Status of Each
 Slice**](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&file=data_uploaded_tracker.xlsx&action=default&mobileredirect=true)
+
+
+:::{.callout-note collapse=true}
+## Integrating Step 1 (QuPath) into Project API
+
+These are some ideas on how to create an API from Step 1 to Step 2.
+
+### 1. Using the paquo Library
+
+**paquo** is a Python library designed specifically to interact with QuPath projects. It leverages the jpype library to seamlessly bridge Python and Java, making it possible to manipulate QuPath projects directly from Python. paquo provides native support for creating, editing, and running scripts within QuPath projects, aligning well with the goal of creating a Python-based API.
+
+**Advantages**
+
+- Simplifies Java-Python interaction for people who have little experience with Java or Groovy
+
+- Native support for QuPath scripts and projects
+
+- Can be integrated into current project API (steps 2-3)
+
+**Challenges**
+
+- JVM configuration can be prone to errors
+- Requires the correct QuPath version
+
+- References:
+
+https://paquo.readthedocs.io/en/latest/ 
+
+https://forum.image.sc/t/paquo-read-write-qupath-projects-from-python/41892 
+
+### 2. Using Python with QuPath CLI
+
+QuPath provides a command-line interface (CLI) that can be accessed through Python's subprocess module. This allows Python scripts to execute Groovy-based workflows in QuPath indirectly.
+
+**Advantages**
+
+- Don’t need a JVM setup in Python
+- Simple and lightweight
+
+**Challenges**
+
+- Limited feedback from QuPath to Python
+- Requires separate Groovy scripts
+- References:
+
+https://www.imagescientist.com/command-line-and-python
+
+https://forum.image.sc/t/automating-qupath-pipeline-completely-using-python/72341  
+
+
+### 3. Standalone Java Application
+
+A Java application can directly utilize the QuPath API to interact with projects, import images, and execute scripts. This approach bypasses Python entirely and offers complete control over QuPath's capabilities. A Java-based solution can serve as a standalone API or backend that exposes QuPath functionalities via user-friendly interfaces (e.g., GUIs or REST endpoints).
+
+**Advantages**
+
+- Direct access to all QuPath functionalities
+- Full performance optimization in Java
+
+**Challenges**
+
+- Requires Java programming expertise
+- References: https://forum.image.sc/t/load-project-from-a-project-file-using-qupath-java-api/63613 
+
+### 4. Python and Java with Jython
+
+Jython enables Python scripts to directly execute Java code. It acts as a bridge between Python and Java but is limited to Python 2.x. Jython can provide a direct way to call QuPath’s Java API from Python-like syntax, enabling API functionalities like project management and script execution.
+
+**Advantages**
+
+- Direct access to Java classes
+
+**Challenges**
+
+- Limited to Python 2.x.
+- No support for modern Python features
+- Requires Java programming expertise
+- Reference: https://github.com/qupath/qupath/wiki/Working-with-Python 
+
+:::
