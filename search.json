@@ -67,7 +67,7 @@
     "href": "step3.html#step-by-step-manual-api-included",
     "title": "Step 3: Epithelium Detection",
     "section": "Step-by-Step Manual (API included)",
-    "text": "Step-by-Step Manual (API included)\nTwo codes required:\n\nTeam4Matching.ipynb\nmatch_pipeline-2.py\n\nFollow these steps to use the pipeline to generate matching slices for all patients or a specific subset:\n1. Prepare Image Data: Place .tif image files in the designated folder (e.g., processed_images). Ensure that each patient has images for all three stains (H&E, Melanin, Sox10).\n2. Choose Full or Subset Processing:\nFor All Patients: Place all images in the same processed_images directory.\nFor a Subset of Patients: Separate patient image files into their own folders within processed_images (e.g., processed_images/patient1, processed_images/patient2). Run the Pipeline.\n3. Run match_pipeline.py. A GUI will prompt you to select the directory containing the images. Open NoahsMatching.ipynb in Jupyter Notebook and execute cells in sequence. Process and Review Matches: Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders."
+    "text": "Step-by-Step Manual (API included)\nCodes required:\n\nPresentation 6 - Generalizing Epithelium Extraction.ipynb (H&E)\nPresentation 7 - Extracting from Melan-A.ipynb (Melan-A)\nPresentation 7 - Extracting from Sox-10.ipynb (SOX-10)"
   },
   {
     "objectID": "step2.html",
