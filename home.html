@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Step 1: Slice extraction – Fall 2024 STAT390 project</title>
+<title>Fall 2024 STAT390 (CMIL Classification) – Fall 2024 STAT390 project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./step1.html" aria-current="page"> 
+    <a class="nav-link" href="./step1.html"> 
 <span class="menu-text">Step 1: Slice extraction</span></a>
   </li>  
   <li class="nav-item">
@@ -127,22 +127,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong></a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Step 1: Slice extraction</h1>
+<h1 class="title">Fall 2024 STAT390 (CMIL Classification)</h1>
 </div>
 
 
@@ -159,256 +152,24 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Aim: To extract the tissue slices from the Whole slide images (WSI)</strong></p>
-<p><img src="images/Step1.png" class="img-fluid"></p>
-<section id="methodology" class="level1">
-<h1><strong>Methodology</strong></h1>
-<p>This method employs a Groovy script in QuPath to automate the identification, processing, and export of tissue regions of interest (ROIs) from Whole Slide Images (WSIs). Key scripts, including <code>tissues_2.json</code>, <code>automate_export_newest.groovy</code>, and <code>existing_annotations.groovy</code>, enable efficient processing and handling of diverse stain types. After setting up the project and placing scripts in their designated directories, the <code>automate_export_newest.groovy</code> script is executed to detect and export regions of interest (ROIs) as tissue slices, which are saved in the <code>processed_data</code> folder.</p>
-<p>The process begins by ensuring the image is not a mask file before applying stain deconvolution to separate Hematoxylin and Eosin (H&amp;E) stains using predefined parameters for color deconvolution. If no annotations exist, a pixel classifier (<code>tissues_2</code>) is applied to detect tissue regions, generating initial annotations. These annotations are refined by merging those within a set distance threshold (5000 micrometers) to consolidate closely related tissue regions, leveraging centroid-based Euclidean distance calculations. Duplicate annotations with centroids closer than 50 micrometers are identified and removed to ensure clean and accurate outputs. Finally, the refined annotations are exported as high-resolution image tiles into a specified output directory, using a customizable downsample parameter to accommodate variations in image quality. This pipeline ensures efficient and accurate tissue ROI extraction, supporting downstream analysis and quality control.</p>
-<p>Follow this step by step manual to extract slices:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p><strong>Aim: The objective of this project is to identify the severity of potential eye cancer by looking at a particular eye tissue of the patient.</strong></p>
+<p>In medical terms, we want to develop a machine learning model to accurately classify <em>Conjunctival melanocytic intraepithelial lesions <strong>(C-MIL)</strong></em> as per the <em>WHO 2022 classification system</em>. Providing a reproducible and accurate grading of C-MIL will help doctors select the most appropriate management plan for the patient.</p>
+<p>The Northwestern University STAT390 Class of Fall 2024 has made the following progress on this project:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/HomeImage.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
 </div>
-<div class="callout-title-container flex-fill">
-<strong>Step-by-Step Manual</strong>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Codes required:</p>
+<p><strong>Step 1:</strong> Extracting tissue slices from Whole Slice Images (<strong>WSI</strong>) using QuPath</p>
+<p><strong>Step 2:</strong> Matching similar tissue slices across the different stains (<strong>H&amp;E, Melan-A, Sox-10</strong>) for each patient when there is a correct match</p>
+<p><strong>Step 3:</strong> Detecting and extracting the epithelium and stroma for each tissue slice. Send to pathologist team</p>
 <ul>
-<li><code>tissues_1.json</code>, <code>tissues_2.json</code> and <code>automate_export_newest.groovy</code></li>
-<li>New for other stain types to expedite process: <code>existing_annotations.groovy</code></li>
+<li><em>Pathologist Team will annotate H&amp;E slice with high grade, low grade, and benign regions and send back to us</em></li>
 </ul>
-<section id="setting-up-in-qupath" class="level3">
-<h3 class="anchored" data-anchor-id="setting-up-in-qupath">Setting up in QuPath</h3>
-<ol type="1">
-<li>Open a project that has all your images</li>
-<li>Put <code>tissue_2.json</code> into <code>base_proj_dir/classifiers/pixel_classifiers</code> (make if does not exist) Note, use <code>tissues_2.json</code> for most recent results (not <code>tissues_1</code> but you can still try this too. <code>tissues_2</code> contains broader parameters for a more sensitive model, works on more stains and images)</li>
-<li>Put <code>automate_export_newest.groovy</code> into <code>base_project_dir/scripts</code> (make if does not exist)</li>
-<li>Make sure you have an image open in QuPath interface</li>
-<li>In QuPath, top bar –&gt; Automate –&gt; Project scripts –&gt; <code>automate_export_newest.groovy</code></li>
-<li>Script Editor has three vertical dots at the bottom –&gt; Run for project</li>
-<li>Data will save in processed_data dir in your base project dir</li>
-</ol>
-<section id="to-deal-with-more-difficult-stain-types-if-you-decide-to-manually-annotate" class="level4">
-<h4 class="anchored" data-anchor-id="to-deal-with-more-difficult-stain-types-if-you-decide-to-manually-annotate">To deal with more difficult stain types if you decide to manually annotate:</h4>
-<p>Runs like <code>automate_export_newest.groovy</code> but only if you already have annotations</p>
-<ol type="1">
-<li>Need to set annotation class to “Positive” in QuPath (Annotations –&gt; Positive –&gt; Set selected and for future annotations to be auto “Positive,” press “Auto set”“)</li>
-<li>To export existing annotations only, run <code>existing_annotations.groovy</code></li>
-<li><code>existing_annotations.groovy</code> –&gt; <code>base_project_dir/scripts</code></li>
-<li>In QuPath, top bar –&gt; Automate –&gt; Project scripts –&gt; <code>existing_annotations.groovy</code></li>
-<li>Script Editor has three vertical dots at the bottom –&gt; Run for project</li>
-<li>Data will save in processed_data dir in your base project dir</li>
-</ol>
-</section>
-<section id="to-create-a-new-pixel-classifier-or-modify-optional" class="level4">
-<h4 class="anchored" data-anchor-id="to-create-a-new-pixel-classifier-or-modify-optional">To create a new pixel classifier or modify (optional):</h4>
-<ol type="1">
-<li>QuPath Interface top bar –&gt; Classify –&gt; Pixel Classification –&gt; Create thresholder</li>
-<li>See <code>tissues_1.json</code> and <code>tissues_2.json</code> for my parameters, and you can work from there</li>
-<li>Save this and then replace <code>tissues_2</code> in .groovy script.</li>
-</ol>
-</section>
-</section>
-<section id="step-1-first-pass-of-algorithm" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-first-pass-of-algorithm">Step 1: First pass of algorithm</h3>
-<p>Following the instructions above, open your image in QuPath and run this “annotation export newest” groovy script.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/step 1 images/step_1_image_1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p>Select Run, then Run For Project</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/step 1 images/step_1_image_2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p><strong><em>Note</em>:</strong> If your automation fails while running due to a particularly large image or systematically fails on a stain type (i.e. Sheffield Sox10–most fail because reference image annotation is too large to export), you have two options: Manually annotate and export images (more on this later) Downsample an annotated area (last resort, but can successfully downsample up to a factor of 2 to match stakeholder’s desired resolution), can do this directly by changing the downsample parameter</p>
-<p>Select your images to process. Not counting the mask images, I tended to process up to 20 at a time to reduce the memory load.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/step 1 images/step_1_image_3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="step-2-analyze-results-and-troubleshoot" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-analyze-results-and-troubleshoot">Step 2: Analyze results and troubleshoot</h3>
-<p>Once you run the automation for your images, I check in QuPath directly image by image to ensure all data was properly exported. You should also check in the processed_images dir created in your Qupath project dir that no image was corrupted or too blurry. In order of manual work needed, here are the possible cases for your images. They correspond with how we dealt with and logged processing these images in the <a href="https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&amp;file=data_uploaded_tracker.xlsx&amp;action=default&amp;mobileredirect=true">Tracker Data of Status of Each Slice</a></p>
-</section>
-</div>
-</div>
-</div>
-<p>Here are the six result cases we encountered and what to do with each one. Some require rerunning certain codes:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Result Cases
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Case 1</strong>: perfect ROI identification Self-explanatory, all ROIs were successfully found and exported</p>
-<p>Example: Liverpool h1831023</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/step 1 images/step_1_image_4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p><strong>Case 2</strong>: merging Some of the region was not selected by the algorithm but belongs in the tissue sample This has to be determined across stains because some tissues might be separated in one type of stain but appear merged in another However, we don’t want to over-merge as the amount of whitespace makes matching difficult</p>
-<p>Example of merging: h1846151 small hanging pieces are okay to merge</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/step 1 images/step_1_image_5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p>Example of when to not merge: h1810898B because sox10 looks similar to unmerged h&amp;e</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/step 1 images/step_1_image_6.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/step 1 images/step_1_image_7.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p>Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory</p>
-<p><strong>Case 3</strong>: deletion For any of the following types of areas, delete the annotations in QuPath: Blank images Example: Sheffield 77</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/step 1 images/step_1_image_8.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p>Splotches (shadows on the glass? blurs?)</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/step 1 images/step_1_image_9.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p>Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering</p>
-<p><strong>Case 4</strong>: manual selection from poor selection Sometimes, the annotation region is specified correctly but with too much whitespace/unnecessary area outside Delete the original annotation, select a new region, set the class to Positive Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering</p>
-<p>Example: selecting around the hair in h2114185 h&amp;e</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/step 1 images/step_1_image_10.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p>Example: h1845484 sox10: selection reduces the splotches’ area and prevents them from being exported extraneously</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/step 1 images/step_1_image_11.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p><strong>Case 5</strong>: manual selection from image too large If Qupath runs out of memory when trying to run images or is stuck on a particular one (ie most of Sheffield sox10 due to large reference tissues), I created a less memory-intensive existing annotations groovy script Select each annotation region manually in QuPath, then set class as Positive Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering</p>
-<p>Example: reference tissues in most of Sheffield sox10–select actual tissue manually instead of running the algorithm–the large files like this will prevent efficient exports</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/step 1 images/step_1_image_12.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p><strong>Case 6</strong>: not even manual selection works to export large image Try to export each annotated area at a time by selecting, selecting class → Positive, and running the “existing annotation” groovy Worst case, downsample by 2.0 factor max Then, rerun “existing annotations” groovy script to export faster and delete remaining ROIs in your file directory to ensure consistent ROI numbering</p>
-<p>Example: Sheffield 85 (lots of samples, junk images, and large files)</p>
-</div>
-</div>
-</div>
-<p>These are some ideas on how to create an API from Step 1 to Step 2 if the team decides to do so:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Integrating Step 1 (QuPath) into Project API
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<section id="using-the-paquo-library" class="level3">
-<h3 class="anchored" data-anchor-id="using-the-paquo-library">1. Using the paquo Library</h3>
-<p><strong>paquo</strong> is a Python library designed specifically to interact with QuPath projects. It leverages the jpype library to seamlessly bridge Python and Java, making it possible to manipulate QuPath projects directly from Python. paquo provides native support for creating, editing, and running scripts within QuPath projects, aligning well with the goal of creating a Python-based API.</p>
-<p><strong>Advantages</strong></p>
-<ul>
-<li><p>Simplifies Java-Python interaction for people who have little experience with Java or Groovy</p></li>
-<li><p>Native support for QuPath scripts and projects</p></li>
-<li><p>Can be integrated into current project API (steps 2-3)</p></li>
-</ul>
-<p><strong>Challenges</strong></p>
-<ul>
-<li><p>JVM configuration can be prone to errors</p></li>
-<li><p>Requires the correct QuPath version</p></li>
-<li><p>References:</p></li>
-</ul>
-<p>https://paquo.readthedocs.io/en/latest/</p>
-<p>https://forum.image.sc/t/paquo-read-write-qupath-projects-from-python/41892</p>
-</section>
-<section id="using-python-with-qupath-cli" class="level3">
-<h3 class="anchored" data-anchor-id="using-python-with-qupath-cli">2. Using Python with QuPath CLI</h3>
-<p>QuPath provides a command-line interface (CLI) that can be accessed through Python’s subprocess module. This allows Python scripts to execute Groovy-based workflows in QuPath indirectly.</p>
-<p><strong>Advantages</strong></p>
-<ul>
-<li>Don’t need a JVM setup in Python</li>
-<li>Simple and lightweight</li>
-</ul>
-<p><strong>Challenges</strong></p>
-<ul>
-<li>Limited feedback from QuPath to Python</li>
-<li>Requires separate Groovy scripts</li>
-<li>References:</li>
-</ul>
-<p>https://www.imagescientist.com/command-line-and-python</p>
-<p>https://forum.image.sc/t/automating-qupath-pipeline-completely-using-python/72341</p>
-</section>
-<section id="standalone-java-application" class="level3">
-<h3 class="anchored" data-anchor-id="standalone-java-application">3. Standalone Java Application</h3>
-<p>A Java application can directly utilize the QuPath API to interact with projects, import images, and execute scripts. This approach bypasses Python entirely and offers complete control over QuPath’s capabilities. A Java-based solution can serve as a standalone API or backend that exposes QuPath functionalities via user-friendly interfaces (e.g., GUIs or REST endpoints).</p>
-<p><strong>Advantages</strong></p>
-<ul>
-<li>Direct access to all QuPath functionalities</li>
-<li>Full performance optimization in Java</li>
-</ul>
-<p><strong>Challenges</strong></p>
-<ul>
-<li>Requires Java programming expertise</li>
-<li>References: https://forum.image.sc/t/load-project-from-a-project-file-using-qupath-java-api/63613</li>
-</ul>
-</section>
-<section id="python-and-java-with-jython" class="level3">
-<h3 class="anchored" data-anchor-id="python-and-java-with-jython">4. Python and Java with Jython</h3>
-<p>Jython enables Python scripts to directly execute Java code. It acts as a bridge between Python and Java but is limited to Python 2.x. Jython can provide a direct way to call QuPath’s Java API from Python-like syntax, enabling API functionalities like project management and script execution.</p>
-<p><strong>Advantages</strong></p>
-<ul>
-<li>Direct access to Java classes</li>
-</ul>
-<p><strong>Challenges</strong></p>
-<ul>
-<li>Limited to Python 2.x.</li>
-<li>No support for modern Python features</li>
-<li>Requires Java programming expertise</li>
-<li>Reference: https://github.com/qupath/qupath/wiki/Working-with-Python</li>
-</ul>
-</section>
-</div>
-</div>
-</div>
-</section>
-<section id="results" class="level1">
-<h1>Results</h1>
-<p><a href="https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FProcessed%20data%20%28slices%20extracted%29&amp;ga=1"><strong>Folder of Extracted Slices</strong></a></p>
-<p><a href="https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&amp;file=data_uploaded_tracker.xlsx&amp;action=default&amp;mobileredirect=true"><strong>Tracker Data of Status of Each Slice</strong></a></p>
+<p><strong>Step 4:</strong> Orienting matched slices and apply patching across epithelium for matched slices</p>
+<p><strong>Literature Review</strong>: Researched adaptive pooling, cross view transformer, advantages of square patches, padding effect, etc.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
