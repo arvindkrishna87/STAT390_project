@@ -32,7 +32,7 @@ Once these steps are complete, we can begin patching.
 # Methodology
 
 
-The **rotation code** processes stained tissue images by aligning them spatially, segmenting key regions (epithelium and stroma), and extracting patches for comparative analysis across different stains (H&E, Melan-A, and Sox-10). It begins by aligning images through contour detection, cropping, and optimizing overlap between stains. Using adaptive thresholding and morphological operations, the script segments epithelium and stroma regions based on luminance and chroma channels in the YCrCb color space. Patches containing both regions are extracted along the skeletonized centerline, validated across stains, and saved for further analysis, enabling consistent and meaningful cross-stain comparisons.
+The **rotation patching code** processes stained tissue images by aligning them spatially, segmenting key regions (epithelium and stroma), and extracting patches for comparative analysis across different stains (H&E, Melan-A, and Sox-10). It begins by aligning images through contour detection, cropping, and optimizing overlap between stains. Using adaptive thresholding and morphological operations, the script segments epithelium and stroma regions based on luminance and chroma channels in the YCrCb color space. Patches containing both regions are extracted along the skeletonized centerline, validated across stains, and saved for further analysis, enabling consistent and meaningful cross-stain comparisons.
 
 
 Follow this step-by-step manual to patch the epithelia.
