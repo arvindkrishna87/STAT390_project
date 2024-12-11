@@ -16,7 +16,7 @@ This method employs a Groovy script in QuPath to automate the identification, pr
 The process begins by ensuring the image is not a mask file before applying stain deconvolution to separate Hematoxylin and Eosin (H&E) stains using predefined parameters for color deconvolution. If no annotations exist, a pixel classifier (`tissues_2`) is applied to detect tissue regions, generating initial annotations. These annotations are refined by merging those within a set distance threshold (5000 micrometers) to consolidate closely related tissue regions, leveraging centroid-based Euclidean distance calculations. Duplicate annotations with centroids closer than 50 micrometers are identified and removed to ensure clean and accurate outputs. Finally, the refined annotations are exported as high-resolution image tiles into a specified output directory, using a customizable downsample parameter to accommodate variations in image quality. This pipeline ensures efficient and accurate tissue ROI extraction, supporting downstream analysis and quality control.
 
 
-Follow this step by step manual to extract slices:
+Follow this step by step manual to extract slices.
 
 :::{.callout-note collapse=true}
 
@@ -109,7 +109,7 @@ Slice](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northweste
 
 :::
 
-Here are the six result cases we encountered and what to do with each one. Some require rerunning certain codes:
+Here are the six result cases we encountered and what to do with each one. Some require rerunning certain codes.
 
 :::{.callout-note collapse=true}
 
@@ -200,7 +200,7 @@ samples, junk images, and large files)
 
 
 
-These are some ideas on how to create an API from Step 1 to Step 2 if the team decides to do so:
+These are some ideas on how to create an API from Step 1 to Step 2 if the team decides to do so.
 
 :::{.callout-note collapse=true}
 
