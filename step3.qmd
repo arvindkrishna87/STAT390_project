@@ -4,7 +4,7 @@ title: "Step 3: Epithelium Detection"
 
 **Aim: To separate the epithelium from the stroma in each tissue.**
 
-![](images/h2114153h&e_ROI_5.png){fig-align="center" width="450"}
+![](images/h2114153h&e_ROI_5.png){fig-align="center" width="500"}
 
 ![](images/Step3.png){fig-align="center"}
 
