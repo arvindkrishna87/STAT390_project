@@ -37,9 +37,7 @@ Follow this step-by-step manual to extract epithelia. Our API we created is incl
 Codes required:
 
 - `Epithelium Extraction Script.ipynb`
--   `Presentation 6 - Generalizing Epithelium Extraction.ipynb` (H&E)
--   `Presentation 7 - Extracting from Melan-A.ipynb` (Melan-A)
--   `Presentation 7 - Extracting from Sox-10.ipynb` (SOX-10)
+
 
 Run `Epithelium Extraction Script.ipynb`. 
 
