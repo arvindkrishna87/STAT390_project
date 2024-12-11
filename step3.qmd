@@ -22,6 +22,8 @@ For **Sox-10** stains, the blue chroma channel is used similarly, with a tailore
 
 Follow this step-by manual to extract epithelia. Our API we created is included which automates the process.
 
+:::{.callout-note collapse=true}
+
 ## Step-by-Step Manual (API included)
 
 Codes required:
@@ -29,7 +31,6 @@ Codes required:
 -   `Presentation 6 - Generalizing Epithelium Extraction.ipynb` (H&E)
 -   `Presentation 7 - Extracting from Melan-A.ipynb` (Melan-A)
 -   `Presentation 7 - Extracting from Sox-10.ipynb` (SOX-10)
-
 
 # API
 
