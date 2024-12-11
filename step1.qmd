@@ -106,7 +106,7 @@ Slice](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northweste
 
 :::
 
-Here are the six result cases we experience and what to do with each one. Some require rerunning certain codes:
+Here are the six result cases we encountered and what to do with each one. Some require rerunning certain codes:
 
 :::{.callout-note collapse=true}
 ## Result Cases
