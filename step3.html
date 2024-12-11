@@ -132,8 +132,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#api-for-epithelium-extraction" id="toc-api-for-epithelium-extraction" class="nav-link active" data-scroll-target="#api-for-epithelium-extraction">API for Epithelium Extraction</a></li>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><strong>Methodology</strong></a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong></a>
+  <ul class="collapse">
+  <li><a href="#code-explanation" id="toc-code-explanation" class="nav-link" data-scroll-target="#code-explanation">Code Explanation</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
   </ul>
 </nav>
     </div>
@@ -170,14 +174,6 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/Step3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<section id="api-for-epithelium-extraction" class="level2">
-<h2 class="anchored" data-anchor-id="api-for-epithelium-extraction">API for Epithelium Extraction</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/API.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</section>
 <section id="methodology" class="level1">
 <h1><strong>Methodology</strong></h1>
 <p>We automated a process to separate tissue regions using automated image processing. The RGB image is converted to YCrCb color space to make tissue features easier to identify. Background regions are removed using brightness thresholds and smoothing techniques. Stroma is isolated by analyzing the red chroma (Cr) channel and selecting specific color ranges. Epithelia are identified by focusing on adjacent color ranges and refining the mask to remove noise. The results are visualized as overlays on the original image, showing stroma and epithelia separately. This process is automated for multiple images, with efficient memory management for large datasets.</p>
@@ -188,18 +184,8 @@ ul.task-list li input[type="checkbox"] {
 <li><code>Presentation 7 - Extracting from Sox-10.ipynb</code></li>
 </ul>
 <p>Each code does a different stain.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Code Explanation
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<section id="code-explanation" class="level2">
+<h2 class="anchored" data-anchor-id="code-explanation">Code Explanation</h2>
 <p><strong>Preprocessing and Color Space Transformation</strong></p>
 <p><strong>Aim:</strong> Convert input images to a color space that separates luminance from chrominance, making it easier to isolate tissue features.</p>
 <p><strong>Input Image:</strong> The original image is loaded as RGB.</p>
@@ -272,28 +258,22 @@ Code Explanation
 <ul>
 <li>To prevent memory overload, unnecessary variables are deleted, and garbage collection is manually triggered at the end of each iteration.</li>
 </ul>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Results
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/h2114153h&amp;e_ROI_5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-</div>
-</div>
+</section>
+<section id="api" class="level1">
+<h1>API</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/API.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
 </div>
 
 
