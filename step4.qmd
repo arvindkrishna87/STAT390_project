@@ -41,24 +41,11 @@ Follow this step-by-step manual to patch the epithelium.
 
 ## Step-by-Step Manual
 
-**Directories:**
+Code required:
 
-Defines input_folder (where processed images are stored) and
-output_folder (where the results will be saved).
+- rotate_extract_patch (1).py
 
-**Directory structure:**
-
-Images: `Step 4/ Processed_images_sub`
-
-Filtered_images: `epithelium_patches_6_hori.py`
-
-
-1.  Place all desired sample images in “filtered_images” folder
-
-2.  Open and run `epithelium_patches_6_hori.py`. Dependencies include
-    cv2, numpy, os
-
-3.  Find processed images in `processed_images_sub`
+Run `rotate_extract_patch (1).py`.
 
 :::
 
