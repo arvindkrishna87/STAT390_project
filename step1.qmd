@@ -203,12 +203,12 @@ Slice**](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwes
 
 
 
+These are some ideas on how to create an API from Step 1 to Step 2 if the team decides to do so:
 
 :::{.callout-note collapse=true}
 
 ## Integrating Step 1 (QuPath) into Project API
 
-These are some ideas on how to create an API from Step 1 to Step 2.
 
 ### 1. Using the paquo Library
 
