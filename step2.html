@@ -89,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.qmd"> 
+    <a class="nav-link" href="./home.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -134,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology"><strong>Methodology</strong></a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  <li><a href="#api-for-matching-slices" id="toc-api-for-matching-slices" class="nav-link" data-scroll-target="#api-for-matching-slices">API for Matching Slices</a></li>
+  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
   </ul>
 </nav>
     </div>
@@ -168,7 +168,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="methodology" class="level1">
 <h1><strong>Methodology</strong></h1>
-<p>The Matching Slices process identifies structurally similar tissue slices across stains (H&amp;E, Melanin, Sox10) for each patient. Image files are prepared and organized, either collectively or by patient-specific folders. The pipeline, executed via match_pipeline.py and Jupyter Notebook, preprocesses images, extracts contours, and matches slices based on structural similarity. Results are saved in organized folders, with matched slices grouped for easy review. This automated process ensures accurate alignment across stains for further analysis.</p>
+<p>This pipeline automates the preprocessing, matching, alignment, and patch extraction of stained tissue images to enable efficient downstream analysis. The process begins with the preprocessing phase, where images are standardized and organized. Files are renamed to a consistent format, and patients missing one or more strain types (H&amp;E, melan, SOX10) are excluded. For patients with multiple images of the same strain, only the highest-resolution image is retained. Once cleaned, images are split into folders by patient ID to prepare for further analysis.</p>
+<p>The matching phase groups corresponding images across the three stains for each patient by calculating distances between extracted contours to find optimal matches. The aligned images are saved as “matches” and further processed during the alignment phase, where images are rotated and resized to maximize overlap while maintaining consistent dimensions. A contour-based algorithm crops images to their regions of interest before alignment.</p>
+<p>Finally, the patch extraction phase identifies and extracts tissue patches containing both epithelium and stroma using skeletonization and gradient-based methods. Each patch is validated to ensure it contains components from all three stain types and meets quality criteria, such as having a balanced proportion of tissue and background pixels. Patches are saved in an organized structure, enabling seamless comparison across stains. The pipeline integrates error handling and modular design to ensure robustness, scalability, and adaptability to varied datasets.</p>
+<p>Follow this step-by-step manual to match slices:</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -209,9 +212,9 @@ Step-by-Step Manual
 </figure>
 </div>
 </section>
-<section id="api-for-matching-slices" class="level1">
-<h1>API for Matching Slices</h1>
-<p>Here is the API we created to automate this step</p>
+<section id="api" class="level1">
+<h1>API</h1>
+<p>Here is the API we created to automate this step. Using this tool will speed up the process a great deal:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/API.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
