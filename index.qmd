@@ -1,5 +1,5 @@
 ---
-title: "Fall 2024 STAT390 (CMIL Classification)"
+title: "Fall 2024 STAT390 (CMIL Classification)" 
 ---
 
 **Aim: The objective of this project is to identify the severity of potential eye cancer by looking at a particular eye tissue of the patient.**
