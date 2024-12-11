@@ -132,12 +132,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#steps-before-patching" id="toc-steps-before-patching" class="nav-link active" data-scroll-target="#steps-before-patching">Steps Before Patching</a>
-  <ul class="collapse">
-  <li><a href="#pathologist-team-annotations" id="toc-pathologist-team-annotations" class="nav-link" data-scroll-target="#pathologist-team-annotations">1. Pathologist Team Annotations</a></li>
-  <li><a href="#orientation" id="toc-orientation" class="nav-link" data-scroll-target="#orientation">2. Orientation</a></li>
-  </ul></li>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><strong>Methodology</strong></a></li>
+  <li><a href="#steps-before-patching" id="toc-steps-before-patching" class="nav-link active" data-scroll-target="#steps-before-patching">Steps Before Patching</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   </ul>
 </nav>
@@ -172,17 +168,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="steps-before-patching" class="level1">
 <h1>Steps Before Patching</h1>
-<section id="pathologist-team-annotations" class="level2">
-<h2 class="anchored" data-anchor-id="pathologist-team-annotations">1. Pathologist Team Annotations</h2>
+<p><strong>1. Pathologist Team Annotations</strong></p>
 <p>Before this step, we will send matched and extracted epithelium slices to the <strong>pathologist team</strong> to annotate the regions.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Annotations.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-</section>
-<section id="orientation" class="level2">
-<h2 class="anchored" data-anchor-id="orientation">2. Orientation</h2>
+<p><strong>2. Orientation</strong></p>
 <p>After this we will orient the images to be aligned evenly before patching.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -191,9 +184,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Once these steps are complete, we can begin patching.</p>
 </section>
-</section>
 <section id="methodology" class="level1">
-<h1><strong>Methodology</strong></h1>
+<h1>Methodology</h1>
 <p>The methodology for segmenting and analyzing epithelium regions in tissue images involves a structured series of image processing steps. Initially, each image is converted to grayscale and smoothed using a Gaussian blur to reduce noise and enhance uniformity. A binary mask is then generated through thresholding, followed by morphological operations such as closing and opening to refine the mask and remove small artifacts. The largest contour is identified as the epithelium region, and its mask is saved for further analysis. To segment the epithelium into patches, optimal patch dimensions are calculated based on the maximum continuous width of white pixels and the total epithelium area. Patches are applied using a stride that ensures coverage while minimizing overlap, and both vertical and horizontal orientations are evaluated to determine the best coverage for each region. The combined patches are drawn on the original image, and coverage percentages are calculated. Additionally, region outlines are overlaid on the images for visualization. The final outputs include the processed images with patches, region outlines, and masks, ensuring comprehensive segmentation and coverage assessment.</p>
 <p>Follow this step-by-step manual to patch the epithelium</p>
 <div class="callout callout-style-default callout-note callout-titled">
