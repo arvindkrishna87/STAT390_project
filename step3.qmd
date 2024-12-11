@@ -20,7 +20,8 @@ For **Melan-A** stains, the red chroma channel is used to identify stroma and ep
 
 For **Sox-10** stains, the blue chroma channel is used similarly, with a tailored binning strategy to reflect the different chromatic characteristics of this stain. In both cases, stroma and epithelium masks are refined through morphological dilation, Gaussian smoothing, and removal of small objects or holes. The resulting masks are applied to the RGB images to generate segmented outputs, which are saved alongside visualizations of the input, stroma, and epithelium regions. These methods balance robustness and flexibility, ensuring segmentation quality across diverse tissue samples and staining variations.
 
-Follow this step-by manual to extract epithelia. Our API we created is included which automates the process.
+
+Follow this step-by-step manual to extract epithelia. Our API we created is included which automates the process.
 
 :::{.callout-note collapse=true}
 
