@@ -9,7 +9,7 @@ editor:
 
 ![](images/Step1.png)
 
-# **Methodology**
+# Methodology
 
 This method employs a Groovy script in QuPath to automate the identification, processing, and export of tissue regions of interest (ROIs) from Whole Slide Images (WSIs). Key scripts, including `tissues_2.json`, `automate_export_newest.groovy`, and `existing_annotations.groovy`, enable efficient processing and handling of diverse stain types. After setting up the project and placing scripts in their designated directories, the `automate_export_newest.groovy` script is executed to detect and export regions of interest (ROIs) as tissue slices, which are saved in the `processed_data` folder.
 
@@ -20,7 +20,7 @@ Follow this step by step manual to extract slices:
 
 :::{.callout-note collapse=true}
 
-## **Step-by-Step Manual**
+## Step-by-Step Manual
 
 
 Codes required:
@@ -112,6 +112,7 @@ Slice](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northweste
 Here are the six result cases we encountered and what to do with each one. Some require rerunning certain codes:
 
 :::{.callout-note collapse=true}
+
 ## Result Cases
 
 **Case 1**: perfect ROI identification Self-explanatory, all ROIs were
