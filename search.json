@@ -56,11 +56,11 @@
     "text": "Aim: Applies horizontal/vertical patching across the matched and oriented epithelia."
   },
   {
-    "objectID": "step4.html#steps-before-patching-pathologist-team",
-    "href": "step4.html#steps-before-patching-pathologist-team",
+    "objectID": "step4.html#pathologist-team-step",
+    "href": "step4.html#pathologist-team-step",
     "title": "Step 4: Patching",
-    "section": "Steps Before Patching (Pathologist Team)",
-    "text": "Steps Before Patching (Pathologist Team)\n1. Pathologist Team Annotations\nBefore this step, we will send matched and extracted epithelium slices to the pathologist team to annotate the regions.\n\n\n\n\n\n2. Orientation\nAfter this we will orient the images to be aligned evenly before patching.\n\n\n\n\n\nOnce these steps are complete, we can begin patching."
+    "section": "Pathologist Team Step",
+    "text": "Pathologist Team Step\n1. Pathologist Team Annotations\nBefore this step, we will send matched and extracted epithelium slices to the pathologist team to annotate the regions.\n\n\n\n\n\n2. Orientation\nAfter this we will orient the images to be aligned evenly before patching.\n\n\n\n\n\nOnce these steps are complete, we can begin patching."
   },
   {
     "objectID": "step3.html",
