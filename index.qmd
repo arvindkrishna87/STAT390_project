@@ -16,7 +16,7 @@ The Northwestern University STAT390 Class of Fall 2024 has made the following pr
 
 **Step 3:**  Detecting and extracting the epithelium and stroma for each tissue slice. Send to pathologist team
 
-*Pathologist Team will annotate H&E slice with high grade, low grade, and benign regions and send back to us*
+- *Pathologist Team will annotate H&E slice with high grade, low grade, and benign regions and send back to us*
 
 **Step 4:**  Orienting matched slices and apply patching across epithelium for matched slices
 
