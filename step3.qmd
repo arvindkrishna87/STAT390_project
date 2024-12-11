@@ -36,6 +36,6 @@ For **Sox-10** stains, the blue chroma channel is used similarly, with a tailore
 
 # API
 
-This 
+Here is the API we created to automate this step. Using this tool will speed up the process.
 
 ![](images/API.png){fig-align="center"}
