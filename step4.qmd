@@ -13,21 +13,12 @@ oriented epithelia.**
 
 ## Pathologist Team Step
 
-**1. Pathologist Team Annotations**
-
 Before this step, we will send matched and extracted epithelium slices
 to the pathologist team to annotate the regions.
 
 ![](images/Annotations.png){fig-align="center"}
 
-**2. Orientation**
-
-After this we will orient the images to be aligned evenly before
-patching.
-
-![](images/Orient.png){fig-align="center"}
-
-Once these steps are complete, we can begin patching.
+Once this step is complete, we can begin patching.
 
 # Methodology
 
@@ -50,6 +41,10 @@ Run `rotate_extract_patch (1).py`.
 :::
 
 # Results
+
+**Orientation**
+
+![](images/Orient.png){fig-align="center"}
 
 ![](images/Step4.png){fig-align="center"}
 
