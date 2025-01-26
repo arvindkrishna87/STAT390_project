@@ -1,5 +1,8 @@
 ---
 title: "Step 3: Annotate Slices"
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 **Aim: idemtify different classes in the epithelium so we can train a model with ground truth**
