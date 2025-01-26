@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Step 3: Patching – Fall 2024 STAT390 project</title>
+<title>Step 4: Patching – Fall 2024 STAT390 project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./step4.html" aria-current="page"> 
-<span class="menu-text">Step 3: Patching</span></a>
+<span class="menu-text">Step 4: Patching</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./litreview.html"> 
@@ -150,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Step 3: Patching</h1>
+<h1 class="title">Step 4: Patching</h1>
 </div>
 
 
@@ -226,9 +226,7 @@ Step-by-Step Manual
 <p>Tilting of patches could lead to smaller, more efficient patches. Smaller patches are advantageous because we will get more data to work with. Each patch will also have less data in it, and our model may have an easier time picking up on patterns. Also, tilting the patches, means that the epithelium is always in the same orientation in each patch. Our model will not have to determine the orientation of a sample. Perhaps, this will lead to a simpler, more efficient model.</p>
 <section id="aryamans-algorithm" class="level3">
 <h3 class="anchored" data-anchor-id="aryamans-algorithm">Aryaman’s algorithm</h3>
-<p>We use edge detection and find the slope between two points on the edge. Using that slope, we create one edge of the square. This way, the square is tilted to match up with the angle of the sample. </p>
-<p><strong>Upsides:</strong> There is already code for that edge detection and finding the edge of the square. </p>
-<p><strong>Downsides:</strong> The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. Also, see downsides of Aryaman’s whole algorithm.</p>
+<p>We use edge detection and find the slope between two points on the edge. Using that slope, we create one edge of the square. This way, the square is tilted to match up with the angle of the sample. <br> <strong>Upsides:</strong> There is already code for that edge detection and finding the edge of the square. <br> <strong>Downsides:</strong> The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. Also, see downsides of Aryaman’s whole algorithm.</p>
 </section>
 <section id="different-tilting-algorithm" class="level3">
 <h3 class="anchored" data-anchor-id="different-tilting-algorithm">Different tilting algorithm:</h3>
@@ -238,9 +236,7 @@ Step-by-Step Manual
 <p><img src="images/regression_tilt.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div>
-<p><strong>Upsides:</strong> this method is not very computationally expensive, especially with the epithelium mask that we have for each sample already. </p>
-<p><strong>Downsides:</strong> When tilting an existing patch, we cannot ensure that the patch still includes the entire epithelium unless we also resize the patch. </p>
-<p><strong>Note:</strong> This separates the tilting from the patching process. While this is not necessarily a negative, we don’t know which patching algorithm works best with this method yet. It adds another step to the process.</p>
+<p><strong>Upsides:</strong> this method is not very computationally expensive, especially with the epithelium mask that we have for each sample already. <br> <strong>Downsides:</strong> When tilting an existing patch, we cannot ensure that the patch still includes the entire epithelium unless we also resize the patch. <br> <strong>Note:</strong> This separates the tilting from the patching process. While this is not necessarily a negative, we don’t know which patching algorithm works best with this method yet. It adds another step to the process.</p>
 
 
 </section>
