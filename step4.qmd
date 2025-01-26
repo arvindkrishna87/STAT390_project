@@ -50,12 +50,9 @@ Run `rotate_extract_patch (1).py`.
 
 ## Comparing Codes
 
-| Pros         | Cons  |
-|---------------------|-----------------:|
-|   - test
-- test
-
-|   - test     |
+| Pros              | Cons              |
+|--------------------|-------------------|
+| - Advantage 1<br>- Advantage 2 | - Disadvantage 1<br>- Disadvantage 2 |
 
 
 ## Tilting the patches
