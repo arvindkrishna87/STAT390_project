@@ -53,13 +53,19 @@ Run `rotate_extract_patch (1).py`.
 ### Alyssa's Code
 
 | Pros              | Cons              |
-|:------------------:|:-----------------:|
+|------------------|-----------------|
 | - Advantage 1<br>- Advantage 2 | - Disadvantage 1<br>- Disadvantage 2 |
 
 ### Aryaman's Code
 
 | Pros              | Cons              |
-|:------------------:|:-----------------:|
+|------------------|-----------------|
+| - Advantage 1<br>- Advantage 2 | - Disadvantage 1<br>- Disadvantage 2 |
+
+### Eli's Code
+
+| Pros              | Cons              |
+|------------------|-----------------|
 | - Advantage 1<br>- Advantage 2 | - Disadvantage 1<br>- Disadvantage 2 |
 
 
