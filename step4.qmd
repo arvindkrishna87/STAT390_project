@@ -48,6 +48,13 @@ Run `rotate_extract_patch (1).py`.
 
 ![](images/Step4.png){fig-align="center"}
 
+## Comparing Codes
+
+| Pros         | Cons  |
+|---------------------|-----------------:|
+|        |        |
+
+
 ## Tilting the patches
 
 Tilting of patches could lead to smaller, more efficient patches. Smaller patches are advantageous because we will get more data to work with. Each patch will also have less data in it, and our model may have an easier time picking up on patterns. Also, tilting the patches, means that the epithelium is always in the same orientation in each patch. Our model will not have to determine the orientation of a sample. Perhaps, this will lead to a simpler, more efficient model. 
