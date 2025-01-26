@@ -52,7 +52,10 @@ Run `rotate_extract_patch (1).py`.
 
 | Pros         | Cons  |
 |---------------------|-----------------:|
-|        |        |
+|   - test
+- test
+
+|   - test     |
 
 
 ## Tilting the patches
