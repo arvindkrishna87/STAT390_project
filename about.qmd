@@ -11,7 +11,11 @@ This is the website for the Fall 2024 STAT390 project!
 
 **Team Members**:
 
-Marianne Cano, Lauren Gomez, Rayyana Hassan, Baron Patterson, Cara Chang, Eli Nacar, Kenny Yeon, Luna Nguyen, Teresa Pan, Emma Drisko, Ally Bardas, Diego Goldfrank, Andrew Luke, Maddy Gallagher, Sarah Abdulwahid, Noah Schulhof, Christina Tzavara, Faith Cramer, Aryaman Chawla, Parth Patel, Atharva Weling, Kyla Bruno, Kevin Li, Alyssa Shou, Annie Xia, Alex Devorsetz, Kelly Meng
+- Thinkers: John Olsen, Kota Suzuki, Yaelle Pierre, Jake Mead, Ryan Yi,	Anna Roney
+- Coders: Sari Eisen, Sharon Lin,	Ryan Lach,	Nathan Jung,	Hannah Ma
+- Literature Surveyors: William Wang,	Bennett Markinson,	Allen Zhang,	Alex Zhou,	Jacob Muriel,	Patrick Schmid,	Lainey Neild
+- Consultants/Organizers/Testers: Olivia Joung,	Anna Deka,	Margaret Pirozzolo,	Jack Ouyang,	Haneef Usmani,	Radhika Todi
+- Health informaticians: Lucinda Hu,	Dila Bitlis,	Julia Nelson,	Walker Frisbie,	Kayla Terrelonge
 
 **Stakeholders**: Dr. Yamini Krishna, Dr. He Zhao, Prashant Kumar
 
