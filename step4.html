@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Step 4: Patching – Fall 2024 STAT390 project</title>
+<title>Step 3: Patching – Fall 2024 STAT390 project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,10 +35,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-659650fc26dc25888fc1474f317bb8ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5027bf1c1f92ac6615724d89c8213d6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -110,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./step4.html" aria-current="page"> 
-<span class="menu-text">Step 4: Patching</span></a>
+<span class="menu-text">Step 3: Patching</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./litreview.html"> 
@@ -134,7 +134,12 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#pathologist-team-step" id="toc-pathologist-team-step" class="nav-link active" data-scroll-target="#pathologist-team-step">Pathologist Team Step</a></li>
   <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#tilting-the-patches" id="toc-tilting-the-patches" class="nav-link" data-scroll-target="#tilting-the-patches">Tilting the patches</a></li>
+  </ul></li>
+  <li><a href="#aryamans-algorithm" id="toc-aryamans-algorithm" class="nav-link" data-scroll-target="#aryamans-algorithm">Aryaman’s algorithm</a></li>
+  <li><a href="#different-tilting-algorithm" id="toc-different-tilting-algorithm" class="nav-link" data-scroll-target="#different-tilting-algorithm">Different tilting algorithm:</a></li>
   </ul>
 </nav>
     </div>
@@ -143,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Step 4: Patching</h1>
+<h1 class="title">Step 3: Patching</h1>
 </div>
 
 
@@ -214,6 +219,24 @@ Step-by-Step Manual
 <p><img src="images/Step4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
+<section id="tilting-the-patches" class="level2">
+<h2 class="anchored" data-anchor-id="tilting-the-patches">Tilting the patches</h2>
+<p>Tilting of patches could lead to smaller, more efficient patches. Smaller patches are advantageous because we will get more data to work with. Each patch will also have less data in it, and our model may have an easier time picking up on patterns. Also, tilting the patches, means that the epithelium is always in the same orientation in each patch. Our model will not have to determine the orientation of a sample. Perhaps, this will lead to a simpler, more efficient model.</p>
+</section>
+</section>
+<section id="aryamans-algorithm" class="level1">
+<h1>Aryaman’s algorithm</h1>
+<p>We use edge detection and find the slope between two points on the edge. Using that slope, we create one edge of the square. This way, the square is tilted to match up with the angle of the sample. <strong>Upsides:</strong> There is already code for that edge detection and finding the edge of the square. <strong>Downsides:</strong> The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. Also, see downsides of Aryaman’s whole algorithm.</p>
+</section>
+<section id="different-tilting-algorithm" class="level1">
+<h1>Different tilting algorithm:</h1>
+<p>We pick a random patch. Next, we identify the stroma and the outside of the sample. We treat the pixels of the stroma and the outside of the sample as points. Using these points, we run a regression model to draw the line that most efficiently crosses the epithelium. Now, we will tilt the patch so that two edges are perpendicular and two edges are parallel to that regression line. This will create a patch that follows the contour of the epithelium. Below is a visual representation of this process.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/regression_tilt.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p><strong>Upsides:</strong> this method is not very computationally expensive, especially with the epithelium mask that we have for each sample already. <strong>Downsides:</strong> When tilting an existing patch, we cannot ensure that the patch still includes the entire epithelium unless we also resize the patch. <strong>Note:</strong> This separates the tilting from the patching process. While this is not necessarily a negative, we don’t know which patching algorithm works best with this method yet. It adds another step to the process.</p>
 
 
 </section>
