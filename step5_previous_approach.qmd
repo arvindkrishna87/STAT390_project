@@ -1,5 +1,8 @@
 ---
 title: "Previous Approach: Epithelium Detection"
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 **Aim: To separate the epithelium from the stroma in each tissue.**
