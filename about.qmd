@@ -2,7 +2,7 @@
 title: "About"
 ---
 
-This is the website for the Fall 2024 STAT390 project!
+This is the website for the Fall 2025 STAT390 project!
 
 
 ## People
@@ -23,11 +23,11 @@ This is the website for the Fall 2024 STAT390 project!
 
 This github contains all the necessary code and algorithms from our progress:
 
-**[GitHub](https://github.com/diegogoldfrank/STAT-390---Fall-24.git)**
+**[GitHub](https://github.com/arvindkrishna87/STAT390_WI2025.git)**
 
 This OneDrive contains all data and processed folders from our progress:
 
-**[OneDrive](https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390)**
+**[OneDrive](https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390&sortField=LinkFilename&isAscending=true)**
 
 ## Data Overview
 
