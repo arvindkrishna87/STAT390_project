@@ -235,7 +235,7 @@ Step-by-Step Manual
 <p>We pick a random patch. Next, we identify the stroma and the outside of the sample. We treat the pixels of the stroma and the outside of the sample as points. Using these points, we run a regression model to draw the line that most efficiently crosses the epithelium. Now, we will tilt the patch so that two edges are perpendicular and two edges are parallel to that regression line. This will create a patch that follows the contour of the epithelium. Below is a visual representation of this process.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/regression_tilt.png" class="quarto-figure quarto-figure-center figure-img" style="height:70.0%"></p>
+<p><img src="images/regression_tilt.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div>
 <p><strong>Upsides:</strong> this method is not very computationally expensive, especially with the epithelium mask that we have for each sample already. </p>
