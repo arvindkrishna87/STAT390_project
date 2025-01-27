@@ -177,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Aim: Applies horizontal/vertical patching across the matched and oriented epithelia.</strong></p>
+<p><strong>Aim:.</strong> To determine whether a fixed patch size can be used effectively for patching. We propose running a patching algorithm on one stain and analysing the distribution of patches it generates. If a large majority of the patches are a specific size, that size can be considered the optimal. Since the distribution of patches will be the same across stains, the optimal patch size found can be used across all three stains.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Step4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -195,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="methodology" class="level1">
 <h1>Methodology</h1>
-<p>The <strong>rotation patching code</strong> processes stained tissue images by aligning them spatially, segmenting key regions (epithelium and stroma), and extracting patches for comparative analysis across different stains (H&amp;E, Melan-A, and Sox-10). It begins by aligning images through contour detection, cropping, and optimizing overlap between stains. Using adaptive thresholding and morphological operations, the script segments epithelium and stroma regions based on luminance and chroma channels in the YCrCb color space. Patches containing both regions are extracted along the skeletonized centerline, validated across stains, and saved for further analysis, enabling consistent and meaningful cross-stain comparisons.</p>
+<p>The <strong>rotation patching code</strong> processes stained tissue images by aligning them spatially, segmenting key regions (epithelium and stroma), and extracting patches for comparative analysis across different stains (H&amp;E, Melan-A, and Sox-10). It begins by aligning images through contour detection, cropping, and optimizing overlap between stains. The algorithm creates a skeleton by converting the image into a binary format, reducing the tissue to a central line. The skeleton represents the edge of the tissue, the boundary of the epithelium, and is used as a guide for placing patches. At each point on the skeleton, the algorithm calculates the slope between neighbouring points, which defines the orientation of the patch. Using this orientation, it forms a square patch which aligns with the boundary. The patch is kept only if it includes regions from the stroma and the background, ensuring that the full width of the epithelium is captured in most cases. Overlapping patches are removed in the final step.</p>
 <p>Follow this step-by-step manual to patch the epithelia.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
