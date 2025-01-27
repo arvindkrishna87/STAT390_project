@@ -19,11 +19,12 @@ to the pathologist team to annotate the regions.
 
 While they annotate the regions, we're working on our patching algorithms.
 
-# Aryaman's Patching Algorithm Methodology
+# Aryaman's Patching Algorithm: Methodology
 
 
 The **rotation patching code** processes stained tissue images by aligning them spatially, segmenting key regions (epithelium and stroma), and extracting patches for comparative analysis across different stains (H&E, Melan-A, and Sox-10). The algorithm creates a skeleton by converting the image of the epithelium mask into a binary format, reducing the tissue to a central line. The skeleton represents the centreline through the epithelial region, and is used as a guide for placing patches. At each point on the skeleton, the algorithm calculates the slope between neighbouring points, which defines the orientation of the patch. Using this orientation, it forms a square patch which aligns with the boundary. The patch is kept only if it includes regions from the stroma and the background, ensuring that the full width of the epithelium is captured in most cases. Overlapping patches are removed in the final step.
 
+![](images/mask_and_skeleton.png){fig-align="center"}
 
 Follow this step-by-step manual to patch the epithelia.
 
