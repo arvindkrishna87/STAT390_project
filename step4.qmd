@@ -54,7 +54,7 @@ Run `rotate_extract_patch (1).py`.
 
 | Pros              | Cons              |
 |------------------|-----------------|
-| - Advantage 1<br>- Advantage 2 | - Disadvantage 1<br>- Disadvantage 2 |
+| - Patches grow until they cover a sufficient region of the epithelium, which allows for better adaptability across different epithelium widths <br>- Advantage 2 | - Disadvantage 1<br>- Disadvantage 2 |
 
 ### Aryaman's Code
 
