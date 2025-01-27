@@ -253,8 +253,12 @@ Step-by-Step Manual
 </thead>
 <tbody>
 <tr class="odd">
-<td>- Patches grow until they cover a sufficient region of the epithelium, which allows for better adaptability across different epithelium widths <br>- Advantage 2</td>
-<td>- Incrementally increases patches using very small step sizes, making code time consuming (likely why this algorithm does not work as effectively with larger, thicker tissues (e.g.&nbsp;the large Copenhagen slices)) <br>- Disadvantage 2</td>
+<td>Patches grow until they cover a sufficient region of the epithelium, which allows for better adaptability across different epithelium widths <br> This also allows for some overlap between patches, which helps create a balance for ensuring coverage and not missing any key spots without too much duplication.</td>
+<td>This method incrementally increases patches using very small step sizes, making code time consuming (likely why this algorithm does not work as effectively with larger, thicker tissues (e.g.&nbsp;the large Copenhagen slices)) <br> This algorithm also depends on color thresholds to identify tissue regions, which may lead to inconsistencies or require frequent adjustments due to variations. <br>-For example, the black and white mask isolates the epithelium from the stroma and background.</td>
+</tr>
+<tr class="even">
+<td><br>-Stain type/image quality/lighting could affect which part is labeled as epithelium vs.&nbsp;stroma vs.&nbsp;background, which could then lead to melanocytes being cut out/not captured in patches.</td>
+<td></td>
 </tr>
 </tbody>
 </table>
