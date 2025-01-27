@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Previous Approach: Epithelium Detection – Fall 2025 STAT390 project</title>
+<title>Automation – Fall 2025 STAT390 project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./step5_previous_approach.html" aria-current="page"> 
-<span class="menu-text">Previous Approach: Epithelium Detection</span></a>
+<span class="menu-text">Automation</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./litreview.html"> 
@@ -136,8 +136,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#slice-extraction" id="toc-slice-extraction" class="nav-link active" data-scroll-target="#slice-extraction">Slice Extraction</a></li>
+  <li><a href="#tissue-matching" id="toc-tissue-matching" class="nav-link" data-scroll-target="#tissue-matching">Tissue Matching</a></li>
+  <li><a href="#epithelium-detection" id="toc-epithelium-detection" class="nav-link" data-scroll-target="#epithelium-detection">Epithelium Detection</a>
+  <ul class="collapse">
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a>
+  <ul class="collapse">
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -146,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Previous Approach: Epithelium Detection</h1>
+<h1 class="title">Automation</h1>
 </div>
 
 
@@ -163,7 +170,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Aim: To separate the epithelium from the stroma in each tissue.</strong></p>
+<p>As noted in the Slice Extraction and Matching steps, we have been working manually. We do, however, hope to make this whole process automated through a few key programs. These include slice extraction, tissue matching, and epithelium detection.</p>
+<section id="slice-extraction" class="level1">
+<h1>Slice Extraction</h1>
+</section>
+<section id="tissue-matching" class="level1">
+<h1>Tissue Matching</h1>
+</section>
+<section id="epithelium-detection" class="level1">
+<h1>Epithelium Detection</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/h2114153h&amp;e_ROI_5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
@@ -174,8 +189,9 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/Step3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<section id="methodology" class="level1">
-<h1>Methodology</h1>
+<p><strong>This algorithm aims to separate the epithelium from the stroma and create an epithelium mask automatically.</strong></p>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
 <p>This project involves a comprehensive image processing workflow designed to segment epithelial and stromal regions from tissue images stained with different markers. The methodology combines advanced image processing techniques, including color space transformations, morphological operations, and region-based segmentation, tailored for specific stain types and locations (e.g., Liverpool or Sheffield). For each image, the script <code>Epithelium Extraction Script.ipynb</code> first identifies background regions using the luminance channel. The algorithm then isolates epithelia and stroma using chroma channels, applying binning techniques to detect dominant pixel intensity ranges. Morphological operations such as dilation, erosion, and small object removal refine the segmentation. Gaussian smoothing is incorporated to reduce noise and improve mask quality. Segmented regions are applied as binary masks to the original image for visualization and saved for further analysis. Parameter tuning and function selection were performed iteratively based on intermediate visualizations, ensuring high accuracy for each stain-location combination.</p>
 <p>Among the six algorithms implemented, those for H&amp;E stains exhibit the highest accuracy, followed by Melan-A and Sox-10 stains. Each algorithm is adapted to the unique characteristics of the stain and location, ensuring reliable extraction of relevant regions.</p>
 <p>The segmentation process for <strong>H&amp;E</strong> stained images leverages the luminance and chroma characteristics of the image to differentiate background, stroma, and epithelial regions effectively. Using the YCrCb color space, the luminance channel identifies the background by isolating the bin with the highest pixel count, refined further through morphological operations like hole filling and object removal. For epithelial segmentation, the red chroma channel is used, with bins adjacent to the stroma bin analyzed to isolate epithelial regions. Morphological techniques, including dilation and Gaussian smoothing, enhance the segmentation mask. The process ensures robust separation of regions, saving the results as masks and visualizations for further analysis. This approach maintains adaptability to the variable staining intensities and patterns characteristic of H&amp;E images.</p>
@@ -205,8 +221,8 @@ Step-by-Step Manual (API included)
 <li><p>Run the setup code: Execute all code cells from the purple header through the end of the file before executing the code cell below. Verify the folder object: Confirm that the folder object contains the correct tissue scans. Once verified, you may execute the code cell below.</p></li>
 <li><p>Run <code>Epithelium Extraction Script.ipynb</code>.</p></li>
 </ol>
-<section id="api" class="level1">
-<h1>API</h1>
+<section id="api" class="level3">
+<h3 class="anchored" data-anchor-id="api">API</h3>
 <p>Here is the API we created to automate this step. Using this tool will speed up the process.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -217,16 +233,21 @@ Step-by-Step Manual (API included)
 </div>
 </div>
 </div>
-</section>
-<section id="results" class="level1">
-<h1>Results</h1>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">Results</h3>
+<p>As seen below, this program could pull out the epithelium on certain samples.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/h2114153h&amp;e_ROI_5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
+<p>However, the program often failed, especially on more irregular shapes as seen below.</p>
+<p><img src="images/failedEpi1.png" class="img-fluid">{fig-align=“center” width = 60%} <img src="images/failedEpi2.png" class="img-fluid">{fig-align=“center” width = 60%}</p>
+<p>** The ultimate goal is to have this program work, so that all doctors have to do is push a button. However, with such inconsistent results, it is better to focus our efforts elsewhere, as we know doctors have the ability, in QuPath, to pull out slices and epithelium masks if need be.**</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
