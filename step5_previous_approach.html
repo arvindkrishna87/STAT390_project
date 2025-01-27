@@ -136,7 +136,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#slice-extraction" id="toc-slice-extraction" class="nav-link active" data-scroll-target="#slice-extraction">Slice Extraction</a></li>
+  <li><a href="#slice-extraction" id="toc-slice-extraction" class="nav-link active" data-scroll-target="#slice-extraction">Slice Extraction</a>
+  <ul class="collapse">
+  <li><a href="#caras-method" id="toc-caras-method" class="nav-link" data-scroll-target="#caras-method">Cara’s Method</a></li>
+  </ul></li>
   <li><a href="#tissue-matching" id="toc-tissue-matching" class="nav-link" data-scroll-target="#tissue-matching">Tissue Matching</a></li>
   <li><a href="#epithelium-detection" id="toc-epithelium-detection" class="nav-link" data-scroll-target="#epithelium-detection">Epithelium Detection</a>
   <ul class="collapse">
@@ -173,6 +176,11 @@ ul.task-list li input[type="checkbox"] {
 <p>As noted in the Slice Extraction and Matching steps, we have been working manually. We do, however, hope to make this whole process automated through a few key programs. These include slice extraction, tissue matching, and epithelium detection.</p>
 <section id="slice-extraction" class="level1">
 <h1>Slice Extraction</h1>
+<p><strong>This step of the automation takes the whole slide image with multiple tissues slices on it and extracts the slices into their own file.</strong> <br> We have two methods for this step. Both work relaively well, but fail in specific cases.</p>
+<section id="caras-method" class="level2">
+<h2 class="anchored" data-anchor-id="caras-method">Cara’s Method</h2>
+<p>Below is the documentation for Cara’s Method in case you are interested in using this algorithm now. <img src="https://docs.google.com/document/d/1u3e0Bw7LGokr4gZgAOPgqrvykZYsyqcx-LGDGNzFQV0/edit?usp=sharing.png" class="img-fluid" alt="Link"></p>
+</section>
 </section>
 <section id="tissue-matching" class="level1">
 <h1>Tissue Matching</h1>
