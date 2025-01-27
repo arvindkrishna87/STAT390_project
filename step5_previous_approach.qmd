@@ -1,19 +1,29 @@
 ---
-title: "Previous Approach: Epithelium Detection"
+title: "Automation"
 editor: 
   markdown: 
     wrap: 72
 ---
 
-**Aim: To separate the epithelium from the stroma in each tissue.**
+As noted in the Slice Extraction and Matching steps, we have been working manually. We do, however, hope to make this whole process automated through a few key programs. These include slice extraction, tissue matching, and epithelium detection. 
+
+
+# Slice Extraction
+
+# Tissue Matching
+
+
+# Epithelium Detection
 
 ![](images/h2114153h&e_ROI_5.png){fig-align="center" width="500"}
 
 ![](images/Step3.png){fig-align="center"}
 
+**This algorithm aims to separate the epithelium from the stroma and create an epithelium mask automatically.**
 
 
-# Methodology
+
+## Methodology
 
 This project involves a comprehensive image processing workflow designed to segment epithelial and stromal regions from tissue images stained with different markers. The methodology combines advanced image processing techniques, including color space transformations, morphological operations, and region-based segmentation, tailored for specific stain types and locations (e.g., Liverpool or Sheffield). For each image, the script `Epithelium Extraction Script.ipynb` first identifies background regions using the luminance channel. The algorithm then isolates epithelia and stroma using chroma channels, applying binning techniques to detect dominant pixel intensity ranges. Morphological operations such as dilation, erosion, and small object removal refine the segmentation. Gaussian smoothing is incorporated to reduce noise and improve mask quality. Segmented regions are applied as binary masks to the original image for visualization and saved for further analysis. Parameter tuning and function selection were performed iteratively based on intermediate visualizations, ensuring high accuracy for each stain-location combination.
 
@@ -35,7 +45,7 @@ Follow this step-by-step manual to extract epithelia. Our API we created is incl
 
 :::{.callout-note collapse=true}
 
-## Step-by-Step Manual (API included)
+### Step-by-Step Manual (API included)
 
 Codes required:
 
@@ -51,7 +61,7 @@ Codes required:
 4. Run `Epithelium Extraction Script.ipynb`. 
 
 
-# API
+### API
 
 Here is the API we created to automate this step. Using this tool will speed up the process.
 
@@ -60,7 +70,15 @@ Here is the API we created to automate this step. Using this tool will speed up 
 :::
 
 
-# Results
+### Results
+
+As seen below, this program could pull out the epithelium on certain samples.
 
 ![](images/h2114153h&e_ROI_5.png){fig-align="center"}
 
+However, the program often failed, especially on more irregular shapes as seen below. 
+
+![](images/failedEpi1.png){fig-align="center" width = 60%}
+![](images/failedEpi2.png){fig-align="center" width = 60%}
+
+** The ultimate goal is to have this program work, so that all doctors have to do is push a button. However, with such inconsistent results, it is better to focus our efforts elsewhere, as we know doctors have the ability, in QuPath, to pull out slices and epithelium masks if need be.**
