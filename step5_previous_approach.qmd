@@ -10,6 +10,15 @@ As noted in the Slice Extraction and Matching steps, we have been working manual
 
 # Slice Extraction
 
+**This step of the automation takes the whole slide image with multiple tissues slices on it and extracts the slices into their own file.**
+<br>
+We have two methods for this step.  Both work relaively well, but fail in specific cases.
+
+## Cara's Method
+
+Below is the documentation for Cara's Method in case you are interested in using this algorithm now. 
+![Link](https://docs.google.com/document/d/1u3e0Bw7LGokr4gZgAOPgqrvykZYsyqcx-LGDGNzFQV0/edit?usp=sharing)
+
 # Tissue Matching
 
 
@@ -20,8 +29,6 @@ As noted in the Slice Extraction and Matching steps, we have been working manual
 ![](images/Step3.png){fig-align="center"}
 
 **This algorithm aims to separate the epithelium from the stroma and create an epithelium mask automatically.**
-
-
 
 ## Methodology
 
