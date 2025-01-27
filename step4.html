@@ -137,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#pathologist-team-step" id="toc-pathologist-team-step" class="nav-link active" data-scroll-target="#pathologist-team-step">Pathologist Team Step</a></li>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#aryamans-patching-algorithm-methodology" id="toc-aryamans-patching-algorithm-methodology" class="nav-link" data-scroll-target="#aryamans-patching-algorithm-methodology">Aryaman’s Patching Algorithm Methodology</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
   <ul class="collapse">
   <li><a href="#comparing-approaches" id="toc-comparing-approaches" class="nav-link" data-scroll-target="#comparing-approaches">Comparing Approaches</a>
@@ -185,17 +185,17 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="pathologist-team-step" class="level2">
 <h2 class="anchored" data-anchor-id="pathologist-team-step">Pathologist Team Step</h2>
-<p>Before this step, we will send matched and extracted epithelium slices to the pathologist team to annotate the regions.</p>
+<p>We will send matched and extracted epithelium slices to the pathologist team to annotate the regions.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Annotations.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>Once this step is complete, we can begin patching.</p>
+<p>While they annotate the regions, we’re working on our patching algorithms.</p>
 </section>
-<section id="methodology" class="level1">
-<h1>Methodology</h1>
-<p>The <strong>rotation patching code</strong> processes stained tissue images by aligning them spatially, segmenting key regions (epithelium and stroma), and extracting patches for comparative analysis across different stains (H&amp;E, Melan-A, and Sox-10). It begins by aligning images through contour detection, cropping, and optimizing overlap between stains. The algorithm creates a skeleton by converting the image into a binary format, reducing the tissue to a central line. The skeleton represents the edge of the tissue, the boundary of the epithelium, and is used as a guide for placing patches. At each point on the skeleton, the algorithm calculates the slope between neighbouring points, which defines the orientation of the patch. Using this orientation, it forms a square patch which aligns with the boundary. The patch is kept only if it includes regions from the stroma and the background, ensuring that the full width of the epithelium is captured in most cases. Overlapping patches are removed in the final step.</p>
+<section id="aryamans-patching-algorithm-methodology" class="level1">
+<h1>Aryaman’s Patching Algorithm Methodology</h1>
+<p>The <strong>rotation patching code</strong> processes stained tissue images by aligning them spatially, segmenting key regions (epithelium and stroma), and extracting patches for comparative analysis across different stains (H&amp;E, Melan-A, and Sox-10). The algorithm creates a skeleton by converting the image of the epithelium mask into a binary format, reducing the tissue to a central line. The skeleton represents the centreline through the epithelial region, and is used as a guide for placing patches. At each point on the skeleton, the algorithm calculates the slope between neighbouring points, which defines the orientation of the patch. Using this orientation, it forms a square patch which aligns with the boundary. The patch is kept only if it includes regions from the stroma and the background, ensuring that the full width of the epithelium is captured in most cases. Overlapping patches are removed in the final step.</p>
 <p>Follow this step-by-step manual to patch the epithelia.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">

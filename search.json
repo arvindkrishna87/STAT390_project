@@ -81,7 +81,7 @@
     "href": "step4.html#pathologist-team-step",
     "title": "Step 4: Patching",
     "section": "Pathologist Team Step",
-    "text": "Pathologist Team Step\nBefore this step, we will send matched and extracted epithelium slices to the pathologist team to annotate the regions.\n\n\n\n\n\nOnce this step is complete, we can begin patching."
+    "text": "Pathologist Team Step\nWe will send matched and extracted epithelium slices to the pathologist team to annotate the regions.\n\n\n\n\n\nWhile they annotate the regions, we’re working on our patching algorithms."
   },
   {
     "objectID": "step4.html#comparing-approaches",
