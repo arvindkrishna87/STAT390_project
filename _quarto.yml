@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Fall 2024 STAT390 project"
+  title: "Fall 2025 STAT390 project"
   navbar:
     left:
       - href: index.qmd
@@ -12,6 +12,7 @@ website:
       - step2.qmd
       - step3.qmd
       - step4.qmd
+      - step5_previous_approach.qmd
       - litreview.qmd
       
 
