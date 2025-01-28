@@ -81,6 +81,14 @@ We use edge detection and find the slope between two points on the edge. Using t
 <br>
 **Downsides:** The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. Also, see downsides of Aryaman’s whole algorithm. 
 
+## Alyssa’s algorithm
+
+Patches grow incrementally until they cover a sufficient region of the epithelium, allowing the algorithm to adapt better to varying epithelium widths. The method also permits some overlap between patches, striking a balance between thorough coverage and avoiding excessive duplication. \n
+<br>
+**Upsides:** This adaptability across different epithelium widths improves coverage, and the overlap between patches helps ensure no critical regions are missed while avoiding excessive redundancy. \n
+<br>
+**Downsides:** Small step sizes can computationally expensive, particularly when dealing with larger tissues, such as the Copenhagen dataset with single large slices per stain. The algorithm’s reliance on color thresholds to identify tissue regions can lead to inconsistencies or require frequent adjustments due to variations in stain type, image quality, or lighting. 
+
 ## Different tilting algorithm: 
 
 We pick a random patch. Next, we identify the stroma and the outside of the sample. We treat the pixels of the stroma and the outside of the sample as points. Using these points, we run a regression model to draw the line that most efficiently crosses the epithelium. Now, we will tilt the patch so that two edges are perpendicular and two edges are parallel to that regression line. This will create a patch that follows the contour of the epithelium. Below is a visual representation of this process.
