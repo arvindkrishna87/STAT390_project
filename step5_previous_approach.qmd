@@ -7,7 +7,6 @@ editor:
 
 As noted in the Slice Extraction and Matching steps, we have been working manually. We do, however, hope to eventually make this whole process automated through a few key programs. These include slice extraction, tissue matching, and epithelium detection. 
 
-
 # Slice Extraction
 
 **This step of the automation takes the whole slide image with multiple tissues slices on it and extracts the slices into their own file.**
@@ -16,7 +15,18 @@ We have two methods for this step.  Both work relatively well, but fail in speci
 
 ## Cara's Method
 
+As already detailed in Step 1, Cara's code aims to expedite the slice extraction process by automatically exporting slices from a single slide image as individual annotations and saving them into a `processed_data` folder, using the following code: `tissues_1.json`, `tissues_2.json`, `automate_export_newest.groovy`, and `existing_annotations.groovy`.
+
 Here is the documentation for Cara's Method in case you are interested in using this algorithm now: [Link](https://docs.google.com/document/d/1u3e0Bw7LGokr4gZgAOPgqrvykZYsyqcx-LGDGNzFQV0/edit?usp=sharing)
+
+As previously stated above, however, we ultimately opted to extract our slices manually for better accuracy and efficiency. For future attempts, here are a few suggestions for improvement:
+
+
+
+
+
+
+
 
 # Tissue Matching
 
