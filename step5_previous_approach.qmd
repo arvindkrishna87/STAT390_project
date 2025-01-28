@@ -50,6 +50,7 @@ Here is the documentation for Kyla's Method in case you are interested in using 
 
 <div style="text-align: center;">
   <img src="images/FalselyJoined1.png" alt="FalselyJoined1" width="450">
+  <br><br>
   <img src="images/FalselyJoined2.png" alt="FalselyJoined2" width="450">
 </div>
 
@@ -90,6 +91,8 @@ Here is a more detailed step-by-step manual on how to run the code:
 :::
 
 ## Results and Known Issues
+
+Most of these issues appear to stem from a lack of diverse samples. The algorithm as it currently stands does not take into account more complex sample attributes (limited testing on tissue holes, differently colored tissues, tissues with more than two relevant contours to take into account, etc.).
 
 - **Contour Matching with Holes in Tissue**: The algorithm currently handles a single example with a hole in the tissue, as there were limited examples available. It averages the similarity between the three contours when a hole is present, relying on the similarity of the largest contour, not just edge similarity.
 - **Similarity Score Threshold**: A fixed threshold has been set for similarity scores, which may work well for most cases but could be insufficient for specific cases with varying image quality or abnormal structures. 
