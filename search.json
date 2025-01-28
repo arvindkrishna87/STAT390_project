@@ -133,6 +133,13 @@
     "text": "Aryaman’s algorithm\nWe use edge detection and find the slope between two points on the edge. Using that slope, we create one edge of the square. This way, the square is tilted to match up with the angle of the sample.  Upsides: There is already code for that edge detection and finding the edge of the square.  Downsides: The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. Also, see downsides of Aryaman’s whole algorithm."
   },
   {
+    "objectID": "step4.html#alyssas-algorithm",
+    "href": "step4.html#alyssas-algorithm",
+    "title": "Step 4: Patching",
+    "section": "Alyssa’s algorithm",
+    "text": "Alyssa’s algorithm\nPatches grow incrementally until they cover a sufficient region of the epithelium, allowing the algorithm to adapt better to varying epithelium widths. The method also permits some overlap between patches, striking a balance between thorough coverage and avoiding excessive duplication.  Upsides: This adaptability across different epithelium widths improves coverage, and the overlap between patches helps ensure no critical regions are missed while avoiding excessive redundancy.  Downsides: Small step sizes can computationally expensive, particularly when dealing with larger tissues, such as the Copenhagen dataset with single large slices per stain. The algorithm’s reliance on color thresholds to identify tissue regions can lead to inconsistencies or require frequent adjustments due to variations in stain type, image quality, or lighting."
+  },
+  {
     "objectID": "step4.html#different-tilting-algorithm",
     "href": "step4.html#different-tilting-algorithm",
     "title": "Step 4: Patching",
