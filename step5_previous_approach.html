@@ -232,9 +232,47 @@ ul.task-list li input[type="checkbox"] {
 <p>Our current automated methodology for matching tissue images across all three stain types (H&amp;E, Melanin, and Sox10) utilizes image preprocessing, contour extraction, and similarity scoring.</p>
 <p>The current pipeline requires two main files, which can both be found <a href="https://github.com/diegogoldfrank/STAT-390---Fall-24/blob/main/Step%202%3A%20Matching%20slices%20across%20stains/README.md">here</a>:</p>
 <ul>
-<li>NoahsMatching.ipynb: An interactive Jupyter Notebook for processing and visualizing tissue matches.</li>
+<li>AnniesMatching.ipynb: An interactive Jupyter Notebook for processing and visualizing tissue matches.</li>
 <li>match_pipeline.py: A Python script designed for batch processing of images.</li>
 </ul>
+<p>Annie’s code is designed to analyze tissue scan images for each patient and identify the best match across the three different staining types—H&amp;E, melan (melanin), and Sox. The main objective is to find the optimal combination of one image from each stain type that has the <strong>highest overall similarity in shape</strong>. This similarity is computed by extracting the primary contours from each image and calculating shape similarity scores for each combination. The code then averages the similarity scores between the three image pairings to get an overall similarity score for each combination, which allows it to determine the best-matching trio of images for each patient.</p>
+<p>Here is a more detailed step-by-step manual on how to run the code:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Prepare Image Data: Place <code>.tif</code> image files in the designated folder (e.g.&nbsp;<code>processed_images</code>). Ensure that each patient has images for all three stains (H&amp;E, Melanin, Sox10).</p></li>
+<li><p>Choose Full or Subset Processing:</p></li>
+</ol>
+<ul>
+<li>For All Patients: Place all images in the same processed_images directory.</li>
+<li>For a Subset of Patients: Separate patient image files into their own folders within <code>processed_images</code> (e.g., <code>processed_images/patient1</code>, <code>processed_images/patient2</code>).</li>
+</ul>
+<ol start="3" type="1">
+<li>Run the Pipeline:</li>
+</ol>
+<ul>
+<li>Run <code>match_pipeline.py</code>. A GUI will prompt you to select the directory containing the images.</li>
+<li>Open <code>AnniesMatching.ipynb</code> in Jupyter Notebook and execute cells in sequence.</li>
+</ul>
+<ol start="4" type="1">
+<li>Process and Review Matches:</li>
+</ol>
+<ul>
+<li>Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="epithelium-detection" class="level1">
 <h1>Epithelium Detection</h1>
@@ -259,7 +297,7 @@ ul.task-list li input[type="checkbox"] {
 <p>For <strong>Sox-10</strong> stains, the blue chroma channel is used similarly, with a tailored binning strategy to reflect the different chromatic characteristics of this stain. In both cases, stroma and epithelium masks are refined through morphological dilation, Gaussian smoothing, and removal of small objects or holes. The resulting masks are applied to the RGB images to generate segmented outputs, which are saved alongside visualizations of the input, stroma, and epithelium regions. These methods balance robustness and flexibility, ensuring segmentation quality across diverse tissue samples and staining variations.</p>
 <p>Follow this step-by-step manual to extract epithelia. Our API we created is included which automates the process.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -268,7 +306,7 @@ Step-by-Step Manual (API included)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Codes required:</p>
 <ul>
