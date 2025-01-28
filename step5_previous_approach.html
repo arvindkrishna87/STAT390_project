@@ -181,9 +181,9 @@ ul.task-list li input[type="checkbox"] {
 <p>Here is the documentation for Cara’s Method in case you are interested in using this algorithm now: <a href="https://docs.google.com/document/d/1u3e0Bw7LGokr4gZgAOPgqrvykZYsyqcx-LGDGNzFQV0/edit?usp=sharing">Link</a></p>
 <p>As previously stated above, however, we ultimately opted to extract our slices manually for better accuracy and efficiency. For future attempts, here are a few areas for improvement:</p>
 <ul>
-<li><strong>Merging Issues:</strong></li>
+<li><strong>Merging/Border Issues:</strong></li>
 </ul>
-<p>Particularly when performed on slides with multiple slices, Cara’s code frequently either fails to merge (saves a single slice as two or more different slices) or incorrectly merges (saves two or more different slices as a single slice), requiring users to then manually adjust. Potential solutions could include accounting more for the amount of whitespace in between neighboring slices and/or slice sizes (e.g.&nbsp;the difference in size/distance between the two respective slices in the slide images below).</p>
+<p>Particularly when performed on slides with multiple slices, Cara’s code frequently either fails to merge (saves a single slice as two or more different slices) or incorrectly merges (saves two or more different slices as a single slice), requiring users to then manually adjust. On other occasions, the algorithm accurately identifies a region as a slice, yet includes too much unnecessary whitespace within the indicated annotation—again requiring manual adjustment. Potential solutions could include accounting more for the amount of whitespace in between neighboring slices and/or slice sizes (e.g.&nbsp;the difference in size/distance between the two respective slices in the slide images below).</p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 50%">
