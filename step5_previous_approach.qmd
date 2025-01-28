@@ -88,6 +88,13 @@ Here is a more detailed step-by-step manual on how to run the code:
 
 ## Results and Known Issues
 
+- **Contour Matching with Holes in Tissue**: The algorithm currently handles a single example with a hole in the tissue, as there were limited examples available. It averages the similarity between the three contours when a hole is present, relying on the similarity of the largest contour, not just edge similarity.
+- **Similarity Score Threshold**: A fixed threshold has been set for similarity scores, which may work well for most cases but could be insufficient for specific cases with varying image quality or abnormal structures. 
+- **Adaptive Thresholding by Stain Type**: Custom adaptive thresholding is applied for each stain, tuned to reduce noise in Melan-a and Sox10 images. However, this adaptation is not entirely generalized and may need tuning for new or varied data sources.
+- **Pixel-Based Detection**: The pipeline uses pixel values corresponding to stain-specific colors (e.g., purple for H&E). This color dependency may limit generalizability to other types of stains or differently colored tissue samples.
+- **Contour Selection Based on Size**: The algorithm selects the two largest contours to account for tissue holes or irregular shapes. If there are multiple areas of interest, this method may not capture smaller but relevant contours, which could affect accuracy in more complex samples.
+- **Limited Testing for Hole Detection**: The approach for detecting tissue holes has only been tested on a few examples, limiting our understanding of its robustness across diverse sample types.
+
 # Epithelium Detection
 
 ![](images/h2114153h&e_ROI_5.png){fig-align="center" width="500"}
