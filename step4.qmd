@@ -6,7 +6,7 @@ editor:
 --- 
 
 
-**Aim:.** To determine whether a fixed patch size can be used effectively for patching. We propose running a patching algorithm on one stain and analysing the distribution of patches it generates. If a large majority of the patches are a specific size, that size can be considered the optimal. Since the distribution of patches will be the same across stains, the optimal patch size found can be used across all three stains.
+**Aim:** To determine whether a fixed patch size can be used effectively for patching. This step is happening in tandem Step 3 (slice annotation)
 
 ![](images/Step4.png){fig-align="center"}
 
