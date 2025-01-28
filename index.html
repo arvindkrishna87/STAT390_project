@@ -177,21 +177,51 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Literature Review</strong>: Researched adaptive pooling, cross view transformer, square patches (advantages, sizes, and rationale), padding effect, etc.</p>
 <section id="core-questions-and-our-methodology" class="level3">
 <h3 class="anchored" data-anchor-id="core-questions-and-our-methodology">Core Questions and Our Methodology</h3>
-<p><strong>Patching Questions</strong> 1. How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution? <br> 2. Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use? <br> 3. If adaptive pooling can be used effectively to handle images of different sizes (i.e.&nbsp;handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?</p>
-<p><strong>Patch Design and Optimization Questions</strong> 1. Why are square patches used in tissue analysis? <br> To explore this question, we researched the current benefits of using square patches, the effectiveness of non-square patch sizing in similar medical contexts, and a potential alternative called PatchAI.</p>
-<p>Sources: https://pmc.ncbi.nlm.nih.gov/articles/PMC5265243/ https://ieeexplore.ieee.org/document/7848208 https://www.mdpi.com/2414-4088/6/12/11</p>
+<section id="patching-questions" class="level4">
+<h4 class="anchored" data-anchor-id="patching-questions">Patching Questions</h4>
+<p>1.** How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution?** <br> 2. <strong>Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use?</strong> <br> 3. <strong>If adaptive pooling can be used effectively to handle images of different sizes (i.e.&nbsp;handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?</strong></p>
+</section>
+<section id="patch-design-and-optimization-questions" class="level4">
+<h4 class="anchored" data-anchor-id="patch-design-and-optimization-questions">Patch Design and Optimization Questions</h4>
+<ol type="1">
+<li><p><strong>Why are square patches used in tissue analysis?</strong><br>
+To explore this question, we researched the current benefits of using square patches, the effectiveness of non-square patch sizing in similar medical contexts, and a potential alternative called PatchAI.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5265243/">PMC Article</a></li>
+<li><a href="https://ieeexplore.ieee.org/document/7848208">IEEE Article</a></li>
+<li><a href="https://www.mdpi.com/2414-4088/6/12/11">MDPI Article</a></li>
+</ul></li>
+</ol>
+<hr>
 <ol start="2" type="1">
-<li>Why is patch size in powers of 2? (e.g.&nbsp;32 x 32, 256 x 256, 512 x 512, etc.) Are there alternatives? <br> To address this question, we combined theoretical insights, practical examples, and empirical evidence.</li>
+<li><p><strong>Why is patch size in powers of 2? (e.g.&nbsp;32 x 32, 256 x 256, 512 x 512, etc.) Are there alternatives?</strong><br>
+To address this question, we combined theoretical insights, practical examples, and empirical evidence.</p>
+<p><strong>Theoretical Analysis:</strong><br>
+We investigated the mathematical and computational advantages of powers of 2 in convolutional neural networks (CNNs).</p>
+<p><strong>Practical Examples:</strong><br>
+We examined earlier CNN architectures such as AlexNet alongside recent practices focused on hardware efficiency.</p>
+<p><strong>Empirical Evidence:</strong><br>
+To supplement our analysis, we referenced the following study:<br>
+<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6033561/#r40">Effect of patch size and network architecture on a convolutional neural network approach for automatic segmentation of OCT retinal layers</a></p>
+<p><strong>Additional Sources:</strong></p>
+<ul>
+<li><a href="https://keras.io/api/layers/pooling_layers/max_pooling2d/">Keras: MaxPooling2D</a></li>
+<li><a href="https://www.cs.toronto.edu/~fritz/absps/imagenet.pdf">ImageNet Paper</a></li>
+<li><a href="https://arxiv.org/pdf/1409.1556">AlexNet Paper</a></li>
+<li><a href="https://docs.nvidia.com/deeplearning/performance/dl-performance-matrix-multiplication/index.html#gpu-imple">NVIDIA GPU Implementation</a></li>
+<li><a href="https://medium.com/aiguys/pooling-layers-in-neural-nets-and-their-variants-f6129fc4628b">Pooling Layers in Neural Nets</a></li>
+</ul></li>
 </ol>
-<p>Theoretical Analysis: We investigated the mathematical and computational advantages of powers of 2 in convolutional neural networks (CNNs)</p>
-<p>Practical Examples: We examined earlier CNN architectures such as AlexNet alongside recent practices focused on Hardware efficiency</p>
-<p>Empirical Evidence: To supplement our analysis, we referenced the following study “Effect of patch size and network architecture on a convolutional neural network approach for automatic segmentation of OCT retinal layers” https://pmc.ncbi.nlm.nih.gov/articles/PMC6033561/#r40</p>
-<p>Additional Sources: https://keras.io/api/layers/pooling_layers/max_pooling2d/ https://www.cs.toronto.edu/~fritz/absps/imagenet.pdf https://arxiv.org/pdf/1409.1556 https://docs.nvidia.com/deeplearning/performance/dl-performance-matrix-multiplication/index.html#gpu-imple https://medium.com/aiguys/pooling-layers-in-neural-nets-and-their-variants-f6129fc4628b</p>
+<hr>
 <ol start="3" type="1">
-<li>How do researchers determine the optimal number of patches? For this question, we conducted a literature review which included creating a post on the QuPath forum. It received one response as of January 27, 2025. https://forum.image.sc/t/optimal-number-of-patches/107600</li>
+<li><strong>How do researchers determine the optimal number of patches?</strong><br>
+For this question, we conducted a literature review which included creating a post on the QuPath forum. It received one response as of January 27, 2025.<br>
+<a href="https://forum.image.sc/t/optimal-number-of-patches/107600">QuPath Forum: Optimal Number of Patches</a></li>
 </ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
