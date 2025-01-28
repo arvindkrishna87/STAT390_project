@@ -16,8 +16,7 @@ We have two methods for this step.  Both work relatively well, but fail in speci
 
 ## Cara's Method
 
-Below is the documentation for Cara's Method in case you are interested in using this algorithm now. 
-![Link](https://docs.google.com/document/d/1u3e0Bw7LGokr4gZgAOPgqrvykZYsyqcx-LGDGNzFQV0/edit?usp=sharing)
+Here is the documentation for Cara's Method in case you are interested in using this algorithm now: [Link](https://docs.google.com/document/d/1u3e0Bw7LGokr4gZgAOPgqrvykZYsyqcx-LGDGNzFQV0/edit?usp=sharing)
 
 # Tissue Matching
 
