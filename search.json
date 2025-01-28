@@ -74,7 +74,7 @@
     "href": "step5_previous_approach.html#caras-method",
     "title": "Automation",
     "section": "Cara’s Method",
-    "text": "Cara’s Method\nHere is the documentation for Cara’s Method in case you are interested in using this algorithm now: Link"
+    "text": "Cara’s Method\nAs already detailed in Step 1, Cara’s code aims to expedite the slice extraction process by automatically exporting slices from a single slide image as individual annotations and saving them into a processed_data folder, using the following code: tissues_1.json, tissues_2.json, automate_export_newest.groovy, and existing_annotations.groovy.\nHere is the documentation for Cara’s Method in case you are interested in using this algorithm now: Link\nAs previously stated above, however, we ultimately opted to extract our slices manually for better accuracy and efficiency. For future attempts, here are a few suggestions for improvement:"
   },
   {
     "objectID": "step5_previous_approach.html#methodology",
