@@ -1,5 +1,5 @@
 ---
-title: "Step 1: Slice extraction"
+title: "Step 1: Slice Extraction"
 editor: 
   markdown: 
     wrap: 72
@@ -10,6 +10,20 @@ editor:
 ![](images/Step1.png)
 
 # Methodology
+
+Currently, extracting slices is done manually. This process begins by manually importing the whole slide image into QuPath. From here, each slice is individually annotated. This is done in one of two ways. One option is to use the manual annotation tools. Most often, the brush tool is used to highlight the individual slice, and then each slice can be highlighted and exported as its own .tif file. The other option is to use the create thresholder feature (top bar -> classify -> pixel classification -> create thresholder). The settings can be seen below (though you may need to adjust slightly to ensure whole slice is annotated). From here, you can export in the same way as before. 
+
+![](images/thresholder.png)
+
+# Results
+
+[**Folder of Extracted Slices**](https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FData%20to%20send%20to%20Stakeholders%20for%20annotating&sortField=LinkFilename&isAscending=true)
+
+[**Tracker Data of Status of Each Slice**](https://docs.google.com/spreadsheets/d/1PbV0faD_WGmLEbrY93mQF5ofhO98hy-TQmh41uGPCxc/edit?gid=0#gid=0)
+
+# Future Automation
+
+This method has been explored as a future solution to fully automate the extraction of the slices from the whole slide image. Currently, the efforts have been focused elsewhere, and the automation will be further fleshed out in the future.
 
 This method employs a Groovy script in QuPath to automate the identification, processing, and export of tissue regions of interest (ROIs) from Whole Slide Images (WSIs). Key scripts, including `tissues_2.json`, `automate_export_newest.groovy`, and `existing_annotations.groovy`, enable efficient processing and handling of diverse stain types. After setting up the project and placing scripts in their designated directories, the `automate_export_newest.groovy` script is executed to detect and export regions of interest (ROIs) as tissue slices, which are saved in the `processed_data` folder.
 
@@ -289,16 +303,3 @@ execution.
 -   Requires Java programming expertise
 -   Reference: https://github.com/qupath/qupath/wiki/Working-with-Python
 :::
-
-# Results
-
-[**Fall 2024 Folder of Extracted Slices**](https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FProcessed%20data%20%28slices%20extracted%29&ga=1)
-
-[**Fall 2024 Tracker Data of Status of Each Slice**](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&file=data_uploaded_tracker.xlsx&action=default&mobileredirect=true)
-
-[**Winter 2025 Folder of Extracted Slices**](https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FData%20to%20send%20to%20Stakeholders%20for%20annotating&sortField=LinkFilename&isAscending=true)
-
-[**Winter 2025 Tracker Data of Status of Each Slice**](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B808b83f5-0ac5-4834-8518-e454850ab281%7D&action=view&wdinitialsession=59b332ce-970d-6fe0-e629-a748b33544ab&wdrldsc=8&wdrldc=1&wdrldr=BootTimeMismatch)
-
-Note: Winter 2025 extracted slices were manually annotated, rather than
-using the script and API
