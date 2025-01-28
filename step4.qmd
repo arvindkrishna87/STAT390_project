@@ -6,9 +6,13 @@ editor:
 --- 
 
 
-**Aim:** To determine whether a fixed patch size can be used effectively for patching. This step is happening in tandem Step 3 (slice annotation)
+**Aim:** To determine whether a fixed patch size can be used effectively for patching. This step is happening in tandem Step 3 (slice annotation) We propose running a patching algorithm on one stain and analysing the distribution of patches it generates. If a large majority of the patches are a specific size, that size can be considered the optimal. Since the distribution of patches will be the same across stains, the optimal patch size found can be used across all three stains.
 
-![](images/Step4.png){fig-align="center"}
+## Patching Questions
+
+1. How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution? <br>
+2. Does having more patches make the ML model more complex? COnsequently, shold we try to minimize the number of distint patch sizes we use? <br>
+3. If adaptive pooling can be used effectively to handle images of different sizes (i.e. handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?
 
 ## Pathologist Team Step
 
@@ -20,7 +24,6 @@ to the pathologist team to annotate the regions.
 While they annotate the regions, we're working on our patching algorithms.
 
 # Aryaman's Patching Algorithm: Methodology
-
 
 The **rotation patching code** processes stained tissue images by aligning them spatially, segmenting key regions (epithelium and stroma), and extracting patches for comparative analysis across different stains (H&E, Melan-A, and Sox-10). The algorithm creates a skeleton by converting the image of the epithelium mask into a binary format, reducing the tissue to a central line. The skeleton represents the centreline through the epithelial region, and is used as a guide for placing patches. At each point on the skeleton, the algorithm calculates the slope between neighbouring points, which defines the orientation of the patch. Using this orientation, it forms a square patch which aligns with the boundary. The patch is kept only if it includes regions from the stroma and the background, ensuring that the full width of the epithelium is captured in most cases. Overlapping patches are removed in the final step.
 
@@ -40,11 +43,7 @@ Run `rotate_extract_patch (1).py`.
 
 :::
 
-# Results
-
-**Orientation**
-
-![](images/Orient.png){fig-align="center"}
+## Results
 
 ![](images/Step4.png){fig-align="center"}
 
@@ -60,7 +59,7 @@ Run `rotate_extract_patch (1).py`.
 
 | Pros              | Cons              |
 |------------------|-----------------|
-| - Advantage 1<br>- Advantage 2 | - Disadvantage 1<br>- Disadvantage 2 |
+| The patch will be generated from the points along the centerline, ensuring that the epithelium is well-positioned within the square patch.<br><br> Consistency across patches since the points are always centralized within the epithelial region. | Code checking if the patch contains both stroma and epithelium is also time consuming, as it requires manual entry <br><br> If patch doesn’t contain both, you have to go back and try another one. |
 
 ## Eli's Code
 
