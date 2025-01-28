@@ -6,9 +6,9 @@ editor:
 ---
 Step 3: annotating is happeneing in parallel with Step 4: patching
 
-**Aim: idemtify different classes in the epithelium so we can train a model with ground truth**
+**Aim: identify different classes in the epithelium so we can train a model with ground truth**
 
-We have sent matched slices to the stakeholder for them to annotate with Benign, Low grade and High grade C-MIL. This will provide a ground ruth for our future model. 
+We have sent matched slices to the stakeholder for them to annotate with Benign, Low grade, and High grade C-MIL. This will provide a ground truth for our future model. 
 
 ![](images/Annotations.png){fig-align="center"}
 
