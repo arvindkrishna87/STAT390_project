@@ -67,7 +67,7 @@
     "href": "step5_previous_approach.html",
     "title": "Automation",
     "section": "",
-    "text": "As noted in the Slice Extraction and Matching steps, we have been working manually. We do, however, hope to make this whole process automated through a few key programs. These include slice extraction, tissue matching, and epithelium detection."
+    "text": "As noted in the Slice Extraction and Matching steps, we have been working manually. We do, however, hope to eventually make this whole process automated through a few key programs. These include slice extraction, tissue matching, and epithelium detection."
   },
   {
     "objectID": "step5_previous_approach.html#caras-method",
