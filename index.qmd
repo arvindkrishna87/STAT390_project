@@ -19,3 +19,46 @@ The Northwestern University STAT390 Class has made the following progress on thi
 **Step 4:**  While the pathologist team annotates slices, orienting matched slices and apply patching across epithelium for matched slices. Currently looking at 3 different approaches to patching to find the optimal results
 
 **Literature Review**: Researched adaptive pooling, cross view transformer, square patches (advantages, sizes, and rationale), padding effect, etc.
+
+### Core Questions and Our Methodology
+
+**Patching Questions**
+1. How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution? <br>
+2. Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use? <br>
+3. If adaptive pooling can be used effectively to handle images of different sizes (i.e. handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches? 
+
+**Patch Design and Optimization Questions**
+1. Why are square patches used in tissue analysis? <br>
+To explore this question, we researched the current benefits of using square patches, the effectiveness of non-square patch sizing in similar medical contexts, and a potential alternative called PatchAI. 
+
+Sources:
+https://pmc.ncbi.nlm.nih.gov/articles/PMC5265243/ 
+https://ieeexplore.ieee.org/document/7848208 
+https://www.mdpi.com/2414-4088/6/12/11 
+
+2. Why is patch size in powers of 2? (e.g. 32 x 32, 256 x 256, 512 x 512, etc.) Are there alternatives? <br>
+To address this question, we combined theoretical insights, practical examples, and empirical evidence. 
+
+Theoretical Analysis: We investigated the mathematical and computational advantages of powers of 2 in convolutional neural networks (CNNs) 
+
+Practical Examples: We examined earlier CNN architectures such as AlexNet alongside recent practices focused on Hardware efficiency  
+
+Empirical Evidence: To supplement our analysis, we referenced the following study 
+“Effect of patch size and network architecture on a convolutional neural network approach for automatic segmentation of OCT retinal layers”
+https://pmc.ncbi.nlm.nih.gov/articles/PMC6033561/#r40 
+
+Additional Sources: 
+https://keras.io/api/layers/pooling_layers/max_pooling2d/ 
+https://www.cs.toronto.edu/~fritz/absps/imagenet.pdf 
+https://arxiv.org/pdf/1409.1556 
+https://docs.nvidia.com/deeplearning/performance/dl-performance-matrix-multiplication/index.html#gpu-imple 
+https://medium.com/aiguys/pooling-layers-in-neural-nets-and-their-variants-f6129fc4628b 
+
+
+3. How do researchers determine the optimal number of patches? 
+For this question, we conducted a literature review which included creating a post on the QuPath forum. It received one response as of January 27, 2025. 
+https://forum.image.sc/t/optimal-number-of-patches/107600 
+
+
+
+
