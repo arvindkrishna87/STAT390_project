@@ -184,20 +184,7 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Merging/Border Issues:</strong></li>
 </ul>
 <p>Particularly when performed on slides with multiple slices, Cara’s code frequently either fails to merge (saves a single slice as two or more different slices) or incorrectly merges (saves two or more different slices as a single slice), requiring users to then manually adjust. On other occasions, the algorithm accurately identifies a region as a slice, yet includes too much unnecessary whitespace within the indicated annotation—again requiring manual adjustment. Potential solutions could include accounting more for the amount of whitespace in between neighboring slices and/or slice sizes (e.g.&nbsp;the difference in size/distance between the two respective slices in the slide images below).</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="images/step 1 images/step_1_image_5.png" class="img-fluid quarto-figure quarto-figure-center"></th>
-<th><img src="images/step 1 images/step_1_image_6.png" class="img-fluid quarto-figure quarto-figure-center"></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<p><img src="images/step 1 images/step_1_image_5.png" class="img-fluid quarto-figure quarto-figure-center"> <img src="images/step 1 images/step_1_image_6.png" class="img-fluid quarto-figure quarto-figure-center"></p>
 <ul>
 <li><strong>False/Failed Annotations:</strong></li>
 </ul>
@@ -207,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="tissue-matching" class="level1">
 <h1>Tissue Matching</h1>
 <p>Our current automated methodology for matching tissue images across all three stain types (H&amp;E, Melanin, and Sox10) utilizes image preprocessing, contour extraction, and similarity scoring.</p>
-<p>The current pipeline requires two main files, which can both be found (here)[https://github.com/diegogoldfrank/STAT-390—Fall-24/blob/main/Step%202%3A%20Matching%20slices%20across%20stains/README.md]): - NoahsMatching.ipynb: An interactive Jupyter Notebook for processing and visualizing tissue matches. - match_pipeline.py: A Python script designed for batch processing of images.</p>
+<p>The current pipeline requires two main files, which can both be found <a href="https://github.com/diegogoldfrank/STAT-390---Fall-24/blob/main/Step%202%3A%20Matching%20slices%20across%20stains/README.md">here</a>: - NoahsMatching.ipynb: An interactive Jupyter Notebook for processing and visualizing tissue matches. - match_pipeline.py: A Python script designed for batch processing of images.</p>
 </section>
 <section id="epithelium-detection" class="level1">
 <h1>Epithelium Detection</h1>
