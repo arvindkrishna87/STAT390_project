@@ -282,6 +282,14 @@ Step-by-Step Manual
 </section>
 <section id="results-and-known-issues" class="level2">
 <h2 class="anchored" data-anchor-id="results-and-known-issues">Results and Known Issues</h2>
+<ul>
+<li><strong>Contour Matching with Holes in Tissue</strong>: The algorithm currently handles a single example with a hole in the tissue, as there were limited examples available. It averages the similarity between the three contours when a hole is present, relying on the similarity of the largest contour, not just edge similarity.</li>
+<li><strong>Similarity Score Threshold</strong>: A fixed threshold has been set for similarity scores, which may work well for most cases but could be insufficient for specific cases with varying image quality or abnormal structures.</li>
+<li><strong>Adaptive Thresholding by Stain Type</strong>: Custom adaptive thresholding is applied for each stain, tuned to reduce noise in Melan-a and Sox10 images. However, this adaptation is not entirely generalized and may need tuning for new or varied data sources.</li>
+<li><strong>Pixel-Based Detection</strong>: The pipeline uses pixel values corresponding to stain-specific colors (e.g., purple for H&amp;E). This color dependency may limit generalizability to other types of stains or differently colored tissue samples.</li>
+<li><strong>Contour Selection Based on Size</strong>: The algorithm selects the two largest contours to account for tissue holes or irregular shapes. If there are multiple areas of interest, this method may not capture smaller but relevant contours, which could affect accuracy in more complex samples.</li>
+<li><strong>Limited Testing for Hole Detection</strong>: The approach for detecting tissue holes has only been tested on a few examples, limiting our understanding of its robustness across diverse sample types.</li>
+</ul>
 </section>
 </section>
 <section id="epithelium-detection" class="level1">
