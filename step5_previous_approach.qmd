@@ -56,8 +56,31 @@ Our current automated methodology for matching tissue images across all three st
 
 The current pipeline requires two main files, which can both be found [here](https://github.com/diegogoldfrank/STAT-390---Fall-24/blob/main/Step%202%3A%20Matching%20slices%20across%20stains/README.md):
 
-- NoahsMatching.ipynb: An interactive Jupyter Notebook for processing and visualizing tissue matches.
+- AnniesMatching.ipynb: An interactive Jupyter Notebook for processing and visualizing tissue matches.
 - match_pipeline.py: A Python script designed for batch processing of images.
+
+Annie’s code is designed to analyze tissue scan images for each patient and identify the best match across the three different staining types—H&E, melan (melanin), and Sox. The main objective is to find the optimal combination of one image from each stain type that has the **highest overall similarity in shape**. This similarity is computed by extracting the primary contours from each image and calculating shape similarity scores for each combination. The code then averages the similarity scores between the three image pairings to get an overall similarity score for each combination, which allows it to determine the best-matching trio of images for each patient.
+
+Here is a more detailed step-by-step manual on how to run the code: 
+
+:::{.callout-note collapse=true}
+
+1) Prepare Image Data: Place `.tif` image files in the designated folder (e.g. `processed_images`). Ensure that each patient has images for all three stains (H&E, Melanin, Sox10).
+
+2) Choose Full or Subset Processing:
+
+- For All Patients: Place all images in the same processed_images directory.
+- For a Subset of Patients: Separate patient image files into their own folders within `processed_images` (e.g., `processed_images/patient1`, `processed_images/patient2`).
+
+3) Run the Pipeline:
+
+- Run `match_pipeline.py`. A GUI will prompt you to select the directory containing the images.
+- Open `AnniesMatching.ipynb` in Jupyter Notebook and execute cells in sequence.
+
+4) Process and Review Matches:
+
+- Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.
+:::
 
 # Epithelium Detection
 
