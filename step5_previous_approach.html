@@ -141,10 +141,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#caras-method" id="toc-caras-method" class="nav-link" data-scroll-target="#caras-method">Cara’s Method</a></li>
   <li><a href="#kylas-method" id="toc-kylas-method" class="nav-link" data-scroll-target="#kylas-method">Kyla’s Method</a></li>
   </ul></li>
-  <li><a href="#tissue-matching" id="toc-tissue-matching" class="nav-link" data-scroll-target="#tissue-matching">Tissue Matching</a></li>
-  <li><a href="#epithelium-detection" id="toc-epithelium-detection" class="nav-link" data-scroll-target="#epithelium-detection">Epithelium Detection</a>
+  <li><a href="#tissue-matching" id="toc-tissue-matching" class="nav-link" data-scroll-target="#tissue-matching">Tissue Matching</a>
   <ul class="collapse">
   <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#results-and-known-issues" id="toc-results-and-known-issues" class="nav-link" data-scroll-target="#results-and-known-issues">Results and Known Issues</a></li>
+  </ul></li>
+  <li><a href="#epithelium-detection" id="toc-epithelium-detection" class="nav-link" data-scroll-target="#epithelium-detection">Epithelium Detection</a>
+  <ul class="collapse">
+  <li><a href="#methodology-1" id="toc-methodology-1" class="nav-link" data-scroll-target="#methodology-1">Methodology</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
@@ -235,6 +239,8 @@ ul.task-list li input[type="checkbox"] {
 <li>AnniesMatching.ipynb: An interactive Jupyter Notebook for processing and visualizing tissue matches.</li>
 <li>match_pipeline.py: A Python script designed for batch processing of images.</li>
 </ul>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
 <p>Annie’s code is designed to analyze tissue scan images for each patient and identify the best match across the three different staining types—H&amp;E, melan (melanin), and Sox. The main objective is to find the optimal combination of one image from each stain type that has the <strong>highest overall similarity in shape</strong>. This similarity is computed by extracting the primary contours from each image and calculating shape similarity scores for each combination. The code then averages the similarity scores between the three image pairings to get an overall similarity score for each combination, which allows it to determine the best-matching trio of images for each patient.</p>
 <p>Here is a more detailed step-by-step manual on how to run the code:</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -243,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Step-by-Step Manual
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -274,6 +280,10 @@ Note
 </div>
 </div>
 </section>
+<section id="results-and-known-issues" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-known-issues">Results and Known Issues</h2>
+</section>
+</section>
 <section id="epithelium-detection" class="level1">
 <h1>Epithelium Detection</h1>
 <div class="quarto-figure quarto-figure-center">
@@ -287,8 +297,8 @@ Note
 </figure>
 </div>
 <p><strong>This algorithm aims to separate the epithelium from the stroma and create an epithelium mask automatically.</strong></p>
-<section id="methodology" class="level2">
-<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
+<section id="methodology-1" class="level2">
+<h2 class="anchored" data-anchor-id="methodology-1">Methodology</h2>
 <p>This project involves a comprehensive image processing workflow designed to segment epithelial and stromal regions from tissue images stained with different markers. The methodology combines advanced image processing techniques, including color space transformations, morphological operations, and region-based segmentation, tailored for specific stain types and locations (e.g., Liverpool or Sheffield). For each image, the script <code>Epithelium Extraction Script.ipynb</code> first identifies background regions using the luminance channel. The algorithm then isolates epithelia and stroma using chroma channels, applying binning techniques to detect dominant pixel intensity ranges. Morphological operations such as dilation, erosion, and small object removal refine the segmentation. Gaussian smoothing is incorporated to reduce noise and improve mask quality. Segmented regions are applied as binary masks to the original image for visualization and saved for further analysis. Parameter tuning and function selection were performed iteratively based on intermediate visualizations, ensuring high accuracy for each stain-location combination.</p>
 <p>Among the six algorithms implemented, those for H&amp;E stains exhibit the highest accuracy, followed by Melan-A and Sox-10 stains. Each algorithm is adapted to the unique characteristics of the stain and location, ensuring reliable extraction of relevant regions.</p>
 <p>The segmentation process for <strong>H&amp;E</strong> stained images leverages the luminance and chroma characteristics of the image to differentiate background, stroma, and epithelial regions effectively. Using the YCrCb color space, the luminance channel identifies the background by isolating the bin with the highest pixel count, refined further through morphological operations like hole filling and object removal. For epithelial segmentation, the red chroma channel is used, with bins adjacent to the stroma bin analyzed to isolate epithelial regions. Morphological techniques, including dilation and Gaussian smoothing, enhance the segmentation mask. The process ensures robust separation of regions, saving the results as masks and visualizations for further analysis. This approach maintains adaptability to the variable staining intensities and patterns characteristic of H&amp;E images.</p>
