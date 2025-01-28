@@ -76,7 +76,7 @@ Here is the API we created to automate this step. Using this tool will speed up 
 :::
 
 
-### Results
+## Results
 
 As seen below, this program could pull out the epithelium on certain samples.
 
