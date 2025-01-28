@@ -145,5 +145,12 @@
     "title": "Step 4: Patching",
     "section": "Different tilting algorithm:",
     "text": "Different tilting algorithm:\nWe pick a random patch. Next, we identify the stroma and the outside of the sample. We treat the pixels of the stroma and the outside of the sample as points. Using these points, we run a regression model to draw the line that most efficiently crosses the epithelium. Now, we will tilt the patch so that two edges are perpendicular and two edges are parallel to that regression line. This will create a patch that follows the contour of the epithelium. Below is a visual representation of this process.\n\n\n\n\n\nUpsides: this method is not very computationally expensive, especially with the epithelium mask that we have for each sample already.  Downsides: When tilting an existing patch, we cannot ensure that the patch still includes the entire epithelium unless we also resize the patch.  Note: This separates the tilting from the patching process. While this is not necessarily a negative, we don’t know which patching algorithm works best with this method yet. It adds another step to the process."
+  },
+  {
+    "objectID": "step4.html#patch-design-and-optimization-qna",
+    "href": "step4.html#patch-design-and-optimization-qna",
+    "title": "Step 4: Patching",
+    "section": "Patch Design and Optimization QnA",
+    "text": "Patch Design and Optimization QnA\n\nQuestion 1: Why are square patches used in tissue analysis?\nSquare images are commonly used in tissue image analysis as they naturally fit into the grid-like structure of digital images, making it easier for algorithms to scan and analyze oatterbs, They streamline calculations for convolutional neural networks (CNNs), which process grids of data efficiently. This uniformity ensures all parts of an image are treated equally, avoiding distortions or biases that could arise from irregular shapes, i.e. rectangular patches. Additionally, square patches align with pre-trained models, saving time and effort by leveraging existing resources. They also simplify techniques like pooling, which reduces data size while preserving important features, focusing on key details without unnecessary complexity. Overall, they offer a balance of computational efficiency and accuracy.\n\n\nQuestion 2: Why is patch size in powers of 2? (e.g. 32 x 32, 256 x 256, 512 x 512, etc.) Are there alternatives?\nplaceholder\n\n\nQuestion 3: How do researchers determine the optimal number of patches?\nplaceholder"
   }
 ]
