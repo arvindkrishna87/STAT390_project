@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Step 1: Slice extraction – 2025 STAT390 C-MIL project</title>
+<title>Step 1: Slice Extraction – 2025 STAT390 C-MIL project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./step1.html" aria-current="page"> 
-<span class="menu-text">Step 1: Slice extraction</span></a>
+<span class="menu-text">Step 1: Slice Extraction</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./step2.html"> 
@@ -138,6 +138,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology">Methodology</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#future-automation" id="toc-future-automation" class="nav-link" data-scroll-target="#future-automation">Future Automation</a></li>
   </ul>
 </nav>
     </div>
@@ -146,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Step 1: Slice extraction</h1>
+<h1 class="title">Step 1: Slice Extraction</h1>
 </div>
 
 
@@ -167,6 +168,17 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/Step1.png" class="img-fluid"></p>
 <section id="methodology" class="level1">
 <h1>Methodology</h1>
+<p>Currently, extracting slices is done manually. This process begins by manually importing the whole slide image into QuPath. From here, each slice is individually annotated. This is done in one of two ways. One option is to use the manual annotation tools. Most often, the brush tool is used to highlight the individual slice, and then each slice can be highlighted and exported as its own .tif file. The other option is to use the create thresholder feature (top bar -&gt; classify -&gt; pixel classification -&gt; create thresholder). The settings can be seen below (though you may need to adjust slightly to ensure whole slice is annotated). From here, you can export in the same way as before.</p>
+<p><img src="images/thresholder.png" class="img-fluid"></p>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<p><a href="https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FData%20to%20send%20to%20Stakeholders%20for%20annotating&amp;sortField=LinkFilename&amp;isAscending=true"><strong>Folder of Extracted Slices</strong></a></p>
+<p><a href="https://docs.google.com/spreadsheets/d/1PbV0faD_WGmLEbrY93mQF5ofhO98hy-TQmh41uGPCxc/edit?gid=0#gid=0"><strong>Tracker Data of Status of Each Slice</strong></a></p>
+</section>
+<section id="future-automation" class="level1">
+<h1>Future Automation</h1>
+<p>This method has been explored as a future solution to fully automate the extraction of the slices from the whole slide image. Currently, the efforts have been focused elsewhere, and the automation will be further fleshed out in the future.</p>
 <p>This method employs a Groovy script in QuPath to automate the identification, processing, and export of tissue regions of interest (ROIs) from Whole Slide Images (WSIs). Key scripts, including <code>tissues_2.json</code>, <code>automate_export_newest.groovy</code>, and <code>existing_annotations.groovy</code>, enable efficient processing and handling of diverse stain types. After setting up the project and placing scripts in their designated directories, the <code>automate_export_newest.groovy</code> script is executed to detect and export regions of interest (ROIs) as tissue slices, which are saved in the <code>processed_data</code> folder.</p>
 <p>The process begins by ensuring the image is not a mask file before applying stain deconvolution to separate Hematoxylin and Eosin (H&amp;E) stains using predefined parameters for color deconvolution. If no annotations exist, a pixel classifier (<code>tissues_2</code>) is applied to detect tissue regions, generating initial annotations. These annotations are refined by merging those within a set distance threshold (5000 micrometers) to consolidate closely related tissue regions, leveraging centroid-based Euclidean distance calculations. Duplicate annotations with centroids closer than 50 micrometers are identified and removed to ensure clean and accurate outputs. Finally, the refined annotations are exported as high-resolution image tiles into a specified output directory, using a customizable downsample parameter to accommodate variations in image quality. This pipeline ensures efficient and accurate tissue ROI extraction, supporting downstream analysis and quality control.</p>
 <p>Follow this step by step manual to extract slices.</p>
@@ -405,14 +417,6 @@ Integrating Step 1 (QuPath) into Project API
 </div>
 </div>
 </div>
-</section>
-<section id="results" class="level1">
-<h1>Results</h1>
-<p><a href="https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FProcessed%20data%20%28slices%20extracted%29&amp;ga=1"><strong>Fall 2024 Folder of Extracted Slices</strong></a></p>
-<p><a href="https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B7050DB24-1558-4042-BF99-C6B17BBAF84D%7D&amp;file=data_uploaded_tracker.xlsx&amp;action=default&amp;mobileredirect=true"><strong>Fall 2024 Tracker Data of Status of Each Slice</strong></a></p>
-<p><a href="https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390%2FData%20to%20send%20to%20Stakeholders%20for%20annotating&amp;sortField=LinkFilename&amp;isAscending=true"><strong>Winter 2025 Folder of Extracted Slices</strong></a></p>
-<p><a href="https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B808b83f5-0ac5-4834-8518-e454850ab281%7D&amp;action=view&amp;wdinitialsession=59b332ce-970d-6fe0-e629-a748b33544ab&amp;wdrldsc=8&amp;wdrldc=1&amp;wdrldr=BootTimeMismatch"><strong>Winter 2025 Tracker Data of Status of Each Slice</strong></a></p>
-<p>Note: Winter 2025 extracted slices were manually annotated, rather than using the script and API</p>
 
 
 </section>
