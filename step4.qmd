@@ -89,6 +89,8 @@ Patches grow incrementally until they cover a sufficient region of the epitheliu
 <br>
 **Downsides:** Small step sizes can computationally expensive, particularly when dealing with larger tissues, such as the Copenhagen dataset with single large slices per stain. The algorithm’s reliance on color thresholds to identify tissue regions can lead to inconsistencies or require frequent adjustments due to variations in stain type, image quality, or lighting. 
 
+![](images/alyssa_ex1.png){fig-align="center"}
+
 ## Different tilting algorithm: 
 
 We pick a random patch. Next, we identify the stroma and the outside of the sample. We treat the pixels of the stroma and the outside of the sample as points. Using these points, we run a regression model to draw the line that most efficiently crosses the epithelium. Now, we will tilt the patch so that two edges are perpendicular and two edges are parallel to that regression line. This will create a patch that follows the contour of the epithelium. Below is a visual representation of this process.
