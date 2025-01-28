@@ -147,6 +147,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -201,6 +202,10 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>False/Failed Annotations:</strong>
 <ul>
 <li>Another frequent issues was that the code would either incorrectly annotate a region of the slide (i.e.&nbsp;blank space or a shadow/blur) or would fail to annotate a clear slice. In our case, the latter issue appeared to commonly occur when dealing with slide images that only consisted of one large slice (e.g.&nbsp;many of the slides from Copenhagen), again requiring manual tracing and exporting instead. While manual extraction may ultimately be the more efficient option when only dealing with these large, single-slice images (as you would effectively be downloading and running code for just a single slice), it would again be helpful if the code could potentially be adjusted to better account for miscellaneous smudges/shadows on the slide.</li>
+</ul></li>
+<li><strong>File Size is too Large:</strong>
+<ul>
+<li>When the file sizes are too large, the program fails and the user must manually export the slices.</li>
 </ul></li>
 </ul>
 </section>
@@ -297,11 +302,14 @@ Step-by-Step Manual (API included)
 </figure>
 </div>
 <p>However, the program often failed, especially on more irregular shapes as seen below.</p>
-<p><img src="images/failedEpi1.png" class="img-fluid">{fig-align=“center” width = 60%} <img src="images/failedEpi2.png" class="img-fluid">{fig-align=“center” width = 60%}</p>
-<p>** The ultimate goal is to have this program work, so that all doctors have to do is push a button. However, with such inconsistent results, it is better to focus our efforts elsewhere, as we know doctors have the ability, in QuPath, to pull out slices and epithelium masks if need be.**</p>
-
-
+<p><img src="images/failedEpi1.png" class="img-fluid quarto-figure quarto-figure-center"> <img src="images/failedEpi2.png" class="img-fluid quarto-figure quarto-figure-center"></p>
 </section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>** The ultimate goal is to have this program work, so that all doctors have to do is push a button. However, with such inconsistent results, it is better to focus our efforts elsewhere, as we know doctors have the ability, in QuPath, to pull out slices and epithelium masks if need be. This is why we are focusing on patching with pre-processed data at this moment.**</p>
+
+
 </section>
 
 </main> <!-- /main -->
