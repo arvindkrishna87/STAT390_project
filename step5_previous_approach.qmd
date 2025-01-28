@@ -19,7 +19,7 @@ As already detailed in Step 1, Cara's code aims to expedite the slice extraction
 
 Here is the documentation for Cara's Method in case you are interested in using this algorithm now: [Link](https://docs.google.com/document/d/1u3e0Bw7LGokr4gZgAOPgqrvykZYsyqcx-LGDGNzFQV0/edit?usp=sharing)
 
-As previously stated above, however, we ultimately opted to extract our slices manually for better accuracy and efficiency. For future attempts, here are a few areas for improvement:
+As previously stated above, however, we ultimately opted to extract our slices manually for better accuracy and efficiency. **For future attempts, here are a few areas for improvement:**
 
 - **Merging/Border Issues:**
 
@@ -34,6 +34,11 @@ Another frequent issues was that the code would either incorrectly annotate a re
 
 # Tissue Matching
 
+Our current automated methodology for matching tissue images across all three stain types (H&E, Melanin, and Sox10) utilizes image preprocessing, contour extraction, and similarity scoring. 
+
+The current pipeline requires two main files, which can both be found (here)[https://github.com/diegogoldfrank/STAT-390---Fall-24/blob/main/Step%202%3A%20Matching%20slices%20across%20stains/README.md]):
+- NoahsMatching.ipynb: An interactive Jupyter Notebook for processing and visualizing tissue matches.
+- match_pipeline.py: A Python script designed for batch processing of images.
 
 # Epithelium Detection
 
