@@ -1,5 +1,5 @@
 ---
-title: "Step 2: Matching slices across stains"
+title: "Step 2: Matching Slices Across Stains"
 ---
 
 **Aim: To identify and match structurally similar slices across stains for each patient.**
@@ -8,6 +8,27 @@ title: "Step 2: Matching slices across stains"
 
 
 # Methodology
+
+The matching of slices is currently done manually. After the slices are extracted, the H&E, Melan-A, and SOX-10 slices are compared to see if there are any matches across all three stains. Often, these matches are very visually similar, but other times the silhouettes are fairly similar, which also makes for a match. Each patient's data has its own folder, labeled by case number. Matched slices are loaded into folders named `match1`, `match2`, etc. and unmatched slices are loaded into folders named `unmatched`. The status of each case is seen below.  
+
+[**Tracker Data of Status of Each Slice**](https://docs.google.com/spreadsheets/d/1PbV0faD_WGmLEbrY93mQF5ofhO98hy-TQmh41uGPCxc/edit?gid=0#gid=0)
+
+# Results
+
+**Example:**
+
+All tissue slices from patient h2114153:
+
+![](images/step%202%20images/slice1.png){width="125"} ![](images/step%202%20images//slice4.png){width="90"} ![](images/step%202%20images//slice5.png){width="106"} ![](images/step%202%20images//slice6.png){width="105"} ![](images/step%202%20images//slice2.png){width="121"} ![](images/step%202%20images//slice7.png){width="100"} ![](images/step%202%20images//slice3.png){width="113"}
+
+**Successfully matched results**
+
+![](images/step%202%20images//slice1.png){width="125"} ![](images/step%202%20images//slice2.png){width="121"} ![](images/step%202%20images//slice3.png){width="113"}
+
+![](images/Step2.png){fig-align="center"}
+
+
+# Future Automation
 
 This pipeline automates the preprocessing, matching, alignment, and patch extraction of stained tissue images to enable efficient downstream analysis. The process begins with the preprocessing phase, where images are standardized and organized. Files are renamed to a consistent format, and patients missing one or more strain types (H&E, Melan-A, SOX-10) are excluded. For patients with multiple images of the same strain, only the highest-resolution image is retained. Once cleaned, images are split into folders by patient ID to prepare for further analysis.
 
@@ -46,19 +67,6 @@ Here is the API we created to automate this step. Using this tool will speed up 
 
 :::
 
-# Results
-
-**Example:**
-
-All tissue slices from patient h2114153:
-
-![](images/step%202%20images/slice1.png){width="125"} ![](images/step%202%20images//slice4.png){width="90"} ![](images/step%202%20images//slice5.png){width="106"} ![](images/step%202%20images//slice6.png){width="105"} ![](images/step%202%20images//slice2.png){width="121"} ![](images/step%202%20images//slice7.png){width="100"} ![](images/step%202%20images//slice3.png){width="113"}
-
-**Successfully matched results**
-
-![](images/step%202%20images//slice1.png){width="125"} ![](images/step%202%20images//slice2.png){width="121"} ![](images/step%202%20images//slice3.png){width="113"}
-
-![](images/Step2.png){fig-align="center"}
 
 
 
