@@ -136,9 +136,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pathologist-team-step" id="toc-pathologist-team-step" class="nav-link active" data-scroll-target="#pathologist-team-step">Pathologist Team Step</a></li>
-  <li><a href="#aryamans-patching-algorithm-methodology" id="toc-aryamans-patching-algorithm-methodology" class="nav-link" data-scroll-target="#aryamans-patching-algorithm-methodology">Aryaman’s Patching Algorithm: Methodology</a></li>
+  <li><a href="#patching-questions" id="toc-patching-questions" class="nav-link active" data-scroll-target="#patching-questions">Patching Questions</a></li>
+  <li><a href="#pathologist-team-step" id="toc-pathologist-team-step" class="nav-link" data-scroll-target="#pathologist-team-step">Pathologist Team Step</a></li>
+  <li><a href="#aryamans-patching-algorithm-methodology" id="toc-aryamans-patching-algorithm-methodology" class="nav-link" data-scroll-target="#aryamans-patching-algorithm-methodology">Aryaman’s Patching Algorithm: Methodology</a>
+  <ul class="collapse">
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  </ul></li>
   <li><a href="#comparing-approaches" id="toc-comparing-approaches" class="nav-link" data-scroll-target="#comparing-approaches">Comparing Approaches</a>
   <ul class="collapse">
   <li><a href="#alyssas-code" id="toc-alyssas-code" class="nav-link" data-scroll-target="#alyssas-code">Alyssa’s Code</a></li>
@@ -182,12 +185,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Aim:</strong> To determine whether a fixed patch size can be used effectively for patching. This step is happening in tandem Step 3 (slice annotation)</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/Step4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
+<p><strong>Aim:</strong> To determine whether a fixed patch size can be used effectively for patching. This step is happening in tandem Step 3 (slice annotation) We propose running a patching algorithm on one stain and analysing the distribution of patches it generates. If a large majority of the patches are a specific size, that size can be considered the optimal. Since the distribution of patches will be the same across stains, the optimal patch size found can be used across all three stains.</p>
+<section id="patching-questions" class="level2">
+<h2 class="anchored" data-anchor-id="patching-questions">Patching Questions</h2>
+<ol type="1">
+<li>How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution? <br></li>
+<li>Does having more patches make the ML model more complex? COnsequently, shold we try to minimize the number of distint patch sizes we use? <br></li>
+<li>If adaptive pooling can be used effectively to handle images of different sizes (i.e.&nbsp;handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?</li>
+</ol>
+</section>
 <section id="pathologist-team-step" class="level2">
 <h2 class="anchored" data-anchor-id="pathologist-team-step">Pathologist Team Step</h2>
 <p>We will send matched and extracted epithelium slices to the pathologist team to annotate the regions.</p>
@@ -227,20 +233,14 @@ Step-by-Step Manual
 </div>
 </div>
 </div>
-</section>
-<section id="results" class="level1">
-<h1>Results</h1>
-<p><strong>Orientation</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/Orient.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Step4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
+</section>
 </section>
 <section id="comparing-approaches" class="level1">
 <h1>Comparing Approaches</h1>
@@ -280,8 +280,8 @@ Step-by-Step Manual
 </thead>
 <tbody>
 <tr class="odd">
-<td>- Advantage 1<br>- Advantage 2</td>
-<td>- Disadvantage 1<br>- Disadvantage 2</td>
+<td>The patch will be generated from the points along the centerline, ensuring that the epithelium is well-positioned within the square patch.<br><br> Consistency across patches since the points are always centralized within the epithelial region.</td>
+<td>Code checking if the patch contains both stroma and epithelium is also time consuming, as it requires manual entry <br><br> If patch doesn’t contain both, you have to go back and try another one.</td>
 </tr>
 </tbody>
 </table>

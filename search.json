@@ -95,7 +95,14 @@
     "href": "step4.html",
     "title": "Step 4: Patching",
     "section": "",
-    "text": "Aim: To determine whether a fixed patch size can be used effectively for patching. This step is happening in tandem Step 3 (slice annotation)"
+    "text": "Aim: To determine whether a fixed patch size can be used effectively for patching. This step is happening in tandem Step 3 (slice annotation) We propose running a patching algorithm on one stain and analysing the distribution of patches it generates. If a large majority of the patches are a specific size, that size can be considered the optimal. Since the distribution of patches will be the same across stains, the optimal patch size found can be used across all three stains."
+  },
+  {
+    "objectID": "step4.html#patching-questions",
+    "href": "step4.html#patching-questions",
+    "title": "Step 4: Patching",
+    "section": "Patching Questions",
+    "text": "Patching Questions\n\nHow many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution? \nDoes having more patches make the ML model more complex? COnsequently, shold we try to minimize the number of distint patch sizes we use? \nIf adaptive pooling can be used effectively to handle images of different sizes (i.e. handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?"
   },
   {
     "objectID": "step4.html#pathologist-team-step",
@@ -103,6 +110,13 @@
     "title": "Step 4: Patching",
     "section": "Pathologist Team Step",
     "text": "Pathologist Team Step\nWe will send matched and extracted epithelium slices to the pathologist team to annotate the regions.\n\n\n\n\n\nWhile they annotate the regions, we’re working on our patching algorithms."
+  },
+  {
+    "objectID": "step4.html#results",
+    "href": "step4.html#results",
+    "title": "Step 4: Patching",
+    "section": "Results",
+    "text": "Results"
   },
   {
     "objectID": "step4.html#alyssas-code",
@@ -116,7 +130,7 @@
     "href": "step4.html#aryamans-code",
     "title": "Step 4: Patching",
     "section": "Aryaman’s Code",
-    "text": "Aryaman’s Code\n\n\n\n\n\n\n\nPros\nCons\n\n\n\n\n- Advantage 1- Advantage 2\n- Disadvantage 1- Disadvantage 2"
+    "text": "Aryaman’s Code\n\n\n\n\n\n\n\nPros\nCons\n\n\n\n\nThe patch will be generated from the points along the centerline, ensuring that the epithelium is well-positioned within the square patch. Consistency across patches since the points are always centralized within the epithelial region.\nCode checking if the patch contains both stroma and epithelium is also time consuming, as it requires manual entry  If patch doesn’t contain both, you have to go back and try another one."
   },
   {
     "objectID": "step4.html#elis-code",
