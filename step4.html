@@ -190,7 +190,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="patching-questions">Patching Questions</h2>
 <ol type="1">
 <li>How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution? <br></li>
-<li>Does having more patches make the ML model more complex? COnsequently, shold we try to minimize the number of distint patch sizes we use? <br></li>
+<li>Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use? <br></li>
 <li>If adaptive pooling can be used effectively to handle images of different sizes (i.e.&nbsp;handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?</li>
 </ol>
 </section>
@@ -336,7 +336,7 @@ Step-by-Step Manual
 </section>
 <section id="question-3-how-do-researchers-determine-the-optimal-number-of-patches" class="level3">
 <h3 class="anchored" data-anchor-id="question-3-how-do-researchers-determine-the-optimal-number-of-patches">Question 3: How do researchers determine the optimal number of patches?</h3>
-<p>placeholder</p>
+<p>The number of patches depends on the variety in the images and the difficulty of identifying differences in the classes. Too many patches can lead to over-segmentation and loss of context. Additionally, it increases the computational cost. Too few patches would make it hard for the model to generalize to unseen data. If we can determine the optimal patch size, that can determine the optimal number of patches by managing the overlap.</p>
 
 
 </section>
