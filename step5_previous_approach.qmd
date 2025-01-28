@@ -5,14 +5,14 @@ editor:
     wrap: 72
 ---
 
-As noted in the Slice Extraction and Matching steps, we have been working manually. We do, however, hope to make this whole process automated through a few key programs. These include slice extraction, tissue matching, and epithelium detection. 
+As noted in the Slice Extraction and Matching steps, we have been working manually. We do, however, hope to eventually make this whole process automated through a few key programs. These include slice extraction, tissue matching, and epithelium detection. 
 
 
 # Slice Extraction
 
 **This step of the automation takes the whole slide image with multiple tissues slices on it and extracts the slices into their own file.**
-<br>
-We have two methods for this step.  Both work relaively well, but fail in specific cases.
+<br><br>
+We have two methods for this step.  Both work relatively well, but fail in specific cases.
 
 ## Cara's Method
 
