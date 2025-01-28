@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Fall 2025 STAT390 project"
+  title: "STAT390 project"
   navbar:
     left:
       - href: index.qmd
