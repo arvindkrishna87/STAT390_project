@@ -105,13 +105,6 @@
     "text": "Patching Questions\n\nHow many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution? \nDoes having more patches make the ML model more complex? COnsequently, shold we try to minimize the number of distint patch sizes we use? \nIf adaptive pooling can be used effectively to handle images of different sizes (i.e. handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?"
   },
   {
-    "objectID": "step4.html#pathologist-team-step",
-    "href": "step4.html#pathologist-team-step",
-    "title": "Step 4: Patching",
-    "section": "Pathologist Team Step",
-    "text": "Pathologist Team Step\nWe will send matched and extracted epithelium slices to the pathologist team to annotate the regions.\n\n\n\n\n\nWhile they annotate the regions, we’re working on our patching algorithms."
-  },
-  {
     "objectID": "step4.html#results",
     "href": "step4.html#results",
     "title": "Step 4: Patching",
@@ -130,7 +123,7 @@
     "href": "step4.html#aryamans-code",
     "title": "Step 4: Patching",
     "section": "Aryaman’s Code",
-    "text": "Aryaman’s Code\n\n\n\n\n\n\n\nPros\nCons\n\n\n\n\nThe patch will be generated from the points along the centerline, ensuring that the epithelium is well-positioned within the square patch. Consistency across patches since the points are always centralized within the epithelial region.\nCode checking if the patch contains both stroma and epithelium is also time consuming, as it requires manual entry  If patch doesn’t contain both, you have to go back and try another one."
+    "text": "Aryaman’s Code\n\n\n\n\n\n\n\nPros\nCons\n\n\n\n\nThe patch will be generated from the points along the centerline, ensuring that the epithelium is well-positioned within the square patch. Consistency across patches since the points are always centralized within the epithelial region. \nCode checking if the patch contains both stroma and epithelium is also time consuming, as it requires manual entry  If patch doesn’t contain both, you have to go back and try another one."
   },
   {
     "objectID": "step4.html#elis-code",
