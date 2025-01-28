@@ -179,7 +179,29 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="caras-method">Cara’s Method</h2>
 <p>As already detailed in Step 1, Cara’s code aims to expedite the slice extraction process by automatically exporting slices from a single slide image as individual annotations and saving them into a <code>processed_data</code> folder, using the following code: <code>tissues_1.json</code>, <code>tissues_2.json</code>, <code>automate_export_newest.groovy</code>, and <code>existing_annotations.groovy</code>.</p>
 <p>Here is the documentation for Cara’s Method in case you are interested in using this algorithm now: <a href="https://docs.google.com/document/d/1u3e0Bw7LGokr4gZgAOPgqrvykZYsyqcx-LGDGNzFQV0/edit?usp=sharing">Link</a></p>
-<p>As previously stated above, however, we ultimately opted to extract our slices manually for better accuracy and efficiency. For future attempts, here are a few suggestions for improvement:</p>
+<p>As previously stated above, however, we ultimately opted to extract our slices manually for better accuracy and efficiency. For future attempts, here are a few areas for improvement:</p>
+<ul>
+<li><strong>Merging Issues:</strong></li>
+</ul>
+<p>Particularly when performed on slides with multiple slices, Cara’s code frequently either fails to merge (saves a single slice as two or more different slices) or incorrectly merges (saves two or more different slices as a single slice), requiring users to then manually adjust. Potential solutions could include accounting more for the amount of whitespace in between neighboring slices and/or slice sizes (e.g.&nbsp;the difference in size/distance between the two respective slices in the slide images below).</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><img src="images/step 1 images/step_1_image_5.png" class="img-fluid"></th>
+<th><img src="images/step 1 images/step_1_image_6.png" class="img-fluid"></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul>
+<li><strong>False/Failed Annotations:</strong></li>
+</ul>
+<p>Another frequent issues was that the code would either incorrectly annotate a region of the slide (i.e.&nbsp;blank space or a shadow/blur) or would fail to annotate a clear slice. In our case, the latter issue appeared to commonly occur when dealing with slide images that only consisted of one large slice (e.g.&nbsp;many of the slides from Copenhagen), again requiring manual tracing and exporting instead. While manual extraction may ultimately be the more efficient option when only dealing with these large, single-slice images (as you would effectively be downloading and running code for just a single slice), it would again be helpful if the code could potentially be adjusted to better account for miscellaneous smudges/shadows on the slide.</p>
 </section>
 </section>
 <section id="tissue-matching" class="level1">
