@@ -41,11 +41,9 @@ The Northwestern University STAT390 Class has made the following progress on thi
 2. **Why is patch size in powers of 2? (e.g. 32 x 32, 256 x 256, 512 x 512, etc.) Are there alternatives?**  
    To address this question, we combined theoretical insights, practical examples, and empirical evidence.
 
-   **Theoretical Analysis:**  
-   We investigated the mathematical and computational advantages of powers of 2 in convolutional neural networks (CNNs).
+   **Theoretical Analysis:** We investigated the mathematical and computational advantages of powers of 2 in convolutional neural networks (CNNs).
 
-   **Practical Examples:**  
-   We examined earlier CNN architectures such as AlexNet alongside recent practices focused on hardware efficiency.
+   **Practical Examples:** We examined earlier CNN architectures such as AlexNet alongside recent practices focused on hardware efficiency.
 
    **Empirical Evidence:**  
    To supplement our analysis, we referenced the following study:  
