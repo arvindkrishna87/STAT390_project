@@ -92,6 +92,10 @@ Here is a more detailed step-by-step manual on how to run the code:
 
 ## Results and Known Issues
 
+**Examples of similarity scores:**
+
+![](images/tissue_matching_ex.png){fig-align="center"}
+
 Most of these issues appear to stem from a lack of diverse samples. The algorithm as it currently stands does not take into account more complex sample attributes (tissue holes, differently colored tissues, tissues with more than two relevant contours to take into account, etc.).
 
 - **Contour Matching with Holes in Tissue**: The algorithm currently handles a single example with a hole in the tissue, as there were limited examples available. It averages the similarity between the three contours when a hole is present, relying on the similarity of the largest contour, not just edge similarity.
