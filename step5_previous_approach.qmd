@@ -59,11 +59,15 @@ The current pipeline requires two main files, which can both be found [here](htt
 - AnniesMatching.ipynb: An interactive Jupyter Notebook for processing and visualizing tissue matches.
 - match_pipeline.py: A Python script designed for batch processing of images.
 
+## Methodology 
+
 Annie’s code is designed to analyze tissue scan images for each patient and identify the best match across the three different staining types—H&E, melan (melanin), and Sox. The main objective is to find the optimal combination of one image from each stain type that has the **highest overall similarity in shape**. This similarity is computed by extracting the primary contours from each image and calculating shape similarity scores for each combination. The code then averages the similarity scores between the three image pairings to get an overall similarity score for each combination, which allows it to determine the best-matching trio of images for each patient.
 
 Here is a more detailed step-by-step manual on how to run the code: 
 
 :::{.callout-note collapse=true}
+
+### Step-by-Step Manual 
 
 1) Prepare Image Data: Place `.tif` image files in the designated folder (e.g. `processed_images`). Ensure that each patient has images for all three stains (H&E, Melanin, Sox10).
 
@@ -81,6 +85,8 @@ Here is a more detailed step-by-step manual on how to run the code:
 
 - Upon execution, the pipeline will preprocess, extract contours, and match images, saving results in the matches folder. Images will be organized by patient, with matched slices grouped in subfolders.
 :::
+
+## Results and Known Issues
 
 # Epithelium Detection
 
