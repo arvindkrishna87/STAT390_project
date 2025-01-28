@@ -48,8 +48,8 @@ Here is the documentation for Kyla's Method in case you are interested in using 
 * **Tissue Merging Threshold**
   + The distance threshold for when two tissues should be merged into one slice is hard-coded into the algorithm. This means it is not perfectly generalizable. When running this code, a few people ran into issues where the program would either keep connected tissues separated or merge unconnected tissues. In the future, the threshold for merging two tissues could be based on the images themselves instead of being hard-coded in. Below is an example of two tissue slices that were originally merged by the automation because they appeared close together on the slide, but had to be manually separated.
 
-![](images/FalselyJoined1.png){width="300px" fig-align="center"}
-![](images/FalselyJoined2.png){width="300px" fig-align="center"}
+![](images/FalselyJoined1.png){width="600px" fig-align="center"}
+![](images/FalselyJoined2.png){width="600px" fig-align="center"}
 
 # Tissue Matching
 
