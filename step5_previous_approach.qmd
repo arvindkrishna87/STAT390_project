@@ -21,9 +21,9 @@ Here is the documentation for Cara's Method in case you are interested in using 
 
 As previously stated above, however, we ultimately opted to extract our slices manually for better accuracy and efficiency. For future attempts, here are a few areas for improvement:
 
-- **Merging Issues:**
+- **Merging/Border Issues:**
 
-Particularly when performed on slides with multiple slices, Cara's code frequently either fails to merge (saves a single slice as two or more different slices) or incorrectly merges (saves two or more different slices as a single slice), requiring users to then manually adjust. Potential solutions could include accounting more for the amount of whitespace in between neighboring slices and/or slice sizes (e.g. the difference in size/distance between the two respective slices in the slide images below). 
+Particularly when performed on slides with multiple slices, Cara's code frequently either fails to merge (saves a single slice as two or more different slices) or incorrectly merges (saves two or more different slices as a single slice), requiring users to then manually adjust. On other occasions, the algorithm accurately identifies a region as a slice, yet includes too much unnecessary whitespace within the indicated annotation—again requiring manual adjustment. Potential solutions could include accounting more for the amount of whitespace in between neighboring slices and/or slice sizes (e.g. the difference in size/distance between the two respective slices in the slide images below). 
 
 | ![](images/step%201%20images/step_1_image_5.png) | ![](images/step%201%20images/step_1_image_6.png) |
 |--------------------------------------------------|--------------------------------------------------|
