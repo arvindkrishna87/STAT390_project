@@ -92,7 +92,7 @@ Here is a more detailed step-by-step manual on how to run the code:
 
 ## Results and Known Issues
 
-Most of these issues appear to stem from a lack of diverse samples. The algorithm as it currently stands does not take into account more complex sample attributes (limited testing on tissue holes, differently colored tissues, tissues with more than two relevant contours to take into account, etc.).
+Most of these issues appear to stem from a lack of diverse samples. The algorithm as it currently stands does not take into account more complex sample attributes (tissue holes, differently colored tissues, tissues with more than two relevant contours to take into account, etc.).
 
 - **Contour Matching with Holes in Tissue**: The algorithm currently handles a single example with a hole in the tissue, as there were limited examples available. It averages the similarity between the three contours when a hole is present, relying on the similarity of the largest contour, not just edge similarity.
 - **Similarity Score Threshold**: A fixed threshold has been set for similarity scores, which may work well for most cases but could be insufficient for specific cases with varying image quality or abnormal structures. 
@@ -169,4 +169,4 @@ However, the program often failed, especially on more irregular shapes as seen b
 
 # Conclusion
 
-** The ultimate goal is to have this program work, so that all doctors have to do is push a button. However, with such inconsistent results, it is better to focus our efforts elsewhere, as we know doctors have the ability, in QuPath, to pull out slices and epithelium masks if need be. This is why we are focusing on patching with pre-processed data at this moment.**
+The ultimate goal is to have this program work, so that all doctors have to do is push a button. However, with such inconsistent results, it is better to focus our efforts elsewhere, as we know doctors have the ability, in QuPath, to pull out slices and epithelium masks if need be. This is why we are focusing on patching with pre-processed data at this moment.
