@@ -284,6 +284,12 @@ Step-by-Step Manual
 </section>
 <section id="results-and-known-issues" class="level2">
 <h2 class="anchored" data-anchor-id="results-and-known-issues">Results and Known Issues</h2>
+<p><strong>Examples of similarity scores:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tissue_matching_ex.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p>Most of these issues appear to stem from a lack of diverse samples. The algorithm as it currently stands does not take into account more complex sample attributes (tissue holes, differently colored tissues, tissues with more than two relevant contours to take into account, etc.).</p>
 <ul>
 <li><strong>Contour Matching with Holes in Tissue</strong>: The algorithm currently handles a single example with a hole in the tissue, as there were limited examples available. It averages the similarity between the three contours when a hole is present, relying on the similarity of the largest contour, not just edge similarity.</li>
