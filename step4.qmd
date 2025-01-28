@@ -48,32 +48,32 @@ Run `rotate_extract_patch (1).py`.
 
 ![](images/Step4.png){fig-align="center"}
 
-## Comparing Approaches
+# Comparing Approaches
 
-### Alyssa's Code
+## Alyssa's Code
 
 | Pros              | Cons              |
 |------------------|-----------------|
 | Patches grow until they cover a sufficient region of the epithelium, which allows for better adaptability across different epithelium widths <br><br> This also allows for some overlap between patches, which helps create a balance for ensuring coverage and not missing any key spots without too much duplication. | This method incrementally increases patches using very small step sizes, making code time consuming (likely why this algorithm does not work as effectively with larger, thicker tissues (e.g. the large Copenhagen slices)) <br><br> This algorithm also depends on color thresholds to identify tissue regions, which may lead to inconsistencies or require frequent adjustments due to variations. <br>- For example, the black and white mask isolates the epithelium from the stroma and background. <br> - Stain type/image quality/lighting could affect which part is labeled as epithelium vs. stroma vs. background, which could then lead to melanocytes being cut out/not captured in patches. <br><br> Differences in color characteristics, staining protocols, lighting, or image quality could create challenges for reliable application. <br><br> The portion of the algorithm that checks for overlap rejects new patches if there is more than 20% overlap with an existing patch. This percentage could be harder to maintain in narrow regions with smaller patches and/or anywhere small overlaps might be unavoidable for complete coverage.|
 
-### Aryaman's Code
+## Aryaman's Code
 
 | Pros              | Cons              |
 |------------------|-----------------|
 | - Advantage 1<br>- Advantage 2 | - Disadvantage 1<br>- Disadvantage 2 |
 
-### Eli's Code
+## Eli's Code
 
 | Pros              | Cons              |
 |------------------|-----------------|
 | - Advantage 1<br>- Advantage 2 | - Disadvantage 1<br>- Disadvantage 2 |
 
 
-## Tilting the patches
+# Tilting the patches
 
 Tilting of patches could lead to smaller, more efficient patches. Smaller patches are advantageous because we will get more data to work with. Each patch will also have less data in it, and our model may have an easier time picking up on patterns. Also, tilting the patches, means that the epithelium is always in the same orientation in each patch. Our model will not have to determine the orientation of a sample. Perhaps, this will lead to a simpler, more efficient model. 
 
-### Aryaman’s algorithm
+## Aryaman’s algorithm
 
 We use edge detection and find the slope between two points on the edge. Using that slope, we create one edge of the square. This way, the square is tilted to match up with the angle of the sample. \n
 <br>
@@ -81,7 +81,7 @@ We use edge detection and find the slope between two points on the edge. Using t
 <br>
 **Downsides:** The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. Also, see downsides of Aryaman’s whole algorithm. 
 
-### Different tilting algorithm: 
+## Different tilting algorithm: 
 
 We pick a random patch. Next, we identify the stroma and the outside of the sample. We treat the pixels of the stroma and the outside of the sample as points. Using these points, we run a regression model to draw the line that most efficiently crosses the epithelium. Now, we will tilt the patch so that two edges are perpendicular and two edges are parallel to that regression line. This will create a patch that follows the contour of the epithelium. Below is a visual representation of this process.
 
