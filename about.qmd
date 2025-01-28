@@ -2,7 +2,7 @@
 title: "About"
 ---
 
-This is the website for the Fall 2025 STAT390 project!
+This is the website for the STAT390 C-MIL Classification project!
 
 
 ## People
