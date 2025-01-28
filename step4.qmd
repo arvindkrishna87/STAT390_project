@@ -103,7 +103,18 @@ We pick a random patch. Next, we identify the stroma and the outside of the samp
 <br>
 **Note:** This separates the tilting from the patching process. While this is not necessarily a negative, we don’t know which patching algorithm works best with this method yet. It adds another step to the process.
 
+## Patch Design and Optimization QnA
 
+### Question 1: Why are square patches used in tissue analysis?
 
+Square images are commonly used in tissue image analysis as they naturally fit into the grid-like structure of digital images, making it easier for algorithms to scan and analyze oatterbs, They streamline calculations for convolutional neural networks (CNNs), which process grids of data efficiently. This uniformity ensures all parts of an image are treated equally, avoiding distortions or biases that could arise from irregular shapes, i.e. rectangular patches. Additionally, square patches align with pre-trained models, saving time and effort by leveraging existing resources. They also simplify techniques like pooling, which reduces data size while preserving important features, focusing on key details without unnecessary complexity. Overall, they offer a balance of computational efficiency and accuracy.
+
+### Question 2: Why is patch size in powers of 2? (e.g. 32 x 32, 256 x 256, 512 x 512, etc.) Are there alternatives?
+
+placeholder
+
+### Question 3: How do researchers determine the optimal number of patches?
+
+placeholder
 
 
