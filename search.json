@@ -4,7 +4,7 @@
     "href": "step3.html",
     "title": "Step 3: Annotate Slices",
     "section": "",
-    "text": "Aim: idemtify different classes in the epithelium so we can train a model with ground truth\nWe will send matched slices to the stakeholder for them to annotate with Benign, Low grade and High grade C-MIL. This will provide a ground ruth for our future model."
+    "text": "Step 3: annotating is happeneing in parallel with Step 4: patching\nAim: idemtify different classes in the epithelium so we can train a model with ground truth\nWe have sent matched slices to the stakeholder for them to annotate with Benign, Low grade and High grade C-MIL. This will provide a ground ruth for our future model.\n\n\n\n\n\nIn the meantime, we are working on our patching algorithm."
   },
   {
     "objectID": "litreview.html",
