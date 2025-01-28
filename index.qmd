@@ -20,7 +20,7 @@ The Northwestern University STAT390 Class has made the following progress on thi
 
 **Literature Review**: Researched adaptive pooling, cross view transformer, square patches (advantages, sizes, and rationale), padding effect, etc.
 
-### Core Questions and Our Methodology
+### Core Questions and Our Approach to Addressing Them
 
 #### Patching Questions
 1. ** How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution?** <br>
