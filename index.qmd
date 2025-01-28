@@ -23,7 +23,7 @@ The Northwestern University STAT390 Class has made the following progress on thi
 ### Core Questions and Our Methodology
 
 #### Patching Questions
-1.** How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution?** <br>
+1. ** How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution?** <br>
 2. **Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use?** <br>
 3. **If adaptive pooling can be used effectively to handle images of different sizes (i.e. handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?**
 
