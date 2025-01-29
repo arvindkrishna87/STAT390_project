@@ -133,6 +133,20 @@
     "text": "Results"
   },
   {
+    "objectID": "step4.html#alyssas-patching-algorithm",
+    "href": "step4.html#alyssas-patching-algorithm",
+    "title": "Step 4: Patching",
+    "section": "Alyssa’s Patching Algorithm",
+    "text": "Alyssa’s Patching Algorithm\nAlyssa’s patching algorithm incrementally generates patches over tissue images by leveraging color thresholds to segment and identify key regions such as the epithelium, stroma, and background. The process begins by isolating the epithelium using a black-and-white mask, which ensures that only relevant tissue areas are targeted. This mask allows the algorithm to exclude non-tissue regions, enhancing its focus on areas of interest. The algorithm then adds patches using a fixed size, iteratively stepping through the tissue with small increments. This approach ensures fine-grained coverage and allows for some overlap between patches, helping maintain continuity and adaptability across different epithelium widths. However, patches with excessive overlap (greater than 20%) are discarded to avoid redundancy. While this method excels in providing detailed coverage, particularly for narrow or irregular tissues, it is computationally intensive due to its small step sizes and reliance on precise color thresholding. This dependence on color thresholds makes the algorithm sensitive to variations in staining protocols, image quality, and lighting, which could misclassify tissue regions and affect patch accuracy. Additionally, the fixed patch size may struggle to accommodate larger or more irregular tissues, particularly those with diverse shapes and sizes. Despite these challenges, Alyssa’s algorithm is effective for capturing detailed tissue information in smaller, more uniform samples."
+  },
+  {
+    "objectID": "step4.html#results-1",
+    "href": "step4.html#results-1",
+    "title": "Step 4: Patching",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
     "objectID": "step4.html#alyssas-code",
     "href": "step4.html#alyssas-code",
     "title": "Step 4: Patching",
@@ -159,13 +173,6 @@
     "title": "Step 4: Patching",
     "section": "Aryaman’s algorithm",
     "text": "Aryaman’s algorithm\nWe use edge detection and find the slope between two points on the edge. Using that slope, we create one edge of the square. This way, the square is tilted to match up with the angle of the sample.  Upsides: There is already code for that edge detection and finding the edge of the square.  Downsides: The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. Also, see downsides of Aryaman’s whole algorithm."
-  },
-  {
-    "objectID": "step4.html#alyssas-algorithm",
-    "href": "step4.html#alyssas-algorithm",
-    "title": "Step 4: Patching",
-    "section": "Alyssa’s algorithm",
-    "text": "Alyssa’s algorithm\nPatches grow incrementally until they cover a sufficient region of the epithelium, allowing the algorithm to adapt better to varying epithelium widths. The method also permits some overlap between patches, striking a balance between thorough coverage and avoiding excessive duplication.  Upsides: This adaptability across different epithelium widths improves coverage, and the overlap between patches helps ensure no critical regions are missed while avoiding excessive redundancy.  Downsides: Small step sizes can computationally expensive, particularly when dealing with larger tissues, such as the Copenhagen dataset with single large slices per stain. The algorithm’s reliance on color thresholds to identify tissue regions can lead to inconsistencies or require frequent adjustments due to variations in stain type, image quality, or lighting."
   },
   {
     "objectID": "step4.html#different-tilting-algorithm",

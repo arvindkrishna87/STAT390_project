@@ -140,6 +140,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#aryamans-patching-algorithm-methodology" id="toc-aryamans-patching-algorithm-methodology" class="nav-link" data-scroll-target="#aryamans-patching-algorithm-methodology">Aryaman’s Patching Algorithm: Methodology</a>
   <ul class="collapse">
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#alyssas-patching-algorithm" id="toc-alyssas-patching-algorithm" class="nav-link" data-scroll-target="#alyssas-patching-algorithm">Alyssa’s Patching Algorithm</a></li>
+  <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1">Results</a></li>
   </ul></li>
   <li><a href="#comparing-approaches" id="toc-comparing-approaches" class="nav-link" data-scroll-target="#comparing-approaches">Comparing Approaches</a>
   <ul class="collapse">
@@ -150,7 +152,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#tilting-the-patches" id="toc-tilting-the-patches" class="nav-link" data-scroll-target="#tilting-the-patches">Tilting the patches</a>
   <ul class="collapse">
   <li><a href="#aryamans-algorithm" id="toc-aryamans-algorithm" class="nav-link" data-scroll-target="#aryamans-algorithm">Aryaman’s algorithm</a></li>
-  <li><a href="#alyssas-algorithm" id="toc-alyssas-algorithm" class="nav-link" data-scroll-target="#alyssas-algorithm">Alyssa’s algorithm</a></li>
   <li><a href="#different-tilting-algorithm" id="toc-different-tilting-algorithm" class="nav-link" data-scroll-target="#different-tilting-algorithm">Different tilting algorithm:</a></li>
   <li><a href="#patch-design-and-optimization-qna" id="toc-patch-design-and-optimization-qna" class="nav-link" data-scroll-target="#patch-design-and-optimization-qna">Patch Design and Optimization QnA</a>
   <ul class="collapse">
@@ -231,6 +232,18 @@ Step-by-Step Manual
 </figure>
 </div>
 </section>
+<section id="alyssas-patching-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="alyssas-patching-algorithm">Alyssa’s Patching Algorithm</h2>
+<p>Alyssa’s patching algorithm incrementally generates patches over tissue images by leveraging color thresholds to segment and identify key regions such as the epithelium, stroma, and background. The process begins by isolating the epithelium using a black-and-white mask, which ensures that only relevant tissue areas are targeted. This mask allows the algorithm to exclude non-tissue regions, enhancing its focus on areas of interest. The algorithm then adds patches using a fixed size, iteratively stepping through the tissue with small increments. This approach ensures fine-grained coverage and allows for some overlap between patches, helping maintain continuity and adaptability across different epithelium widths. However, patches with excessive overlap (greater than 20%) are discarded to avoid redundancy. While this method excels in providing detailed coverage, particularly for narrow or irregular tissues, it is computationally intensive due to its small step sizes and reliance on precise color thresholding. This dependence on color thresholds makes the algorithm sensitive to variations in staining protocols, image quality, and lighting, which could misclassify tissue regions and affect patch accuracy. Additionally, the fixed patch size may struggle to accommodate larger or more irregular tissues, particularly those with diverse shapes and sizes. Despite these challenges, Alyssa’s algorithm is effective for capturing detailed tissue information in smaller, more uniform samples.</p>
+</section>
+<section id="results-1" class="level2">
+<h2 class="anchored" data-anchor-id="results-1">Results</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/alyssa_ex1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
+</figure>
+</div>
+</section>
 </section>
 <section id="comparing-approaches" class="level1">
 <h1>Comparing Approaches</h1>
@@ -304,15 +317,6 @@ Step-by-Step Manual
 <section id="aryamans-algorithm" class="level2">
 <h2 class="anchored" data-anchor-id="aryamans-algorithm">Aryaman’s algorithm</h2>
 <p>We use edge detection and find the slope between two points on the edge. Using that slope, we create one edge of the square. This way, the square is tilted to match up with the angle of the sample. <br> <strong>Upsides:</strong> There is already code for that edge detection and finding the edge of the square. <br> <strong>Downsides:</strong> The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. Also, see downsides of Aryaman’s whole algorithm.</p>
-</section>
-<section id="alyssas-algorithm" class="level2">
-<h2 class="anchored" data-anchor-id="alyssas-algorithm">Alyssa’s algorithm</h2>
-<p>Patches grow incrementally until they cover a sufficient region of the epithelium, allowing the algorithm to adapt better to varying epithelium widths. The method also permits some overlap between patches, striking a balance between thorough coverage and avoiding excessive duplication. <br> <strong>Upsides:</strong> This adaptability across different epithelium widths improves coverage, and the overlap between patches helps ensure no critical regions are missed while avoiding excessive redundancy. <br> <strong>Downsides:</strong> Small step sizes can computationally expensive, particularly when dealing with larger tissues, such as the Copenhagen dataset with single large slices per stain. The algorithm’s reliance on color thresholds to identify tissue regions can lead to inconsistencies or require frequent adjustments due to variations in stain type, image quality, or lighting.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/alyssa_ex1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
-</figure>
-</div>
 </section>
 <section id="different-tilting-algorithm" class="level2">
 <h2 class="anchored" data-anchor-id="different-tilting-algorithm">Different tilting algorithm:</h2>
