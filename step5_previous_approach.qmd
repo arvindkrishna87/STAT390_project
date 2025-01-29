@@ -46,7 +46,7 @@ Here is the documentation for Kyla's Method in case you are interested in using 
   + The merging of annotations uses complex geometrical techniques such as 'union'. This could lead to failure with overlapping or invalid shapes, and also create artifacts within the merged annotations. 
 
 * **Tissue Merging Threshold**
-  + The distance threshold for when two tissues should be merged into one slice is hard-coded into the algorithm. This means it is not perfectly generalizable. When running this code, a few people ran into issues where the program would either keep connected tissues separated or merge unconnected tissues. In the future, the threshold for merging two tissues could be based on the images themselves instead of being hard-coded in. Below is an example of two tissue slices that were originally merged by the automation because they appeared close together on the slide, but had to be manually separated.
+  + Similarly to Cara's method, the distance threshold for when two tissues should be merged into one slice is hard-coded into the algorithm. This means it is not perfectly generalizable. When running this code, a few people ran into issues where the program would either keep connected tissues separated or merge unconnected tissues. In the future, the threshold for merging two tissues could be based on the images themselves instead of being hard-coded in. Below is an example of two tissue slices that were originally merged by the automation because they appeared close together on the slide, but had to be manually separated.
 
 <div style="text-align: center;">
   <img src="images/FalselyJoined1.png" alt="FalselyJoined1" width="450">
@@ -60,8 +60,8 @@ Our current automated methodology for matching tissue images across all three st
 
 The current pipeline requires two main files, which can both be found [here](https://github.com/diegogoldfrank/STAT-390---Fall-24/blob/main/Step%202%3A%20Matching%20slices%20across%20stains/README.md):
 
-- AnniesMatching.ipynb: An interactive Jupyter Notebook for processing and visualizing tissue matches.
-- match_pipeline.py: A Python script designed for batch processing of images.
+- `AnniesMatching.ipynb`: An interactive Jupyter Notebook for processing and visualizing tissue matches.
+- `match_pipeline.py`: A Python script designed for batch processing of images.
 
 ## Methodology 
 
@@ -127,7 +127,7 @@ For **Melan-A** stains, the red chroma channel is used to identify stroma and ep
 
 For **Sox-10** stains, the blue chroma channel is used similarly, with a tailored binning strategy to reflect the different chromatic characteristics of this stain. In both cases, stroma and epithelium masks are refined through morphological dilation, Gaussian smoothing, and removal of small objects or holes. The resulting masks are applied to the RGB images to generate segmented outputs, which are saved alongside visualizations of the input, stroma, and epithelium regions. These methods balance robustness and flexibility, ensuring segmentation quality across diverse tissue samples and staining variations.
 
-See our current progress with this task through this [GitHub Link](https://github.com/diegogoldfrank/STAT-390---Fall-24/tree/main/Step%203%3A%20Epithelium%20detection):
+See our current progress with this task through this [GitHub Link](https://github.com/diegogoldfrank/STAT-390---Fall-24/tree/main/Step%203%3A%20Epithelium%20detection)
 
 ## Results
 
@@ -146,7 +146,7 @@ However, the program often failed, especially on more irregular shapes as seen b
   + Currently, all stains are using YCrCb and YUV. However, using LAB color spacecould work better. LAB color space is good for histology images because it separates lunienscence from color.
 
 * **Move from Fixed Values to Adaptive Thresholding**
-  + Currently, the threshold for binning the epithelium is determined by another fixed value 'no_of_chroma_bins'. This may fail for varying samples. We could instead try using Adaptive Thresholding using Otsu's method. Otsu's method calculates the optimal threshold for small regions within an image as opposed to treating the image as a whole. 
+  + Currently, the threshold for binning the epithelium is determined by another fixed value `no_of_chroma_bins`. This may fail for varying samples. We could instead try using Adaptive Thresholding using Otsu's method. Otsu's method calculates the optimal threshold for small regions within an image as opposed to treating the image as a whole. 
 
 # Conclusion
 
