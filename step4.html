@@ -316,7 +316,7 @@ Step-by-Step Manual
 <p>Tilting of patches could lead to smaller, more efficient patches. Smaller patches are advantageous because we will get more data to work with. Each patch will also have less data in it, and our model may have an easier time picking up on patterns. Also, tilting the patches, means that the epithelium is always in the same orientation in each patch. Our model will not have to determine the orientation of a sample. Perhaps, this will lead to a simpler, more efficient model.</p>
 <section id="aryamans-algorithm" class="level2">
 <h2 class="anchored" data-anchor-id="aryamans-algorithm">Aryaman’s algorithm</h2>
-<p>We use edge detection and find the slope between two points on the edge. Using that slope, we create one edge of the square. This way, the square is tilted to match up with the angle of the sample. <br> <strong>Upsides:</strong> There is already code for that edge detection and finding the edge of the square. <br> <strong>Downsides:</strong> The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. Also, see downsides of Aryaman’s whole algorithm.</p>
+<p>We use edge detection and find the slope between two points on the edge. Using that slope, we create one edge of the square. This way, the square is tilted to match up with the angle of the sample. <br> <strong>Upsides:</strong> There is already code for that edge detection and finding the edge of the square. <br> <strong>Downsides:</strong> The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. <em>Also, see downsides of Aryaman’s whole algorithm.</em></p>
 </section>
 <section id="different-tilting-algorithm" class="level2">
 <h2 class="anchored" data-anchor-id="different-tilting-algorithm">Different tilting algorithm:</h2>
@@ -326,7 +326,7 @@ Step-by-Step Manual
 <p><img src="images/regression_tilt.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div>
-<p><strong>Upsides:</strong> this method is not very computationally expensive, especially with the epithelium mask that we have for each sample already. <br> <strong>Downsides:</strong> When tilting an existing patch, we cannot ensure that the patch still includes the entire epithelium unless we also resize the patch. <br> <strong>Note:</strong> This separates the tilting from the patching process. While this is not necessarily a negative, we don’t know which patching algorithm works best with this method yet. It adds another step to the process.</p>
+<p><strong>Upsides:</strong> this method is not very computationally expensive, especially with the epithelium mask that we already have for many samples. <br> <strong>Downsides:</strong> When tilting an existing patch, we cannot ensure that the patch still includes the entire epithelium unless we also resize the patch. <br> <strong>Note:</strong> This separates the tilting from the patching process. While this is not necessarily a negative, we don’t know which patching algorithm works best with this method yet. It adds another step to the process.</p>
 </section>
 <section id="patch-design-and-optimization-qna" class="level2">
 <h2 class="anchored" data-anchor-id="patch-design-and-optimization-qna">Patch Design and Optimization QnA</h2>
