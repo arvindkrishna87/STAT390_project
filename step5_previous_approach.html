@@ -226,7 +226,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><strong>Tissue Merging Threshold</strong>
 <ul>
-<li>The distance threshold for when two tissues should be merged into one slice is hard-coded into the algorithm. This means it is not perfectly generalizable. When running this code, a few people ran into issues where the program would either keep connected tissues separated or merge unconnected tissues. In the future, the threshold for merging two tissues could be based on the images themselves instead of being hard-coded in. Below is an example of two tissue slices that were originally merged by the automation because they appeared close together on the slide, but had to be manually separated.</li>
+<li>Similarly to Cara’s method, the distance threshold for when two tissues should be merged into one slice is hard-coded into the algorithm. This means it is not perfectly generalizable. When running this code, a few people ran into issues where the program would either keep connected tissues separated or merge unconnected tissues. In the future, the threshold for merging two tissues could be based on the images themselves instead of being hard-coded in. Below is an example of two tissue slices that were originally merged by the automation because they appeared close together on the slide, but had to be manually separated.</li>
 </ul></li>
 </ul>
 <div style="text-align: center;">
@@ -239,8 +239,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Our current automated methodology for matching tissue images across all three stain types (H&amp;E, Melanin, and Sox10) utilizes image preprocessing, contour extraction, and similarity scoring.</p>
 <p>The current pipeline requires two main files, which can both be found <a href="https://github.com/diegogoldfrank/STAT-390---Fall-24/blob/main/Step%202%3A%20Matching%20slices%20across%20stains/README.md">here</a>:</p>
 <ul>
-<li>AnniesMatching.ipynb: An interactive Jupyter Notebook for processing and visualizing tissue matches.</li>
-<li>match_pipeline.py: A Python script designed for batch processing of images.</li>
+<li><code>AnniesMatching.ipynb</code>: An interactive Jupyter Notebook for processing and visualizing tissue matches.</li>
+<li><code>match_pipeline.py</code>: A Python script designed for batch processing of images.</li>
 </ul>
 <section id="methodology" class="level2">
 <h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
@@ -323,7 +323,7 @@ Step-by-Step Manual
 <p>The methodologies for segmenting and extracting epithelium and stroma regions from tissue images stained with <strong>Melan-A</strong> and <strong>Sox-10</strong> employ similar algorithms but adapt to the unique properties of each stain. Both methods begin by loading the images and converting them to the YCrCb color space to leverage luminance (Y) and chroma (Cr or Cb) channels for segmentation. The background is identified using a binning approach on the luminance channel, isolating the most common intensity bin. Morphological operations like object removal and hole filling refine the background mask, ensuring accurate separation of non-background elements.</p>
 <p>For <strong>Melan-A</strong> stains, the red chroma channel is used to identify stroma and epithelium, leveraging bins surrounding the most frequent intensity to segment stroma and bins further offset to isolate epithelium.</p>
 <p>For <strong>Sox-10</strong> stains, the blue chroma channel is used similarly, with a tailored binning strategy to reflect the different chromatic characteristics of this stain. In both cases, stroma and epithelium masks are refined through morphological dilation, Gaussian smoothing, and removal of small objects or holes. The resulting masks are applied to the RGB images to generate segmented outputs, which are saved alongside visualizations of the input, stroma, and epithelium regions. These methods balance robustness and flexibility, ensuring segmentation quality across diverse tissue samples and staining variations.</p>
-<p>See our current progress with this task through this <a href="https://github.com/diegogoldfrank/STAT-390---Fall-24/tree/main/Step%203%3A%20Epithelium%20detection">GitHub Link</a>:</p>
+<p>See our current progress with this task through this <a href="https://github.com/diegogoldfrank/STAT-390---Fall-24/tree/main/Step%203%3A%20Epithelium%20detection">GitHub Link</a></p>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
@@ -345,7 +345,7 @@ Step-by-Step Manual
 </ul></li>
 <li><strong>Move from Fixed Values to Adaptive Thresholding</strong>
 <ul>
-<li>Currently, the threshold for binning the epithelium is determined by another fixed value ‘no_of_chroma_bins’. This may fail for varying samples. We could instead try using Adaptive Thresholding using Otsu’s method. Otsu’s method calculates the optimal threshold for small regions within an image as opposed to treating the image as a whole.</li>
+<li>Currently, the threshold for binning the epithelium is determined by another fixed value <code>no_of_chroma_bins</code>. This may fail for varying samples. We could instead try using Adaptive Thresholding using Otsu’s method. Otsu’s method calculates the optimal threshold for small regions within an image as opposed to treating the image as a whole.</li>
 </ul></li>
 </ul>
 </section>
