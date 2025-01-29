@@ -29,12 +29,12 @@ The Northwestern University STAT390 Class has made the following progress on thi
 
 #### Patch Design and Optimization Questions
 1. **Why are square patches used in tissue analysis?**  
-   To explore this question, we researched the current benefits of using square patches, the effectiveness of non-square patch sizing in similar medical contexts, and a potential alternative called PatchAI.
+   To explore this question, we researched the current benefits of using square patches, the effectiveness of non-square patch sizing in similar medical contexts, and a potential alternative called PatchIT.
 
    **Sources:**
-   - [PMC Article](https://pmc.ncbi.nlm.nih.gov/articles/PMC5265243/)
-   - [IEEE Article](https://ieeexplore.ieee.org/document/7848208)
-   - [MDPI Article](https://www.mdpi.com/2414-4088/6/12/11)
+   - [“Tissue classification for laparoscopic image understanding based on multispectral texture analysis”](https://pmc.ncbi.nlm.nih.gov/articles/PMC5265243/)
+   - [“Machine learning algorithm for retinal image analysis”](https://ieeexplore.ieee.org/document/7848208)
+   - [“patchIT: A Multipurpose Patch Creation Tool for Image Processing Applications”](https://www.mdpi.com/2414-4088/6/12/11)
 
 ---
 
@@ -51,9 +51,9 @@ The Northwestern University STAT390 Class has made the following progress on thi
 
    **Additional Sources:**  
    - [Keras: MaxPooling2D](https://keras.io/api/layers/pooling_layers/max_pooling2d/)
-   - [ImageNet Paper](https://www.cs.toronto.edu/~fritz/absps/imagenet.pdf)
-   - [AlexNet Paper](https://arxiv.org/pdf/1409.1556)
-   - [NVIDIA GPU Implementation](https://docs.nvidia.com/deeplearning/performance/dl-performance-matrix-multiplication/index.html#gpu-imple)
+   - [ImageNet Classifcation](https://www.cs.toronto.edu/~fritz/absps/imagenet.pdf)
+   - [Deep Convolutional Networks](https://arxiv.org/pdf/1409.1556)
+   - [Nvidia Matrix Multiplication Guide](https://docs.nvidia.com/deeplearning/performance/dl-performance-matrix-multiplication/index.html#gpu-imple)
    - [Pooling Layers in Neural Nets](https://medium.com/aiguys/pooling-layers-in-neural-nets-and-their-variants-f6129fc4628b)
 
 ---
