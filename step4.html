@@ -249,8 +249,12 @@ Step-by-Step Manual
 </thead>
 <tbody>
 <tr class="odd">
-<td>Patches grow until they cover a sufficient region of the epithelium, which allows for better adaptability across different epithelium widths <br><br> This also allows for some overlap between patches, which helps create a balance for ensuring coverage and not missing any key spots without too much duplication.</td>
-<td>This method incrementally increases patches using very small step sizes, making code time consuming (likely why this algorithm does not work as effectively with larger, thicker tissues (e.g.&nbsp;the large Copenhagen slices)) <br><br> This algorithm also depends on color thresholds to identify tissue regions, which may lead to inconsistencies or require frequent adjustments due to variations. <br>- For example, the black and white mask isolates the epithelium from the stroma and background. <br> - Stain type/image quality/lighting could affect which part is labeled as epithelium vs.&nbsp;stroma vs.&nbsp;background, which could then lead to melanocytes being cut out/not captured in patches. <br><br> Differences in color characteristics, staining protocols, lighting, or image quality could create challenges for reliable application. <br><br> The portion of the algorithm that checks for overlap rejects new patches if there is more than 20% overlap with an existing patch. This percentage could be harder to maintain in narrow regions with smaller patches and/or anywhere small overlaps might be unavoidable for complete coverage.</td>
+<td>Patches grow until they cover a sufficient region of the epithelium, which allows for better adaptability across different epithelium widths <br><br> Adjustable threshold allows for some overlap between patches, which helps create a balance for ensuring coverage and not missing any key spots without too much duplication</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>This method incrementally increases patches using very small step sizes, making code time consuming (likely why this algorithm does not work as effectively with larger, thicker tissues (e.g.&nbsp;the large Copenhagen slices)) <br><br> The algorithm depends on color thresholds to identify tissue regions, which may lead to inconsistencies or require frequent adjustments due to variations. Differences in color characteristics, staining protocols, lighting, or image quality could create challenges for reliable application. <br><br> Depends on specific parameter values that were likely chosen by testing on a specific tissue slice. These parameters limit the code’s generalizability to other tissue slices, requiring manual adjustments through trial and error.</td>
+<td></td>
 </tr>
 </tbody>
 </table>
