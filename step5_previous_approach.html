@@ -150,6 +150,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#methodology-1" id="toc-methodology-1" class="nav-link" data-scroll-target="#methodology-1">Methodology</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#suggestions-for-improvement" id="toc-suggestions-for-improvement" class="nav-link" data-scroll-target="#suggestions-for-improvement">Suggestions for Improvement</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
@@ -322,41 +323,7 @@ Step-by-Step Manual
 <p>The methodologies for segmenting and extracting epithelium and stroma regions from tissue images stained with <strong>Melan-A</strong> and <strong>Sox-10</strong> employ similar algorithms but adapt to the unique properties of each stain. Both methods begin by loading the images and converting them to the YCrCb color space to leverage luminance (Y) and chroma (Cr or Cb) channels for segmentation. The background is identified using a binning approach on the luminance channel, isolating the most common intensity bin. Morphological operations like object removal and hole filling refine the background mask, ensuring accurate separation of non-background elements.</p>
 <p>For <strong>Melan-A</strong> stains, the red chroma channel is used to identify stroma and epithelium, leveraging bins surrounding the most frequent intensity to segment stroma and bins further offset to isolate epithelium.</p>
 <p>For <strong>Sox-10</strong> stains, the blue chroma channel is used similarly, with a tailored binning strategy to reflect the different chromatic characteristics of this stain. In both cases, stroma and epithelium masks are refined through morphological dilation, Gaussian smoothing, and removal of small objects or holes. The resulting masks are applied to the RGB images to generate segmented outputs, which are saved alongside visualizations of the input, stroma, and epithelium regions. These methods balance robustness and flexibility, ensuring segmentation quality across diverse tissue samples and staining variations.</p>
-<p>Follow this step-by-step manual to extract epithelia. Our API we created is included which automates the process.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Step-by-Step Manual (API included)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Codes required:</p>
-<ul>
-<li><code>Epithelium Extraction Script.ipynb</code></li>
-</ul>
-<ol type="1">
-<li><p>Set the input and output directories: Make sure the paths for the input and output directories are correctly configured to point to the appropriate folders on your computer.</p></li>
-<li><p>Rename files to include locations: Update the file names to include their locations (E.G., h2114189 melan_ROI_1 (Sheffield).tif). This step is essential because the extraction algorithm selection depends on both the stain type and location.</p></li>
-<li><p>Run the setup code: Execute all code cells from the purple header through the end of the file before executing the code cell below. Verify the folder object: Confirm that the folder object contains the correct tissue scans. Once verified, you may execute the code cell below.</p></li>
-<li><p>Run <code>Epithelium Extraction Script.ipynb</code>.</p></li>
-</ol>
-<section id="api" class="level3">
-<h3 class="anchored" data-anchor-id="api">API</h3>
-<p>Here is the API we created to automate this step. Using this tool will speed up the process.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/API.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</section>
-</div>
-</div>
-</div>
+<p>See our current progress with this task through this <a href="https://github.com/diegogoldfrank/STAT-390---Fall-24/tree/main/Step%203%3A%20Epithelium%20detection">GitHub Link</a>:</p>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
@@ -369,10 +336,23 @@ Step-by-Step Manual (API included)
 <p>However, the program often failed, especially on more irregular shapes as seen below.</p>
 <p><img src="images/failedEpi1.png" class="img-fluid quarto-figure quarto-figure-center"> <img src="images/failedEpi2.png" class="img-fluid quarto-figure quarto-figure-center"></p>
 </section>
+<section id="suggestions-for-improvement" class="level2">
+<h2 class="anchored" data-anchor-id="suggestions-for-improvement">Suggestions for Improvement</h2>
+<ul>
+<li><strong>Improving the Color Space Selection</strong>
+<ul>
+<li>Currently, all stains are using YCrCb and YUV. However, using LAB color spacecould work better. LAB color space is good for histology images because it separates lunienscence from color.</li>
+</ul></li>
+<li><strong>Move from Fixed Values to Adaptive Thresholding</strong>
+<ul>
+<li>Currently, the threshold for binning the epithelium is determined by another fixed value ‘no_of_chroma_bins’. This may fail for varying samples. We could instead try using Adaptive Thresholding using Otsu’s method. Otsu’s method calculates the optimal threshold for small regions within an image as opposed to treating the image as a whole.</li>
+</ul></li>
+</ul>
+</section>
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
-<p>The ultimate goal is to have this program work, so that all doctors have to do is push a button. However, with such inconsistent results, it is better to focus our efforts elsewhere, as we know doctors have the ability, in QuPath, to pull out slices and epithelium masks if need be. This is why we are focusing on patching with pre-processed data at this moment.</p>
+<p>The ultimate goal is to have this program work so that all doctors have to do is push a button. However, with such inconsistent results, it is better to focus our efforts elsewhere, as we know doctors have the ability, in QuPath, to pull out slices and epithelium masks if need be. This is why we are focusing on patching with pre-processed data at this moment.</p>
 
 
 </section>
