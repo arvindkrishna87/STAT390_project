@@ -31,7 +31,7 @@ The Northwestern University STAT390 Class has made the following progress on thi
 1. **Why are square patches used in tissue analysis?**  
    To explore this question, we researched the current benefits of using square patches, the effectiveness of non-square patch sizing in similar medical contexts, and a potential alternative called PatchIT.
 
-   **Sources:**
+   **Additional Sources:**
    - [“Tissue classification for laparoscopic image understanding based on multispectral texture analysis”](https://pmc.ncbi.nlm.nih.gov/articles/PMC5265243/)
    - [“Machine learning algorithm for retinal image analysis”](https://ieeexplore.ieee.org/document/7848208)
    - [“patchIT: A Multipurpose Patch Creation Tool for Image Processing Applications”](https://www.mdpi.com/2414-4088/6/12/11)
