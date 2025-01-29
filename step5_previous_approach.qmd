@@ -127,38 +127,7 @@ For **Melan-A** stains, the red chroma channel is used to identify stroma and ep
 
 For **Sox-10** stains, the blue chroma channel is used similarly, with a tailored binning strategy to reflect the different chromatic characteristics of this stain. In both cases, stroma and epithelium masks are refined through morphological dilation, Gaussian smoothing, and removal of small objects or holes. The resulting masks are applied to the RGB images to generate segmented outputs, which are saved alongside visualizations of the input, stroma, and epithelium regions. These methods balance robustness and flexibility, ensuring segmentation quality across diverse tissue samples and staining variations.
 
-
-
-
-
-Follow this step-by-step manual to extract epithelia. Our API we created is included which automates the process.
-
-:::{.callout-note collapse=true}
-
-### Step-by-Step Manual (API included)
-
-Codes required:
-
-- `Epithelium Extraction Script.ipynb`
-
-
-1. Set the input and output directories: Make sure the paths for the input and output directories are correctly configured to point to the appropriate folders on your computer.
-
-2. Rename files to include locations: Update the file names to include their locations (E.G., h2114189 melan_ROI_1 (Sheffield).tif). This step is essential because the extraction algorithm selection depends on both the stain type and location.
-
-3. Run the setup code: Execute all code cells from the purple header through the end of the file before executing the code cell below. Verify the folder object: Confirm that the folder object contains the correct tissue scans. Once verified, you may execute the code cell below.
-
-4. Run `Epithelium Extraction Script.ipynb`. 
-
-
-### API
-
-Here is the API we created to automate this step. Using this tool will speed up the process.
-
-![](images/API.png){fig-align="center"}
-
-:::
-
+See our current progress with this task through this [GitHub Link](https://github.com/diegogoldfrank/STAT-390---Fall-24/tree/main/Step%203%3A%20Epithelium%20detection):
 
 ## Results
 
@@ -171,6 +140,14 @@ However, the program often failed, especially on more irregular shapes as seen b
 ![](images/failedEpi1.png){fig-align="center"}
 ![](images/failedEpi2.png){fig-align="center"}
 
+## Suggestions for Improvement
+
+* **Improving the Color Space Selection**
+  + Currently, all stains are using YCrCb and YUV. However, using LAB color spacecould work better. LAB color space is good for histology images because it separates lunienscence from color.
+
+* **Move from Fixed Values to Adaptive Thresholding**
+  + Currently, the threshold for binning the epithelium is determined by another fixed value 'no_of_chroma_bins'. This may fail for varying samples. We could instead try using Adaptive Thresholding using Otsu's method. Otsu's method calculates the optimal threshold for small regions within an image as opposed to treating the image as a whole. 
+
 # Conclusion
 
-The ultimate goal is to have this program work, so that all doctors have to do is push a button. However, with such inconsistent results, it is better to focus our efforts elsewhere, as we know doctors have the ability, in QuPath, to pull out slices and epithelium masks if need be. This is why we are focusing on patching with pre-processed data at this moment.
+The ultimate goal is to have this program work so that all doctors have to do is push a button. However, with such inconsistent results, it is better to focus our efforts elsewhere, as we know doctors have the ability, in QuPath, to pull out slices and epithelium masks if need be. This is why we are focusing on patching with pre-processed data at this moment.
