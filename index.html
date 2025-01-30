@@ -180,9 +180,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="patching-questions" class="level4">
 <h4 class="anchored" data-anchor-id="patching-questions">Patching Questions</h4>
 <ol type="1">
-<li><strong>How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution?</strong> <br></li>
-<li><strong>Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use?</strong> <br></li>
-<li><strong>If adaptive pooling can be used effectively to handle images of different sizes (i.e.&nbsp;handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?</strong></li>
+<li><p><strong>How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution?</strong> <br> We will develop a histogram of all patch sizes used for the 106 tissue slices to determine the modality and distribution of patch sizes we will ultimately use to train our CNN model.</p></li>
+<li><p><strong>Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use?</strong> <br> We answered this question by reviewing existing research on patch-based machine-learning models and considering the implications of using multiple and minimal patch sizes.</p></li>
+</ol>
+<p><strong>Additional Sources:</strong> - <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6033561/">“Effect of patch size and network architecture on a convolutional neural network approach for automatic segmentation of OCT retinal layers”</a> - <a href="https://datascience.stackexchange.com/questions/96516/filter-size-in-cnns-and-how-they-relate-to-overfitting-underfitting">“Filter size in CNNs and how they relate to overfitting/underfitting”</a></p>
+<ol start="3" type="1">
+<li><strong>If adaptive pooling can be used effectively to handle images of different sizes (i.e.&nbsp;handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?</strong> We explored how adaptive pooling in CNNs maintains fixed output dimensions while handling varying input sizes. By examining how convolutional layers learn hierarchical patterns, we assessed whether adaptive pooling preserves distinct features in small and large patches, ensuring the model can still identify patterns at different scales.</li>
 </ol>
 </section>
 <section id="patch-design-and-optimization-questions" class="level4">
