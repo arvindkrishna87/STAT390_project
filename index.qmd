@@ -30,8 +30,8 @@ The Northwestern University STAT390 Class has made the following progress on thi
    We answered this question by reviewing existing research on patch-based machine-learning models and considering the implications of using multiple and minimal patch sizes.
 
 **Additional Sources:**
-- [“Effect of patch size and network architecture on a convolutional neural network approach for automatic segmentation of OCT retinal layers”](https://pmc.ncbi.nlm.nih.gov/articles/PMC6033561/)
-- [“Filter size in CNNs and how they relate to overfitting/underfitting”](https://datascience.stackexchange.com/questions/96516/filter-size-in-cnns-and-how-they-relate-to-overfitting-underfitting)
+   - [“Effect of patch size and network architecture on a convolutional neural network approach for automatic segmentation of OCT retinal layers”](https://pmc.ncbi.nlm.nih.gov/articles/PMC6033561/)
+   - [“Filter size in CNNs and how they relate to overfitting/underfitting”](https://datascience.stackexchange.com/questions/96516/filter-size-in-cnns-and-how-they-relate-to-overfitting-underfitting)
 
 3. **If adaptive pooling can be used effectively to handle images of different sizes (i.e. handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?**
    We explored how adaptive pooling in CNNs maintains fixed output dimensions while handling varying input sizes. By examining how convolutional layers learn hierarchical patterns, we assessed whether adaptive pooling preserves distinct features in small and large patches, ensuring the model can still identify patterns at different scales.
