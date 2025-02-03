@@ -46,6 +46,25 @@ Alyssa’s patching algorithm incrementally generates patches over tissue images
 
 ![](images/alyssa_ex1.png){fig-align="center" width=40%}
 
+## Epithelium Pixel Width Method
+By Eli Nacar
+
+* Goes through every row of pixels in the image of the epithelium mask to determine the width of the epithelium in that row
+* Defines distinct patch sizes
+* Uses the epithelium width to fit appropriate patches to a given region
+* Iterates through the defined patch sizes, starting with the smallest size
+* Places patches where they do not overlap with others until a certain percentage of the epithelium mask is covered
+
+***Note: There seems to be a discrepancy between the [README](https://github.com/diegogoldfrank/STAT-390---Fall-24/blob/main/Step%204%3A%20Patching/Eli_Patch_Algo_README.md) and the code itself***
+*As it stands, the readME outlines a method in which the epithelium width is used to calculate the height of any given patch, then calculates the patch width based on the total epithelium area. This ensures the patch is large enough to provide a meaningful sample of the epithelium.*
+<br>
+*The code that is supposed to execute this seems to do something slightly different. The code defines distinct patch sizes, then uses the epithelium width to fit appropriate patches to a given region. It iterates through the defined patch sizes, starting with the smallest size.* 
+<br>
+<br>
+*This idea is a good one, and potentially simpler than the other stuff we’ve been looking at. There is the question of orientation of the slice, but in our last class, someone seemed to solve the orientation problem with a simple height and width of the image. This algorithm seems to work best on vertically oriented slices. If we can treat patching and tilting as separate tasks, this could be a good jumping off point before we tilt the patches.*
+
+
+
 # Comparing Approaches
 
 ## Alyssa's Code
@@ -65,7 +84,7 @@ Alyssa’s patching algorithm incrementally generates patches over tissue images
 
 | Pros              | Cons              |
 |------------------|-----------------|
-| - Advantage 1<br>- Advantage 2 | - Disadvantage 1<br>- Disadvantage 2 |
+| Computationally inexpensive <br> Utilizes a lot of vectorized operations to carry out the task <br> Seems to be the simplest algorithm we have| Does not touch on tilting the patches at all, and relies a lot on the grid of pixels <br> Not a clearly used or written algorithm <br> Performance relies heavily on slice orientation|
 
 
 # Tilting the patches
