@@ -69,7 +69,7 @@ By Eli Nacar
 
 | Feature | Alyssa's Algorithm | Aryaman's Algorithm | Eli's Algorithm |
 |---------|--------------------|--------------------|----------------|
-| **1**   |                    |                    |                |
+| **Computationally Inexpensive**   |                   |                   |        X        |
 | **2**   |                    |                    |                |
 | **3**   |                    |                    |                |
 | **4**   |                    |                    |                |
