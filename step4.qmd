@@ -70,8 +70,8 @@ By Eli Nacar
 | Feature | Alyssa's Algorithm | Aryaman's Algorithm | Eli's Algorithm |
 |---------|--------------------|--------------------|----------------|
 | **Computationally Inexpensive**   |                   |                   |        X        |
-| **2**   |                    |                    |                |
-| **3**   |                    |                    |                |
+| **Incorporates Tilting**   |                    |          X          |                |
+| **Discards data if patches overlap too much**   |          X          |                    |                |
 | **4**   |                    |                    |                |
 | **5**   |                    |                    |                |
 
