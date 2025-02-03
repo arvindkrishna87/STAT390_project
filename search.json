@@ -25,7 +25,7 @@
     "href": "step5_models.html#pattern-recognition",
     "title": "Step 5: Classification Model",
     "section": "Pattern recognition:",
-    "text": "Pattern recognition:\n\nNote that low-grade CMIL's have no-to-mild atypia, and high-grade CMIL'shave modern-to-sever atypia.\nIdeally, our model needs to be able to identify the distribution and size/shape of melanocytes.\nOnce we verify a list of discernible patterns, we can create separate models for specific patterns and then ensemble those models to generate a final classification decision."
+    "text": "Pattern recognition:\n\nNote that low-grade CMIL's have no-to-mild atypia, and high-grade CMIL'shave modern-to-sever atypia.\nIdeally, our model needs to be able to identify the distribution and size/shape of melanocytes.\nOnce we verify a list of discernible patterns, we can create separate models for specific patterns and then use an ensemble model to generate a final classification decision."
   },
   {
     "objectID": "step5_models.html#melan-a-and-sox-10-vs.-he",
