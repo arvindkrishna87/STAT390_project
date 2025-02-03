@@ -14,7 +14,32 @@ This step is happening in tandem with Step 3 (slice annotation)
 2. Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use? <br>
 3. If adaptive pooling can be used effectively to handle images of different sizes (i.e. handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?
 
-# Aryaman's Patching Algorithm: Methodology
+# Comparing Approaches
+
+| Feature | Dynamic Epithelial Pixel Width Algorithm | Edge Following Algorithm | Static Epithelial Pixel Width Algorithm |
+|---------|------------------------------------------|--------------------------|-----------------------------------------|
+| **Computationally Inexpensive**   |                   |                   |        X        |
+| **Incorporates Tilting**   |                    |          X          |                |
+| **Discards data if patches overlap too much**   |          X          |                    |                |
+| **Incrementally Changes patch size**   |          X          |                    |                |
+| **Changes patch size based on epithelium width**   |          X          |         X           |                |
+| **Uses Pre-determined patch sizes**   |                    |                    |        X        |
+
+## Dynamic Epithelial Pixel Width Algorithm
+By Alyssa
+
+Alyssa’s patching algorithm incrementally generates patches over tissue images by leveraging color thresholds to segment and identify key regions such as the epithelium, stroma, and background. The process begins by isolating the epithelium using a black-and-white mask, which ensures that only relevant tissue areas are targeted. This mask allows the algorithm to exclude non-tissue regions, enhancing its focus on areas of interest. The algorithm then adds patches using a fixed size, iteratively stepping through the tissue with small increments. This approach ensures fine-grained coverage and allows for some overlap between patches, helping maintain continuity and adaptability across different epithelium widths. However, patches with excessive overlap (greater than 20%) are discarded to avoid redundancy. While this method excels in providing detailed coverage, particularly for narrow or irregular tissues, it is computationally intensive due to its small step sizes and reliance on precise color thresholding. This dependence on color thresholds makes the algorithm sensitive to variations in staining protocols, image quality, and lighting, which could misclassify tissue regions and affect patch accuracy. Additionally, the fixed patch size may struggle to accommodate larger or more irregular tissues, particularly those with diverse shapes and sizes. Despite these challenges, Alyssa’s algorithm is effective for capturing detailed tissue information in smaller, more uniform samples.
+
+| Pros | Cons |
+|------|------|
+| Patches grow until they cover a sufficient region of the epithelium, which allows for better adaptability across different epithelium widths. <br><br> Threshold allows for some overlap between patches, which helps create a balance for ensuring coverage and not missing any key spots without too much duplication. <br><br> Provides thorough coverage on narrow and irregular tissues and performs well in capturing detailed tissue information when applied to smaller, more uniform samples.| This method incrementally increases patches using very small step sizes, making code time consuming (likely why this algorithm does not work as effectively with larger, thicker tissues (e.g. the large Copenhagen slices)). <br><br> The algorithm depends on color thresholds to identify tissue regions, which may lead to inconsistencies or require frequent adjustments due to variations. Differences in color characteristics, staining protocols, lighting, or image quality could create challenges for reliable application. <br><br> Depends on specific parameter values that were likely chosen by testing on a specific tissue slice. These parameters limit the code's generalizability to other tissue slices, requiring manual adjustments through trial and error. |
+
+## Results
+
+![](images/alyssa_ex1.png){fig-align="center" width=40%}
+
+# Edge Following Algorithm
+By Aryaman
 
 The **rotation patching code** processes stained tissue images by aligning them spatially and extracting patches for comparative analysis across different stains (H&E, Melan-A, and Sox-10). The algorithm creates a skeleton by converting the image of the epithelium mask into a binary format, reducing the tissue to a central line. The skeleton represents the centreline through the epithelial region, and is used as a guide for placing patches. At each point on the skeleton, the algorithm calculates the slope between neighbouring points, which defines the orientation of the patch. Using this orientation, it forms a square patch which aligns with the boundary. The patch is kept only if it includes regions from the stroma and the background, ensuring that the full width of the epithelium is captured in most cases. Overlapping patches are removed in the final step.
 
@@ -38,15 +63,13 @@ Run `rotate_extract_patch (1).py`.
 
 ![](images/Step4.png){fig-align="center"}
 
-## Alyssa’s Patching Algorithm
 
-Alyssa’s patching algorithm incrementally generates patches over tissue images by leveraging color thresholds to segment and identify key regions such as the epithelium, stroma, and background. The process begins by isolating the epithelium using a black-and-white mask, which ensures that only relevant tissue areas are targeted. This mask allows the algorithm to exclude non-tissue regions, enhancing its focus on areas of interest. The algorithm then adds patches using a fixed size, iteratively stepping through the tissue with small increments. This approach ensures fine-grained coverage and allows for some overlap between patches, helping maintain continuity and adaptability across different epithelium widths. However, patches with excessive overlap (greater than 20%) are discarded to avoid redundancy. While this method excels in providing detailed coverage, particularly for narrow or irregular tissues, it is computationally intensive due to its small step sizes and reliance on precise color thresholding. This dependence on color thresholds makes the algorithm sensitive to variations in staining protocols, image quality, and lighting, which could misclassify tissue regions and affect patch accuracy. Additionally, the fixed patch size may struggle to accommodate larger or more irregular tissues, particularly those with diverse shapes and sizes. Despite these challenges, Alyssa’s algorithm is effective for capturing detailed tissue information in smaller, more uniform samples.
+| Pros              | Cons              |
+|------------------|-----------------|
+| The patch will be generated from the points along the centerline, ensuring that the epithelium is well-positioned within the square patch. Patches are aligned perpendicular to the skeleton, capturing the structural direction of the epithelium. <br><br> Consistency across patches since the points are always centralized within the epithelial region. <br><br> Patch dimensions can be customized to increase the chances of covering the entire epithelium in a single patch. <br><br> | Calculating skeletons, determining gradients, and filtering patches for overlap can be computationally intensive, especially for large images. Code checking if the patch contains both stroma and epithelium is also time consuming. <br><br> The patch size is fixed, and the algorithm samples along the skeleton at intervals, potentially missing parts of the epithelium in patches. The fixed patch size may not be optimal for varying epithelial dimensions. If a specific epithelial region is wider than the patch width, the algorithm may fail to capture it entirely in a single patch. Since the algorithm discards patches that do not include stroma, epithelium, and background, there is a risk that such regions might be missed entirely. <br><br> Skeletonization errors (e.g., gaps or noisy lines) could result in incomplete or misaligned patches.  |
 
-## Results
 
-![](images/alyssa_ex1.png){fig-align="center" width=40%}
-
-## Epithelium Pixel Width Method
+## Static Epithelium Pixel Width Algorithm
 By Eli Nacar
 
 * Goes through every row of pixels in the image of the epithelium mask to determine the width of the epithelium in that row
@@ -64,33 +87,6 @@ By Eli Nacar
 *This idea is a good one, and potentially simpler than the other stuff we’ve been looking at. There is the question of orientation of the slice, but in our last class, someone seemed to solve the orientation problem with a simple height and width of the image. This algorithm seems to work best on vertically oriented slices. If we can treat patching and tilting as separate tasks, this could be a good jumping off point before we tilt the patches.*
 
 
-
-# Comparing Approaches
-
-| Feature | Alyssa's Algorithm | Aryaman's Algorithm | Eli's Algorithm |
-|---------|--------------------|--------------------|----------------|
-| **Computationally Inexpensive**   |                   |                   |        X        |
-| **Incorporates Tilting**   |                    |          X          |                |
-| **Discards data if patches overlap too much**   |          X          |                    |                |
-| **4**   |                    |                    |                |
-| **5**   |                    |                    |                |
-
-
-## Alyssa's Code
-
-| Pros | Cons |
-|------|------|
-| Patches grow until they cover a sufficient region of the epithelium, which allows for better adaptability across different epithelium widths. <br><br> Threshold allows for some overlap between patches, which helps create a balance for ensuring coverage and not missing any key spots without too much duplication. <br><br> Provides thorough coverage on narrow and irregular tissues and performs well in capturing detailed tissue information when applied to smaller, more uniform samples.| This method incrementally increases patches using very small step sizes, making code time consuming (likely why this algorithm does not work as effectively with larger, thicker tissues (e.g. the large Copenhagen slices)). <br><br> The algorithm depends on color thresholds to identify tissue regions, which may lead to inconsistencies or require frequent adjustments due to variations. Differences in color characteristics, staining protocols, lighting, or image quality could create challenges for reliable application. <br><br> Depends on specific parameter values that were likely chosen by testing on a specific tissue slice. These parameters limit the code's generalizability to other tissue slices, requiring manual adjustments through trial and error. |
-
-
-## Aryaman's Code
-
-| Pros              | Cons              |
-|------------------|-----------------|
-| The patch will be generated from the points along the centerline, ensuring that the epithelium is well-positioned within the square patch. Patches are aligned perpendicular to the skeleton, capturing the structural direction of the epithelium. <br><br> Consistency across patches since the points are always centralized within the epithelial region. <br><br> Patch dimensions can be customized to increase the chances of covering the entire epithelium in a single patch. <br><br> | Calculating skeletons, determining gradients, and filtering patches for overlap can be computationally intensive, especially for large images. Code checking if the patch contains both stroma and epithelium is also time consuming. <br><br> The patch size is fixed, and the algorithm samples along the skeleton at intervals, potentially missing parts of the epithelium in patches. The fixed patch size may not be optimal for varying epithelial dimensions. If a specific epithelial region is wider than the patch width, the algorithm may fail to capture it entirely in a single patch. Since the algorithm discards patches that do not include stroma, epithelium, and background, there is a risk that such regions might be missed entirely. <br><br> Skeletonization errors (e.g., gaps or noisy lines) could result in incomplete or misaligned patches.  |
-
-## Eli's Code
-
 | Pros              | Cons              |
 |------------------|-----------------|
 | Computationally inexpensive <br> Utilizes a lot of vectorized operations to carry out the task <br> Seems to be the simplest algorithm we have| Does not touch on tilting the patches at all, and relies a lot on the grid of pixels <br> Not a clearly used or written algorithm <br> Performance relies heavily on slice orientation|
@@ -106,7 +102,7 @@ We use edge detection and find the slope between two points on the edge. Using t
 <br>
 **Upsides:** There is already code for that edge detection and finding the edge of the square. \n
 <br>
-**Downsides:** The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. *Also, see downsides of Aryaman’s whole algorithm.*
+**Downsides:** The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. *Also, see downsides of the Edge Following Algorithm.*
 
 ## Regression Tilting Algorithm: 
 
