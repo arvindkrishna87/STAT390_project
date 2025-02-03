@@ -9,6 +9,10 @@ editor:
 
 ![](images/Step1.png)
 
+# Summary
+
+Tissue slices are manually extracted from Whole Slide Images (WSIs) using QuPath, either through manual annotation or pixel classification. A future automation pipeline using Groovy scripts in QuPath is being explored to streamline this process.
+
 # Methodology
 
 Currently, extracting slices is done manually. This process begins by manually importing the whole slide image into QuPath. From here, each slice is individually annotated. This is done in one of two ways. One option is to use the manual annotation tools. Most often, the brush tool is used to highlight the individual slice, and then each slice can be highlighted and exported as its own .tif file. The other option is to use the create thresholder feature (top bar -> classify -> pixel classification -> create thresholder). The settings can be seen below (though you may need to adjust slightly to ensure whole slice is annotated). From here, you can export in the same way as before. 
