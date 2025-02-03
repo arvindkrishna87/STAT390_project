@@ -7,6 +7,12 @@ editor:
 
 As noted in the Slice Extraction and Matching steps, we have been working manually. We do, however, hope to eventually make this whole process automated through a few key programs. These include slice extraction, tissue matching, and epithelium detection. 
 
+  + Cara’s and Kyla’s algorithms showed promise but faced merging errors, annotation issues, and file size limitations, leading to continued manual extraction.
+  + Tissue Matching: Annie’s contour-based similarity scoring struggled with complex samples and tissue variations.
+  + Epithelium Detection: Algorithms aimed to separate tissue structures but lacked consistency across stains.
+
+Automation is currently not a priority; efforts now center on patching with pre-processed data for better accuracy and efficiency.
+
 # Slice Extraction
 
 **This step of the automation takes the whole slide image with multiple tissues slices on it and extracts the slices into their own file.**

@@ -7,6 +7,10 @@ editor:
 
 **Aim: Create a machine learning model to classify slices as low-grade, high-grade, or benign.**
 
+# Summary
+
+The classification model aims to categorize tissue slices as **low-grade, high-grade, or benign C-MIL**. Key considerations include incorporating **patient demographics** (age, gender, lesion location) to enhance accuracy, identifying **melanocyte distribution patterns** for improved classification, and prioritizing **Melan-A and Sox-10** stains over H&E, as they provide clearer visibility of melanocytes. An ensemble approach may be explored to refine predictions.
+
 # Model Considerations
 
 Here are some potential steps/directions to consider when creating classification models. 
