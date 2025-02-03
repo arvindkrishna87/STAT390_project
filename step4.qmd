@@ -67,6 +67,15 @@ By Eli Nacar
 
 # Comparing Approaches
 
+| Feature | Alyssa's Algorithm | Aryaman's Algorithm | Eli's Algorithm |
+|---------|--------------------|--------------------|----------------|
+| **1**   |                    |                    |                |
+| **2**   |                    |                    |                |
+| **3**   |                    |                    |                |
+| **4**   |                    |                    |                |
+| **5**   |                    |                    |                |
+
+
 ## Alyssa's Code
 
 | Pros | Cons |
