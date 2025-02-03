@@ -142,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#slice-extraction" id="toc-slice-extraction" class="nav-link active" data-scroll-target="#slice-extraction">Slice Extraction</a>
   <ul class="collapse">
-  <li><a href="#caras-method" id="toc-caras-method" class="nav-link" data-scroll-target="#caras-method">Cara’s Method</a></li>
+  <li><a href="#slide-annotation-method" id="toc-slide-annotation-method" class="nav-link" data-scroll-target="#slide-annotation-method">Slide Annotation Method</a></li>
   <li><a href="#stain-specific-extraction-method" id="toc-stain-specific-extraction-method" class="nav-link" data-scroll-target="#stain-specific-extraction-method">Stain-Specific Extraction Method</a></li>
   </ul></li>
   <li><a href="#tissue-matching" id="toc-tissue-matching" class="nav-link" data-scroll-target="#tissue-matching">Tissue Matching</a>
@@ -186,8 +186,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="slice-extraction" class="level1">
 <h1>Slice Extraction</h1>
 <p><strong>This step of the automation takes the whole slide image with multiple tissues slices on it and extracts the slices into their own file.</strong> <br><br> We have two methods for this step. Both work relatively well, but fail in specific cases.</p>
-<section id="caras-method" class="level2">
-<h2 class="anchored" data-anchor-id="caras-method">Cara’s Method</h2>
+<section id="slide-annotation-method" class="level2">
+<h2 class="anchored" data-anchor-id="slide-annotation-method">Slide Annotation Method</h2>
+<p>by Cara</p>
 <p>As already detailed in Step 1, Cara’s code aims to expedite the slice extraction process by automatically exporting slices from a single slide image as individual annotations and saving them into a <code>processed_data</code> folder, using the following code: <code>tissues_1.json</code>, <code>tissues_2.json</code>, <code>automate_export_newest.groovy</code>, and <code>existing_annotations.groovy</code>.</p>
 <p>Here is the documentation for Cara’s Method in case you are interested in using this algorithm now: <a href="https://docs.google.com/document/d/1u3e0Bw7LGokr4gZgAOPgqrvykZYsyqcx-LGDGNzFQV0/edit?usp=sharing">Link</a></p>
 <p>As previously stated above, however, we ultimately opted to extract our slices manually for better accuracy and efficiency. <strong>For future attempts, here are a few areas for improvement:</strong></p>
