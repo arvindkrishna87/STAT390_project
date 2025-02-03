@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Step 5: Classification Models – 2025 STAT390 C-MIL project</title>
+<title>Step 5: Classification Model – 2025 STAT390 C-MIL project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -113,12 +113,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Step 4: Patching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./step5_previous_approach.html"> 
-<span class="menu-text">Automation</span></a>
+    <a class="nav-link active" href="./step5_models.html" aria-current="page"> 
+<span class="menu-text">Step 5: Classification Model</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./step5_models.html" aria-current="page"> 
-<span class="menu-text">Step 5: Classification Models</span></a>
+    <a class="nav-link" href="./step5_previous_approach.html"> 
+<span class="menu-text">Automation</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./litreview.html"> 
@@ -140,7 +140,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#model-considerations" id="toc-model-considerations" class="nav-link active" data-scroll-target="#model-considerations">Model Considerations</a></li>
+  <li><a href="#model-considerations" id="toc-model-considerations" class="nav-link active" data-scroll-target="#model-considerations">Model Considerations</a>
+  <ul class="collapse">
+  <li><a href="#patient-demographics" id="toc-patient-demographics" class="nav-link" data-scroll-target="#patient-demographics">Patient demographics:</a></li>
+  <li><a href="#pattern-recognition" id="toc-pattern-recognition" class="nav-link" data-scroll-target="#pattern-recognition">Pattern recognition:</a></li>
+  <li><a href="#melan-a-and-sox-10-vs.-he" id="toc-melan-a-and-sox-10-vs.-he" class="nav-link" data-scroll-target="#melan-a-and-sox-10-vs.-he">Melan-A and Sox-10 vs.&nbsp;H&amp;E</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -149,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Step 5: Classification Models</h1>
+<h1 class="title">Step 5: Classification Model</h1>
 </div>
 
 
@@ -168,8 +173,25 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="model-considerations" class="level1">
 <h1>Model Considerations</h1>
+<p>Here are some potential steps/directions to consider when creating classification models.</p>
+<section id="patient-demographics" class="level2">
+<h2 class="anchored" data-anchor-id="patient-demographics">Patient demographics:</h2>
+<p>Using the information from this file <a href="clinical data sheet for scoring.xlsx">clinical data sheet for scoring.xlsx</a>, add patient information including age, gender, ethnicity, laterality, and location of lesion to our ML model.</p>
+</section>
+<section id="pattern-recognition" class="level2">
+<h2 class="anchored" data-anchor-id="pattern-recognition">Pattern recognition:</h2>
+<ul>
+<li>Note that <code>low-grade CMIL's</code> have no-to-mild atypia, and <code>high-grade CMIL's</code>have modern-to-sever atypia.</li>
+<li>Ideally, our model needs to be able to identify the distribution and size/shape of melanocytes.</li>
+<li>Once we verify a list of discernible patterns, we can create separate models for specific patterns and then ensemble those models to generate a final classification decision.</li>
+</ul>
+</section>
+<section id="melan-a-and-sox-10-vs.-he" class="level2">
+<h2 class="anchored" data-anchor-id="melan-a-and-sox-10-vs.-he">Melan-A and Sox-10 vs.&nbsp;H&amp;E</h2>
+<p>Since Melan-A and Sox-10 appear to display melanocyte distribution more clearly than H&amp;E, consider weighing the former two stain types more than the latter when creating our model.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
