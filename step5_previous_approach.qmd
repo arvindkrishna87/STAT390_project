@@ -13,7 +13,8 @@ As noted in the Slice Extraction and Matching steps, we have been working manual
 <br><br>
 We have two methods for this step.  Both work relatively well, but fail in specific cases.
 
-## Cara's Method
+## Slide Annotation Method
+by Cara
 
 As already detailed in Step 1, Cara's code aims to expedite the slice extraction process by automatically exporting slices from a single slide image as individual annotations and saving them into a `processed_data` folder, using the following code: `tissues_1.json`, `tissues_2.json`, `automate_export_newest.groovy`, and `existing_annotations.groovy`.
 
