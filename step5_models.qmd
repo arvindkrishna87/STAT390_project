@@ -11,11 +11,11 @@ editor:
 
 Here are some potential steps/directions to consider when creating classification models. 
 
-## Patient demographics:
+## Patient demographics
 
-Using the information from this file [clinical data sheet for scoring.xlsx](clinical data sheet for scoring.xlsx), add patient information including age, gender, ethnicity, laterality, and location of lesion to our ML model. 
+Using the information from this [file](clinical data sheet for scoring.xlsx), add patient information including age, gender, ethnicity, laterality, and location of lesion to our ML model. 
 
-## Pattern recognition:
+## Pattern recognition
 
 - Ideally, our model needs to be able to identify the distribution and size/shape of melanocytes.
   - Note that `low-grade CMIL's` have no-to-mild atypia, and `high-grade CMIL's`have modern-to-sever atypia.
