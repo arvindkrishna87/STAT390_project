@@ -143,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#slice-extraction" id="toc-slice-extraction" class="nav-link active" data-scroll-target="#slice-extraction">Slice Extraction</a>
   <ul class="collapse">
   <li><a href="#caras-method" id="toc-caras-method" class="nav-link" data-scroll-target="#caras-method">Cara’s Method</a></li>
-  <li><a href="#kylas-method" id="toc-kylas-method" class="nav-link" data-scroll-target="#kylas-method">Kyla’s Method</a></li>
+  <li><a href="#stain-specific-extraction-method" id="toc-stain-specific-extraction-method" class="nav-link" data-scroll-target="#stain-specific-extraction-method">Stain-Specific Extraction Method</a></li>
   </ul></li>
   <li><a href="#tissue-matching" id="toc-tissue-matching" class="nav-link" data-scroll-target="#tissue-matching">Tissue Matching</a>
   <ul class="collapse">
@@ -218,10 +218,11 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="kylas-method" class="level2">
-<h2 class="anchored" data-anchor-id="kylas-method">Kyla’s Method</h2>
-<p>Kyla’s method is similar to Cara’s method in goal and outcome, but differs in some approach and processing steps. Kyla’s methos uses pre-trained classifiers for each different stain type, so before it runs, it checks which stain type the slide image is based on the file name. It then splits larger annotations into smaller pieces and labels them all as tissue. It attempts to remove non-tissue images that have been pulled from the slides, then merges tissues that appear close together on the slide image.</p>
-<p>Here is the documentation for Kyla’s Method in case you are interested in using this algorithm now: <a href="https://github.com/diegogoldfrank/STAT-390---Fall-24/tree/main/Step%201%3A%20Tissue%20slice%20extraction/Kyla's%20Code">GitHub</a></p>
+<section id="stain-specific-extraction-method" class="level2">
+<h2 class="anchored" data-anchor-id="stain-specific-extraction-method">Stain-Specific Extraction Method</h2>
+<p>By Kyla</p>
+<p>Kyla’s method is similar to Cara’s method in goal and outcome, but differs in some approach and processing steps. Kyla’s method uses pre-trained classifiers for each different stain type, so before it runs, it checks which stain type the slide image is based on the file name. It then splits larger annotations into smaller pieces and labels them all as tissue. It attempts to remove non-tissue images that have been pulled from the slides, then merges tissues that appear close together on the slide image.</p>
+<p><a href="https://github.com/diegogoldfrank/STAT-390---Fall-24/tree/main/Step%201%3A%20Tissue%20slice%20extraction/Kyla's%20Code">Here</a> is the documentation for the Stain Specific Extraction Method in case you are interested in using this algorithm now.</p>
 <p><strong>For future attempts, here are a few areas for improvement:</strong></p>
 <ul>
 <li><strong>Geometry Operations</strong>
