@@ -11,28 +11,28 @@
     "href": "step5_models.html",
     "title": "Step 5: Classification Model",
     "section": "",
-    "text": "Here are some potential steps/directions to consider when creating classification models.\n\n\nUsing the information from this file clinical data sheet for scoring.xlsx, add patient information including age, gender, ethnicity, laterality, and location of lesion to our ML model.\n\n\n\n\nNote that low-grade CMIL's have no-to-mild atypia, and high-grade CMIL'shave modern-to-sever atypia.\nIdeally, our model needs to be able to identify the distribution and size/shape of melanocytes.\nOnce we verify a list of discernible patterns, we can create separate models for specific patterns and then ensemble those models to generate a final classification decision.\n\n\n\n\nSince Melan-A and Sox-10 appear to display melanocyte distribution more clearly than H&E, consider weighing the former two stain types more than the latter when creating our model."
+    "text": "Aim: Create a machine learning model to classify slices as low-grade, high-grade, or benign."
   },
   {
     "objectID": "step5_models.html#patient-demographics",
     "href": "step5_models.html#patient-demographics",
     "title": "Step 5: Classification Model",
-    "section": "",
-    "text": "Using the information from this file clinical data sheet for scoring.xlsx, add patient information including age, gender, ethnicity, laterality, and location of lesion to our ML model."
+    "section": "Patient demographics:",
+    "text": "Patient demographics:\nUsing the information from this file clinical data sheet for scoring.xlsx, add patient information including age, gender, ethnicity, laterality, and location of lesion to our ML model."
   },
   {
     "objectID": "step5_models.html#pattern-recognition",
     "href": "step5_models.html#pattern-recognition",
     "title": "Step 5: Classification Model",
-    "section": "",
-    "text": "Note that low-grade CMIL's have no-to-mild atypia, and high-grade CMIL'shave modern-to-sever atypia.\nIdeally, our model needs to be able to identify the distribution and size/shape of melanocytes.\nOnce we verify a list of discernible patterns, we can create separate models for specific patterns and then ensemble those models to generate a final classification decision."
+    "section": "Pattern recognition:",
+    "text": "Pattern recognition:\n\nNote that low-grade CMIL's have no-to-mild atypia, and high-grade CMIL'shave modern-to-sever atypia.\nIdeally, our model needs to be able to identify the distribution and size/shape of melanocytes.\nOnce we verify a list of discernible patterns, we can create separate models for specific patterns and then ensemble those models to generate a final classification decision."
   },
   {
     "objectID": "step5_models.html#melan-a-and-sox-10-vs.-he",
     "href": "step5_models.html#melan-a-and-sox-10-vs.-he",
     "title": "Step 5: Classification Model",
-    "section": "",
-    "text": "Since Melan-A and Sox-10 appear to display melanocyte distribution more clearly than H&E, consider weighing the former two stain types more than the latter when creating our model."
+    "section": "Melan-A and Sox-10 vs. H&E",
+    "text": "Melan-A and Sox-10 vs. H&E\nSince Melan-A and Sox-10 appear to display melanocyte distribution more clearly than H&E, consider weighing the former two stain types more than the latter when creating our model."
   },
   {
     "objectID": "step5_previous_approach.html",
