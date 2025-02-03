@@ -141,18 +141,15 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#patching-questions" id="toc-patching-questions" class="nav-link active" data-scroll-target="#patching-questions">Patching Questions</a></li>
-  <li><a href="#aryamans-patching-algorithm-methodology" id="toc-aryamans-patching-algorithm-methodology" class="nav-link" data-scroll-target="#aryamans-patching-algorithm-methodology">Aryaman’s Patching Algorithm: Methodology</a>
-  <ul class="collapse">
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  <li><a href="#alyssas-patching-algorithm" id="toc-alyssas-patching-algorithm" class="nav-link" data-scroll-target="#alyssas-patching-algorithm">Alyssa’s Patching Algorithm</a></li>
-  <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1">Results</a></li>
-  <li><a href="#epithelium-pixel-width-method" id="toc-epithelium-pixel-width-method" class="nav-link" data-scroll-target="#epithelium-pixel-width-method">Epithelium Pixel Width Method</a></li>
-  </ul></li>
   <li><a href="#comparing-approaches" id="toc-comparing-approaches" class="nav-link" data-scroll-target="#comparing-approaches">Comparing Approaches</a>
   <ul class="collapse">
-  <li><a href="#alyssas-code" id="toc-alyssas-code" class="nav-link" data-scroll-target="#alyssas-code">Alyssa’s Code</a></li>
-  <li><a href="#aryamans-code" id="toc-aryamans-code" class="nav-link" data-scroll-target="#aryamans-code">Aryaman’s Code</a></li>
-  <li><a href="#elis-code" id="toc-elis-code" class="nav-link" data-scroll-target="#elis-code">Eli’s Code</a></li>
+  <li><a href="#dynamic-epithelial-pixel-width-algorithm" id="toc-dynamic-epithelial-pixel-width-algorithm" class="nav-link" data-scroll-target="#dynamic-epithelial-pixel-width-algorithm">Dynamic Epithelial Pixel Width Algorithm</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  </ul></li>
+  <li><a href="#edge-following-algorithm" id="toc-edge-following-algorithm" class="nav-link" data-scroll-target="#edge-following-algorithm">Edge Following Algorithm</a>
+  <ul class="collapse">
+  <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1">Results</a></li>
+  <li><a href="#static-epithelium-pixel-width-algorithm" id="toc-static-epithelium-pixel-width-algorithm" class="nav-link" data-scroll-target="#static-epithelium-pixel-width-algorithm">Static Epithelium Pixel Width Algorithm</a></li>
   </ul></li>
   <li><a href="#tilting-the-patches" id="toc-tilting-the-patches" class="nav-link" data-scroll-target="#tilting-the-patches">Tilting the patches</a>
   <ul class="collapse">
@@ -200,8 +197,97 @@ ul.task-list li input[type="checkbox"] {
 <li>If adaptive pooling can be used effectively to handle images of different sizes (i.e.&nbsp;handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?</li>
 </ol>
 </section>
-<section id="aryamans-patching-algorithm-methodology" class="level1">
-<h1>Aryaman’s Patching Algorithm: Methodology</h1>
+<section id="comparing-approaches" class="level1">
+<h1>Comparing Approaches</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 35%">
+<col style="width: 22%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Dynamic Epithelial Pixel Width Algorithm</th>
+<th>Edge Following Algorithm</th>
+<th>Static Epithelial Pixel Width Algorithm</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Computationally Inexpensive</strong></td>
+<td></td>
+<td></td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td><strong>Incorporates Tilting</strong></td>
+<td></td>
+<td>X</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>Discards data if patches overlap too much</strong></td>
+<td>X</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Incrementally Changes patch size</strong></td>
+<td>X</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>Changes patch size based on epithelium width</strong></td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Uses Pre-determined patch sizes</strong></td>
+<td></td>
+<td></td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+<section id="dynamic-epithelial-pixel-width-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="dynamic-epithelial-pixel-width-algorithm">Dynamic Epithelial Pixel Width Algorithm</h2>
+<p>By Alyssa</p>
+<p>Alyssa’s patching algorithm incrementally generates patches over tissue images by leveraging color thresholds to segment and identify key regions such as the epithelium, stroma, and background. The process begins by isolating the epithelium using a black-and-white mask, which ensures that only relevant tissue areas are targeted. This mask allows the algorithm to exclude non-tissue regions, enhancing its focus on areas of interest. The algorithm then adds patches using a fixed size, iteratively stepping through the tissue with small increments. This approach ensures fine-grained coverage and allows for some overlap between patches, helping maintain continuity and adaptability across different epithelium widths. However, patches with excessive overlap (greater than 20%) are discarded to avoid redundancy. While this method excels in providing detailed coverage, particularly for narrow or irregular tissues, it is computationally intensive due to its small step sizes and reliance on precise color thresholding. This dependence on color thresholds makes the algorithm sensitive to variations in staining protocols, image quality, and lighting, which could misclassify tissue regions and affect patch accuracy. Additionally, the fixed patch size may struggle to accommodate larger or more irregular tissues, particularly those with diverse shapes and sizes. Despite these challenges, Alyssa’s algorithm is effective for capturing detailed tissue information in smaller, more uniform samples.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Patches grow until they cover a sufficient region of the epithelium, which allows for better adaptability across different epithelium widths. <br><br> Threshold allows for some overlap between patches, which helps create a balance for ensuring coverage and not missing any key spots without too much duplication. <br><br> Provides thorough coverage on narrow and irregular tissues and performs well in capturing detailed tissue information when applied to smaller, more uniform samples.</td>
+<td>This method incrementally increases patches using very small step sizes, making code time consuming (likely why this algorithm does not work as effectively with larger, thicker tissues (e.g.&nbsp;the large Copenhagen slices)). <br><br> The algorithm depends on color thresholds to identify tissue regions, which may lead to inconsistencies or require frequent adjustments due to variations. Differences in color characteristics, staining protocols, lighting, or image quality could create challenges for reliable application. <br><br> Depends on specific parameter values that were likely chosen by testing on a specific tissue slice. These parameters limit the code’s generalizability to other tissue slices, requiring manual adjustments through trial and error.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/alyssa_ex1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="edge-following-algorithm" class="level1">
+<h1>Edge Following Algorithm</h1>
+<p>By Aryaman</p>
 <p>The <strong>rotation patching code</strong> processes stained tissue images by aligning them spatially and extracting patches for comparative analysis across different stains (H&amp;E, Melan-A, and Sox-10). The algorithm creates a skeleton by converting the image of the epithelium mask into a binary format, reducing the tissue to a central line. The skeleton represents the centreline through the epithelial region, and is used as a guide for placing patches. At each point on the skeleton, the algorithm calculates the slope between neighbouring points, which defines the orientation of the patch. Using this orientation, it forms a square patch which aligns with the boundary. The patch is kept only if it includes regions from the stroma and the background, ensuring that the full width of the epithelium is captured in most cases. Overlapping patches are removed in the final step.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -229,112 +315,13 @@ Step-by-Step Manual
 </div>
 </div>
 </div>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="results-1" class="level2">
+<h2 class="anchored" data-anchor-id="results-1">Results</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Step4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-</section>
-<section id="alyssas-patching-algorithm" class="level2">
-<h2 class="anchored" data-anchor-id="alyssas-patching-algorithm">Alyssa’s Patching Algorithm</h2>
-<p>Alyssa’s patching algorithm incrementally generates patches over tissue images by leveraging color thresholds to segment and identify key regions such as the epithelium, stroma, and background. The process begins by isolating the epithelium using a black-and-white mask, which ensures that only relevant tissue areas are targeted. This mask allows the algorithm to exclude non-tissue regions, enhancing its focus on areas of interest. The algorithm then adds patches using a fixed size, iteratively stepping through the tissue with small increments. This approach ensures fine-grained coverage and allows for some overlap between patches, helping maintain continuity and adaptability across different epithelium widths. However, patches with excessive overlap (greater than 20%) are discarded to avoid redundancy. While this method excels in providing detailed coverage, particularly for narrow or irregular tissues, it is computationally intensive due to its small step sizes and reliance on precise color thresholding. This dependence on color thresholds makes the algorithm sensitive to variations in staining protocols, image quality, and lighting, which could misclassify tissue regions and affect patch accuracy. Additionally, the fixed patch size may struggle to accommodate larger or more irregular tissues, particularly those with diverse shapes and sizes. Despite these challenges, Alyssa’s algorithm is effective for capturing detailed tissue information in smaller, more uniform samples.</p>
-</section>
-<section id="results-1" class="level2">
-<h2 class="anchored" data-anchor-id="results-1">Results</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/alyssa_ex1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
-</figure>
-</div>
-</section>
-<section id="epithelium-pixel-width-method" class="level2">
-<h2 class="anchored" data-anchor-id="epithelium-pixel-width-method">Epithelium Pixel Width Method</h2>
-<p>By Eli Nacar</p>
-<ul>
-<li>Goes through every row of pixels in the image of the epithelium mask to determine the width of the epithelium in that row</li>
-<li>Defines distinct patch sizes</li>
-<li>Uses the epithelium width to fit appropriate patches to a given region</li>
-<li>Iterates through the defined patch sizes, starting with the smallest size</li>
-<li>Places patches where they do not overlap with others until a certain percentage of the epithelium mask is covered</li>
-</ul>
-<p><strong><em>Note: There seems to be a discrepancy between the <a href="https://github.com/diegogoldfrank/STAT-390---Fall-24/blob/main/Step%204%3A%20Patching/Eli_Patch_Algo_README.md">README</a> and the code itself</em></strong> <em>As it stands, the readME outlines a method in which the epithelium width is used to calculate the height of any given patch, then calculates the patch width based on the total epithelium area. This ensures the patch is large enough to provide a meaningful sample of the epithelium.</em> <br> <em>The code that is supposed to execute this seems to do something slightly different. The code defines distinct patch sizes, then uses the epithelium width to fit appropriate patches to a given region. It iterates through the defined patch sizes, starting with the smallest size.</em> <br> <br> <em>This idea is a good one, and potentially simpler than the other stuff we’ve been looking at. There is the question of orientation of the slice, but in our last class, someone seemed to solve the orientation problem with a simple height and width of the image. This algorithm seems to work best on vertically oriented slices. If we can treat patching and tilting as separate tasks, this could be a good jumping off point before we tilt the patches.</em></p>
-</section>
-</section>
-<section id="comparing-approaches" class="level1">
-<h1>Comparing Approaches</h1>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 13%">
-<col style="width: 30%">
-<col style="width: 30%">
-<col style="width: 24%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Alyssa’s Algorithm</th>
-<th>Aryaman’s Algorithm</th>
-<th>Eli’s Algorithm</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Computationally Inexpensive</strong></td>
-<td></td>
-<td></td>
-<td>X</td>
-</tr>
-<tr class="even">
-<td><strong>Incorporates Tilting</strong></td>
-<td></td>
-<td>X</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>Discards data if patches overlap too much</strong></td>
-<td>X</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>4</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>5</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<section id="alyssas-code" class="level2">
-<h2 class="anchored" data-anchor-id="alyssas-code">Alyssa’s Code</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Pros</th>
-<th>Cons</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Patches grow until they cover a sufficient region of the epithelium, which allows for better adaptability across different epithelium widths. <br><br> Threshold allows for some overlap between patches, which helps create a balance for ensuring coverage and not missing any key spots without too much duplication. <br><br> Provides thorough coverage on narrow and irregular tissues and performs well in capturing detailed tissue information when applied to smaller, more uniform samples.</td>
-<td>This method incrementally increases patches using very small step sizes, making code time consuming (likely why this algorithm does not work as effectively with larger, thicker tissues (e.g.&nbsp;the large Copenhagen slices)). <br><br> The algorithm depends on color thresholds to identify tissue regions, which may lead to inconsistencies or require frequent adjustments due to variations. Differences in color characteristics, staining protocols, lighting, or image quality could create challenges for reliable application. <br><br> Depends on specific parameter values that were likely chosen by testing on a specific tissue slice. These parameters limit the code’s generalizability to other tissue slices, requiring manual adjustments through trial and error.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="aryamans-code" class="level2">
-<h2 class="anchored" data-anchor-id="aryamans-code">Aryaman’s Code</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 51%">
@@ -354,8 +341,17 @@ Step-by-Step Manual
 </tbody>
 </table>
 </section>
-<section id="elis-code" class="level2">
-<h2 class="anchored" data-anchor-id="elis-code">Eli’s Code</h2>
+<section id="static-epithelium-pixel-width-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="static-epithelium-pixel-width-algorithm">Static Epithelium Pixel Width Algorithm</h2>
+<p>By Eli Nacar</p>
+<ul>
+<li>Goes through every row of pixels in the image of the epithelium mask to determine the width of the epithelium in that row</li>
+<li>Defines distinct patch sizes</li>
+<li>Uses the epithelium width to fit appropriate patches to a given region</li>
+<li>Iterates through the defined patch sizes, starting with the smallest size</li>
+<li>Places patches where they do not overlap with others until a certain percentage of the epithelium mask is covered</li>
+</ul>
+<p><strong><em>Note: There seems to be a discrepancy between the <a href="https://github.com/diegogoldfrank/STAT-390---Fall-24/blob/main/Step%204%3A%20Patching/Eli_Patch_Algo_README.md">README</a> and the code itself</em></strong> <em>As it stands, the readME outlines a method in which the epithelium width is used to calculate the height of any given patch, then calculates the patch width based on the total epithelium area. This ensures the patch is large enough to provide a meaningful sample of the epithelium.</em> <br> <em>The code that is supposed to execute this seems to do something slightly different. The code defines distinct patch sizes, then uses the epithelium width to fit appropriate patches to a given region. It iterates through the defined patch sizes, starting with the smallest size.</em> <br> <br> <em>This idea is a good one, and potentially simpler than the other stuff we’ve been looking at. There is the question of orientation of the slice, but in our last class, someone seemed to solve the orientation problem with a simple height and width of the image. This algorithm seems to work best on vertically oriented slices. If we can treat patching and tilting as separate tasks, this could be a good jumping off point before we tilt the patches.</em></p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 51%">
@@ -381,7 +377,7 @@ Step-by-Step Manual
 <p>Tilting of patches could lead to smaller, more efficient patches. Smaller patches are advantageous because we will get more data to work with. Each patch will also have less data in it, and our model may have an easier time picking up on patterns. Also, tilting the patches, means that the epithelium is always in the same orientation in each patch. Our model will not have to determine the orientation of a sample. Perhaps, this will lead to a simpler, more efficient model.</p>
 <section id="edge-tilting-algorithm" class="level2">
 <h2 class="anchored" data-anchor-id="edge-tilting-algorithm">Edge Tilting Algorithm</h2>
-<p>We use edge detection and find the slope between two points on the edge. Using that slope, we create one edge of the square. This way, the square is tilted to match up with the angle of the sample. <br> <strong>Upsides:</strong> There is already code for that edge detection and finding the edge of the square. <br> <strong>Downsides:</strong> The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. <em>Also, see downsides of Aryaman’s whole algorithm.</em></p>
+<p>We use edge detection and find the slope between two points on the edge. Using that slope, we create one edge of the square. This way, the square is tilted to match up with the angle of the sample. <br> <strong>Upsides:</strong> There is already code for that edge detection and finding the edge of the square. <br> <strong>Downsides:</strong> The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. <em>Also, see downsides of the Edge Following Algorithm.</em></p>
 </section>
 <section id="regression-tilting-algorithm" class="level2">
 <h2 class="anchored" data-anchor-id="regression-tilting-algorithm">Regression Tilting Algorithm:</h2>
