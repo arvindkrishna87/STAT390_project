@@ -188,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>This step of the automation takes the whole slide image with multiple tissues slices on it and extracts the slices into their own file.</strong> <br><br> We have two methods for this step. Both work relatively well, but fail in specific cases.</p>
 <section id="slide-annotation-method" class="level2">
 <h2 class="anchored" data-anchor-id="slide-annotation-method">Slide Annotation Method</h2>
-<p>by Cara</p>
+<p>by Cara <br> <strong>For Step 1</strong></p>
 <p>As already detailed in Step 1, Cara’s code aims to expedite the slice extraction process by automatically exporting slices from a single slide image as individual annotations and saving them into a <code>processed_data</code> folder, using the following code: <code>tissues_1.json</code>, <code>tissues_2.json</code>, <code>automate_export_newest.groovy</code>, and <code>existing_annotations.groovy</code>.</p>
 <p>Here is the documentation for Cara’s Method in case you are interested in using this algorithm now: <a href="https://docs.google.com/document/d/1u3e0Bw7LGokr4gZgAOPgqrvykZYsyqcx-LGDGNzFQV0/edit?usp=sharing">Link</a></p>
 <p>As previously stated above, however, we ultimately opted to extract our slices manually for better accuracy and efficiency. <strong>For future attempts, here are a few areas for improvement:</strong></p>
@@ -221,7 +221,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="stain-specific-extraction-method" class="level2">
 <h2 class="anchored" data-anchor-id="stain-specific-extraction-method">Stain-Specific Extraction Method</h2>
-<p>By Kyla</p>
+<p>By Kyla <strong>For Step 1</strong></p>
 <p>Kyla’s method is similar to Cara’s method in goal and outcome, but differs in some approach and processing steps. Kyla’s method uses pre-trained classifiers for each different stain type, so before it runs, it checks which stain type the slide image is based on the file name. It then splits larger annotations into smaller pieces and labels them all as tissue. It attempts to remove non-tissue images that have been pulled from the slides, then merges tissues that appear close together on the slide image.</p>
 <p><a href="https://github.com/diegogoldfrank/STAT-390---Fall-24/tree/main/Step%201%3A%20Tissue%20slice%20extraction/Kyla's%20Code">Here</a> is the documentation for the Stain Specific Extraction Method in case you are interested in using this algorithm now.</p>
 <p><strong>For future attempts, here are a few areas for improvement:</strong></p>
@@ -242,7 +242,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="tissue-matching" class="level1">
 <h1>Tissue Matching</h1>
-<p>Our current automated methodology for matching tissue images across all three stain types (H&amp;E, Melanin, and Sox10) utilizes image preprocessing, contour extraction, and similarity scoring.</p>
+<p><strong>For Step 2</strong> <br> Our current automated methodology for matching tissue images across all three stain types (H&amp;E, Melanin, and Sox10) utilizes image preprocessing, contour extraction, and similarity scoring.</p>
 <p>The current pipeline requires two main files, which can both be found <a href="https://github.com/diegogoldfrank/STAT-390---Fall-24/blob/main/Step%202%3A%20Matching%20slices%20across%20stains/README.md">here</a>:</p>
 <ul>
 <li><code>AnniesMatching.ipynb</code>: An interactive Jupyter Notebook for processing and visualizing tissue matches.</li>
