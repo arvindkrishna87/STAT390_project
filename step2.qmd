@@ -6,6 +6,9 @@ title: "Step 2: Matching Slices Across Stains"
 
 ![](images/Step2.png){fig-align="center"}
 
+# Summary
+
+Slices from H&E, Melan-A, and SOX-10 stains are manually matched based on structural similarity and stored in labeled folders. Future automation efforts focus on contour-based matching, alignment, and patch extraction to streamline the process and ensure consistency across stains.
 
 # Methodology
 
