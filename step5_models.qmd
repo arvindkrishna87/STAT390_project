@@ -1,5 +1,5 @@
 ---
-title: "Step 5: Classification Models"
+title: "Step 5: Classification Model"
 editor: 
   markdown: 
     wrap: 72
@@ -7,3 +7,18 @@ editor:
 
 # Model Considerations
 
+Here are some potential steps/directions to consider when creating classification models. 
+
+## Patient demographics:
+
+Using the information from this file [clinical data sheet for scoring.xlsx](clinical data sheet for scoring.xlsx), add patient information including age, gender, ethnicity, laterality, and location of lesion to our ML model. 
+
+## Pattern recognition:
+
+- Note that `low-grade CMIL's` have no-to-mild atypia, and `high-grade CMIL's`have modern-to-sever atypia.
+- Ideally, our model needs to be able to identify the distribution and size/shape of melanocytes.
+- Once we verify a list of discernible patterns, we can create separate models for specific patterns and then ensemble those models to generate a final classification decision. 
+
+## Melan-A and Sox-10 vs. H&E
+
+Since Melan-A and Sox-10 appear to display melanocyte distribution more clearly than H&E, consider weighing the former two stain types more than the latter when creating our model. 
