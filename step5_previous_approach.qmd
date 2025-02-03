@@ -34,11 +34,12 @@ As previously stated above, however, we ultimately opted to extract our slices m
 * **File Size is too Large:**
   + When the file sizes are too large, the program fails and the user must manually export the slices. 
 
-## Kyla's Method
+## Stain-Specific Extraction Method
+By Kyla
 
-Kyla's method is similar to Cara's method in goal and outcome, but differs in some approach and processing steps. Kyla's methos uses pre-trained classifiers for each different stain type, so before it runs, it checks which stain type the slide image is based on the file name. It then splits larger annotations into smaller pieces and labels them all as tissue. It attempts to remove non-tissue images that have been pulled from the slides, then merges tissues that appear close together on the slide image. 
+Kyla's method is similar to Cara's method in goal and outcome, but differs in some approach and processing steps. Kyla's method uses pre-trained classifiers for each different stain type, so before it runs, it checks which stain type the slide image is based on the file name. It then splits larger annotations into smaller pieces and labels them all as tissue. It attempts to remove non-tissue images that have been pulled from the slides, then merges tissues that appear close together on the slide image. 
 
-Here is the documentation for Kyla's Method in case you are interested in using this algorithm now: [GitHub](https://github.com/diegogoldfrank/STAT-390---Fall-24/tree/main/Step%201%3A%20Tissue%20slice%20extraction/Kyla's%20Code)
+[Here](https://github.com/diegogoldfrank/STAT-390---Fall-24/tree/main/Step%201%3A%20Tissue%20slice%20extraction/Kyla's%20Code) is the documentation for the Stain Specific Extraction Method in case you are interested in using this algorithm now.
 
 **For future attempts, here are a few areas for improvement:**
 
