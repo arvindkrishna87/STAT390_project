@@ -156,8 +156,8 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#tilting-the-patches" id="toc-tilting-the-patches" class="nav-link" data-scroll-target="#tilting-the-patches">Tilting the patches</a>
   <ul class="collapse">
-  <li><a href="#aryamans-algorithm" id="toc-aryamans-algorithm" class="nav-link" data-scroll-target="#aryamans-algorithm">Aryaman’s algorithm</a></li>
-  <li><a href="#different-tilting-algorithm" id="toc-different-tilting-algorithm" class="nav-link" data-scroll-target="#different-tilting-algorithm">Different tilting algorithm:</a></li>
+  <li><a href="#edge-tilting-algorithm" id="toc-edge-tilting-algorithm" class="nav-link" data-scroll-target="#edge-tilting-algorithm">Edge Tilting Algorithm</a></li>
+  <li><a href="#regression-tilting-algorithm" id="toc-regression-tilting-algorithm" class="nav-link" data-scroll-target="#regression-tilting-algorithm">Regression Tilting Algorithm:</a></li>
   <li><a href="#patch-design-and-optimization-qna" id="toc-patch-design-and-optimization-qna" class="nav-link" data-scroll-target="#patch-design-and-optimization-qna">Patch Design and Optimization QnA</a>
   <ul class="collapse">
   <li><a href="#question-1-why-are-square-patches-used-in-tissue-analysis" id="toc-question-1-why-are-square-patches-used-in-tissue-analysis" class="nav-link" data-scroll-target="#question-1-why-are-square-patches-used-in-tissue-analysis">Question 1: Why are square patches used in tissue analysis?</a></li>
@@ -331,12 +331,12 @@ Step-by-Step Manual
 <section id="tilting-the-patches" class="level1">
 <h1>Tilting the patches</h1>
 <p>Tilting of patches could lead to smaller, more efficient patches. Smaller patches are advantageous because we will get more data to work with. Each patch will also have less data in it, and our model may have an easier time picking up on patterns. Also, tilting the patches, means that the epithelium is always in the same orientation in each patch. Our model will not have to determine the orientation of a sample. Perhaps, this will lead to a simpler, more efficient model.</p>
-<section id="aryamans-algorithm" class="level2">
-<h2 class="anchored" data-anchor-id="aryamans-algorithm">Aryaman’s algorithm</h2>
+<section id="edge-tilting-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="edge-tilting-algorithm">Edge Tilting Algorithm</h2>
 <p>We use edge detection and find the slope between two points on the edge. Using that slope, we create one edge of the square. This way, the square is tilted to match up with the angle of the sample. <br> <strong>Upsides:</strong> There is already code for that edge detection and finding the edge of the square. <br> <strong>Downsides:</strong> The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. <em>Also, see downsides of Aryaman’s whole algorithm.</em></p>
 </section>
-<section id="different-tilting-algorithm" class="level2">
-<h2 class="anchored" data-anchor-id="different-tilting-algorithm">Different tilting algorithm:</h2>
+<section id="regression-tilting-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="regression-tilting-algorithm">Regression Tilting Algorithm:</h2>
 <p>We pick a random patch. Next, we identify the stroma and the outside of the sample. We treat the pixels of the stroma and the outside of the sample as points. Using these points, we run a regression model to draw the line that most efficiently crosses the epithelium. Now, we will tilt the patch so that two edges are perpendicular and two edges are parallel to that regression line. This will create a patch that follows the contour of the epithelium. Below is a visual representation of this process.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

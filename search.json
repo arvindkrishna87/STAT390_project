@@ -210,18 +210,18 @@
     "text": "Eli’s Code\n\n\n\n\n\n\n\nPros\nCons\n\n\n\n\nComputationally inexpensive  Utilizes a lot of vectorized operations to carry out the task  Seems to be the simplest algorithm we have\nDoes not touch on tilting the patches at all, and relies a lot on the grid of pixels  Not a clearly used or written algorithm  Performance relies heavily on slice orientation"
   },
   {
-    "objectID": "step4.html#aryamans-algorithm",
-    "href": "step4.html#aryamans-algorithm",
+    "objectID": "step4.html#edge-tilting-algorithm",
+    "href": "step4.html#edge-tilting-algorithm",
     "title": "Step 4: Patching",
-    "section": "Aryaman’s algorithm",
-    "text": "Aryaman’s algorithm\nWe use edge detection and find the slope between two points on the edge. Using that slope, we create one edge of the square. This way, the square is tilted to match up with the angle of the sample.  Upsides: There is already code for that edge detection and finding the edge of the square.  Downsides: The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. Also, see downsides of Aryaman’s whole algorithm."
+    "section": "Edge Tilting Algorithm",
+    "text": "Edge Tilting Algorithm\nWe use edge detection and find the slope between two points on the edge. Using that slope, we create one edge of the square. This way, the square is tilted to match up with the angle of the sample.  Upsides: There is already code for that edge detection and finding the edge of the square.  Downsides: The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. Also, see downsides of Aryaman’s whole algorithm."
   },
   {
-    "objectID": "step4.html#different-tilting-algorithm",
-    "href": "step4.html#different-tilting-algorithm",
+    "objectID": "step4.html#regression-tilting-algorithm",
+    "href": "step4.html#regression-tilting-algorithm",
     "title": "Step 4: Patching",
-    "section": "Different tilting algorithm:",
-    "text": "Different tilting algorithm:\nWe pick a random patch. Next, we identify the stroma and the outside of the sample. We treat the pixels of the stroma and the outside of the sample as points. Using these points, we run a regression model to draw the line that most efficiently crosses the epithelium. Now, we will tilt the patch so that two edges are perpendicular and two edges are parallel to that regression line. This will create a patch that follows the contour of the epithelium. Below is a visual representation of this process.\n\n\n\n\n\nUpsides: this method is not very computationally expensive, especially with the epithelium mask that we already have for many samples.  Downsides: When tilting an existing patch, we cannot ensure that the patch still includes the entire epithelium unless we also resize the patch.  Note: This separates the tilting from the patching process. While this is not necessarily a negative, we don’t know which patching algorithm works best with this method yet. It adds another step to the process."
+    "section": "Regression Tilting Algorithm:",
+    "text": "Regression Tilting Algorithm:\nWe pick a random patch. Next, we identify the stroma and the outside of the sample. We treat the pixels of the stroma and the outside of the sample as points. Using these points, we run a regression model to draw the line that most efficiently crosses the epithelium. Now, we will tilt the patch so that two edges are perpendicular and two edges are parallel to that regression line. This will create a patch that follows the contour of the epithelium. Below is a visual representation of this process.\n\n\n\n\n\nUpsides: this method is not very computationally expensive, especially with the epithelium mask that we already have for many samples.  Downsides: When tilting an existing patch, we cannot ensure that the patch still includes the entire epithelium unless we also resize the patch.  Note: This separates the tilting from the patching process. While this is not necessarily a negative, we don’t know which patching algorithm works best with this method yet. It adds another step to the process."
   },
   {
     "objectID": "step4.html#patch-design-and-optimization-qna",
