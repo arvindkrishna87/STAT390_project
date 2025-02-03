@@ -135,8 +135,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -162,6 +168,9 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Step 3: annotating is happeneing in parallel with Step 4: patching</p>
 <p><strong>Aim: identify different classes in the epithelium so we can train a model with ground truth</strong></p>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>Matched slices are sent to stakeholders for annotation with <strong>Benign</strong>, <strong>Low Grade</strong>, and <strong>High Grade</strong> C-MIL labels, providing ground truth for model training. This step runs <strong>in parallel</strong> with patching development.</p>
 <p>We have sent matched slices to the stakeholder for them to annotate with Benign, Low grade, and High grade C-MIL. This will provide a ground truth for our future model.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -171,6 +180,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In the meantime, we are working on our patching algorithm.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

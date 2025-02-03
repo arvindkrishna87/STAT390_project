@@ -4,7 +4,7 @@
     "href": "step3.html",
     "title": "Step 3: Annotate Slices",
     "section": "",
-    "text": "Step 3: annotating is happeneing in parallel with Step 4: patching\nAim: identify different classes in the epithelium so we can train a model with ground truth\nWe have sent matched slices to the stakeholder for them to annotate with Benign, Low grade, and High grade C-MIL. This will provide a ground truth for our future model.\n\n\n\n\n\nIn the meantime, we are working on our patching algorithm."
+    "text": "Step 3: annotating is happeneing in parallel with Step 4: patching\nAim: identify different classes in the epithelium so we can train a model with ground truth\n\nSummary\nMatched slices are sent to stakeholders for annotation with Benign, Low Grade, and High Grade C-MIL labels, providing ground truth for model training. This step runs in parallel with patching development.\nWe have sent matched slices to the stakeholder for them to annotate with Benign, Low grade, and High grade C-MIL. This will provide a ground truth for our future model.\n\n\n\n\n\nIn the meantime, we are working on our patching algorithm."
   },
   {
     "objectID": "step5_models.html",
