@@ -13,7 +13,7 @@ Here are some potential steps/directions to consider when creating classificatio
 
 ## Patient demographics
 
-Using the information from this [file](clinical data sheet for scoring.xlsx), add patient information including age, gender, ethnicity, laterality, and location of lesion to our ML model. 
+Using the information from this [file](https://nuwildcat-my.sharepoint.com/:x:/r/personal/akl0407_ads_northwestern_edu/_layouts/15/Doc.aspx?sourcedoc=%7B808B83F5-0AC5-4834-8518-E454850AB281%7D&file=clincal%20data%20sheet%20for%20scoring.xlsx&action=default&mobileredirect=true), add patient information including age, gender, ethnicity, laterality, and location of lesion to our ML model. 
 
 ## Pattern recognition
 
