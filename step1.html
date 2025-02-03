@@ -140,7 +140,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#future-automation" id="toc-future-automation" class="nav-link" data-scroll-target="#future-automation">Future Automation</a></li>
   </ul>
@@ -170,6 +171,10 @@ ul.task-list li input[type="checkbox"] {
 
 <p><strong>Aim: To extract the tissue slices from the Whole slide images (WSI)</strong></p>
 <p><img src="images/Step1.png" class="img-fluid"></p>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>Tissue slices are manually extracted from Whole Slide Images (WSIs) using QuPath, either through manual annotation or pixel classification. A future automation pipeline using Groovy scripts in QuPath is being explored to streamline this process.</p>
+</section>
 <section id="methodology" class="level1">
 <h1>Methodology</h1>
 <p>Currently, extracting slices is done manually. This process begins by manually importing the whole slide image into QuPath. From here, each slice is individually annotated. This is done in one of two ways. One option is to use the manual annotation tools. Most often, the brush tool is used to highlight the individual slice, and then each slice can be highlighted and exported as its own .tif file. The other option is to use the create thresholder feature (top bar -&gt; classify -&gt; pixel classification -&gt; create thresholder). The settings can be seen below (though you may need to adjust slightly to ensure whole slice is annotated). From here, you can export in the same way as before.</p>
