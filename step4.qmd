@@ -91,7 +91,7 @@ By Eli Nacar
 
 Tilting of patches could lead to smaller, more efficient patches. Smaller patches are advantageous because we will get more data to work with. Each patch will also have less data in it, and our model may have an easier time picking up on patterns. Also, tilting the patches, means that the epithelium is always in the same orientation in each patch. Our model will not have to determine the orientation of a sample. Perhaps, this will lead to a simpler, more efficient model. 
 
-## Aryaman’s algorithm
+## Edge Tilting Algorithm
 
 We use edge detection and find the slope between two points on the edge. Using that slope, we create one edge of the square. This way, the square is tilted to match up with the angle of the sample. \n
 <br>
@@ -99,7 +99,7 @@ We use edge detection and find the slope between two points on the edge. Using t
 <br>
 **Downsides:** The samples are very irregular, so, when the edge is extended, a patch could cut off a lot of epithelium. That cut off epithelium could then be picked up by other patches, but there might be inefficiency in the patching this way. *Also, see downsides of Aryaman’s whole algorithm.*
 
-## Different tilting algorithm: 
+## Regression Tilting Algorithm: 
 
 We pick a random patch. Next, we identify the stroma and the outside of the sample. We treat the pixels of the stroma and the outside of the sample as points. Using these points, we run a regression model to draw the line that most efficiently crosses the epithelium. Now, we will tilt the patch so that two edges are perpendicular and two edges are parallel to that regression line. This will create a patch that follows the contour of the epithelium. Below is a visual representation of this process.
 
