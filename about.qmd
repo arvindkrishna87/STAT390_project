@@ -15,7 +15,7 @@ This is the website for the STAT390 C-MIL Classification project!
 - Coders: Sari Eisen, Sharon Lin,	Ryan Lach,	Nathan Jung,	Hannah Ma
 - Literature Surveyors: William Wang,	Bennett Markinson,	Allen Zhang,	Alex Zhou,	Jacob Muriel,	Patrick Schmid,	Lainey Neild
 - Consultants/Organizers/Testers: Olivia Joung,	Anna Deka,	Margaret Pirozzolo,	Jack Ouyang,	Haneef Usmani,	Radhika Todi
-- Health informaticians: Lucinda Hu,	Dila Bitlis,	Julia Nelson,	Walker Frisbie,	Kayla Terrelonge
+- Health Informaticians: Lucinda Hu,	Dila Bitlis,	Julia Nelson,	Walker Frisbie,	Kayla Terrelonge
 
 **Stakeholders**: Dr. Yamini Krishna, Dr. He Zhao, Prashant Kumar
 
