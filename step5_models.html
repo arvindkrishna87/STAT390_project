@@ -140,7 +140,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#model-considerations" id="toc-model-considerations" class="nav-link active" data-scroll-target="#model-considerations">Model Considerations</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#model-considerations" id="toc-model-considerations" class="nav-link" data-scroll-target="#model-considerations">Model Considerations</a>
   <ul class="collapse">
   <li><a href="#patient-demographics" id="toc-patient-demographics" class="nav-link" data-scroll-target="#patient-demographics">Patient demographics</a></li>
   <li><a href="#pattern-recognition" id="toc-pattern-recognition" class="nav-link" data-scroll-target="#pattern-recognition">Pattern recognition</a></li>
@@ -172,6 +173,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p><strong>Aim: Create a machine learning model to classify slices as low-grade, high-grade, or benign.</strong></p>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>The classification model aims to categorize tissue slices as <strong>low-grade, high-grade, or benign C-MIL</strong>. Key considerations include incorporating <strong>patient demographics</strong> (age, gender, lesion location) to enhance accuracy, identifying <strong>melanocyte distribution patterns</strong> for improved classification, and prioritizing <strong>Melan-A and Sox-10</strong> stains over H&amp;E, as they provide clearer visibility of melanocytes. An ensemble approach may be explored to refine predictions.</p>
+</section>
 <section id="model-considerations" class="level1">
 <h1>Model Considerations</h1>
 <p>Here are some potential steps/directions to consider when creating classification models.</p>
