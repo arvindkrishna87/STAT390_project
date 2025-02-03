@@ -5,6 +5,8 @@ editor:
     wrap: 72
 ---
 
+**Aim: Create a machine learning model to classify slices as low-grade, high-grade, or benign.**
+
 # Model Considerations
 
 Here are some potential steps/directions to consider when creating classification models. 
