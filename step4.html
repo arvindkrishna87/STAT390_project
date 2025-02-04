@@ -191,11 +191,19 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Aim:</strong> To determine whether a fixed patch size can be used effectively for patching. We propose running a patching algorithm on one stain and analysing the distribution of patches it generates. If a large majority of the patches are a specific size, that size can be considered the optimal. Since the distribution of patches will be the same across stains, the optimal patch size found can be used across all three stains.</p>
 <section id="patching-questions" class="level2">
 <h2 class="anchored" data-anchor-id="patching-questions">Patching Questions</h2>
-<ol type="1">
-<li>How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution? <br></li>
-<li>Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use? <br></li>
-<li>If adaptive pooling can be used effectively to handle images of different sizes (i.e.&nbsp;handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?</li>
-</ol>
+<section id="how-many-distinct-patch-sizes-should-we-consider-should-we-fit-patches-on-every-tissue-slice-to-visualise-the-distribution" class="level4">
+<h4 class="anchored" data-anchor-id="how-many-distinct-patch-sizes-should-we-consider-should-we-fit-patches-on-every-tissue-slice-to-visualise-the-distribution">1. How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution? <br></h4>
+<p>We will develop a histogram of all patch sizes used for the 106 tissue slices to determine the modality and distribution of patch sizes we will ultimately use to train our CNN model.</p>
+</section>
+<section id="does-having-more-patches-make-the-ml-model-more-complex-consequently-shold-we-try-to-minimize-the-number-of-distint-patch-sizes-we-use" class="level4">
+<h4 class="anchored" data-anchor-id="does-having-more-patches-make-the-ml-model-more-complex-consequently-shold-we-try-to-minimize-the-number-of-distint-patch-sizes-we-use">2. Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use? <br></h4>
+<p>We will answer this question by reviewing existing research on patch-based machine-learning models and considering the implications of using multiple and minimal patch sizes.</p>
+<p><strong>Additional Sources:</strong> - <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6033561/">“Effect of patch size and network architecture on a convolutional neural network approach for automatic segmentation of OCT retinal layers”</a> - <a href="https://datascience.stackexchange.com/questions/96516/filter-size-in-cnns-and-how-they-relate-to-overfitting-underfitting">“Filter size in CNNs and how they relate to overfitting/underfitting”</a></p>
+</section>
+<section id="if-adaptive-pooling-can-be-used-effectively-to-handle-images-of-different-sizes-i.e.-handle-distinct-patch-sizes-can-a-ml-model-distinctly-identify-patterns-in-small-patches-or-large-patches" class="level4">
+<h4 class="anchored" data-anchor-id="if-adaptive-pooling-can-be-used-effectively-to-handle-images-of-different-sizes-i.e.-handle-distinct-patch-sizes-can-a-ml-model-distinctly-identify-patterns-in-small-patches-or-large-patches">3. If adaptive pooling can be used effectively to handle images of different sizes (i.e.&nbsp;handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?</h4>
+<p>We explored how adaptive pooling in CNNs maintains fixed output dimensions while handling varying input sizes. By examining how convolutional layers learn hierarchical patterns, we assessed whether adaptive pooling preserves distinct features in small and large patches, ensuring the model can still identify patterns at different scales.</p>
+</section>
 </section>
 <section id="comparing-approaches" class="level1">
 <h1>Comparing Approaches</h1>
@@ -406,14 +414,21 @@ Step-by-Step Manual
 <section id="question-1-why-are-square-patches-used-in-tissue-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="question-1-why-are-square-patches-used-in-tissue-analysis">Question 1: Why are square patches used in tissue analysis?</h3>
 <p>Square images are commonly used in tissue image analysis as they naturally fit into the grid-like structure of digital images, making it easier for algorithms to scan and analyze oatterbs, They streamline calculations for convolutional neural networks (CNNs), which process grids of data efficiently. This uniformity ensures all parts of an image are treated equally, avoiding distortions or biases that could arise from irregular shapes, i.e.&nbsp;rectangular patches. Additionally, square patches align with pre-trained models, saving time and effort by leveraging existing resources. They also simplify techniques like pooling, which reduces data size while preserving important features, focusing on key details without unnecessary complexity. Overall, they offer a balance of computational efficiency and accuracy.</p>
+<p><strong>Additional Sources:</strong> - <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5265243/">“Tissue classification for laparoscopic image understanding based on multispectral texture analysis”</a> - <a href="https://ieeexplore.ieee.org/document/7848208">“Machine learning algorithm for retinal image analysis”</a> - <a href="https://www.mdpi.com/2414-4088/6/12/11">“patchIT: A Multipurpose Patch Creation Tool for Image Processing Applications”</a></p>
 </section>
 <section id="question-2-why-is-patch-size-in-powers-of-2-e.g.-32-x-32-256-x-256-512-x-512-etc.-are-there-alternatives" class="level3">
 <h3 class="anchored" data-anchor-id="question-2-why-is-patch-size-in-powers-of-2-e.g.-32-x-32-256-x-256-512-x-512-etc.-are-there-alternatives">Question 2: Why is patch size in powers of 2? (e.g.&nbsp;32 x 32, 256 x 256, 512 x 512, etc.) Are there alternatives?</h3>
 <p>CNN layers benefit from power-of -2 to maintain spatial coherence and compatibility with pooling and downsampling operations. Non-standard dimensions risk spatial distortion or mismatched sizes. GPU’s are optimized for power-of-2 memory alignment, with non-standard dimensions causing potential performance drops, though modern GPUs handle them better. Internal resizing of images wastes memory, processing time, and could introduce rounding errors. Non-standard sizes may also require extra padding to ensure compatibility with layer operations. The 224x224 image size standard introduced in AlexNet, set a precedent for future architectures. Nvidia Tensor Cores optimize hardware efficiency with batch sizes in multiples of 8, while unrelated, it shows how aligning dimensions with hardware multiples improves efficiency.</p>
+<p>To supplement our analysis, we referenced the following study:<br>
+<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6033561/#r40">Effect of patch size and network architecture on a convolutional neural network approach for automatic segmentation of OCT retinal layers</a></p>
+<p><strong>Additional Sources:</strong><br>
+- <a href="https://keras.io/api/layers/pooling_layers/max_pooling2d/">Keras: MaxPooling2D</a> - <a href="https://www.cs.toronto.edu/~fritz/absps/imagenet.pdf">ImageNet Classifcation</a> - <a href="https://arxiv.org/pdf/1409.1556">Deep Convolutional Networks</a> - <a href="https://docs.nvidia.com/deeplearning/performance/dl-performance-matrix-multiplication/index.html#gpu-imple">Nvidia Matrix Multiplication Guide</a> - <a href="https://medium.com/aiguys/pooling-layers-in-neural-nets-and-their-variants-f6129fc4628b">Pooling Layers in Neural Nets</a></p>
 </section>
 <section id="question-3-how-do-researchers-determine-the-optimal-number-of-patches" class="level3">
 <h3 class="anchored" data-anchor-id="question-3-how-do-researchers-determine-the-optimal-number-of-patches">Question 3: How do researchers determine the optimal number of patches?</h3>
 <p>The number of patches depends on the variety in the images and the difficulty of identifying differences in the classes. Too many patches can lead to over-segmentation and loss of context. Additionally, it increases the computational cost. Too few patches would make it hard for the model to generalize to unseen data. If we can determine the optimal patch size, that can determine the optimal number of patches by managing the overlap.</p>
+<p>For this question, we conducted a literature review which included creating a post on the QuPath forum. It received one response as of January 27, 2025.<br>
+<a href="https://forum.image.sc/t/optimal-number-of-patches/107600">QuPath Forum: Optimal Number of Patches</a></p>
 
 
 </section>
