@@ -140,7 +140,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#three-different-approaches" id="toc-three-different-approaches" class="nav-link active" data-scroll-target="#three-different-approaches">Three Different Approaches</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#three-different-approaches" id="toc-three-different-approaches" class="nav-link" data-scroll-target="#three-different-approaches">Three Different Approaches</a>
   <ul class="collapse">
   <li><a href="#comparing-approaches" id="toc-comparing-approaches" class="nav-link" data-scroll-target="#comparing-approaches">Comparing Approaches</a></li>
   <li><a href="#dynamic-epithelial-pixel-width-algorithm" id="toc-dynamic-epithelial-pixel-width-algorithm" class="nav-link" data-scroll-target="#dynamic-epithelial-pixel-width-algorithm">Dynamic Epithelial Pixel Width Algorithm</a>
@@ -194,6 +195,14 @@ ul.task-list li input[type="checkbox"] {
 
 <p>This step is happening in tandem with Step 3 (slice annotation)</p>
 <p><strong>Aim:</strong> To determine whether a fixed patch size can be used effectively for patching. We propose running a patching algorithm on one stain and analysing the distribution of patches it generates. If a large majority of the patches are a specific size, that size can be considered the optimal. Since the distribution of patches will be the same across stains, the optimal patch size found can be used across all three stains.</p>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>This step runs alongside slice annotation to determine whether a fixed patch size can be effectively used. Three different patching algorithms are compared:</p>
+<pre><code>- **Dynamic Epithelial Pixel Width Algorithm** (Alyssa): Adjusts patch size incrementally based on tissue characteristics, ensuring adaptability but requiring fine-tuning.
+- **Edge Following Algorithm** (Aryaman): Uses a skeletonized epithelium mask to align patches along the tissue structure, maintaining consistency but being computationally expensive.
+- **Static Epithelium Pixel Width Algorithm** (Eli): Uses predefined patch sizes based on epithelium width, making it efficient but less adaptable to irregular shapes.</code></pre>
+<p>Research also explores tilting patches to optimize orientation, patch size selection, and the impact of adaptive pooling on machine learning performance. The goal is to <strong>establish a standardized patching method that balances efficiency, accuracy, and model interpretability.</strong></p>
+</section>
 <section id="three-different-approaches" class="level1">
 <h1>Three Different Approaches</h1>
 <p>Below are images comparing the outcome of our three approaches to the patching problem. Find more details on each algorithm below the comparison.</p>
