@@ -8,27 +8,13 @@ This step is happening in tandem with Step 3 (slice annotation)
 
 **Aim:** To determine whether a fixed patch size can be used effectively for patching. We propose running a patching algorithm on one stain and analysing the distribution of patches it generates. If a large majority of the patches are a specific size, that size can be considered the optimal. Since the distribution of patches will be the same across stains, the optimal patch size found can be used across all three stains.
 
-## Patching Questions
+# Three Different Approaches
 
-#### 1. How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution? <br>
-
-We will develop a histogram of all patch sizes used for the 106 tissue slices to determine the modality and distribution of patch sizes we will ultimately use to train our CNN model.
+Below are images comparing the outcome of our three approaches to the patching problem. Find more details on each algorithm below the comparison. 
 
 
-#### 2. Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use? <br>
 
-We will answer this question by reviewing existing research on patch-based machine-learning models and considering the implications of using multiple and minimal patch sizes.
-
-**Additional Sources:**
-   - [“Effect of patch size and network architecture on a convolutional neural network approach for automatic segmentation of OCT retinal layers”](https://pmc.ncbi.nlm.nih.gov/articles/PMC6033561/)
-   - [“Filter size in CNNs and how they relate to overfitting/underfitting”](https://datascience.stackexchange.com/questions/96516/filter-size-in-cnns-and-how-they-relate-to-overfitting-underfitting)
-
-#### 3. If adaptive pooling can be used effectively to handle images of different sizes (i.e. handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?
-
-We explored how adaptive pooling in CNNs maintains fixed output dimensions while handling varying input sizes. By examining how convolutional layers learn hierarchical patterns, we assessed whether adaptive pooling preserves distinct features in small and large patches, ensuring the model can still identify patterns at different scales.
-
-
-# Comparing Approaches
+## Comparing Approaches
 
 | Feature | Dynamic Epithelial Pixel Width Algorithm | Edge Following Algorithm | Static Epithelial Pixel Width Algorithm |
 |---------|:------------------------------------------:|:--------------------------:|:-----------------------------------------:|
@@ -55,11 +41,11 @@ By Alyssa
 |------|------|
 | Patches grow until they cover a sufficient region of the epithelium, which allows for better adaptability across different epithelium widths. <br><br> Threshold allows for some overlap between patches, which helps create a balance for ensuring coverage and not missing any key spots without too much duplication. <br><br> Provides thorough coverage on narrow and irregular tissues and performs well in capturing detailed tissue information when applied to smaller, more uniform samples.| This method incrementally increases patches using very small step sizes, making code time consuming (likely why this algorithm does not work as effectively with larger, thicker tissues (e.g. the large Copenhagen slices)). <br><br> The algorithm depends on color thresholds to identify tissue regions, which may lead to inconsistencies or require frequent adjustments due to variations. Differences in color characteristics, staining protocols, lighting, or image quality could create challenges for reliable application. <br><br> Depends on specific parameter values that were likely chosen by testing on a specific tissue slice. These parameters limit the code's generalizability to other tissue slices, requiring manual adjustments through trial and error. |
 
-## Results
+### Results
 
 ![](images/alyssa_ex1.png){fig-align="center" width=40%}
 
-# Edge Following Algorithm
+## Edge Following Algorithm
 By Aryaman
 
 The **rotation patching code** processes stained tissue images by aligning them spatially and extracting patches for comparative analysis across different stains (H&E, Melan-A, and Sox-10). The algorithm creates a skeleton by converting the image of the epithelium mask into a binary format, reducing the tissue to a central line. The skeleton represents the centreline through the epithelial region, and is used as a guide for placing patches. At each point on the skeleton, the algorithm calculates the slope between neighbouring points, which defines the orientation of the patch. Using this orientation, it forms a square patch which aligns with the boundary. The patch is kept only if it includes regions from the stroma and the background, ensuring that the full width of the epithelium is captured in most cases. Overlapping patches are removed in the final step.
@@ -70,7 +56,7 @@ Follow this step-by-step manual to patch the epithelia.
 
 :::{.callout-note collapse=true}
 
-## Step-by-Step Manual
+### Step-by-Step Manual
 
 Code required:
 
@@ -80,7 +66,7 @@ Run `rotate_extract_patch (1).py`.
 
 :::
 
-## Results
+### Results
 
 ![](images/Step4.png){fig-align="center"}
 
@@ -137,7 +123,8 @@ We pick a random patch. Next, we identify the stroma and the outside of the samp
 <br>
 **Note:** This separates the tilting from the patching process. While this is not necessarily a negative, we don’t know which patching algorithm works best with this method yet. It adds another step to the process.
 
-## Patch Design and Optimization QnA
+
+# Patch Design and Optimization QnA
 
 ### Question 1: Why are square patches used in tissue analysis?
 
@@ -168,4 +155,21 @@ The number of patches depends on the variety in the images and the difficulty of
 
 For this question, we conducted a literature review which included creating a post on the QuPath forum. It received one response as of January 27, 2025.  
    [QuPath Forum: Optimal Number of Patches](https://forum.image.sc/t/optimal-number-of-patches/107600)
+
+### Question 4: How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution? <br>
+
+We will develop a histogram of all patch sizes used for the 106 tissue slices to determine the modality and distribution of patch sizes we will ultimately use to train our CNN model.
+
+### Question 5: Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use? <br>
+
+We will answer this question by reviewing existing research on patch-based machine-learning models and considering the implications of using multiple and minimal patch sizes.
+
+**Additional Sources:**
+   - [“Effect of patch size and network architecture on a convolutional neural network approach for automatic segmentation of OCT retinal layers”](https://pmc.ncbi.nlm.nih.gov/articles/PMC6033561/)
+   - [“Filter size in CNNs and how they relate to overfitting/underfitting”](https://datascience.stackexchange.com/questions/96516/filter-size-in-cnns-and-how-they-relate-to-overfitting-underfitting)
+
+### Question 6: If adaptive pooling can be used effectively to handle images of different sizes (i.e. handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?
+
+We explored how adaptive pooling in CNNs maintains fixed output dimensions while handling varying input sizes. By examining how convolutional layers learn hierarchical patterns, we assessed whether adaptive pooling preserves distinct features in small and large patches, ensuring the model can still identify patterns at different scales.
+
 
