@@ -276,7 +276,14 @@ ul.task-list li input[type="checkbox"] {
 <section id="dynamic-epithelial-pixel-width-algorithm" class="level2">
 <h2 class="anchored" data-anchor-id="dynamic-epithelial-pixel-width-algorithm">Dynamic Epithelial Pixel Width Algorithm</h2>
 <p>By Alyssa</p>
-<p>Alyssa’s patching algorithm incrementally generates patches over tissue images by leveraging color thresholds to segment and identify key regions such as the epithelium, stroma, and background. The process begins by isolating the epithelium using a black-and-white mask, which ensures that only relevant tissue areas are targeted. This mask allows the algorithm to exclude non-tissue regions, enhancing its focus on areas of interest. The algorithm then adds patches using a fixed size, iteratively stepping through the tissue with small increments. This approach ensures fine-grained coverage and allows for some overlap between patches, helping maintain continuity and adaptability across different epithelium widths. However, patches with excessive overlap (greater than 20%) are discarded to avoid redundancy. While this method excels in providing detailed coverage, particularly for narrow or irregular tissues, it is computationally intensive due to its small step sizes and reliance on precise color thresholding. This dependence on color thresholds makes the algorithm sensitive to variations in staining protocols, image quality, and lighting, which could misclassify tissue regions and affect patch accuracy. Additionally, the fixed patch size may struggle to accommodate larger or more irregular tissues, particularly those with diverse shapes and sizes. Despite these challenges, Alyssa’s algorithm is effective for capturing detailed tissue information in smaller, more uniform samples.</p>
+<ul>
+<li>Incrementally generates patches over tissue images to segment and identify key regions such as the epithelium, stroma, and background using color thresholds.</li>
+<li>Isolates the epithelium using a black-and-white mask to target only relevant tissue areas.</li>
+<li>Excludes non-tissue regions, enhancing focus on areas of interest.</li>
+<li>Adds patches using a fixed size, iteratively stepping through the tissue with small increments.</li>
+<li>Provides fine-grained coverage with some overlap between patches to maintain continuity and adaptability to different tissue widths.</li>
+<li>Discards patches with excessive overlap (greater than 10%) to avoid redundancy.</li>
+</ul>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
