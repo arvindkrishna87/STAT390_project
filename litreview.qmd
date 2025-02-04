@@ -66,13 +66,14 @@ In medical imaging applications, image patches are usually square regions whose 
 
 -   Square patches are popular due to their simplicity and compatibility with standard convolutional neural network (CNN) architectures. They provide balanced feature extraction and are easy to preprocess and resize.
 
--   **Study Reference**: A study on patch-based classification using CNNs found that square patches offered efficient, balanced spatial representation for deep learning models (link.springer.com).
+-   **[Study Reference](https://link.springer.com)**: A study on patch-based classification using CNNs found that square patches offered efficient, balanced spatial representation for deep learning models.
+
 
 [**Rectangular Patches: Advantages and Considerations**]{.underline}
 
 -   Rectangular patches are beneficial for capturing elongated or directional structures in tissues, such as blood vessels or specific cellular arrangements. They can maximize context capture along a specific axis.
 
--   **Study Reference**: Research on adaptive patch extraction found that rectangular patches, when properly oriented, improved analysis accuracy for tissues with dominant directional features (arxiv.org).
+-   **[Study Reference](https://arxiv.org)**: Research on adaptive patch extraction found that rectangular patches, when properly oriented, improved analysis accuracy for tissues with dominant directional features.
 
 [**Comparative Analysis**]{.underline}		
 
