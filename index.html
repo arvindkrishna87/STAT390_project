@@ -135,14 +135,8 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#core-questions-and-our-approach-to-addressing-them" id="toc-core-questions-and-our-approach-to-addressing-them" class="nav-link active" data-scroll-target="#core-questions-and-our-approach-to-addressing-them">Core Questions and Our Approach to Addressing Them</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -178,60 +172,10 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Step 2:</strong> Matching similar tissue slices across the different stains (<strong>H&amp;E, Melan-A, Sox-10</strong>) for each patient when there is a correct match</p>
 <p><strong>Step 3:</strong> Send matched slices to pathologist team, who will annotate H&amp;E slice with high grade, low grade, and benign regions and send back to us</p>
 <p><strong>Step 4:</strong> While the pathologist team annotates slices, orienting matched slices and apply patching across epithelium for matched slices. Currently looking at 3 different approaches to patching to find the optimal results</p>
+<p><strong>Step 5:</strong> Create a machine learning model to classify slices as low-grade, high-grade, or benign</p>
 <p><strong>Literature Review</strong>: Researched adaptive pooling, cross view transformer, square patches (advantages, sizes, and rationale), padding effect, etc.</p>
-<section id="core-questions-and-our-approach-to-addressing-them" class="level3">
-<h3 class="anchored" data-anchor-id="core-questions-and-our-approach-to-addressing-them">Core Questions and Our Approach to Addressing Them</h3>
-<section id="patching-questions" class="level4">
-<h4 class="anchored" data-anchor-id="patching-questions">Patching Questions</h4>
-<ol type="1">
-<li><p><strong>How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution?</strong> <br> We will develop a histogram of all patch sizes used for the 106 tissue slices to determine the modality and distribution of patch sizes we will ultimately use to train our CNN model.</p></li>
-<li><p><strong>Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use?</strong> <br> We answered this question by reviewing existing research on patch-based machine-learning models and considering the implications of using multiple and minimal patch sizes.</p></li>
-</ol>
-<p><strong>Additional Sources:</strong> - <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6033561/">“Effect of patch size and network architecture on a convolutional neural network approach for automatic segmentation of OCT retinal layers”</a> - <a href="https://datascience.stackexchange.com/questions/96516/filter-size-in-cnns-and-how-they-relate-to-overfitting-underfitting">“Filter size in CNNs and how they relate to overfitting/underfitting”</a></p>
-<ol start="3" type="1">
-<li><strong>If adaptive pooling can be used effectively to handle images of different sizes (i.e.&nbsp;handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?</strong> We explored how adaptive pooling in CNNs maintains fixed output dimensions while handling varying input sizes. By examining how convolutional layers learn hierarchical patterns, we assessed whether adaptive pooling preserves distinct features in small and large patches, ensuring the model can still identify patterns at different scales.</li>
-</ol>
-</section>
-<section id="patch-design-and-optimization-questions" class="level4">
-<h4 class="anchored" data-anchor-id="patch-design-and-optimization-questions">Patch Design and Optimization Questions</h4>
-<ol type="1">
-<li><p><strong>Why are square patches used in tissue analysis?</strong><br>
-To explore this question, we researched the current benefits of using square patches, the effectiveness of non-square patch sizing in similar medical contexts, and a potential alternative called PatchIT.</p>
-<p><strong>Additional Sources:</strong></p>
-<ul>
-<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5265243/">“Tissue classification for laparoscopic image understanding based on multispectral texture analysis”</a></li>
-<li><a href="https://ieeexplore.ieee.org/document/7848208">“Machine learning algorithm for retinal image analysis”</a></li>
-<li><a href="https://www.mdpi.com/2414-4088/6/12/11">“patchIT: A Multipurpose Patch Creation Tool for Image Processing Applications”</a></li>
-</ul></li>
-</ol>
-<hr>
-<ol start="2" type="1">
-<li><p><strong>Why is patch size in powers of 2? (e.g.&nbsp;32 x 32, 256 x 256, 512 x 512, etc.) Are there alternatives?</strong><br>
-To address this question, we combined theoretical insights, practical examples, and empirical evidence.</p>
-<p><strong>Theoretical Analysis:</strong> We investigated the mathematical and computational advantages of powers of 2 in convolutional neural networks (CNNs).</p>
-<p><strong>Practical Examples:</strong> We examined earlier CNN architectures such as AlexNet alongside recent practices focused on hardware efficiency.</p>
-<p><strong>Empirical Evidence:</strong><br>
-To supplement our analysis, we referenced the following study:<br>
-<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6033561/#r40">Effect of patch size and network architecture on a convolutional neural network approach for automatic segmentation of OCT retinal layers</a></p>
-<p><strong>Additional Sources:</strong></p>
-<ul>
-<li><a href="https://keras.io/api/layers/pooling_layers/max_pooling2d/">Keras: MaxPooling2D</a></li>
-<li><a href="https://www.cs.toronto.edu/~fritz/absps/imagenet.pdf">ImageNet Classifcation</a></li>
-<li><a href="https://arxiv.org/pdf/1409.1556">Deep Convolutional Networks</a></li>
-<li><a href="https://docs.nvidia.com/deeplearning/performance/dl-performance-matrix-multiplication/index.html#gpu-imple">Nvidia Matrix Multiplication Guide</a></li>
-<li><a href="https://medium.com/aiguys/pooling-layers-in-neural-nets-and-their-variants-f6129fc4628b">Pooling Layers in Neural Nets</a></li>
-</ul></li>
-</ol>
-<hr>
-<ol start="3" type="1">
-<li><strong>How do researchers determine the optimal number of patches?</strong><br>
-For this question, we conducted a literature review which included creating a post on the QuPath forum. It received one response as of January 27, 2025.<br>
-<a href="https://forum.image.sc/t/optimal-number-of-patches/107600">QuPath Forum: Optimal Number of Patches</a></li>
-</ol>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
