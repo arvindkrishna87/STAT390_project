@@ -140,27 +140,32 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#patching-questions" id="toc-patching-questions" class="nav-link active" data-scroll-target="#patching-questions">Patching Questions</a></li>
-  <li><a href="#comparing-approaches" id="toc-comparing-approaches" class="nav-link" data-scroll-target="#comparing-approaches">Comparing Approaches</a>
+  <li><a href="#three-different-approaches" id="toc-three-different-approaches" class="nav-link active" data-scroll-target="#three-different-approaches">Three Different Approaches</a>
   <ul class="collapse">
-  <li><a href="#dynamic-epithelial-pixel-width-algorithm" id="toc-dynamic-epithelial-pixel-width-algorithm" class="nav-link" data-scroll-target="#dynamic-epithelial-pixel-width-algorithm">Dynamic Epithelial Pixel Width Algorithm</a></li>
+  <li><a href="#comparing-approaches" id="toc-comparing-approaches" class="nav-link" data-scroll-target="#comparing-approaches">Comparing Approaches</a></li>
+  <li><a href="#dynamic-epithelial-pixel-width-algorithm" id="toc-dynamic-epithelial-pixel-width-algorithm" class="nav-link" data-scroll-target="#dynamic-epithelial-pixel-width-algorithm">Dynamic Epithelial Pixel Width Algorithm</a>
+  <ul class="collapse">
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   </ul></li>
   <li><a href="#edge-following-algorithm" id="toc-edge-following-algorithm" class="nav-link" data-scroll-target="#edge-following-algorithm">Edge Following Algorithm</a>
   <ul class="collapse">
   <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1">Results</a></li>
+  </ul></li>
   <li><a href="#static-epithelium-pixel-width-algorithm" id="toc-static-epithelium-pixel-width-algorithm" class="nav-link" data-scroll-target="#static-epithelium-pixel-width-algorithm">Static Epithelium Pixel Width Algorithm</a></li>
   </ul></li>
   <li><a href="#tilting-the-patches" id="toc-tilting-the-patches" class="nav-link" data-scroll-target="#tilting-the-patches">Tilting the patches</a>
   <ul class="collapse">
   <li><a href="#edge-tilting-algorithm" id="toc-edge-tilting-algorithm" class="nav-link" data-scroll-target="#edge-tilting-algorithm">Edge Tilting Algorithm</a></li>
   <li><a href="#regression-tilting-algorithm" id="toc-regression-tilting-algorithm" class="nav-link" data-scroll-target="#regression-tilting-algorithm">Regression Tilting Algorithm:</a></li>
+  </ul></li>
   <li><a href="#patch-design-and-optimization-qna" id="toc-patch-design-and-optimization-qna" class="nav-link" data-scroll-target="#patch-design-and-optimization-qna">Patch Design and Optimization QnA</a>
   <ul class="collapse">
   <li><a href="#question-1-why-are-square-patches-used-in-tissue-analysis" id="toc-question-1-why-are-square-patches-used-in-tissue-analysis" class="nav-link" data-scroll-target="#question-1-why-are-square-patches-used-in-tissue-analysis">Question 1: Why are square patches used in tissue analysis?</a></li>
   <li><a href="#question-2-why-is-patch-size-in-powers-of-2-e.g.-32-x-32-256-x-256-512-x-512-etc.-are-there-alternatives" id="toc-question-2-why-is-patch-size-in-powers-of-2-e.g.-32-x-32-256-x-256-512-x-512-etc.-are-there-alternatives" class="nav-link" data-scroll-target="#question-2-why-is-patch-size-in-powers-of-2-e.g.-32-x-32-256-x-256-512-x-512-etc.-are-there-alternatives">Question 2: Why is patch size in powers of 2? (e.g.&nbsp;32 x 32, 256 x 256, 512 x 512, etc.) Are there alternatives?</a></li>
   <li><a href="#question-3-how-do-researchers-determine-the-optimal-number-of-patches" id="toc-question-3-how-do-researchers-determine-the-optimal-number-of-patches" class="nav-link" data-scroll-target="#question-3-how-do-researchers-determine-the-optimal-number-of-patches">Question 3: How do researchers determine the optimal number of patches?</a></li>
-  </ul></li>
+  <li><a href="#question-4-how-many-distinct-patch-sizes-should-we-consider-should-we-fit-patches-on-every-tissue-slice-to-visualise-the-distribution" id="toc-question-4-how-many-distinct-patch-sizes-should-we-consider-should-we-fit-patches-on-every-tissue-slice-to-visualise-the-distribution" class="nav-link" data-scroll-target="#question-4-how-many-distinct-patch-sizes-should-we-consider-should-we-fit-patches-on-every-tissue-slice-to-visualise-the-distribution">Question 4: How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution? <br></a></li>
+  <li><a href="#question-5-does-having-more-patches-make-the-ml-model-more-complex-consequently-shold-we-try-to-minimize-the-number-of-distint-patch-sizes-we-use" id="toc-question-5-does-having-more-patches-make-the-ml-model-more-complex-consequently-shold-we-try-to-minimize-the-number-of-distint-patch-sizes-we-use" class="nav-link" data-scroll-target="#question-5-does-having-more-patches-make-the-ml-model-more-complex-consequently-shold-we-try-to-minimize-the-number-of-distint-patch-sizes-we-use">Question 5: Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use? <br></a></li>
+  <li><a href="#question-6-if-adaptive-pooling-can-be-used-effectively-to-handle-images-of-different-sizes-i.e.-handle-distinct-patch-sizes-can-a-ml-model-distinctly-identify-patterns-in-small-patches-or-large-patches" id="toc-question-6-if-adaptive-pooling-can-be-used-effectively-to-handle-images-of-different-sizes-i.e.-handle-distinct-patch-sizes-can-a-ml-model-distinctly-identify-patterns-in-small-patches-or-large-patches" class="nav-link" data-scroll-target="#question-6-if-adaptive-pooling-can-be-used-effectively-to-handle-images-of-different-sizes-i.e.-handle-distinct-patch-sizes-can-a-ml-model-distinctly-identify-patterns-in-small-patches-or-large-patches">Question 6: If adaptive pooling can be used effectively to handle images of different sizes (i.e.&nbsp;handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -189,24 +194,11 @@ ul.task-list li input[type="checkbox"] {
 
 <p>This step is happening in tandem with Step 3 (slice annotation)</p>
 <p><strong>Aim:</strong> To determine whether a fixed patch size can be used effectively for patching. We propose running a patching algorithm on one stain and analysing the distribution of patches it generates. If a large majority of the patches are a specific size, that size can be considered the optimal. Since the distribution of patches will be the same across stains, the optimal patch size found can be used across all three stains.</p>
-<section id="patching-questions" class="level2">
-<h2 class="anchored" data-anchor-id="patching-questions">Patching Questions</h2>
-<section id="how-many-distinct-patch-sizes-should-we-consider-should-we-fit-patches-on-every-tissue-slice-to-visualise-the-distribution" class="level4">
-<h4 class="anchored" data-anchor-id="how-many-distinct-patch-sizes-should-we-consider-should-we-fit-patches-on-every-tissue-slice-to-visualise-the-distribution">1. How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution? <br></h4>
-<p>We will develop a histogram of all patch sizes used for the 106 tissue slices to determine the modality and distribution of patch sizes we will ultimately use to train our CNN model.</p>
-</section>
-<section id="does-having-more-patches-make-the-ml-model-more-complex-consequently-shold-we-try-to-minimize-the-number-of-distint-patch-sizes-we-use" class="level4">
-<h4 class="anchored" data-anchor-id="does-having-more-patches-make-the-ml-model-more-complex-consequently-shold-we-try-to-minimize-the-number-of-distint-patch-sizes-we-use">2. Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use? <br></h4>
-<p>We will answer this question by reviewing existing research on patch-based machine-learning models and considering the implications of using multiple and minimal patch sizes.</p>
-<p><strong>Additional Sources:</strong> - <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6033561/">“Effect of patch size and network architecture on a convolutional neural network approach for automatic segmentation of OCT retinal layers”</a> - <a href="https://datascience.stackexchange.com/questions/96516/filter-size-in-cnns-and-how-they-relate-to-overfitting-underfitting">“Filter size in CNNs and how they relate to overfitting/underfitting”</a></p>
-</section>
-<section id="if-adaptive-pooling-can-be-used-effectively-to-handle-images-of-different-sizes-i.e.-handle-distinct-patch-sizes-can-a-ml-model-distinctly-identify-patterns-in-small-patches-or-large-patches" class="level4">
-<h4 class="anchored" data-anchor-id="if-adaptive-pooling-can-be-used-effectively-to-handle-images-of-different-sizes-i.e.-handle-distinct-patch-sizes-can-a-ml-model-distinctly-identify-patterns-in-small-patches-or-large-patches">3. If adaptive pooling can be used effectively to handle images of different sizes (i.e.&nbsp;handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?</h4>
-<p>We explored how adaptive pooling in CNNs maintains fixed output dimensions while handling varying input sizes. By examining how convolutional layers learn hierarchical patterns, we assessed whether adaptive pooling preserves distinct features in small and large patches, ensuring the model can still identify patterns at different scales.</p>
-</section>
-</section>
-<section id="comparing-approaches" class="level1">
-<h1>Comparing Approaches</h1>
+<section id="three-different-approaches" class="level1">
+<h1>Three Different Approaches</h1>
+<p>Below are images comparing the outcome of our three approaches to the patching problem. Find more details on each algorithm below the comparison.</p>
+<section id="comparing-approaches" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-approaches">Comparing Approaches</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 7%">
@@ -273,6 +265,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</section>
 <section id="dynamic-epithelial-pixel-width-algorithm" class="level2">
 <h2 class="anchored" data-anchor-id="dynamic-epithelial-pixel-width-algorithm">Dynamic Epithelial Pixel Width Algorithm</h2>
 <p>By Alyssa</p>
@@ -302,9 +295,8 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-</section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">Results</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/alyssa_ex1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
@@ -312,8 +304,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="edge-following-algorithm" class="level1">
-<h1>Edge Following Algorithm</h1>
+<section id="edge-following-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="edge-following-algorithm">Edge Following Algorithm</h2>
 <p>By Aryaman</p>
 <p>The <strong>rotation patching code</strong> processes stained tissue images by aligning them spatially and extracting patches for comparative analysis across different stains (H&amp;E, Melan-A, and Sox-10). The algorithm creates a skeleton by converting the image of the epithelium mask into a binary format, reducing the tissue to a central line. The skeleton represents the centreline through the epithelial region, and is used as a guide for placing patches. At each point on the skeleton, the algorithm calculates the slope between neighbouring points, which defines the orientation of the patch. Using this orientation, it forms a square patch which aligns with the boundary. The patch is kept only if it includes regions from the stroma and the background, ensuring that the full width of the epithelium is captured in most cases. Overlapping patches are removed in the final step.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -342,8 +334,8 @@ Step-by-Step Manual
 </div>
 </div>
 </div>
-<section id="results-1" class="level2">
-<h2 class="anchored" data-anchor-id="results-1">Results</h2>
+<section id="results-1" class="level3">
+<h3 class="anchored" data-anchor-id="results-1">Results</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Step4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -367,6 +359,7 @@ Step-by-Step Manual
 </tr>
 </tbody>
 </table>
+</section>
 </section>
 <section id="static-epithelium-pixel-width-algorithm" class="level2">
 <h2 class="anchored" data-anchor-id="static-epithelium-pixel-width-algorithm">Static Epithelium Pixel Width Algorithm</h2>
@@ -416,8 +409,9 @@ Step-by-Step Manual
 </div>
 <p><strong>Upsides:</strong> this method is not very computationally expensive, especially with the epithelium mask that we already have for many samples. <br> <strong>Downsides:</strong> When tilting an existing patch, we cannot ensure that the patch still includes the entire epithelium unless we also resize the patch. <br> <strong>Note:</strong> This separates the tilting from the patching process. While this is not necessarily a negative, we don’t know which patching algorithm works best with this method yet. It adds another step to the process.</p>
 </section>
-<section id="patch-design-and-optimization-qna" class="level2">
-<h2 class="anchored" data-anchor-id="patch-design-and-optimization-qna">Patch Design and Optimization QnA</h2>
+</section>
+<section id="patch-design-and-optimization-qna" class="level1">
+<h1>Patch Design and Optimization QnA</h1>
 <section id="question-1-why-are-square-patches-used-in-tissue-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="question-1-why-are-square-patches-used-in-tissue-analysis">Question 1: Why are square patches used in tissue analysis?</h3>
 <p>Square images are commonly used in tissue image analysis as they naturally fit into the grid-like structure of digital images, making it easier for algorithms to scan and analyze oatterbs, They streamline calculations for convolutional neural networks (CNNs), which process grids of data efficiently. This uniformity ensures all parts of an image are treated equally, avoiding distortions or biases that could arise from irregular shapes, i.e.&nbsp;rectangular patches. Additionally, square patches align with pre-trained models, saving time and effort by leveraging existing resources. They also simplify techniques like pooling, which reduces data size while preserving important features, focusing on key details without unnecessary complexity. Overall, they offer a balance of computational efficiency and accuracy.</p>
@@ -436,9 +430,21 @@ Step-by-Step Manual
 <p>The number of patches depends on the variety in the images and the difficulty of identifying differences in the classes. Too many patches can lead to over-segmentation and loss of context. Additionally, it increases the computational cost. Too few patches would make it hard for the model to generalize to unseen data. If we can determine the optimal patch size, that can determine the optimal number of patches by managing the overlap.</p>
 <p>For this question, we conducted a literature review which included creating a post on the QuPath forum. It received one response as of January 27, 2025.<br>
 <a href="https://forum.image.sc/t/optimal-number-of-patches/107600">QuPath Forum: Optimal Number of Patches</a></p>
-
-
 </section>
+<section id="question-4-how-many-distinct-patch-sizes-should-we-consider-should-we-fit-patches-on-every-tissue-slice-to-visualise-the-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="question-4-how-many-distinct-patch-sizes-should-we-consider-should-we-fit-patches-on-every-tissue-slice-to-visualise-the-distribution">Question 4: How many distinct patch sizes should we consider? Should we fit patches on every tissue slice to visualise the distribution? <br></h3>
+<p>We will develop a histogram of all patch sizes used for the 106 tissue slices to determine the modality and distribution of patch sizes we will ultimately use to train our CNN model.</p>
+</section>
+<section id="question-5-does-having-more-patches-make-the-ml-model-more-complex-consequently-shold-we-try-to-minimize-the-number-of-distint-patch-sizes-we-use" class="level3">
+<h3 class="anchored" data-anchor-id="question-5-does-having-more-patches-make-the-ml-model-more-complex-consequently-shold-we-try-to-minimize-the-number-of-distint-patch-sizes-we-use">Question 5: Does having more patches make the ML model more complex? Consequently, shold we try to minimize the number of distint patch sizes we use? <br></h3>
+<p>We will answer this question by reviewing existing research on patch-based machine-learning models and considering the implications of using multiple and minimal patch sizes.</p>
+<p><strong>Additional Sources:</strong> - <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6033561/">“Effect of patch size and network architecture on a convolutional neural network approach for automatic segmentation of OCT retinal layers”</a> - <a href="https://datascience.stackexchange.com/questions/96516/filter-size-in-cnns-and-how-they-relate-to-overfitting-underfitting">“Filter size in CNNs and how they relate to overfitting/underfitting”</a></p>
+</section>
+<section id="question-6-if-adaptive-pooling-can-be-used-effectively-to-handle-images-of-different-sizes-i.e.-handle-distinct-patch-sizes-can-a-ml-model-distinctly-identify-patterns-in-small-patches-or-large-patches" class="level3">
+<h3 class="anchored" data-anchor-id="question-6-if-adaptive-pooling-can-be-used-effectively-to-handle-images-of-different-sizes-i.e.-handle-distinct-patch-sizes-can-a-ml-model-distinctly-identify-patterns-in-small-patches-or-large-patches">Question 6: If adaptive pooling can be used effectively to handle images of different sizes (i.e.&nbsp;handle distinct patch sizes) can a ML model distinctly identify patterns in small patches or large patches?</h3>
+<p>We explored how adaptive pooling in CNNs maintains fixed output dimensions while handling varying input sizes. By examining how convolutional layers learn hierarchical patterns, we assessed whether adaptive pooling preserves distinct features in small and large patches, ensuring the model can still identify patterns at different scales.</p>
+
+
 </section>
 </section>
 
