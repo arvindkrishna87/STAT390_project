@@ -17,7 +17,7 @@ This step is happening in tandem with Step 3 (slice annotation)
 # Comparing Approaches
 
 | Feature | Dynamic Epithelial Pixel Width Algorithm | Edge Following Algorithm | Static Epithelial Pixel Width Algorithm |
-|---------|------------------------------------------|--------------------------|-----------------------------------------|
+|---------|:------------------------------------------:|:--------------------------:|:-----------------------------------------:|
 | **Computationally Inexpensive**   |                   |                   |        X        |
 | **Incorporates Tilting**   |                    |          X          |                |
 | **Discards data if patches overlap too much**   |          X          |                    |                |
