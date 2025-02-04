@@ -8,6 +8,16 @@ This step is happening in tandem with Step 3 (slice annotation)
 
 **Aim:** To determine whether a fixed patch size can be used effectively for patching. We propose running a patching algorithm on one stain and analysing the distribution of patches it generates. If a large majority of the patches are a specific size, that size can be considered the optimal. Since the distribution of patches will be the same across stains, the optimal patch size found can be used across all three stains.
 
+# Summary
+
+This step runs alongside slice annotation to determine whether a fixed patch size can be effectively used. Three different patching algorithms are compared:
+
+	- **Dynamic Epithelial Pixel Width Algorithm** (Alyssa): Adjusts patch size incrementally based on tissue characteristics, ensuring adaptability but requiring fine-tuning.
+	- **Edge Following Algorithm** (Aryaman): Uses a skeletonized epithelium mask to align patches along the tissue structure, maintaining consistency but being computationally expensive.
+	- **Static Epithelium Pixel Width Algorithm** (Eli): Uses predefined patch sizes based on epithelium width, making it efficient but less adaptable to irregular shapes.
+
+Research also explores tilting patches to optimize orientation, patch size selection, and the impact of adaptive pooling on machine learning performance. The goal is to **establish a standardized patching method that balances efficiency, accuracy, and model interpretability.**
+
 # Three Different Approaches
 
 Below are images comparing the outcome of our three approaches to the patching problem. Find more details on each algorithm below the comparison. 
