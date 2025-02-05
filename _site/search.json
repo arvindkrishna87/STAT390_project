@@ -11,6 +11,27 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "This is the website for the STAT390 project!\nThere will be more information to come soon!"
+    "text": "This is the website for the STAT390 C-MIL Classification project!"
+  },
+  {
+    "objectID": "about.html#people",
+    "href": "about.html#people",
+    "title": "About",
+    "section": "People",
+    "text": "People\n\nStakeholders:\nDr. Yamini Krishna\n  Consultant Ophthalmic Pathologist,\n  Honorary Senior Clinical Lecturer (Eye & Vision Sciences),\n  Royal Liverpool University Hospital & University of Liverpool,\n  Liverpool, UK\nDr. He Zhao\n  Lecturer (Eye & Vision Sciences),\n  University of Liverpool,\n  Liverpool, UK.\n\n\nProject Co-ordinator (STAT390):\nDr. Arvind Krishna (Krish)\n Assistant Professor of Instruction,\n Department of Statistics & Data Science,\n Northwestern University,\n Evanston, IL, USA.\n\n\nCollaborator:\nPrashant Kumar\n Staff Engineer,\n Qualcomm,\n San Diego, CA, USA.\n\n\nStudent Teams (STAT390):\n\nThinkers: John Olsen, Kota Suzuki, Yaelle Pierre, Jake Mead, Ryan Yi, Anna Roney\nCoders: Sari Eisen, Sharon Lin, Ryan Lach, Nathan Jung, Hannah Ma\nLiterature Surveyors: William Wang, Bennett Markinson, Allen Zhang, Alex Zhou, Jacob Muriel, Patrick Schmid, Lainey Neild\nConsultants/Organizers/Testers: Olivia Joung, Anna Deka, Margaret Pirozzolo, Jack Ouyang, Haneef Usmani, Radhika Todi\nHealth Informaticians: Lucinda Hu, Dila Bitlis, Julia Nelson, Walker Frisbie, Kayla Terrelonge"
+  },
+  {
+    "objectID": "about.html#github-and-onedrive",
+    "href": "about.html#github-and-onedrive",
+    "title": "About",
+    "section": "GitHub and OneDrive",
+    "text": "GitHub and OneDrive\nThis GitHub contains all the necessary code and algorithms from our progress:\nThis OneDrive contains all data and processed folders from our progress:"
+  },
+  {
+    "objectID": "about.html#data-overview",
+    "href": "about.html#data-overview",
+    "title": "About",
+    "section": "Data Overview",
+    "text": "Data Overview\nThe Data consists of 105 cases from 97 patients. Below are some statistics of the data:\n\n60 women (age range: 23-93 years; median 65; mean 61.5) and 37 men (age range: 31-91 years; median 68; mean 66.5)\nThe ethnic group mix comprised of the following: 88 White Caucasian, 4 Black, 2 South Asian, 1 Inuit, 1 Mixed race, and 1 Unspecified\n\nThe data corresponds to patients in the following 3 ocular oncology/pathology centers:\n\nLiverpool University Hospitals NHS Foundation Trust (Liverpool; cases from 2018 to 2021),\nRoyal Hallamshire Hospital (Sheffield; from 2011 to 2021), and\nRigshospitalet (Copenhagen; from 1996 to 2021)\n\nFor each patient, a tissue is taken from their conjunctiva. The tissue is sliced into multiple slices. Multiple slices are used so that each slice can be analyzed separately and there is more evidence to support the conclusion, i.e., the classification of the C-MIL."
   }
 ]

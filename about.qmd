@@ -7,20 +7,41 @@ This is the website for the STAT390 C-MIL Classification project!
 
 ## People
 
-**Stakeholders**: Dr. Yamini Krishna, and Dr. He Zhao. 
+### Stakeholders: 
 
-**Project Co-ordinator (STAT390)**: Arvind Krishna
+| **Dr. Yamini Krishna**
+|   Consultant Ophthalmic Pathologist,
+|   Honorary Senior Clinical Lecturer (Eye \& Vision Sciences),
+|   Royal Liverpool University Hospital \& University of Liverpool, 
+|   Liverpool, UK
 
-**Collaborator:** Prashant Kumar
+| **Dr. He Zhao**
+|   Lecturer (Eye \& Vision Sciences),
+|   University of Liverpool, 
+|   Liverpool, UK.
 
-**Student Teams (STAT390)**:
+### Project Co-ordinator (STAT390): 
+
+| **Dr. Arvind Krishna (Krish)**
+|  Assistant Professor of Instruction,
+|  Department of Statistics \& Data Science,
+|  Northwestern University,
+|  Evanston, IL, USA.
+
+### Collaborator:
+
+| **Prashant Kumar**
+|  Staff Engineer,
+|  Qualcomm,
+|  San Diego, CA, USA.
+
+### Student Teams (STAT390):
 
 - **Thinkers:** John Olsen, Kota Suzuki, Yaelle Pierre, Jake Mead, Ryan Yi,	Anna Roney
 - **Coders:** Sari Eisen, Sharon Lin,	Ryan Lach,	Nathan Jung,	Hannah Ma
 - **Literature Surveyors:** William Wang,	Bennett Markinson,	Allen Zhang,	Alex Zhou,	Jacob Muriel,	Patrick Schmid,	Lainey Neild
 - **Consultants/Organizers/Testers:** Olivia Joung,	Anna Deka,	Margaret Pirozzolo,	Jack Ouyang,	Haneef Usmani,	Radhika Todi
 - **Health Informaticians:** Lucinda Hu,	Dila Bitlis,	Julia Nelson,	Walker Frisbie,	Kayla Terrelonge
-
 
 
 ## GitHub and OneDrive

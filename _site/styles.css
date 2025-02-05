@@ -1,1 +1,8 @@
 /* css styles */
+.navbar .navbar-brand {
+  white-space: normal;  /* Allow title to wrap */
+  word-wrap: break-word;  /* Allow long words to break */
+  line-height: 1.3em;  /* Adjust line height (optional) */
+  max-width: 100%;  /* Prevent clipping */
+  display: inline-block;  /* Allow title to be inline while wrapping */
+}
