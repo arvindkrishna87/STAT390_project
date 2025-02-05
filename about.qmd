@@ -11,19 +11,19 @@ This is the website for the STAT390 C-MIL Classification project!
 
 **Team Members**:
 
-- Thinkers: John Olsen, Kota Suzuki, Yaelle Pierre, Jake Mead, Ryan Yi,	Anna Roney
-- Coders: Sari Eisen, Sharon Lin,	Ryan Lach,	Nathan Jung,	Hannah Ma
-- Literature Surveyors: William Wang,	Bennett Markinson,	Allen Zhang,	Alex Zhou,	Jacob Muriel,	Patrick Schmid,	Lainey Neild
-- Consultants/Organizers/Testers: Olivia Joung,	Anna Deka,	Margaret Pirozzolo,	Jack Ouyang,	Haneef Usmani,	Radhika Todi
-- Health Informaticians: Lucinda Hu,	Dila Bitlis,	Julia Nelson,	Walker Frisbie,	Kayla Terrelonge
+- **Thinkers:** John Olsen, Kota Suzuki, Yaelle Pierre, Jake Mead, Ryan Yi,	Anna Roney
+- **Coders:** Sari Eisen, Sharon Lin,	Ryan Lach,	Nathan Jung,	Hannah Ma
+- **Literature Surveyors:** William Wang,	Bennett Markinson,	Allen Zhang,	Alex Zhou,	Jacob Muriel,	Patrick Schmid,	Lainey Neild
+- **Consultants/Organizers/Testers:** Olivia Joung,	Anna Deka,	Margaret Pirozzolo,	Jack Ouyang,	Haneef Usmani,	Radhika Todi
+- **Health Informaticians:** Lucinda Hu,	Dila Bitlis,	Julia Nelson,	Walker Frisbie,	Kayla Terrelonge
 
-**Stakeholders**: Dr. Yamini Krishna, Dr. He Zhao, Prashant Kumar
+**Stakeholders**: Dr. Yamini Krishna, and Dr. He Zhao. 
+
+**Collaborator:** Prashant Kumar
 
 ## GitHub and OneDrive
 
 This **[GitHub](https://github.com/arvindkrishna87/STAT390_WI2025.git)** contains all the necessary code and algorithms from our progress:
-
-
 
 This **[OneDrive](https://nuwildcat-my.sharepoint.com/personal/akl0407_ads_northwestern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fakl0407%5Fads%5Fnorthwestern%5Fedu%2FDocuments%2FSTAT390&sortField=LinkFilename&isAscending=true)** contains all data and processed folders from our progress:
 
