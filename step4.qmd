@@ -32,7 +32,7 @@ Below are images comparing the outcome of our three approaches to the patching p
 | **Incorporates Tilting**   |                    |          X          |                |
 | **Discards data if patches overlap too much**   |          X          |        X           |                |
 | **Incrementally Changes patch size**   |          X          |                    |                |
-| **Changes patch size based on epithelium width**   |          X          |         X           |                |
+| **Changes patch size based on epithelium width**   |          X          |                    |                |
 | **Uses Pre-determined patch sizes**   |                    |         X           |        X        |
 | **Sensitive to Image Quality**        |           X        |         X           |                 |
 | **Can Handle Irregular Tissue Shapes** |           X        |        X          |                 |
