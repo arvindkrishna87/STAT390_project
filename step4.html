@@ -198,9 +198,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="summary" class="level1">
 <h1>Summary</h1>
 <p>This step runs alongside slice annotation to determine whether a fixed patch size can be effectively used. Three different patching algorithms are compared:</p>
-<pre><code>- **Dynamic Epithelial Pixel Width Algorithm** (Alyssa): Adjusts patch size incrementally based on tissue characteristics, ensuring adaptability but requiring fine-tuning.
-- **Edge Following Algorithm** (Aryaman): Uses a skeletonized epithelium mask to align patches along the tissue structure, maintaining consistency but being computationally expensive.
-- **Static Epithelium Pixel Width Algorithm** (Eli): Uses predefined patch sizes based on epithelium width, making it efficient but less adaptable to irregular shapes.</code></pre>
+<ul>
+<li><strong>Dynamic Epithelial Pixel Width Algorithm</strong> (Alyssa): Adjusts patch size incrementally based on tissue characteristics, ensuring adaptability but requiring fine-tuning.</li>
+<li><strong>Edge Following Algorithm</strong> (Aryaman): Uses a skeletonized epithelium mask to align patches along the tissue structure, maintaining consistency but being computationally expensive.</li>
+<li><strong>Static Epithelium Pixel Width Algorithm</strong> (Eli): Uses predefined patch sizes based on epithelium width, making it efficient but less adaptable to irregular shapes.</li>
+</ul>
 <p>Research also explores tilting patches to optimize orientation, patch size selection, and the impact of adaptive pooling on machine learning performance. The goal is to <strong>establish a standardized patching method that balances efficiency, accuracy, and model interpretability.</strong></p>
 </section>
 <section id="three-different-approaches" class="level1">
