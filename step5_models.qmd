@@ -22,7 +22,7 @@ Using the information from this [file](https://nuwildcat-my.sharepoint.com/:x:/r
 ## Pattern recognition
 
 - Ideally, our model needs to be able to identify the distribution and size/shape of melanocytes.
-  - Note that `low-grade CMIL's` have no-to-mild atypia, and `high-grade CMIL's`have modern-to-severe atypia.
+  - Note that `low-grade CMIL's` have no-to-mild atypia, and `high-grade CMIL's`have moderate-to-severe atypia.
 - Once we verify a list of discernible patterns, we can create separate models for specific patterns and then use an ensemble model to generate a final classification decision. 
 
 ## Melan-A and Sox-10 vs. H&E
