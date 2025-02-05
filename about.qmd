@@ -7,7 +7,7 @@ This is the website for the STAT390 C-MIL Classification project!
 
 ## People
 
-**Professor and Project Leader**: Arvind Krishna
+**Project Co-ordinator**: Arvind Krishna
 
 **Team Members**:
 
