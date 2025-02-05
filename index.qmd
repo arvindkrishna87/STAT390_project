@@ -8,7 +8,7 @@ In medical terms, we want to develop a machine learning model to accurately clas
 
 The Northwestern University STAT390 Class has made the following progress on this project:
 
-![](images/HomeImage.png){fig-align="center"}
+![](images/workflow_diagram.png){fig-align="center"}
 
 **Step 1:**  Extracting tissue slices from Whole Slice Images (**WSI**) using QuPath
 
