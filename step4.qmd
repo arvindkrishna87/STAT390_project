@@ -30,12 +30,12 @@ Below are images comparing the outcome of our three approaches to the patching p
 |---------|:------------------------------------------:|:--------------------------:|:-----------------------------------------:|
 | **Computationally Inexpensive**   |                   |                   |        X        |
 | **Incorporates Tilting**   |                    |          X          |                |
-| **Discards data if patches overlap too much**   |          X          |                    |                |
+| **Discards data if patches overlap too much**   |          X          |        X           |                |
 | **Incrementally Changes patch size**   |          X          |                    |                |
 | **Changes patch size based on epithelium width**   |          X          |         X           |                |
-| **Uses Pre-determined patch sizes**   |                    |                    |        X        |
-| **Sensitive to Image Quality**        |           X        |                    |                 |
-| **Can Handle Irregular Tissue Shapes** |           X        |                    |                 |
+| **Uses Pre-determined patch sizes**   |                    |         X           |        X        |
+| **Sensitive to Image Quality**        |           X        |         X           |                 |
+| **Can Handle Irregular Tissue Shapes** |           X        |        X          |                 |
 
 ## Dynamic Epithelial Pixel Width Algorithm
 By Alyssa
@@ -58,7 +58,13 @@ By Alyssa
 ## Edge Following Algorithm
 By Aryaman
 
-The **rotation patching code** processes stained tissue images by aligning them spatially and extracting patches for comparative analysis across different stains (H&E, Melan-A, and Sox-10). The algorithm creates a skeleton by converting the image of the epithelium mask into a binary format, reducing the tissue to a central line. The skeleton represents the centreline through the epithelial region, and is used as a guide for placing patches. At each point on the skeleton, the algorithm calculates the slope between neighbouring points, which defines the orientation of the patch. Using this orientation, it forms a square patch which aligns with the boundary. The patch is kept only if it includes regions from the stroma and the background, ensuring that the full width of the epithelium is captured in most cases. Overlapping patches are removed in the final step.
+- Aligns staines tissues and extracts patches for comparative analysis across stains (H&E, Melan-A, and Sox-10).
+- Creates an epithelium mask, converts it into a binary and creates a skeleton i.e. the central line through the epithelium.
+- Uses the skeleton as a guide to place patches.
+- Chooses a point on the skeleton and calculates the slope between neighboring points to define the orientation of the patch.
+- Forms a quare patch that aligns with the boundary.
+- A patch is kept only if it includes regions from the stroma, epithelium, and background; ensuring the full width of the epithelium is captured.
+- Overlapping patches are discarded.
 
 ![](images/mask_and_skeleton.png){fig-align="center"}
 
