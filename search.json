@@ -158,7 +158,7 @@
     "href": "step4.html#comparing-approaches",
     "title": "Step 4: Patching",
     "section": "Comparing Approaches",
-    "text": "Comparing Approaches\n\n\n\n\n\n\n\n\n\nFeature\nDynamic Epithelial Pixel Width Algorithm\nEdge Following Algorithm\nStatic Epithelial Pixel Width Algorithm\n\n\n\n\nComputationally Inexpensive\n\n\nX\n\n\nIncorporates Tilting\n\nX\n\n\n\nDiscards data if patches overlap too much\nX\nX\n\n\n\nIncrementally Changes patch size\nX\n\n\n\n\nChanges patch size based on epithelium width\nX\nX\n\n\n\nUses Pre-determined patch sizes\n\nX\nX\n\n\nSensitive to Image Quality\nX\nX\n\n\n\nCan Handle Irregular Tissue Shapes\nX\nX"
+    "text": "Comparing Approaches\n\n\n\n\n\n\n\n\n\nFeature\nDynamic Epithelial Pixel Width Algorithm\nEdge Following Algorithm\nStatic Epithelial Pixel Width Algorithm\n\n\n\n\nComputationally Inexpensive\n\n\nX\n\n\nIncorporates Tilting\n\nX\n\n\n\nDiscards data if patches overlap too much\nX\nX\n\n\n\nIncrementally Changes patch size\nX\n\n\n\n\nChanges patch size based on epithelium width\nX\n\n\n\n\nUses Pre-determined patch sizes\n\nX\nX\n\n\nSensitive to Image Quality\nX\nX\n\n\n\nCan Handle Irregular Tissue Shapes\nX\nX"
   },
   {
     "objectID": "step4.html#dynamic-epithelial-pixel-width-algorithm",
