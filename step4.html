@@ -239,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td><strong>Discards data if patches overlap too much</strong></td>
 <td style="text-align: center;">X</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
@@ -257,19 +257,19 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td><strong>Uses Pre-determined patch sizes</strong></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
 <td style="text-align: center;">X</td>
 </tr>
 <tr class="odd">
 <td><strong>Sensitive to Image Quality</strong></td>
 <td style="text-align: center;">X</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td><strong>Can Handle Irregular Tissue Shapes</strong></td>
 <td style="text-align: center;">X</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
@@ -316,7 +316,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="edge-following-algorithm" class="level2">
 <h2 class="anchored" data-anchor-id="edge-following-algorithm">Edge Following Algorithm</h2>
 <p>By Aryaman</p>
-<p>The <strong>rotation patching code</strong> processes stained tissue images by aligning them spatially and extracting patches for comparative analysis across different stains (H&amp;E, Melan-A, and Sox-10). The algorithm creates a skeleton by converting the image of the epithelium mask into a binary format, reducing the tissue to a central line. The skeleton represents the centreline through the epithelial region, and is used as a guide for placing patches. At each point on the skeleton, the algorithm calculates the slope between neighbouring points, which defines the orientation of the patch. Using this orientation, it forms a square patch which aligns with the boundary. The patch is kept only if it includes regions from the stroma and the background, ensuring that the full width of the epithelium is captured in most cases. Overlapping patches are removed in the final step.</p>
+<ul>
+<li>Aligns staines tissues and extracts patches for comparative analysis across stains (H&amp;E, Melan-A, and Sox-10).</li>
+<li>Creates an epithelium mask, converts it into a binary and creates a skeleton i.e.&nbsp;the central line through the epithelium.</li>
+<li>Uses the skeleton as a guide to place patches.</li>
+<li>Chooses a point on the skeleton and calculates the slope between neighboring points to define the orientation of the patch.</li>
+<li>Forms a quare patch that aligns with the boundary.</li>
+<li>A patch is kept only if it includes regions from the stroma, epithelium, and background; ensuring the full width of the epithelium is captured.</li>
+<li>Overlapping patches are discarded.</li>
+</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/mask_and_skeleton.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
