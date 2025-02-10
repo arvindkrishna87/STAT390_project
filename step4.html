@@ -141,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#three-different-approaches" id="toc-three-different-approaches" class="nav-link" data-scroll-target="#three-different-approaches">Three Different Approaches</a>
+  <li><a href="#two-different-approaches" id="toc-two-different-approaches" class="nav-link" data-scroll-target="#two-different-approaches">Two Different Approaches</a>
   <ul class="collapse">
   <li><a href="#comparing-approaches" id="toc-comparing-approaches" class="nav-link" data-scroll-target="#comparing-approaches">Comparing Approaches</a></li>
   <li><a href="#dynamic-epithelial-pixel-width-algorithm" id="toc-dynamic-epithelial-pixel-width-algorithm" class="nav-link" data-scroll-target="#dynamic-epithelial-pixel-width-algorithm">Dynamic Epithelial Pixel Width Algorithm</a>
@@ -152,7 +152,6 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1">Results</a></li>
   </ul></li>
-  <li><a href="#static-epithelium-pixel-width-algorithm" id="toc-static-epithelium-pixel-width-algorithm" class="nav-link" data-scroll-target="#static-epithelium-pixel-width-algorithm">Static Epithelium Pixel Width Algorithm</a></li>
   </ul></li>
   <li><a href="#tilting-the-patches" id="toc-tilting-the-patches" class="nav-link" data-scroll-target="#tilting-the-patches">Tilting the patches</a>
   <ul class="collapse">
@@ -205,16 +204,15 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Research also explores tilting patches to optimize orientation, patch size selection, and the impact of adaptive pooling on machine learning performance. The goal is to <strong>establish a standardized patching method that balances efficiency, accuracy, and model interpretability.</strong></p>
 </section>
-<section id="three-different-approaches" class="level1">
-<h1>Three Different Approaches</h1>
-<p>Below are images comparing the outcome of our three approaches to the patching problem. Find more details on each algorithm below the comparison.</p>
+<section id="two-different-approaches" class="level1">
+<h1>Two Different Approaches</h1>
+<p>Below are images comparing the outcome of our two approaches to the patching problem. Find more details on each algorithm below the comparison.</p>
 <section id="comparing-approaches" class="level2">
 <h2 class="anchored" data-anchor-id="comparing-approaches">Comparing Approaches</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 7%">
-<col style="width: 35%">
-<col style="width: 22%">
+<col style="width: 11%">
+<col style="width: 54%">
 <col style="width: 34%">
 </colgroup>
 <thead>
@@ -222,7 +220,6 @@ ul.task-list li input[type="checkbox"] {
 <th>Feature</th>
 <th style="text-align: center;">Dynamic Epithelial Pixel Width Algorithm</th>
 <th style="text-align: center;">Edge Following Algorithm</th>
-<th style="text-align: center;">Static Epithelial Pixel Width Algorithm</th>
 </tr>
 </thead>
 <tbody>
@@ -230,49 +227,41 @@ ul.task-list li input[type="checkbox"] {
 <td><strong>Computationally Inexpensive</strong></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;">X</td>
 </tr>
 <tr class="even">
 <td><strong>Incorporates Tilting</strong></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;">X</td>
-<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td><strong>Discards data if patches overlap too much</strong></td>
 <td style="text-align: center;">X</td>
 <td style="text-align: center;">X</td>
-<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td><strong>Incrementally Changes patch size</strong></td>
 <td style="text-align: center;">X</td>
-<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td><strong>Changes patch size based on epithelium width</strong></td>
 <td style="text-align: center;">X</td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td><strong>Uses Pre-determined patch sizes</strong></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;">X</td>
 <td style="text-align: center;">X</td>
 </tr>
 <tr class="odd">
 <td><strong>Sensitive to Image Quality</strong></td>
 <td style="text-align: center;">X</td>
 <td style="text-align: center;">X</td>
-<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td><strong>Can Handle Irregular Tissue Shapes</strong></td>
 <td style="text-align: center;">X</td>
 <td style="text-align: center;">X</td>
-<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
@@ -379,36 +368,6 @@ Step-by-Step Manual
 </tbody>
 </table>
 </section>
-</section>
-<section id="static-epithelium-pixel-width-algorithm" class="level2">
-<h2 class="anchored" data-anchor-id="static-epithelium-pixel-width-algorithm">Static Epithelium Pixel Width Algorithm</h2>
-<p>By Eli Nacar</p>
-<ul>
-<li>Goes through every row of pixels in the image of the epithelium mask to determine the width of the epithelium in that row</li>
-<li>Defines distinct patch sizes</li>
-<li>Uses the epithelium width to fit appropriate patches to a given region</li>
-<li>Iterates through the defined patch sizes, starting with the smallest size</li>
-<li>Places patches where they do not overlap with others until a certain percentage of the epithelium mask is covered</li>
-</ul>
-<p><strong><em>Note: There seems to be a discrepancy between the <a href="https://github.com/diegogoldfrank/STAT-390---Fall-24/blob/main/Step%204%3A%20Patching/Eli_Patch_Algo_README.md">README</a> and the code itself</em></strong> <em>As it stands, the readME outlines a method in which the epithelium width is used to calculate the height of any given patch, then calculates the patch width based on the total epithelium area. This ensures the patch is large enough to provide a meaningful sample of the epithelium.</em> <br> <em>The code that is supposed to execute this seems to do something slightly different. The code defines distinct patch sizes, then uses the epithelium width to fit appropriate patches to a given region. It iterates through the defined patch sizes, starting with the smallest size.</em> <br> <br> <em>This idea is a good one, and potentially simpler than the other stuff we’ve been looking at. There is the question of orientation of the slice, but in our last class, someone seemed to solve the orientation problem with a simple height and width of the image. This algorithm seems to work best on vertically oriented slices. If we can treat patching and tilting as separate tasks, this could be a good jumping off point before we tilt the patches.</em></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 51%">
-<col style="width: 48%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Pros</th>
-<th>Cons</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Computationally inexpensive <br> Utilizes a lot of vectorized operations to carry out the task <br> Seems to be the simplest algorithm we have</td>
-<td>Does not touch on tilting the patches at all, and relies a lot on the grid of pixels <br> Not a clearly used or written algorithm <br> Performance relies heavily on slice orientation</td>
-</tr>
-</tbody>
-</table>
 </section>
 </section>
 <section id="tilting-the-patches" class="level1">
