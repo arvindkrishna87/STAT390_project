@@ -18,24 +18,24 @@ This step runs alongside slice annotation to determine whether a fixed patch siz
 
 Research also explores tilting patches to optimize orientation, patch size selection, and the impact of adaptive pooling on machine learning performance. The goal is to **establish a standardized patching method that balances efficiency, accuracy, and model interpretability.**
 
-# Three Different Approaches
+# Two Different Approaches
 
-Below are images comparing the outcome of our three approaches to the patching problem. Find more details on each algorithm below the comparison. 
+Below are images comparing the outcome of our two approaches to the patching problem. Find more details on each algorithm below the comparison. 
 
 
 
 ## Comparing Approaches
 
-| Feature | Dynamic Epithelial Pixel Width Algorithm | Edge Following Algorithm | Static Epithelial Pixel Width Algorithm |
-|---------|:------------------------------------------:|:--------------------------:|:-----------------------------------------:|
-| **Computationally Inexpensive**   |                   |                   |        X        |
-| **Incorporates Tilting**   |                    |          X          |                |
-| **Discards data if patches overlap too much**   |          X          |        X           |                |
-| **Incrementally Changes patch size**   |          X          |                    |                |
-| **Changes patch size based on epithelium width**   |          X          |                    |                |
-| **Uses Pre-determined patch sizes**   |                    |         X           |        X        |
-| **Sensitive to Image Quality**        |           X        |         X           |                 |
-| **Can Handle Irregular Tissue Shapes** |           X        |        X          |                 |
+| Feature | Dynamic Epithelial Pixel Width Algorithm | Edge Following Algorithm | 
+|---------|:------------------------------------------:|:--------------------------:|
+| **Computationally Inexpensive**   |                   |                   |
+| **Incorporates Tilting**   |                    |          X          |
+| **Discards data if patches overlap too much**   |          X          |        X           |
+| **Incrementally Changes patch size**   |          X          |                    |
+| **Changes patch size based on epithelium width**   |          X          |                    |
+| **Uses Pre-determined patch sizes**   |                    |         X           |
+| **Sensitive to Image Quality**        |           X        |         X           |
+| **Can Handle Irregular Tissue Shapes** |           X        |        X          |
 
 ## Dynamic Epithelial Pixel Width Algorithm
 By Alyssa
@@ -90,29 +90,6 @@ Run `rotate_extract_patch (1).py`.
 | Pros              | Cons              |
 |------------------|-----------------|
 | The patch will be generated from the points along the centerline, ensuring that the epithelium is well-positioned within the square patch. Patches are aligned perpendicular to the skeleton, capturing the structural direction of the epithelium. <br><br> Consistency across patches since the points are always centralized within the epithelial region. <br><br> Patch dimensions can be customized to increase the chances of covering the entire epithelium in a single patch. <br><br> | Calculating skeletons, determining gradients, and filtering patches for overlap can be computationally intensive, especially for large images. Code checking if the patch contains both stroma and epithelium is also time consuming. <br><br> The patch size is fixed, and the algorithm samples along the skeleton at intervals, potentially missing parts of the epithelium in patches. The fixed patch size may not be optimal for varying epithelial dimensions. If a specific epithelial region is wider than the patch width, the algorithm may fail to capture it entirely in a single patch. Since the algorithm discards patches that do not include stroma, epithelium, and background, there is a risk that such regions might be missed entirely. <br><br> Skeletonization errors (e.g., gaps or noisy lines) could result in incomplete or misaligned patches.  |
-
-
-## Static Epithelium Pixel Width Algorithm
-By Eli Nacar
-
-* Goes through every row of pixels in the image of the epithelium mask to determine the width of the epithelium in that row
-* Defines distinct patch sizes
-* Uses the epithelium width to fit appropriate patches to a given region
-* Iterates through the defined patch sizes, starting with the smallest size
-* Places patches where they do not overlap with others until a certain percentage of the epithelium mask is covered
-
-***Note: There seems to be a discrepancy between the [README](https://github.com/diegogoldfrank/STAT-390---Fall-24/blob/main/Step%204%3A%20Patching/Eli_Patch_Algo_README.md) and the code itself***
-*As it stands, the readME outlines a method in which the epithelium width is used to calculate the height of any given patch, then calculates the patch width based on the total epithelium area. This ensures the patch is large enough to provide a meaningful sample of the epithelium.*
-<br>
-*The code that is supposed to execute this seems to do something slightly different. The code defines distinct patch sizes, then uses the epithelium width to fit appropriate patches to a given region. It iterates through the defined patch sizes, starting with the smallest size.* 
-<br>
-<br>
-*This idea is a good one, and potentially simpler than the other stuff we’ve been looking at. There is the question of orientation of the slice, but in our last class, someone seemed to solve the orientation problem with a simple height and width of the image. This algorithm seems to work best on vertically oriented slices. If we can treat patching and tilting as separate tasks, this could be a good jumping off point before we tilt the patches.*
-
-
-| Pros              | Cons              |
-|------------------|-----------------|
-| Computationally inexpensive <br> Utilizes a lot of vectorized operations to carry out the task <br> Seems to be the simplest algorithm we have| Does not touch on tilting the patches at all, and relies a lot on the grid of pixels <br> Not a clearly used or written algorithm <br> Performance relies heavily on slice orientation|
 
 
 # Tilting the patches
